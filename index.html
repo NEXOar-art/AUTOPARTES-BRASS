@@ -6,45 +6,63 @@
 <title>Autopartes Brass | Repuestos en Trelew</title>
 <meta name="description" content="Autopartes Brass - repuestos y autopartes en Trelew, Chubut.">
 <style>
-:root{--red:#e30613;--red2:#b9000d;--blue:#17377d;--ink:#333;--muted:#777;--line:#ddd;--soft:#f6f6f6}
+:root{--red:#c91524;--red2:#8f0d19;--blue:#123c7a;--blue2:#0b2550;--ink:#202735;--muted:#687080;--line:#d7dce5;--soft:#f3f6fb;--gold:#d6a93a;--wa:#25D366}
 *{box-sizing:border-box;scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff 0,#f5f8fc 100%)}
 a{text-decoration:none;color:inherit}
-.topbar{height:24px;background:var(--red);color:#fff;font-size:11px}
+.topbar{height:24px;background:linear-gradient(90deg,var(--blue2),var(--blue),var(--red));color:#fff;font-size:11px}
 .topbar .inner{max-width:1180px;margin:auto;height:100%;display:flex;justify-content:flex-end;align-items:center;gap:18px}
-.header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #ddd;box-shadow:0 2px 7px rgba(0,0,0,.06)}
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid #ddd;box-shadow:0 2px 7px rgba(0,0,0,.06)}
 .header-main{max-width:1180px;margin:auto;min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .logo-box{width:245px;height:65px;display:flex;align-items:center}
-.logo-box img{max-width:100%;max-height:65px;object-fit:contain}
+.logo-box img{max-width:100%;max-height:65px;object-fit:contain;filter:drop-shadow(0 0 5px rgba(214,169,58,.28));animation:logoGlow 2.8s ease-in-out infinite alternate}
+@keyframes logoGlow{from{filter:drop-shadow(0 0 3px rgba(214,169,58,.18)) drop-shadow(0 0 0 rgba(201,21,36,0))}to{filter:drop-shadow(0 0 8px rgba(214,169,58,.62)) drop-shadow(0 0 15px rgba(201,21,36,.20))}}
 .logo-fallback{display:none;width:210px;height:50px;align-items:center;justify-content:center;font-size:27px;font-weight:900;font-style:italic;color:#fff;background:linear-gradient(#244b9e,#11285e);border:4px solid #fff;outline:2px solid var(--red);transform:skew(-7deg);text-shadow:2px 2px #111}
 .logo-fallback span{transform:skew(7deg)}
 .contact-mini{font-size:11px;color:#9a4b50;display:flex;gap:22px;align-items:center}
 .nav{max-width:1180px;margin:auto;display:flex;align-items:center;gap:4px;overflow-x:auto}
 .nav a{padding:13px 12px;font-size:11px;font-weight:bold;white-space:nowrap;border-bottom:3px solid transparent}
-.nav a:hover,.nav a.active{color:var(--red);border-bottom-color:var(--red)}
+.nav a:hover,.nav a.active{color:var(--blue);border-bottom-color:var(--red)}
 .nav-search{margin-left:auto;display:flex;height:30px;min-width:210px}
 .nav-search input{min-width:0;flex:1;border:1px solid #ccc;padding:0 8px;font-size:11px}
-.nav-search button{width:38px;border:0;background:var(--red);color:#fff}
+.nav-search button{width:38px;border:0;background:var(--blue);color:#fff}
 .container{max-width:1180px;margin:35px auto;display:grid;grid-template-columns:205px 1fr;gap:12px}
 .sidebar{border:1px solid #d8d8d8;height:max-content}
-.sidebar h3{margin:0;background:var(--red);color:#fff;padding:12px 15px;font-size:12px}
+.sidebar h3{margin:0;background:linear-gradient(90deg,var(--blue2),var(--blue));color:#fff;padding:12px 15px;font-size:12px}
 .sidebar a{display:block;padding:8px 10px;border-bottom:1px solid #e8e8e8;background:#fafafa;font-size:10px}
 .sidebar a:nth-child(even){background:#f1f1f1}
-.sidebar a:hover{background:#ffe7e9;color:var(--red)}
-.hero{min-height:265px;background:linear-gradient(135deg,#d90816 0 57%,#ae0010 57%);position:relative;overflow:hidden;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center}
+.sidebar a:hover{background:#eaf1fb;color:var(--blue);padding-left:14px}
+.hero{min-height:265px;background:linear-gradient(135deg,var(--blue2) 0 57%,var(--red) 57%);position:relative;overflow:hidden;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center}
 .hero:before{content:"";position:absolute;inset:-90px auto auto -70px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.07)}
 .hero:after{content:"";position:absolute;right:-100px;bottom:-150px;width:330px;height:330px;border-radius:50%;background:rgba(255,255,255,.06)}
 .hero-content{position:relative;z-index:1;padding:25px}
 .hero small{letter-spacing:3px;font-weight:bold}
-.hero h1{font-size:43px;margin:10px 0;text-shadow:3px 3px #640812}
+.hero h1{font-size:43px;margin:10px 0;text-shadow:3px 3px rgba(0,0,0,.28)}
 .hero p{font-size:14px}
-.badge{display:inline-block;background:#fff;color:var(--red);font-size:11px;font-weight:bold;padding:9px 15px;margin-top:8px}
+.badge{display:inline-block;background:#fff;color:var(--blue);font-size:11px;font-weight:bold;padding:9px 15px;margin-top:8px}
+.hero-carousel{position:relative;overflow:hidden;border-radius:0;box-shadow:0 8px 24px rgba(18,60,122,.12)}
+.hero-slide{display:none;min-height:265px;position:relative;background:#0b2550}
+.hero-slide.active{display:flex;align-items:center;justify-content:center}
+.hero-slide img{width:100%;height:265px;object-fit:cover;display:block;opacity:.82}
+.hero-slide .slide-caption{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:linear-gradient(90deg,rgba(11,37,80,.78),rgba(11,37,80,.18),rgba(201,21,36,.45));padding:25px}
+.hero-slide .slide-caption h2{font-size:30px;margin:0 0 8px;text-shadow:2px 2px 5px #000}
+.hero-slide .slide-caption p{font-size:13px;margin:0}
+.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.88);color:var(--blue);font-size:22px;cursor:pointer;box-shadow:0 3px 12px rgba(0,0,0,.18)}
+.carousel-arrow.prev{left:12px}.carousel-arrow.next{right:12px}
+.carousel-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:5;display:flex;gap:7px}
+.carousel-dot{width:9px;height:9px;border-radius:50%;border:1px solid #fff;background:rgba(255,255,255,.5);cursor:pointer}.carousel-dot.active{background:#fff}
+.segment-label{display:block;padding:7px 10px;background:#eef3f9;color:var(--blue);font-size:9px;font-weight:900;letter-spacing:.7px;text-transform:uppercase;border-bottom:1px solid #dce4ef}
+.order-path{margin:0 0 15px;padding:10px 12px;background:#eef7ff;border-left:4px solid var(--blue);font-size:10px;color:#36506d}
+.whatsapp-preview{margin-top:14px;padding:13px;background:#eaf8ef;border:1px solid #bde8cd;border-radius:8px;font-size:10px;color:#28553a}
+.whatsapp-preview strong{color:#128c45}
+@media(max-width:520px){.hero-slide,.hero-slide img{height:285px}.hero-slide .slide-caption h2{font-size:24px}}
 .section{padding-top:42px}
 .section-title{display:flex;align-items:center;gap:15px;margin-bottom:18px}
 .section-title h2{font-size:21px;font-weight:normal;margin:0}
 .section-title:after{content:"";height:1px;background:#ddd;flex:1}
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.gallery-card{height:145px;background:linear-gradient(135deg,#eee,#cfcfcf);display:flex;align-items:center;justify-content:center;color:#777;font-weight:bold;font-size:14px;border:1px solid #ddd}
+.gallery-card{height:145px;position:relative;overflow:hidden;}
+.gallery-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}.gallery-card:hover img{transform:scale(1.04)}background:linear-gradient(135deg,#eee,#cfcfcf);display:flex;align-items:center;justify-content:center;color:#777;font-weight:bold;font-size:14px;border:1px solid #ddd}
 .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .product{border:1px solid #ddd;background:#fff;padding:16px}
 .product .pic{height:115px;background:#f2f2f2;display:flex;align-items:center;justify-content:center;color:#999;font-size:11px;margin-bottom:12px}
@@ -64,24 +82,24 @@ a{text-decoration:none;color:inherit}
 .bank-note{font-size:10px;color:#777;margin:5px 0 10px}
 .bank-details{margin-top:8px;padding:12px;background:#f8f8f8;border:1px solid #ddd;font-size:11px;line-height:1.7;display:none}
 .bank-details strong{color:#333}
-.submit{background:var(--red);border:0;color:#fff;padding:12px 18px;font-size:11px;font-weight:bold;cursor:pointer}
-.submit:hover{background:var(--red2)}
-.summary{background:#f7f7f7;border:1px solid #ddd;padding:18px;height:max-content;position:sticky;top:150px}
-.summary h3{margin:0 0 13px;color:var(--red);font-size:14px}
+.submit{background:linear-gradient(90deg,#128c45,var(--wa));border:0;color:#fff;padding:12px 18px;font-size:11px;font-weight:bold;cursor:pointer}
+.submit:hover{background:#128c45}
+.summary{background:linear-gradient(145deg,#fff,#f3f7fc);border:1px solid #cfd8e6;padding:18px;height:max-content;position:sticky;top:150px}
+.summary h3{margin:0 0 13px;color:var(--blue);font-size:14px}
 .summary p{font-size:11px;margin:8px 0;line-height:1.5}
 .summary strong{color:#333}
 .brands{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
 .brand{height:78px;border:1px solid #ddd;display:flex;align-items:center;justify-content:center;background:#fff;padding:9px;overflow:hidden;transition:.2s}
-.brand:hover{border-color:var(--red);box-shadow:0 3px 10px rgba(0,0,0,.08);transform:translateY(-2px)}
+.brand:hover{border-color:var(--blue);box-shadow:0 3px 10px rgba(0,0,0,.08);transform:translateY(-2px)}
 .brand img{max-width:90%;max-height:55px;width:auto;height:auto;object-fit:contain;display:block}
 .map-wrap{border:1px solid #ddd;background:#f5f5f5;overflow:hidden;min-height:340px}
 .map-wrap iframe{width:100%;height:340px;border:0;display:block}
 .map-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
 .location{display:grid;grid-template-columns:1fr 1fr;gap:15px}
 .info{border:1px solid #ddd;padding:20px;background:#fafafa}
-.info h3{font-size:14px;color:var(--red);margin:0 0 10px}
+.info h3{font-size:14px;color:var(--blue);margin:0 0 10px}
 .info p{font-size:12px;line-height:1.6}
-.btn{display:inline-block;background:var(--red);color:#fff;padding:10px 14px;font-size:11px;font-weight:bold;margin-top:5px}
+.btn{display:inline-block;background:var(--blue);color:#fff;padding:10px 14px;font-size:11px;font-weight:bold;margin-top:5px}
 .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .review{border:1px solid #ddd;padding:18px;background:#fff}
 .stars{color:#e30613;letter-spacing:2px;font-size:13px}
@@ -116,8 +134,8 @@ a{text-decoration:none;color:inherit}
 <header class="header">
   <div class="header-main">
     <div class="logo-box">
-      <!-- Colocá el archivo "LOGO AUTOPARTES BRASS.jpeg" en la misma carpeta que este HTML -->
-      <img src="LOGO AUTOPARTES BRASS.jpeg" alt="Autopartes Brass"
+      <!-- Colocá el archivo "LOGO AUTOPARTES BRASS.jpg" en la misma carpeta que este HTML -->
+      <img src="LOGO AUTOPARTES BRASS.jpg" alt="Autopartes Brass"
            onerror="this.style.display='none';document.querySelector('.logo-fallback').style.display='flex'">
       <div class="logo-fallback"><span>BRASS</span></div>
     </div>
@@ -142,31 +160,56 @@ a{text-decoration:none;color:inherit}
 <main id="inicio" class="container">
 <aside class="sidebar">
   <h3>REPUESTOS</h3>
-  <a href="#repuestos">ALTERNADOR</a><a href="#repuestos">BOBINA DE ENCENDIDO</a><a href="#repuestos">BOMBA DE AGUA</a>
-  <a href="#repuestos">BOMBA DE NAFTA</a><a href="#repuestos">BOMBA INYECTORA</a><a href="#repuestos">CAJA DE TRANSFERENCIA</a>
-  <a href="#repuestos">CAJA DE VELOCIDADES</a><a href="#repuestos">CAPOT</a><a href="#repuestos">CARBURADOR</a>
-  <a href="#repuestos">COMPRESOR DE AIRE ACONDICIONADO</a><a href="#repuestos">CONDENSADOR</a><a href="#repuestos">AIRE ACONDICIONADO</a>
-  <a href="#repuestos">ELECTROVENTILADOR</a><a href="#repuestos">GRILLA DELANTERA</a><a href="#repuestos">GUARDABARROS</a>
-  <a href="#repuestos">INSTRUMENTAL DE TABLERO</a><a href="#repuestos">INTERCOOLER</a><a href="#repuestos">MÓDULO DE INYECCIÓN</a>
-  <a href="#repuestos">MOTOR DE ARRANQUE</a><a href="#repuestos">PUERTAS</a><a href="#repuestos">RADIADOR</a>
-  <a href="#repuestos">RADIADOR DE ACEITE</a><a href="#repuestos">TABLERO DE INSTRUMENTO</a><a href="#repuestos">TAPA DE BAÚL</a>
-  <a href="#repuestos">TAPIZADOS</a><a href="#repuestos">TURBO COMPRESOR</a><a href="#repuestos">VOLANTE DE MOTOR</a>
+  <span class="segment-label">Motor y encendido</span>
+  <a href="#pedido" data-category="Motor y encendido" data-product="ALTERNADOR">ALTERNADOR</a><a href="#pedido" data-category="Motor y encendido" data-product="BOBINA DE ENCENDIDO">BOBINA DE ENCENDIDO</a><a href="#pedido" data-category="Motor y encendido" data-product="MOTOR DE ARRANQUE">MOTOR DE ARRANQUE</a><a href="#pedido" data-category="Motor y encendido" data-product="VOLANTE DE MOTOR">VOLANTE DE MOTOR</a>
+  <span class="segment-label">Combustible e inyección</span>
+  <a href="#pedido" data-category="Combustible e inyección" data-product="BOMBA DE NAFTA">BOMBA DE NAFTA</a><a href="#pedido" data-category="Combustible e inyección" data-product="BOMBA INYECTORA">BOMBA INYECTORA</a><a href="#pedido" data-category="Combustible e inyección" data-product="CARBURADOR">CARBURADOR</a><a href="#pedido" data-category="Combustible e inyección" data-product="MÓDULO DE INYECCIÓN">MÓDULO DE INYECCIÓN</a>
+  <span class="segment-label">Transmisión</span>
+  <a href="#pedido" data-category="Transmisión" data-product="CAJA DE TRANSFERENCIA">CAJA DE TRANSFERENCIA</a><a href="#pedido" data-category="Transmisión" data-product="CAJA DE VELOCIDADES">CAJA DE VELOCIDADES</a>
+  <span class="segment-label">Carrocería</span>
+  <a href="#pedido" data-category="Carrocería" data-product="CAPOT">CAPOT</a><a href="#pedido" data-category="Carrocería" data-product="GRILLA DELANTERA">GRILLA DELANTERA</a><a href="#pedido" data-category="Carrocería" data-product="GUARDABARROS">GUARDABARROS</a><a href="#pedido" data-category="Carrocería" data-product="PUERTAS">PUERTAS</a><a href="#pedido" data-category="Carrocería" data-product="TAPA DE BAÚL">TAPA DE BAÚL</a>
+  <span class="segment-label">Climatización / aire acondicionado</span>
+  <a href="#pedido" data-category="Climatización" data-product="AIRE ACONDICIONADO">AIRE ACONDICIONADO</a><a href="#pedido" data-category="Climatización" data-product="COMPRESOR DE AIRE ACONDICIONADO">COMPRESOR DE AIRE ACONDICIONADO</a><a href="#pedido" data-category="Climatización" data-product="CONDENSADOR">CONDENSADOR</a>
+  <span class="segment-label">Refrigeración</span>
+  <a href="#pedido" data-category="Refrigeración" data-product="BOMBA DE AGUA">BOMBA DE AGUA</a><a href="#pedido" data-category="Refrigeración" data-product="RADIADOR">RADIADOR</a><a href="#pedido" data-category="Refrigeración" data-product="RADIADOR DE ACEITE">RADIADOR DE ACEITE</a><a href="#pedido" data-category="Refrigeración" data-product="ELECTROVENTILADOR">ELECTROVENTILADOR</a>
+  <span class="segment-label">Electricidad</span>
+  <a href="#pedido" data-category="Electricidad" data-product="ALTERNADOR">ALTERNADOR</a><a href="#pedido" data-category="Electricidad" data-product="INSTRUMENTAL DE TABLERO">INSTRUMENTAL DE TABLERO</a><a href="#pedido" data-category="Electricidad" data-product="TABLERO DE INSTRUMENTO">TABLERO DE INSTRUMENTO</a>
+  <span class="segment-label">Interior</span>
+  <a href="#pedido" data-category="Interior" data-product="TABLERO DE INSTRUMENTO">TABLERO DE INSTRUMENTO</a><a href="#pedido" data-category="Interior" data-product="TAPIZADOS">TAPIZADOS</a>
+  <span class="segment-label">Admisión y turbo</span>
+  <a href="#pedido" data-category="Admisión y turbo" data-product="INTERCOOLER">INTERCOOLER</a><a href="#pedido" data-category="Admisión y turbo" data-product="TURBO COMPRESOR">TURBO COMPRESOR</a>
 </aside>
 
 <section class="main">
-<section class="hero">
-  <div class="hero-content">
-    <small>AUTOPARTES • REPUESTOS • ACCESORIOS</small>
-    <h1>AUTOPARTES BRASS</h1>
-    <p>Repuestos para tu vehículo en Trelew, Chubut</p>
-    <a class="badge" href="#pedido">SOLICITAR UN REPUESTO</a>
+<section class="hero-carousel" id="heroCarousel" aria-label="Promociones Autopartes Brass">
+  <div class="hero-slide active">
+    <div class="hero" style="width:100%">
+      <div class="hero-content">
+        <small>AUTOPARTES • REPUESTOS • ACCESORIOS</small>
+        <h1>AUTOPARTES BRASS</h1>
+        <p>Repuestos para tu vehículo en Trelew, Chubut</p>
+        <a class="badge" href="#pedido">SOLICITAR UN REPUESTO</a>
+      </div>
+    </div>
   </div>
+  <div class="hero-slide"><img src="OFERTA CUENTAS.png" alt="Oferta y medios de pago"><div class="slide-caption"><div><h2>OFERTAS Y MEDIOS DE PAGO</h2><p>Consultá nuestras opciones para tu repuesto.</p></div></div></div>
+  <div class="hero-slide"><img src="OFERTA HORARIO DE ATENCION.png" alt="Horario de atención"><div class="slide-caption"><div><h2>HORARIO DE ATENCIÓN</h2><p>Encontrá el momento ideal para visitarnos.</p></div></div></div>
+  <div class="hero-slide"><img src="OFERTA MOTOR .png" alt="Oferta motor"><div class="slide-caption"><div><h2>REPUESTOS DE MOTOR</h2><p>Consultá por compatibilidad, stock y disponibilidad.</p></div></div></div>
+  <div class="hero-slide"><img src="OFERTA CAJA DE VELOCIDADES.png" alt="Oferta caja de velocidades"><div class="slide-caption"><div><h2>CAJAS DE VELOCIDADES</h2><p>Buscamos la pieza adecuada para tu vehículo.</p></div></div></div>
+  <button class="carousel-arrow prev" type="button" aria-label="Anterior">‹</button>
+  <button class="carousel-arrow next" type="button" aria-label="Siguiente">›</button>
+  <div class="carousel-dots" aria-label="Seleccionar imagen"></div>
 </section>
 
 <section id="galeria" class="section">
  <div class="section-title"><h2>Galería</h2></div>
  <div class="gallery">
-   <div class="gallery-card">FOTO DEL LOCAL</div><div class="gallery-card">AUTOPARTES</div><div class="gallery-card">REPUESTOS</div>
+   <div class="gallery-card"><img src="LOCAL.jpg" alt="Local Autopartes Brass" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+   <div class="gallery-card"><img src="AUTOPARTES.jpg" alt="Autopartes" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+   <div class="gallery-card"><img src="AUTOPARTES2.jpg" alt="Autopartes 2" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+   <div class="gallery-card"><img src="REPUESTO MOTOR.jpg" alt="Repuesto de motor" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+   <div class="gallery-card"><img src="REPUESTO PLASTICOS.jpg" alt="Repuestos plásticos" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+   <div class="gallery-card"><img src="REPUESTO CAJA.jpg" alt="Repuesto de caja" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
  </div>
 </section>
 
@@ -176,6 +219,7 @@ a{text-decoration:none;color:inherit}
   <div class="form-card" id="pedido">
    <h3>Pedido / Captación de repuesto</h3>
    <div class="sub">Seleccioná una categoría y el producto. La selección se incorpora automáticamente al pedido.</div>
+   <div class="order-path" id="orderPath">Ruta inteligente: <strong>Repuestos</strong> → elegí categoría → elegí producto. Los accesos laterales cargan automáticamente la combinación.</div>
    <div class="row">
     <div class="field">
       <label>Categoría de repuesto *</label>
@@ -219,7 +263,8 @@ a{text-decoration:none;color:inherit}
     <div id="bankDetails" class="bank-details"></div>
    </div>
    <div class="field"><label>Comentario adicional <span>(opcional)</span></label><textarea id="comentario" placeholder="Indicá motor, versión, lado, año, código o cualquier dato que ayude a identificar el repuesto."></textarea></div>
-   <button class="submit" id="enviarPedido" type="button">ENVIAR PEDIDO POR WHATSAPP</button>
+   <button class="submit" id="enviarPedido" type="button">📲 ENVIAR PEDIDO FORMATEADO POR WHATSAPP</button>
+   <div class="whatsapp-preview"><strong>Pedido listo para WhatsApp</strong><br>Se enviará con categoría, producto, datos del cliente, vehículo, ubicación, medio de pago y comentario, organizado como una ficha de pedido.</div>
   </div>
 
   <aside class="summary">
@@ -389,18 +434,29 @@ const sum={
  comentario:document.getElementById('sumComentario')
 };
 
-cat.addEventListener('change',()=>{
+function cargarCategoria(nombreCategoria, productoDeseado=''){
+  cat.value=nombreCategoria||'';
   prod.innerHTML='<option value="">Seleccionar repuesto...</option>';
   prod.disabled=!cat.value;
   (catalogo[cat.value]||[]).forEach(x=>{
     const o=document.createElement('option');
     o.value=x;o.textContent=x;prod.appendChild(o);
   });
+  if(productoDeseado && (catalogo[cat.value]||[]).includes(productoDeseado)) prod.value=productoDeseado;
   sum.cat.textContent=cat.value||'—';
-  sum.prod.textContent='—';
-});
+  sum.prod.textContent=prod.value||'—';
+  document.getElementById('orderPath').innerHTML=`Ruta inteligente: <strong>Repuestos</strong> → <strong>${cat.value||'categoría'}</strong> → <strong>${prod.value||'producto'}</strong>`;
+}
 
-prod.addEventListener('change',()=>sum.prod.textContent=prod.value||'—');
+cat.addEventListener('change',()=>cargarCategoria(cat.value));
+prod.addEventListener('change',()=>{sum.prod.textContent=prod.value||'—';document.getElementById('orderPath').innerHTML=`Ruta inteligente: <strong>Repuestos</strong> → <strong>${cat.value||'categoría'}</strong> → <strong>${prod.value||'producto'}</strong>`;});
+
+document.querySelectorAll('.sidebar a[data-category]').forEach(link=>{
+  link.addEventListener('click',()=>{
+    cargarCategoria(link.dataset.category,link.dataset.product);
+    setTimeout(()=>document.getElementById('pedido').scrollIntoView({behavior:'smooth',block:'start'}),40);
+  });
+});
 
 fields.nombre.addEventListener('input',()=>sum.nombre.textContent=fields.nombre.value||'—');
 fields.vehiculo.addEventListener('input',()=>sum.vehiculo.textContent=fields.vehiculo.value||'—');
@@ -434,24 +490,42 @@ document.getElementById('enviarPedido').addEventListener('click',()=>{
     ? `${c.banco} | ${c.cta ? 'Cuenta: '+c.cta+' | ' : ''}${c.cbu ? 'CBU: '+c.cbu+' | ' : ''}${c.cvu ? 'CVU: '+c.cvu+' | ' : ''}Alias: ${c.alias}`
     : 'No seleccionada';
 
+  const ahora = new Date();
+  const fecha = ahora.toLocaleString('es-AR',{dateStyle:'short',timeStyle:'short'});
+  const numeroPedido = 'BR-'+Date.now().toString().slice(-6);
   const msg =
-`PEDIDO DE REPUESTO - AUTOPARTES BRASS
+`━━━━━━━━━━━━━━━━━━━━
+🚗 *AUTOPARTES BRASS*
+📋 *PEDIDO DE REPUESTO*
+━━━━━━━━━━━━━━━━━━━━
+🆔 Pedido: ${numeroPedido}
+🗓️ Fecha: ${fecha}
 
-Categoría: ${cat.value}
-Repuesto: ${prod.value}
+🔧 *REPUESTO SOLICITADO*
+• Categoría: ${cat.value}
+• Producto: ${prod.value}
 
-Nombre: ${fields.nombre.value}
-Teléfono/WhatsApp: ${fields.telefono.value}
-E-mail: ${fields.email.value || 'No informado'}
-Vehículo: ${fields.vehiculo.value || 'No informado'}
-Dirección: ${fields.direccion.value || 'No informada'}
-Código postal: ${fields.cp.value || 'No informado'}
-Ciudad: ${fields.ciudad.value || 'No informada'}
+👤 *DATOS DEL CLIENTE*
+• Nombre: ${fields.nombre.value}
+• WhatsApp: ${fields.telefono.value}
+• E-mail: ${fields.email.value || 'No informado'}
 
-CUENTA / MEDIO DE PAGO SELECCIONADO:
+🚘 *VEHÍCULO*
+• Marca / modelo / año: ${fields.vehiculo.value || 'No informado'}
+
+📍 *ENTREGA / UBICACIÓN*
+• Dirección: ${fields.direccion.value || 'No informada'}
+• Código postal: ${fields.cp.value || 'No informado'}
+• Ciudad: ${fields.ciudad.value || 'No informada'}
+
+💳 *MEDIO DE PAGO / CUENTA*
 ${cuentaTexto}
 
-Comentario: ${fields.comentario.value || 'Sin comentario'}`;
+📝 *DETALLE ADICIONAL*
+${fields.comentario.value || 'Sin comentario'}
+
+━━━━━━━━━━━━━━━━━━━━
+📲 *Pedido generado desde la web de Autopartes Brass*`;
 
   window.open('https://wa.me/542804589193?text='+encodeURIComponent(msg),'_blank');
 });
@@ -462,6 +536,18 @@ document.getElementById('globalSearch').addEventListener('input',e=>{
     a.style.display=!q || a.textContent.toLowerCase().includes(q)?'block':'none';
   });
 });
+// Carrusel principal: conserva el primer hero con su botón de acción.
+const slides=[...document.querySelectorAll('.hero-slide')];
+const dotsWrap=document.querySelector('.carousel-dots');
+let slideIndex=0;
+slides.forEach((_,i)=>{const d=document.createElement('button');d.className='carousel-dot'+(i===0?' active':'');d.type='button';d.setAttribute('aria-label','Ir a imagen '+(i+1));d.addEventListener('click',()=>showSlide(i));dotsWrap.appendChild(d);});
+const dots=[...document.querySelectorAll('.carousel-dot')];
+function showSlide(i){slideIndex=(i+slides.length)%slides.length;slides.forEach((s,n)=>s.classList.toggle('active',n===slideIndex));dots.forEach((d,n)=>d.classList.toggle('active',n===slideIndex));}
+document.querySelector('.carousel-arrow.prev').addEventListener('click',()=>showSlide(slideIndex-1));
+document.querySelector('.carousel-arrow.next').addEventListener('click',()=>showSlide(slideIndex+1));
+setInterval(()=>showSlide(slideIndex+1),5500);
+
 </script>
 </body>
 </html>
+
