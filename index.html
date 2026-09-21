@@ -1,402 +1,467 @@
 <!DOCTYPE html>
-<html lang="es" data-lang="es">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tongoy – Restobar Campana</title>
-<link
-href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,30
-0;0,400;0,500;0,600;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
-<style> :root{ --gold:#C9A84C;--gold-l:#E8C96A;--dark:#0F0C09;--dark2:#1A1510;--dark3:#2D2318; --cream:#F5F0E8;--muted:#7A6E65;--rust:#8B3A1E;--rust2:#C4552B;--char:#3D3530; --border:rgba(201,168,76,.22); } *{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;font-size:16px;} body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);overflow-x:hidden;} img{display:block;max-width:100%;} a{text-decoration:none;color:inherit;} body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:60; background:radial-gradient(ellipse at 50% 42%, transparent 58%, rgba(0,0,0,.42) 100%);} .scroll-progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:600;pointer-events:none; background:linear-gradient(90deg,var(--gold),var(--gold-l));box-shadow:0 0 10px rgba(201,168,76,.7);} nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(15,12,9,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);transition:all .3s;} .nav-inner{max-width:1280px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:62px;} .logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:.12em;color:var(--gold);} .status-badge{display:flex;align-items:center;gap:.45rem;padding:.35rem .85rem;border-radius:50px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:u ppercase;border:1px solid transparent;transition:all .4s;} .status-open{background:rgba(37,211,102,.12);border-color:rgba(37,211,102,.35);color:#25D36 6;} .status-closed{background:rgba(196,85,43,.12);border-color:rgba(196,85,43,.35);color:#E07050; } .status-dot{width:7px;height:7px;border-radius:50%;} .status-open .status-dot{background:#25D366;box-shadow:0 0 6px #25D366;} .status-closed .status-dot{background:#E07050;} .nav-links{display:flex;gap:1.75rem;list-style:none;} .nav-links a{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;opacity:.75;transition:opacity .2s,color .2s;} .nav-links a:hover{opacity:1;color:var(--gold);} .nav-right{display:flex;align-items:center;gap:.75rem;} .nav-cta{background:var(--gold);color:var(--dark);padding:.45rem 1.2rem;border-radius:2px;font-size:.77rem;font-weight:700;letter-spacing:.07em;text-transform:u ppercase;transition:background .2s;white-space:nowrap;} .nav-cta:hover{background:var(--gold-l);} .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;} .hamburger span{width:24px;height:2px;background:var(--cream);border-radius:2px;transition:.3s;} .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);} .hamburger.open span:nth-child(2){opacity:0;} .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);} .mob-menu{display:none;position:fixed;inset:0;background:var(--dark2);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2rem;padding-top:62px;} .mob-menu.open{display:flex;} .mob-menu a{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:.08em;color:var(--cream);transition:color .2s;} .mob-menu a:hover{color:var(--gold);} .lang-switcher{display:flex;align-items:center;gap:2px;border:1px solid var(--border);border-radius:20px;padding:2px 4px;background:rgba(15,12,9,.6);} .lang-btn{background:none;border:none;cursor:pointer;font-size:.65rem;font-weight:700;letter-sp acing:.07em;text-transform:uppercase;color:var(--muted);padding:.25rem .45rem;border-radius:16px;transition:all .2s;font-family:'DM Sans',sans-serif;} .lang-btn:hover{color:var(--cream);} .lang-btn.active{background:var(--gold);color:var(--dark);} .hero-video-wrap{position:fixed;inset:0;z-index:0;overflow:hidden;will-change:transform,opacity;} .hero-video-wrap video{width:100%;height:100%;object-fit:cover;pointer-events:none;animation:heroZoomOut 7s ease-out forwards;transform-origin:center center;} @keyframes heroZoomOut{0%{transform:scale(1.65);}100%{transform:scale(1.0);}} .hero-fallback-bg{position:absolute;inset:0;background:var(--dark2);} .overlay-fachada{position:absolute;inset:0;background:linear-gradient(160deg,rgba(15,12,9,.55) 0%,rgba(201,168,76,.05) 100%);z-index:1;} .hero-scroll-overlay{position:absolute;inset:0;background:#0F0C09;opacity:0;z-index:2;pointer-events:none;} #inicio{position:relative;z-index:1;height:100vh;display:flex;align-items:center;justify-content:cent er;overflow:hidden;} #inicio::before{content:'';position:absolute;top:0;left:0;right:0;height:140px;background:linear-gra dient(to bottom,var(--dark) 0%,transparent 100%);z-index:3;pointer-events:none;} #inicio::after{content:'';position:absolute;bottom:0;left:0;right:0;height:160px;background:linear-gr adient(to top,var(--dark) 0%,transparent 100%);z-index:3;pointer-events:none;} .parallax-section{position:relative;z-index:1;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;} .parallax-section::before{content:'';position:absolute;top:0;left:0;right:0;height:140px;background: linear-gradient(to bottom,var(--dark) 0%,transparent 100%);z-index:3;pointer-events:none;} .parallax-section::after{content:'';position:absolute;bottom:0;left:0;right:0;height:140px;background:linear-gradient(to top,var(--dark) 0%,transparent 100%);z-index:3;pointer-events:none;} .parallax-bg{position:absolute;inset:-8%;background-size:cover;background-position:center;bac kground-repeat:no-repeat;will-change:transform,background-position;transform:scale(1.35) translateY(0px);transition:transform 1.4s cubic-bezier(.22,1,.36,1);} .parallax-section.in-view .parallax-bg{transform:scale(1.0) translateY(0px);} .parallax-overlay{position:absolute;inset:0;z-index:1;} .overlay-desayuno{background:linear-gradient(to bottom,rgba(15,12,9,.5) 0%,rgba(15,12,9,.15) 40%,rgba(15,12,9,.78) 100%);} .overlay-after{background:linear-gradient(135deg,rgba(15,12,9,.8) 0%,rgba(45,35,24,.45) 100%);} .overlay-mila{background:linear-gradient(to top,rgba(15,12,9,.92) 0%,rgba(15,12,9,.25) 60%,rgba(15,12,9,.55) 100%);} .overlay-bebidas{background:linear-gradient(to bottom right,rgba(15,12,9,.7),rgba(139,58,30,.22),rgba(15,12,9,.8));} .parallax-content{position:relative;z-index:4;text-align:center;padding:2rem;max-width:900px;will -change:transform,opacity;} .sec-index{position:absolute;top:6%;left:4%;font-family:'Bebas Neue',sans-serif;font-size:clamp(6rem,18vw,16rem);color:rgba(201,168,76,.07);line-height:.8;z-index:2;pointer-events:none;letter-spacing:.04em;user-select:none;} .eyebrow{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin- bottom:1rem;opacity:0;animation:fadeUp .9s forwards;} .hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,16vw,12rem);line-height:.88;letter-spacing:.05em;color:va r(--cream);margin-bottom:.75rem;opacity:0;animation:fadeUp .9s .2s forwards;text-shadow:0 8px 40px rgba(0,0,0,.6);} .hero-title .g{color:var(--gold);} .hero-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,2.5vw,1.5rem);color:rgba(245,240,232,.78);m argin-bottom:2rem;opacity:0;animation:fadeUp .9s .4s forwards;} .sec-label{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;} .sec-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,7vw,5.5rem);letter-spacing:.06em;line-height:.95;margin-bottom:1rem;} .divider{width:36px;height:2px;background:var(--gold);margin:1.2rem auto;} .hero-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;opacity:0;animation:fa deUp .9s .6s forwards;} .btn-gold{background:var(--gold);color:var(--dark);padding:.8rem 2.2rem;border-radius:2px;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:u ppercase;border:none;cursor:pointer;transition:all .2s;display:inline-block;} .btn-gold:hover{background:var(--gold-l);transform:translateY(-2px);} .btn-outline{border:1px solid rgba(245,240,232,.4);color:var(--cream);padding:.8rem 2.2rem;border-radius:2px;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;transit ion:all .2s;display:inline-block;} .btn-outline:hover{border-color:var(--gold);color:var(--gold);} .scroll-ind{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-di rection:column;align-items:center;gap:.4rem;color:rgba(245,240,232,.5);font-size:.65rem;letter-s pacing:.25em;text-transform:uppercase;animation:pulse 2.5s infinite;z-index:4;} .scroll-ind::after{content:'';width:1px;height:48px;background:linear-gradient(to bottom,var(--gold),transparent);} .section-callout{animation:fadeUp 1s .2s both;} .callout-desc{font-size:clamp(.9rem,2vw,1.1rem);color:rgba(245,240,232,.72);line-height:1.8;ma x-width:560px;margin:0 auto 2rem;} .strip{position:relative;z-index:1;background:var(--gold);padding:.7rem 1.5rem;text-align:center;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.22em;color:var(--dark);} #menu{position:relative;z-index:1;background:var(--dark3);padding:5rem 1.5rem;} .container{max-width:1280px;margin:0 auto;} .menu-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1. 5rem;margin-bottom:2rem;} .menu-top-left .sec-h{text-align:left;} .menu-top-left .divider{margin:1rem 0;} .admin-toggle-wrap{display:flex;align-items:center;gap:.6rem;} .admin-toggle-wrap label{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);} .toggle{position:relative;width:44px;height:24px;} .toggle input{opacity:0;width:0;height:0;} .slider-t{position:absolute;inset:0;background:var(--char);border-radius:24px;cursor:pointer;transition:.3s;} .slider-t::before{content:'';position:absolute;width:18px;height:18px;left:3px;bottom:3px;backgrou nd:var(--muted);border-radius:50%;transition:.3s;} .toggle input:checked+.slider-t{background:var(--gold);} .toggle input:checked+.slider-t::before{transform:translateX(20px);background:var(--dark);} .menu-search{position:relative;max-width:560px;margin:0 0 1.4rem;} .menu-search input{width:100%;background:var(--dark2);border:1px solid var(--border);color:var(--cream);padding:.9rem 3.1rem .9rem 3.1rem;border-radius:50px;font-size:.92rem;font-family:'DM Sans',sans-serif;transition:border-color .25s,box-shadow .25s;} .menu-search input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.13);} .menu-search input::placeholder{color:var(--muted);} .menu-search .search-icon{position:absolute;left:1.15rem;top:50%;transform:translateY(-50%);color:var(--mute d);font-size:1rem;pointer-events:none;} .menu-search .search-clear{position:absolute;right:.7rem;top:50%;transform:translateY(-50%);background:var( --char);border:none;color:var(--muted);width:27px;height:27px;border-radius:50%;cursor:pointer; font-size:.85rem;display:none;align-items:center;justify-content:center;transition:all .2s;} .menu-search .search-clear.visible{display:flex;} .menu-search .search-clear:hover{background:var(--gold);color:var(--dark);} .search-meta{font-size:.8rem;color:var(--muted);margin:-.4rem 0 1.6rem;letter-spacing:.03em;} .search-meta b{color:var(--gold);font-weight:700;} .cat-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;} .tab{padding:.45rem 1.1rem;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:.77rem;letter-spacing:.1em;tex t-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .2s;font-family:'DM Sans',sans-serif;} .tab.active,.tab:hover{background:var(--gold);color:var(--dark);border-color:var(--gold);font-weigh t:700;} .subcat-tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:2rem;min-height:0;opacity:0; max-height:0;overflow:hidden;transition:all .4s ease;} .subcat-tabs.visible{opacity:1;max-height:200px;margin-bottom:2rem;} .sub-tab{padding:.35rem .85rem;border:1px solid rgba(201,168,76,.35);background:transparent;color:var(--muted);font-size:.7rem;letter-spacing:. 08em;text-transform:uppercase;cursor:pointer;border-radius:50px;transition:all .2s;font-family:'DM Sans',sans-serif;} .sub-tab.active,.sub-tab:hover{background:var(--gold);color:var(--dark);border-color:var(--gold);f ont-weight:700;} .menu-sections{display:flex;flex-direction:column;gap:3.6rem;} .menu-section{position:relative;} .menu-section-head{position:relative;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.4rem 1.6rem;padding-bottom:1.4rem;margin-bottom:2rem;cursor:default;} .msh-index{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,5rem);line-height:.78;letter-spacing:.04em;color:rgba (201,168,76,.16);transition:color .4s,text-shadow .4s;} .menu-section-head:hover .msh-index{color:rgba(201,168,76,.32);text-shadow:0 0 26px rgba(201,168,76,.18);} .msh-center{min-width:0;} .msh-titlerow{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;} .msh-emoji{font-size:1.5rem;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4));} .msh-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.9rem,4.4vw,3rem);letter-spacing:.06em;color:var(--cream);lin e-height:.95;transition:letter-spacing .35s;} .menu-section-head:hover .msh-title{letter-spacing:.09em;} .msh-desc{font-family:'Playfair Display',serif;font-style:italic;font-size:.86rem;color:var(--muted);margin-top:.35rem;} .msh-meta{display:flex;flex-direction:column;align-items:flex-end;gap:.05rem;text-align:right;} .msh-count{font-family:'Bebas Neue',sans-serif;font-size:2.1rem;line-height:.9;color:var(--gold);letter-spacing:.04em;} .msh-countlabel{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute d);} .msh-underline{position:absolute;left:0;bottom:0;height:2px;width:100%;background:linear-gradi ent(90deg,var(--gold),rgba(201,168,76,.18) 62%,transparent);transform:scaleX(0);transform-origin:left;transition:transform 1s .15s cubic-bezier(.22,1,.36,1);} .menu-section-head.in .msh-underline{transform:scaleX(1);} .menu-subsection{margin-top:.4rem;} .menu-subsection + .menu-subsection{margin-top:1.9rem;} .menu-subsection-head{display:flex;align-items:center;gap:.7rem;margin:1.5rem 0 1.05rem;} .mssh-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 9px rgba(201,168,76,.65);flex-shrink:0;} .mssh-name{font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;white-space:nowrap;} .mssh-rule{flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.55),transparent );transform-origin:left;transform:scaleX(0);transition:transform .85s .15s cubic-bezier(.22,1,.36,1);} .menu-subsection-head.in .mssh-rule{transform:scaleX(1);} .mssh-count{font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--muted);letter-spacing:.06em;} .menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.2rem;} .mhead-reveal{opacity:0;} .mhead-reveal.in{animation:headReveal .7s cubic-bezier(.22,1,.36,1) forwards;} @keyframes headReveal{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}} .mcard-reveal{opacity:0;} .mcard-reveal.in{animation:cardReveal .6s cubic-bezier(.22,1,.36,1) forwards;animation-delay:var(--d,0ms);} @keyframes cardReveal{from{opacity:0;transform:translateY(26px) scale(.985);}to{opacity:1;transform:none;}} .menu-card{background:var(--dark2);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:transform .35s cubic-bezier(.22,1,.36,1),border-color .25s,box-shadow .35s;position:relative;} .menu-card:hover{transform:translateY(-6px) scale(1.02);border-color:rgba(201,168,76,.6);box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 0 1px rgba(201,168,76,.15);} .menu-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba( 201,168,76,0) 0%,rgba(201,168,76,.08) 100%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:1;} .menu-card:hover::before{opacity:1;} .menu-card:hover .card-img-wrap img{transform:scale(1.08);filter:brightness(1) saturate(1.2);} .menu-card:hover .add-btn{transform:scale(1.15) rotate(90deg);background:var(--gold-l);} @keyframes cardShine{0%{transform:translateX(-100%);}100%{transform:translateX(100%);}} .menu-card::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:li near-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);transform:translateX(-100 %);pointer-events:none;z-index:2;} .menu-card:hover::after{animation:cardShine .8s ease-out;} .card-img-wrap{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--char);} .card-img-wrap img{width:100%;height:100%;object-fit:cover;filter:brightness(.88) saturate(1.1);transition:transform .5s cubic-bezier(.22,1,.36,1),filter .4s;} .card-emoji{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:3.5rem;} .card-body{padding:1rem 1.1rem;} .card-name{font-weight:600;font-size:.95rem;margin-bottom:.25rem;} .card-desc{color:var(--muted);font-size:.78rem;line-height:1.55;margin-bottom:.8rem;min-height: 2.4em;} .card-footer{display:flex;justify-content:space-between;align-items:center;gap:.5rem;} .card-price{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;color:var(--gold);letter-spacing:.04em;} .card-price.consult{font-size:1.02rem;letter-spacing:.08em;color:var(--gold-l);} .add-btn{background:var(--gold);color:var(--dark);border:none;width:34px;height:34px;border-radius:2px;font-size:1.3rem;font-weight:700;cursor:pointer;transition:all .3s cubic-bezier(.22,1,.36,1);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-s hadow:0 4px 12px rgba(201,168,76,.3);} .add-btn:hover{background:var(--gold-l);transform:scale(1.1);} .add-btn.added{background:#25D366;animation:addPulse .4s ease;} @keyframes addPulse{0%{transform:scale(1);}50%{transform:scale(1.35);}100%{transform:scale(1);}} .menu-empty{grid-column:1/-1;text-align:center;padding:3.5rem 1rem;color:var(--muted);font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;} .img-edit-btn{position:absolute;top:.5rem;right:.5rem;z-index:3;background:rgba(15,12,9,.85);bor der:1px solid var(--gold);color:var(--gold);width:32px;height:32px;border-radius:4px;cursor:pointer;font-size:.9 5rem;display:flex;align-items:center;justify-content:center;transition:all .2s;backdrop-filter:blur(4px);} .img-edit-btn:hover{background:var(--gold);color:var(--dark);transform:scale(1.1);} .cart-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:250;} .cart-btn{background:var(--gold);color:var(--dark);border:none;padding:.8rem 1.4rem;border-radius:50px;font-weight:700;font-size:.88rem;cursor:pointer;display:flex;align-items:center;gap:.5rem;box-shadow:0 6px 28px rgba(201,168,76,.38);transition:all .2s;letter-spacing:.04em;} .cart-btn:hover{background:var(--gold-l);transform:translateY(-2px);} .cart-badge{background:var(--rust2);color:#fff;border-radius:50%;width:22px;height:22px;display :flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;} .cart-panel{display:none;position:fixed;right:1.5rem;bottom:5.5rem;width:370px;max-width:calc(1 00vw - 2rem);background:var(--dark3);border:1px solid var(--border);border-radius:10px;z-index:250;overflow:hidden;box-shadow:0 20px 56px rgba(0,0,0,.6);} .cart-panel.open{display:flex;flex-direction:column;} .cart-header{padding:1rem 1.2rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;} .cart-header h3{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:.08em;color:var(--gold);} .cart-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:1.1rem;tran sition:color .2s;padding:2px 6px;} .cart-close:hover{color:var(--cream);} .cart-items{padding:.75rem 1.2rem;max-height:250px;overflow-y:auto;display:flex;flex-direction:column;gap:.7rem;} .cart-item{display:flex;justify-content:space-between;align-items:center;gap:.6rem;} .ci-name{font-size:.85rem;flex:1;} .ci-qty{display:flex;align-items:center;gap:.35rem;} .qty-btn{background:var(--char);border:none;color:var(--cream);width:24px;height:24px;border-r adius:2px;cursor:pointer;font-size:.85rem;font-weight:700;transition:background .15s;display:flex;align-items:center;justify-content:center;} .qty-btn:hover{background:var(--gold);color:var(--dark);} .ci-price{font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--gold);min-width:64px;text-align:right;} .ci-price.consult{font-size:.78rem;letter-spacing:.05em;} .cart-empty{text-align:center;padding:2rem;color:var(--muted);font-size:.85rem;line-height:1.6;} .cart-footer{padding:1rem 1.2rem;border-top:1px solid var(--border);} .cart-mesa-wrap{margin-bottom:.8rem;} .cart-mesa-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mute d);margin-bottom:.4rem;display:flex;align-items:center;gap:.4rem;} .cart-mesa-label .required{color:#E07050;} .cart-mesa-select{width:100%;background:var(--char);border:1px solid var(--border);color:var(--cream);padding:.5rem .7rem;border-radius:4px;font-size:.85rem;font-family:'DM Sans',sans-serif;cursor:pointer;} .cart-mesa-select:focus{outline:none;border-color:var(--gold);} .cart-note-wrap{margin-bottom:.8rem;} .cart-note-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted) ;margin-bottom:.4rem;display:flex;align-items:center;gap:.4rem;} .cart-note{width:100%;background:var(--char);border:1px solid var(--border);color:var(--cream);padding:.55rem .7rem;border-radius:4px;font-size:.85rem;font-family:'DM Sans',sans-serif;resize:vertical;min-height:54px;line-height:1.45;transition:border-color .25s;} .cart-note:focus{outline:none;border-color:var(--gold);} .cart-note::placeholder{color:var(--muted);} .cart-pay-wrap{margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem;padding:.5rem .7rem;background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.2);border-radius:4px;flex-wrap:wrap;} .cart-pay-wrap input[type="checkbox"]{width:16px;height:16px;accent-color:var(--gold);cursor:pointer;} .cart-pay-wrap label{font-size:.78rem;color:var(--cream);cursor:pointer;flex:1;} .cart-pay-wrap .pay-info{width:100%;font-size:.68rem;color:var(--muted);margin-top:.2rem;} .cart-consult-note{display:none;font-size:.72rem;color:#E8C96A;background:rgba(232,201,106,. 08);border:1px solid rgba(232,201,106,.25);border-radius:4px;padding:.45rem .6rem;margin-bottom:.8rem;} .cart-consult-note.visible{display:block;} .cart-total{display:flex;justify-content:space-between;align-items:center;margin-bottom:.9rem;} .cart-total span:first-child{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted );} .cart-total span:last-child{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;color:var(--gold);letter-spacing:.04em;} .cart-buttons{display:flex;flex-direction:column;gap:.5rem;} .btn-wa{width:100%;background:#25D366;color:#fff;border:none;padding:.875rem;border-radius :4px;font-weight:700;font-size:.88rem;cursor:pointer;display:flex;align-items:center;justify-conten t:center;gap:.5rem;transition:background .2s;letter-spacing:.05em;text-transform:uppercase;} .btn-wa:hover{background:#1EBF5A;} .btn-wa:disabled{background:#999;cursor:not-allowed;opacity:.6;} .btn-online{width:100%;background:var(--gold);color:var(--dark);border:none;padding:.75rem;bo rder-radius:4px;font-weight:700;font-size:.82rem;cursor:pointer;display:none;align-items:center;j ustify-content:center;gap:.5rem;transition:all .2s;letter-spacing:.05em;text-transform:uppercase;} .btn-online:hover{background:var(--gold-l);} .btn-online.visible{display:flex;} #promociones{position:relative;z-index:1;background:var(--dark2);padding:5rem 1.5rem;} .promos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem; margin-top:3rem;} .promo-card{border:1px solid var(--border);border-radius:6px;overflow:hidden;position:relative;transition:transform .22s,border-color .22s,box-shadow .22s;background:var(--dark3);} .promo-card:hover{transform:translateY(-4px);border-color:rgba(201,168,76,.5);box-shadow:0 12px 32px rgba(0,0,0,.4);} .promo-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear- gradient(90deg,var(--gold),var(--rust2));z-index:2;} .promo-img-wrap{position:relative;aspect-ratio:16/7;overflow:hidden;background:var(--char);} .promo-img-wrap img{width:100%;height:100%;object-fit:cover;filter:brightness(.82) saturate(1.1);transition:transform .4s,filter .4s;} .promo-card:hover .promo-img-wrap img{transform:scale(1.04);filter:brightness(.95) saturate(1.2);} .promo-img-emoji{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;f ont-size:3rem;color:var(--gold);} .promo-body{padding:1.5rem;} .promo-badge{display:inline-block;background:var(--rust);color:#fff;padding:.22rem .7rem;border-radius:2px;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:upp ercase;margin-bottom:.85rem;} .promo-name{font-family:'Bebas Neue',sans-serif;font-size:1.65rem;letter-spacing:.05em;margin-bottom:.5rem;} .promo-desc{color:var(--muted);font-size:.83rem;line-height:1.65;margin-bottom:1rem;min-height:1.2em;} .promo-footer{display:flex;align-items:center;justify-content:space-between;gap:.5rem;} .promo-price{font-family:'Bebas Neue',sans-serif;font-size:2.1rem;color:var(--gold);} #nosotros{position:relative;z-index:1;background:var(--dark3);padding:5rem 1.5rem;} .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;} .about-imgs{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;} .about-imgs img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:4px;filter:brightness(.82) saturate(1.1);} .about-imgs img:first-child{grid-column:span 2;aspect-ratio:16/9;} .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem;} .stat{border-left:2px solid var(--gold);padding-left:1rem;} .stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--gold);line-height:1;} .stat-lbl{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);} #contacto{position:relative;z-index:1;background:var(--dark2);padding:5rem 1.5rem;} .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;} .contact-info{display:flex;flex-direction:column;gap:1.5rem;} .ci-item{display:flex;gap:.9rem;align-items:flex-start;} .ci-icon{width:40px;height:40px;background:rgba(201,168,76,.09);border:1px solid var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0; font-size:1.1rem;} .ci-txt h4{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem;} .ci-txt p,.ci-txt a{color:var(--cream);font-size:.88rem;transition:color .2s;} .ci-txt a:hover{color:var(--gold);} .social-row{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem;} .soc-btn{display:flex;align-items:center;gap:.45rem;padding:.55rem 1.1rem;border:1px solid var(--border);border-radius:2px;font-size:.77rem;letter-spacing:.07em;text-transform:uppercase; color:var(--cream);text-decoration:none;transition:all .2s;} .soc-btn:hover{transform:translateY(-1px);} .soc-wa:hover{border-color:#25D366;color:#25D366;} .soc-ig:hover{border-color:#E1306C;color:#E1306C;} .soc-fb:hover{border-color:#1877F2;color:#1877F2;} .map-block{background:var(--char);border:1px solid var(--border);border-radius:6px;height:360px;display:flex;flex-direction:column;align-items:center ;justify-content:center;gap:.75rem;color:var(--muted);font-size:.85rem;text-decoration:none;transition:border-color .2s;} .map-block:hover{border-color:var(--gold);} footer{position:relative;z-index:1;background:var(--dark3);border-top:1px solid var(--border);padding:3rem 1.5rem 2rem;} .footer-inner{max-width:1280px;margin:0 auto;} .footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;margin-bottom:2r em;} .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;letter-spacing:.12em;color:var(--gold);} .footer-tag{color:var(--muted);font-style:italic;font-family:'Playfair Display',serif;font-size:.88rem;margin-top:.2rem;} .footer-col h4{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;} .footer-col a{display:block;color:var(--muted);font-size:.83rem;margin-bottom:.4rem;text-decoration:none;tr ansition:color .2s;} .footer-col a:hover{color:var(--cream);} .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:. 75rem;padding-top:1.5rem;border-top:1px solid var(--border);} .footer-bottom p{color:var(--muted);font-size:.73rem;} @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}} @keyframes pulse{0%,100%{opacity:.5;}50%{opacity:1;}} .reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1);} .reveal.visible{opacity:1;transform:none;} .admin-panel{display:none;position:fixed;top:0;left:0;right:0;z-index:400;background:rgba(15,12, 9,.97);border-bottom:2px solid var(--gold);padding:1rem 1.5rem;flex-direction:column;gap:.5rem;} .admin-panel.open{display:flex;} .admin-panel-header{display:flex;justify-content:space-between;align-items:center;} .admin-panel-header h2{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.1em;color:var(--gold);} .admin-close-full{background:none;border:1px solid var(--border);color:var(--cream);padding:.35rem .9rem;border-radius:2px;cursor:pointer;font-size:.78rem;letter-spacing:.08em;text-transform:upp ercase;transition:all .2s;} .admin-close-full:hover{border-color:var(--gold);color:var(--gold);} .admin-hint{font-size:.8rem;color:var(--cream);line-height:1.6;} .admin-hint span{color:var(--gold);} @media(max-width:900px){ .nav-links,.nav-cta{display:none;} .hamburger{display:flex;} .about-grid,.contact-grid{grid-template-columns:1fr;} .about-imgs img:first-child{aspect-ratio:4/3;} .parallax-content{padding:1.5rem;} .sec-index{top:3%;left:3%;} } @media(max-width:600px){ .cart-panel{right:.75rem;left:.75rem;width:auto;bottom:5rem;} .cart-float{right:1rem;bottom:1rem;} .hero-title{line-height:.9;} .promos-grid{grid-template-columns:1fr;} .about-stats{grid-template-columns:1fr 1fr;} .lang-btn{font-size:.58rem;padding:.2rem .35rem;} .menu-section-head{grid-template-columns:auto 1fr;gap:.3rem .9rem;} .msh-meta{grid-column:1 / -1;flex-direction:row;align-items:baseline;justify-content:flex-start;gap:.5rem;text-align:left;margin -top:.2rem;} .msh-desc{display:none;} } @media(prefers-reduced-motion:reduce){ .hero-video-wrap video{animation:none;transform:scale(1);} .parallax-bg{transition:none !important;transform:scale(1) !important;} .menu-card{transition:none !important;} .menu-card:hover{transform:none !important;} .mhead-reveal,.mcard-reveal{opacity:1 !important;animation:none !important;} .msh-underline,.mssh-rule{transform:scaleX(1) !important;transition:none !important;} }  .hero-video-wrap{transform:none!important;opacity:1!important;will-change:auto;} .hero-video-wrap video{animation:none!important;transform:none!important;} .parallax-section{perspective:1200px;transform-style:preserve-3d;} .parallax-bg{transform:scale(1.12);transition:none;will-change:transform;} .parallax-content{transform-style:preserve-3d;will-change:transform,opacity;} .scroll-motion-text{will-change:transform,opacity;transform-style:preserve-3d;} .menu-section,.promo-card,.about-grid,.contact-grid{will-change:transform,opacity;} @media(prefers-reduced-motion:reduce){.hero-video-wrap video{animation:none!important}.parallax-bg{transition:none!important;transform:scale(1)!important}.scroll-motion-text{transform:none!important}} </style>
+<title>Autopartes Brass | Repuestos en Trelew</title>
+<meta name="description" content="Autopartes Brass - repuestos y autopartes en Trelew, Chubut.">
+<style>
+:root{--red:#e30613;--red2:#b9000d;--blue:#17377d;--ink:#333;--muted:#777;--line:#ddd;--soft:#f6f6f6}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
+a{text-decoration:none;color:inherit}
+.topbar{height:24px;background:var(--red);color:#fff;font-size:11px}
+.topbar .inner{max-width:1180px;margin:auto;height:100%;display:flex;justify-content:flex-end;align-items:center;gap:18px}
+.header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #ddd;box-shadow:0 2px 7px rgba(0,0,0,.06)}
+.header-main{max-width:1180px;margin:auto;min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo-box{width:245px;height:65px;display:flex;align-items:center}
+.logo-box img{max-width:100%;max-height:65px;object-fit:contain}
+.logo-fallback{display:none;width:210px;height:50px;align-items:center;justify-content:center;font-size:27px;font-weight:900;font-style:italic;color:#fff;background:linear-gradient(#244b9e,#11285e);border:4px solid #fff;outline:2px solid var(--red);transform:skew(-7deg);text-shadow:2px 2px #111}
+.logo-fallback span{transform:skew(7deg)}
+.contact-mini{font-size:11px;color:#9a4b50;display:flex;gap:22px;align-items:center}
+.nav{max-width:1180px;margin:auto;display:flex;align-items:center;gap:4px;overflow-x:auto}
+.nav a{padding:13px 12px;font-size:11px;font-weight:bold;white-space:nowrap;border-bottom:3px solid transparent}
+.nav a:hover,.nav a.active{color:var(--red);border-bottom-color:var(--red)}
+.nav-search{margin-left:auto;display:flex;height:30px;min-width:210px}
+.nav-search input{min-width:0;flex:1;border:1px solid #ccc;padding:0 8px;font-size:11px}
+.nav-search button{width:38px;border:0;background:var(--red);color:#fff}
+.container{max-width:1180px;margin:35px auto;display:grid;grid-template-columns:205px 1fr;gap:12px}
+.sidebar{border:1px solid #d8d8d8;height:max-content}
+.sidebar h3{margin:0;background:var(--red);color:#fff;padding:12px 15px;font-size:12px}
+.sidebar a{display:block;padding:8px 10px;border-bottom:1px solid #e8e8e8;background:#fafafa;font-size:10px}
+.sidebar a:nth-child(even){background:#f1f1f1}
+.sidebar a:hover{background:#ffe7e9;color:var(--red)}
+.hero{min-height:265px;background:linear-gradient(135deg,#d90816 0 57%,#ae0010 57%);position:relative;overflow:hidden;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero:before{content:"";position:absolute;inset:-90px auto auto -70px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.07)}
+.hero:after{content:"";position:absolute;right:-100px;bottom:-150px;width:330px;height:330px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hero-content{position:relative;z-index:1;padding:25px}
+.hero small{letter-spacing:3px;font-weight:bold}
+.hero h1{font-size:43px;margin:10px 0;text-shadow:3px 3px #640812}
+.hero p{font-size:14px}
+.badge{display:inline-block;background:#fff;color:var(--red);font-size:11px;font-weight:bold;padding:9px 15px;margin-top:8px}
+.section{padding-top:42px}
+.section-title{display:flex;align-items:center;gap:15px;margin-bottom:18px}
+.section-title h2{font-size:21px;font-weight:normal;margin:0}
+.section-title:after{content:"";height:1px;background:#ddd;flex:1}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gallery-card{height:145px;background:linear-gradient(135deg,#eee,#cfcfcf);display:flex;align-items:center;justify-content:center;color:#777;font-weight:bold;font-size:14px;border:1px solid #ddd}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.product{border:1px solid #ddd;background:#fff;padding:16px}
+.product .pic{height:115px;background:#f2f2f2;display:flex;align-items:center;justify-content:center;color:#999;font-size:11px;margin-bottom:12px}
+.product h3{font-size:13px;margin:0 0 7px}
+.product p{font-size:11px;color:#777;margin:0}
+.quote{background:#fafafa;border-left:4px solid var(--red);padding:14px;margin-top:12px;font-size:12px;line-height:1.6}
+.form-wrap{display:grid;grid-template-columns:1fr .65fr;gap:18px}
+.form-card{border:1px solid #ddd;background:#fff;padding:22px}
+.form-card h3{margin:0 0 5px;font-size:17px}
+.form-card .sub{font-size:11px;color:#777;margin-bottom:18px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{margin-bottom:13px}
+.field label{display:block;font-size:11px;font-weight:bold;margin-bottom:6px}
+.field label span{font-weight:normal;color:#999}
+.field input,.field select,.field textarea{width:100%;border:1px solid #ccc;padding:10px;font:inherit;font-size:12px;border-radius:2px}
+.field textarea{min-height:105px;resize:vertical}
+.bank-note{font-size:10px;color:#777;margin:5px 0 10px}
+.bank-details{margin-top:8px;padding:12px;background:#f8f8f8;border:1px solid #ddd;font-size:11px;line-height:1.7;display:none}
+.bank-details strong{color:#333}
+.submit{background:var(--red);border:0;color:#fff;padding:12px 18px;font-size:11px;font-weight:bold;cursor:pointer}
+.submit:hover{background:var(--red2)}
+.summary{background:#f7f7f7;border:1px solid #ddd;padding:18px;height:max-content;position:sticky;top:150px}
+.summary h3{margin:0 0 13px;color:var(--red);font-size:14px}
+.summary p{font-size:11px;margin:8px 0;line-height:1.5}
+.summary strong{color:#333}
+.brands{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.brand{height:78px;border:1px solid #ddd;display:flex;align-items:center;justify-content:center;background:#fff;padding:9px;overflow:hidden;transition:.2s}
+.brand:hover{border-color:var(--red);box-shadow:0 3px 10px rgba(0,0,0,.08);transform:translateY(-2px)}
+.brand img{max-width:90%;max-height:55px;width:auto;height:auto;object-fit:contain;display:block}
+.map-wrap{border:1px solid #ddd;background:#f5f5f5;overflow:hidden;min-height:340px}
+.map-wrap iframe{width:100%;height:340px;border:0;display:block}
+.map-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.location{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.info{border:1px solid #ddd;padding:20px;background:#fafafa}
+.info h3{font-size:14px;color:var(--red);margin:0 0 10px}
+.info p{font-size:12px;line-height:1.6}
+.btn{display:inline-block;background:var(--red);color:#fff;padding:10px 14px;font-size:11px;font-weight:bold;margin-top:5px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.review{border:1px solid #ddd;padding:18px;background:#fff}
+.stars{color:#e30613;letter-spacing:2px;font-size:13px}
+.review p{font-size:12px;line-height:1.6}
+.review small{color:#777;font-size:10px}
+.newsletter{margin-top:45px;border-top:1px solid #ddd;border-bottom:1px solid #ddd;padding:25px}
+.newsletter-inner{max-width:760px;margin:auto;display:flex}
+.newsletter input{flex:1;border:1px solid #ddd;height:36px;padding:0 10px;font-size:11px}
+.newsletter button{border:0;background:var(--red);color:#fff;width:90px;font-size:10px;font-weight:bold}
+.footer{background:#fafafa}
+.footer-inner{max-width:1180px;margin:auto;padding:28px 0;display:grid;grid-template-columns:1.2fr .7fr 1.4fr;gap:45px}
+.footer h4{font-size:11px;margin:0 0 12px}.footer p,.footer a{font-size:10px;color:#777;line-height:1.8;display:block}
+.footer-logo{font-size:25px;font-weight:900;font-style:italic;color:var(--blue)}
+.copyright{text-align:center;border-top:1px solid #ddd;padding:10px;font-size:9px;color:#999}
+@media(max-width:900px){
+ .header-main{padding:8px 15px}.contact-mini{display:none}.nav{padding:0 10px}.nav-search{display:none}
+ .container{grid-template-columns:1fr;padding:0 15px}.sidebar{display:none}
+ .form-wrap,.location{grid-template-columns:1fr}.summary{position:static}
+ .brands{grid-template-columns:repeat(3,1fr)}.reviews{grid-template-columns:1fr}.gallery,.product-grid{grid-template-columns:1fr 1fr}.map-wrap iframe{height:300px}
+ .footer-inner{padding:25px 15px;grid-template-columns:1fr}
+}
+@media(max-width:520px){
+ .logo-box{width:190px}.logo-box img{max-height:52px}.hero h1{font-size:30px}
+ .gallery,.product-grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}.brands{grid-template-columns:repeat(2,1fr)}.map-wrap iframe{height:280px}
+}
+</style>
 </head>
 <body>
-<div class="scroll-progress" id="scrollProgress"></div>
-<div class="hero-video-wrap" id="heroVideoWrap">
-<div class="hero-fallback-bg"></div>
-<video autoplay muted loop playsinline>
-<source src="VIDEO_SCROLLING_TONGOY.mp4" type="video/mp4">
-<source
-src="https://raw.githubusercontent.com/NEXOar-art/TONGOY/main/VIDEO2TONGOY.mp4"
-type="video/mp4">
-</video>
-<div class="overlay-fachada"></div>
-<div class="hero-scroll-overlay" id="heroScrollOverlay"></div>
-</div>
-<div class="admin-panel" id="adminPanel">
-<div class="admin-panel-header">
-<h2 data-i18n="admin_title">⚙ Modo Administrador Activo</h2>
-<button class="admin-close-full" onclick="setAdmin(false)" data-i18n="admin_exit">Salir del
-modo admin</button>
-</div>
-<p class="admin-hint">
-📊<strong>Base de Datos:</strong> Productos, precios e imágenes se cargan desde
-Google Sheets.
-<br><br>
-<a
-href="https://docs.google.com/spreadsheets/d/1wlDDniHWbdJZ0FbbEcEPLVi4EeglWlAHlKf4oO
-0VScI/edit?usp=sharing" target="_blank" style="color:var(--gold-l);text-decoration:underline;
-font-weight:bold; font-size: 1rem;">📝Abrir Google Sheets para Editar</a>
-<br><br>
-<em style="font-size: 0.75rem; color: var(--muted);">
-🖼️<strong>Imágenes (columna E):</strong> pegá una URL pública (http/https, Google Drive
-compartido, Dropbox o Imgur) y se muestra sola.
-También podés cambiar la imagen con el botón 📷de cada tarjeta (se guarda en este
-navegador).
-<br>🧾Las filas con categoría "PROMOS" se muestran como promociones. Después de
-guardar cambios en la hoja, recargá (F5).
-</em>
-</p>
-</div>
-<nav id="mainNav">
-<div class="nav-inner">
-<a href="#inicio" class="logo">Tongoy</a>
-<ul class="nav-links">
-<li><a href="#inicio" data-i18n="nav_home">Inicio</a></li>
-<li><a href="#menu" data-i18n="nav_menu">Menú</a></li>
-<li><a href="#promociones" data-i18n="nav_promos">Promos</a></li>
-<li><a href="#nosotros" data-i18n="nav_about">Nosotros</a></li>
-<li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
-</ul>
-<div class="nav-right">
-<div class="lang-switcher">
-<button class="lang-btn active" onclick="setLang('es')">ES</button>
-<button class="lang-btn" onclick="setLang('en')">EN</button>
-</div>
-<div class="status-badge status-open" id="statusBadge">
-<span class="status-dot"></span>
-<span id="statusText" data-i18n="status_open">Abierto</span>
-</div>
-<a href="https://wa.me/5493489236010" target="_blank" rel="noopener noreferrer"
-class="nav-cta" data-i18n="nav_order">Hacer Pedido</a>
-<div class="hamburger" id="hamburger" onclick="toggleMobile()">
-<span></span><span></span><span></span>
-</div>
-</div>
-</div>
-</nav>
-<div class="mob-menu" id="mobMenu">
-<a href="#inicio" onclick="closeMobile()" data-i18n="nav_home">Inicio</a>
-<a href="#menu" onclick="closeMobile()" data-i18n="nav_menu">Menú</a>
-<a href="#promociones" onclick="closeMobile()" data-i18n="nav_promos">Promos</a>
-<a href="#nosotros" onclick="closeMobile()" data-i18n="nav_about">Nosotros</a>
-<a href="#contacto" onclick="closeMobile()" data-i18n="nav_contact">Contacto</a>
-</div>
-<section id="inicio">
-<div class="parallax-content" id="heroContent" style="z-index:4;">
-<p class="eyebrow" data-i18n="hero_eyebrow">✦ Restobar · Campana, Buenos Aires</p>
-<h1 class="hero-title">TON<span class="g">GOY</span></h1>
-<p class="hero-sub" data-i18n="hero_sub">Gastronomía de calidad, ambiente cálido<br>y el
-mejor after work de Campana.</p>
-<div class="hero-actions">
-<a href="#menu" class="btn-gold" data-i18n="btn_menu">Ver Menú</a>
-<a href="https://wa.me/5493489236010" target="_blank" rel="noopener noreferrer"
-class="btn-outline" data-i18n="btn_whatsapp">📲Pedido WhatsApp</a>
-</div>
-</div>
-<div class="scroll-ind" id="scrollInd" data-i18n="scroll_text">Scroll</div>
+
+<div class="topbar"><div class="inner"><span>Trelew, Chubut</span><span>|</span><a href="#contacto">Contacto</a></div></div>
+
+<header class="header">
+  <div class="header-main">
+    <div class="logo-box">
+      <!-- Colocá el archivo "LOGO AUTOPARTES BRASS.jpeg" en la misma carpeta que este HTML -->
+      <img src="LOGO AUTOPARTES BRASS.jpeg" alt="Autopartes Brass"
+           onerror="this.style.display='none';document.querySelector('.logo-fallback').style.display='flex'">
+      <div class="logo-fallback"><span>BRASS</span></div>
+    </div>
+    <div class="contact-mini">
+      <span>📞 0280 458-9193</span>
+      <span>📍 Av. Cd. de la Plata 2701</span>
+    </div>
+  </div>
+  <nav class="nav" aria-label="Navegación principal">
+    <a href="#inicio" class="active">Inicio</a>
+    <a href="#galeria">Galería</a>
+    <a href="#repuestos">Repuestos</a>
+    <a href="#ofertas">Ofertas</a>
+    <a href="#novedades">Novedades</a>
+    <a href="#marcas">Marcas</a>
+    <a href="#ubicacion">Ubicación</a>
+    <a href="#contacto">Contacto</a>
+    <div class="nav-search"><input id="globalSearch" type="search" placeholder="Buscar repuesto..."><button>🔎</button></div>
+  </nav>
+</header>
+
+<main id="inicio" class="container">
+<aside class="sidebar">
+  <h3>REPUESTOS</h3>
+  <a href="#repuestos">ALTERNADOR</a><a href="#repuestos">BOBINA DE ENCENDIDO</a><a href="#repuestos">BOMBA DE AGUA</a>
+  <a href="#repuestos">BOMBA DE NAFTA</a><a href="#repuestos">BOMBA INYECTORA</a><a href="#repuestos">CAJA DE TRANSFERENCIA</a>
+  <a href="#repuestos">CAJA DE VELOCIDADES</a><a href="#repuestos">CAPOT</a><a href="#repuestos">CARBURADOR</a>
+  <a href="#repuestos">COMPRESOR DE AIRE ACONDICIONADO</a><a href="#repuestos">CONDENSADOR</a><a href="#repuestos">AIRE ACONDICIONADO</a>
+  <a href="#repuestos">ELECTROVENTILADOR</a><a href="#repuestos">GRILLA DELANTERA</a><a href="#repuestos">GUARDABARROS</a>
+  <a href="#repuestos">INSTRUMENTAL DE TABLERO</a><a href="#repuestos">INTERCOOLER</a><a href="#repuestos">MÓDULO DE INYECCIÓN</a>
+  <a href="#repuestos">MOTOR DE ARRANQUE</a><a href="#repuestos">PUERTAS</a><a href="#repuestos">RADIADOR</a>
+  <a href="#repuestos">RADIADOR DE ACEITE</a><a href="#repuestos">TABLERO DE INSTRUMENTO</a><a href="#repuestos">TAPA DE BAÚL</a>
+  <a href="#repuestos">TAPIZADOS</a><a href="#repuestos">TURBO COMPRESOR</a><a href="#repuestos">VOLANTE DE MOTOR</a>
+</aside>
+
+<section class="main">
+<section class="hero">
+  <div class="hero-content">
+    <small>AUTOPARTES • REPUESTOS • ACCESORIOS</small>
+    <h1>AUTOPARTES BRASS</h1>
+    <p>Repuestos para tu vehículo en Trelew, Chubut</p>
+    <a class="badge" href="#pedido">SOLICITAR UN REPUESTO</a>
+  </div>
 </section>
-<div class="strip" data-i18n="strip_hours">🕐LUN–JUE 07:00 A 23:00 &nbsp;|&nbsp; VIE–SÁB
-07:00 A 00:30 &nbsp;|&nbsp; TAKE AWAY 3489-236010</div>
-<section class="parallax-section" id="sec-desayuno">
-<span class="sec-index">01</span>
-<div class="parallax-bg"
-style="background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd20
-85?w=1920&q=85&fit=crop');" aria-hidden="true"></div>
-<div class="parallax-overlay overlay-desayuno"></div>
-<div class="parallax-content section-callout">
-<p class="sec-label reveal scroll-motion-text" data-i18n="sec_breakfast_label">✦ Comenzá el día</p>
-<h2 class="sec-h reveal scroll-motion-text" data-i18n="sec_breakfast_title">Desayunos<br><span
-style="color:var(--gold)">& Meriendas</span></h2>
-<div class="divider reveal scroll-motion-text"></div>
-<p class="callout-desc reveal scroll-motion-text" data-i18n="sec_breakfast_desc">Desde las 7 de la mañana,
-el aroma del café recién hecho y las medialunas artesanales te esperan en Tongoy.</p>
-<a href="#menu" class="btn-gold reveal" data-i18n="btn_see_breakfast">Ver Desayunos</a>
-</div>
+
+<section id="galeria" class="section">
+ <div class="section-title"><h2>Galería</h2></div>
+ <div class="gallery">
+   <div class="gallery-card">FOTO DEL LOCAL</div><div class="gallery-card">AUTOPARTES</div><div class="gallery-card">REPUESTOS</div>
+ </div>
 </section>
-<section class="parallax-section" id="sec-afterwork">
-<span class="sec-index">02</span>
-<div class="parallax-bg"
-style="background-image:url('https://images.unsplash.com/photo-1470337458703-46ad1756a1
-87?w=1920&q=85&fit=crop');" aria-hidden="true"></div>
-<div class="parallax-overlay overlay-after"></div>
-<div class="parallax-content section-callout"
-style="text-align:left;max-width:650px;margin-left:0;padding-left:5vw;">
-<p class="sec-label reveal scroll-motion-text" data-i18n="sec_after_label">✦ De lunes a sábado</p>
-<h2 class="sec-h reveal scroll-motion-text" style="font-size:clamp(3rem,8vw,6.5rem);"
-data-i18n="sec_after_title">AFTER<br><span style="color:var(--gold)">WORK</span></h2>
-<div class="divider reveal scroll-motion-text" style="margin-left:0;"></div>
-<p class="callout-desc reveal scroll-motion-text" style="text-align:left;margin-left:0;"
-data-i18n="sec_after_desc">Terminó el trabajo, empieza Tongoy. Tu gin tonic frío, buena
-música y el mejor ambiente de Campana.</p>
-<a href="#menu" class="btn-outline reveal" data-i18n="btn_see_drinks">Ver Bebidas</a>
-</div>
+
+<section id="repuestos" class="section">
+ <div class="section-title"><h2>Repuestos</h2></div>
+ <div class="form-wrap">
+  <div class="form-card" id="pedido">
+   <h3>Pedido / Captación de repuesto</h3>
+   <div class="sub">Seleccioná una categoría y el producto. La selección se incorpora automáticamente al pedido.</div>
+   <div class="row">
+    <div class="field">
+      <label>Categoría de repuesto *</label>
+      <select id="categoria" required>
+       <option value="">Seleccionar categoría...</option>
+       <option>Motor y encendido</option><option>Combustible e inyección</option><option>Transmisión</option>
+       <option>Carrocería</option><option>Climatización</option><option>Refrigeración</option>
+       <option>Electricidad</option><option>Interior</option><option>Admisión y turbo</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Repuesto / producto *</label>
+      <select id="producto" required disabled><option value="">Primero elegí una categoría...</option></select>
+    </div>
+   </div>
+   <div class="row">
+    <div class="field"><label>Nombre y apellido *</label><input id="nombre" required placeholder="Tu nombre completo"></div>
+    <div class="field"><label>Teléfono / WhatsApp *</label><input id="telefono" required placeholder="Ej. 0280 458-9193"></div>
+   </div>
+   <div class="field"><label>E-mail <span>(opcional)</span></label><input id="email" type="email" placeholder="tuemail@ejemplo.com"></div>
+   <div class="field">
+    <label>Vehículo: marca / modelo / año <span>(opcional)</span></label>
+    <input id="vehiculo" placeholder="Ej. Ford Ranger / 2018">
+   </div>
+   <div class="row">
+    <div class="field"><label>Dirección <span>(opcional)</span></label><input id="direccion" placeholder="Calle y número"></div>
+    <div class="field"><label>Código postal <span>(opcional)</span></label><input id="cp" placeholder="Ej. 9100"></div>
+   </div>
+   <div class="field"><label>Ciudad <span>(opcional)</span></label><input id="ciudad" placeholder="Ej. Trelew"></div>
+   <div class="field">
+    <label>DATOS DE CUENTA BANCARIA</label>
+    <div class="bank-note">Elegí la cuenta a la que querés enviar el pago. Los datos seleccionados se incorporarán al pedido.</div>
+    <select id="cuenta">
+      <option value="">Seleccionar cuenta bancaria / medio de pago...</option>
+      <option value="Credicoop">Banco Credicoop</option>
+      <option value="Galicia">Banco Galicia</option>
+      <option value="Provincia">Banco Provincia</option>
+      <option value="Macro">Banco Macro</option>
+      <option value="Mercado Pago">Mercado Pago</option>
+    </select>
+    <div id="bankDetails" class="bank-details"></div>
+   </div>
+   <div class="field"><label>Comentario adicional <span>(opcional)</span></label><textarea id="comentario" placeholder="Indicá motor, versión, lado, año, código o cualquier dato que ayude a identificar el repuesto."></textarea></div>
+   <button class="submit" id="enviarPedido" type="button">ENVIAR PEDIDO POR WHATSAPP</button>
+  </div>
+
+  <aside class="summary">
+    <h3>Resumen del pedido</h3>
+    <p><strong>Categoría:</strong> <span id="sumCat">—</span></p>
+    <p><strong>Repuesto:</strong> <span id="sumProd">—</span></p>
+    <p><strong>Cliente:</strong> <span id="sumNombre">—</span></p>
+    <p><strong>Vehículo:</strong> <span id="sumVehiculo">—</span></p>
+    <p><strong>Dirección:</strong> <span id="sumDireccion">—</span></p>
+    <p><strong>Código postal:</strong> <span id="sumCP">—</span></p>
+    <p><strong>Ciudad:</strong> <span id="sumCiudad">—</span></p>
+    <p><strong>Cuenta para pago:</strong> <span id="sumCuenta">—</span></p>
+    <p><strong>Comentario:</strong> <span id="sumComentario">—</span></p>
+    <hr>
+    <p>El formulario conserva todos los datos elegidos antes de enviar el pedido.</p>
+  </aside>
+ </div>
 </section>
-<section class="parallax-section" id="sec-mila">
-<span class="sec-index">03</span>
-<div class="parallax-bg"
-style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?
-w=1920&q=85&fit=crop');" aria-hidden="true"></div>
-<div class="parallax-overlay overlay-mila"></div>
-<div class="parallax-content section-callout"
-style="text-align:right;max-width:650px;margin-left:auto;padding-right:5vw;">
-<p class="sec-label reveal scroll-motion-text" data-i18n="sec_dishes_label">✦ Platos principales</p>
-<h2 class="sec-h reveal scroll-motion-text" style="font-size:clamp(2.8rem,7vw,5.5rem);"
-data-i18n="sec_dishes_title">Cocina<br><span style="color:var(--gold)">con
-alma</span></h2>
-<div class="divider reveal scroll-motion-text" style="margin-left:auto;"></div>
-<p class="callout-desc reveal scroll-motion-text" style="text-align:right;margin-left:auto;"
-data-i18n="sec_dishes_desc">Milanesas jugosas, hamburguesas artesanales y ensaladas
-frescas. Ingredientes seleccionados, recetas con sabor a casa.</p>
-<a href="#menu" class="btn-gold reveal" data-i18n="btn_see_dishes">Ver Platos</a>
-</div>
+
+<section id="ofertas" class="section">
+ <div class="section-title"><h2>Ofertas</h2></div>
+ <div class="product-grid">
+  <article class="product"><div class="pic">PRODUCTO EN OFERTA</div><h3>Repuestos seleccionados</h3><p>Consultá disponibilidad y precio.</p></article>
+  <article class="product"><div class="pic">PRODUCTO EN OFERTA</div><h3>Autopartes destacadas</h3><p>Solicitá información por WhatsApp.</p></article>
+  <article class="product"><div class="pic">PRODUCTO EN OFERTA</div><h3>Promociones</h3><p>Stock sujeto a disponibilidad.</p></article>
+ </div>
 </section>
-<section class="parallax-section" id="sec-bebidas">
-<span class="sec-index">04</span>
-<div class="parallax-bg"
-style="background-image:url('https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w
-=1920&q=85&fit=crop');" aria-hidden="true"></div>
-<div class="parallax-overlay overlay-bebidas"></div>
-<div class="parallax-content section-callout">
-<p class="sec-label reveal scroll-motion-text" data-i18n="sec_drinks_label">✦ Carta de tragos</p>
-<h2 class="sec-h reveal scroll-motion-text" data-i18n="sec_drinks_title">Gin Tonic · Aperol<br><span
-style="color:var(--gold)">Amargo Obrero</span></h2>
-<div class="divider reveal scroll-motion-text"></div>
-<p class="callout-desc reveal scroll-motion-text" data-i18n="sec_drinks_desc">Cada copa cuenta una historia.
-Nuestros bartenders combinan los mejores destilados con ingredientes frescos para el trago
-perfecto.</p>
-<a href="#menu" class="btn-gold reveal" data-i18n="btn_see_drinks">Ver Bebidas</a>
-</div>
+
+<section id="novedades" class="section">
+ <div class="section-title"><h2>Novedades</h2></div>
+ <div class="quote">Nuevos ingresos de autopartes y repuestos. Consultá por marca, modelo, año y disponibilidad.</div>
 </section>
-<section id="menu">
-<div class="container">
-<div class="menu-top reveal">
-<div class="menu-top-left">
-<p class="sec-label" data-i18n="menu_label">✦ Nuestra carta</p>
-<h2 class="sec-h" style="text-align:left" data-i18n="menu_title">Menú Digital</h2>
-<div class="divider" style="margin-left:0;"></div>
-<p style="color:var(--muted);font-size:.9rem;max-width:420px;line-height:1.7;"
-data-i18n="menu_desc">Seleccioná tus platos, revisá el carrito y enviá tu pedido directo al local
-por WhatsApp.</p>
-</div>
-<div class="admin-toggle-wrap">
-<label for="adminToggle" data-i18n="admin_mode">Modo Admin</label>
-<label class="toggle">
-<input type="checkbox" id="adminToggle" onchange="setAdmin(this.checked)">
-<span class="slider-t"></span>
-</label>
-</div>
-</div>
-<div class="menu-search reveal">
-<span class="search-icon">🔍</span>
-<input type="text" id="menuSearch" data-i18n-placeholder="search_placeholder"
-placeholder="Buscar platos, bebidas, ingredientes..." oninput="onSearch(this.value)"
-autocomplete="off">
-<button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
-</div>
-<div class="search-meta" id="searchMeta" style="display:none;"></div>
-<div class="cat-tabs" id="tabs"></div>
-<div class="subcat-tabs" id="subTabs"></div>
-<div class="menu-sections" id="menuGrid"></div>
-</div>
+
+<section id="marcas" class="section">
+ <div class="section-title"><h2>Marcas</h2></div>
+ <div class="brands">
+  <div class="brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAAAvCAIAAAApV9C2AAAJ9UlEQVR4nO1Za3RU1RXe+9zXPPMajHkRSAgxIRB5y8PVBT6goqKCVqStSouryFJ5VMCC4gvkIRbx1aWr1q5WCiK1WnGptUtlgRSFIiRAzAPygCQTZiaTycyde+/ce8/pj8FkQgxMYoKulO/XzJlzz9nffHufvfe5yBiD/wOQH9qAi4RLPPsXLvHsX7jEs3+hF3gyxgBozHeA70rJXQxDPAm8q2fjRy/wRMTvHD+HAAK0z4v5JfbxvitaMEaNWM4UABgQiDWu47SoTR1IMgDGgMTSjtE5Fix2XdJhvOOWXaOzzecDH+e82A0YQwBARBYFIEWgDBgCQ2xTBAEYEDUCYVXVNE3XTUopABBCRFEURdEqCZKEsZYiAgIgAwQQsF3e6F7Qte/0mOc5Skb/aRIdQoSzBAEAkCHoABEEGcATAK/P5/H4vF5vS2tIUfUIY4AccASQEMIjommaQBkyE8GUeLRJUnKiMyUlKTU11ZWS6HKADUEEIBQ4pNE9GOukW3QkbtZd+W0nxHgUBUYBDQAGYAC4fUpZbf3xE3WNAVmwOdLSMlwul0UQGXLhiKFE9FZF1k0W0U2dMQrIEUEQBFHgrAJnt4mSICCjhqm3+LzeJjdT5IEpCcNysvIHprkSeAJAAHgAZJQAtuvZDQ9v59kNMAATQAdoVOFQWd3h0mM6CtlXjLAkJHtaWmtqT7kb630eb4LFkp6ebrU7NNOQFVnR1JBuGMibvECJQIEDaqKuqaqqUQJAeIKXJSVkX56cm56W7LAZcsBdW2nlYdyVw4uGJLsQBAACDKGHjhsXz+gcypAiGAghDT49WPrF8eqM/OEOV3pJRfWR4xWtYcXpdDpELjM5ceZPJ52o8ZdXVAUVJTk5KeuyxIlXD4oANHihyc88zf5QKEQQE2zWAekDDlV6j1acIIRYCLOgYSqhcDCYYLcV5ecU5g3WWpr8dZXXjLxibOFAGwECwFNAoIjYrVg9H88OrkGZjmggfFMffHPXJ8nZ+fbLB77zr93VzWGL63KDAdUjaGipPNuy7JYnVr100q+k5RY2+luIrtw5ZYJdEl/b9o+hhYUTx40ZOTxrcAZYAQImvP+Ze8u2XWJqJuOi4ct4AhyCZBEAOS3UMijJOnPqZMVdZwbcc26YkpWAIgMBGACN4XnhUzdenowxA/FIte8P2/85dtqsD/ceOFxxQkxI9VNOR94wDDAjJKLcOL5o5V2jFy1YnVk0Nqd47Kuvv/HA/F8rdZWNp06TpLTP9u43dVVXQhKhFoGXNUO3OCPJmTKxIC8QDgRCrRKXn59fWV2nIEcIcRKDV0Oj8nOnjisq2/vJg7+8dXAiLwFjzCSkjd6FeZ47I7bywI5xHlDMN3a+P2zC1O0ffHrweK1sWty+YMjnlxvdetMZ3d1kejwnD31t5+DtPz1126QxH7y84fYr82YUp1UdOvDQgrusyDd7mlsCelCXmjWpUSYhagtrJNTkMz0e090IjXXcqbKVd9z0i8ljlMoyo7FJPuPzeYP+MN1XUrXr84O5xZP+suN9xQQAQOSARQ+puFJovPmTIdSeqq+paxh5XerR0gqVWFQK1GRgmGDo1IigqVmQNYTOzLxlaSJPZ9004747Zl97/U8WLFjc3Ny8eePLu78sRY2avGC1ORKctoaGhsTk5GCglSecYZo2my0S9k+eUDx1hHPG7IepTlSFUdGqc0QVBJXggeYjc6ZN+fydSrfbm5jlwm4WTufy7BzabQtGFNUIhZgcVn1+BQVmMgAESoHpoqmNGpa78clFa9a8uP+/x92o/37LKzvfenPxsmcqaxp/+9B910yZGgps/Nncn+/YsWP1Yw87rLBnz1c3zxy/dt3f/rP/qzVr1iUnO77Yu2/G9EnPP7+tJSBrvINqIeAUIEgRNY4gU41mf9jriYSVLm3tGhcQPTZ6hwweJFLdamoZCYKotAoRhegaGhHR1J2gblq9aNOT67/et5tQ3TCMzS9sKa88ceDAl0uWLJk4cfINM6afLC+dclX2wnvvvHv2rS4L2Km84/X3dH/9e1uf//e72++88bpZ0yedOe3d+dZ2qlMwKaEGGhrRVEELi3Ig0yZamWrjzKyM9Dar4s+JneuMc4tsBADGkEGSQ1q8cP4fN69dt/yBPJdVNGTO0DhGwdAsHEtxgE0ioAfTbdor61dmZ2asWrUqw2Wfc9uE1U88BZz1qglj/c3mvHnznl67fv+B8oLho1NSUh59dFlNjW/r1q2FBfk8D0uWrkhLH3jP3DloqEh1NA3e1HgtmJvEr3/k/lc2PLFi0cIEG9/mtPFnlrjiM1pe8gSuHnvF6uUPrn328Qfn3VdR5/nz9r/LGhOQaqHwqRrfuqeXn/7N/KzMlKACt8y+h0jODc9uam2FadOmZ2UNXL5i4dy5vxo9bkLxyIJrp90uSWJKkgMsTqtku2ripOeeXXvwUIXdkbhsySMPLF8pGJSiTplp48ndc2YW5Wa8uG7VM4+vGD8qj8OeNGnx1kOMMQA8W+g1hTa/9FpVbdP0G2d5W+SPPv6kqvx4gl26f/69Q/LyjlWcfPWNvwYURESnQLIzXE8+9rtAKPTMxhdqT9Vt2bTh3V0ffPz5fkYIYWbB0MHPrVldWXZsz549ixYv/Wz33vWbNkcAKcO8ITk3XH9tZmrSR7vezstOW7r4/rQBdgIQbRY69VK9yRMAgAFSAJNCda1367ad+776Oje/oKBwRERVyo4eKSkpOe0JRJigEwsSQQDKUVWX/cARweqiDCNqUJSsOm8zADmkPNWMoFdAxvM8ISQtLWP4iBH5w4bZbdaq8tKT5cfGjy6+9567BmcPQAQOAOHbahy53ucZndM+89teymQQko1DJUc//OjTQ4dLraKUk5OTljXI6kxUdfS3BP1+f2vAL7e2hsNhNcJMkwEYhBAiSnZngtNuS0lyDEi0u5KcgiCEWgON7vrq6upIRB1ZXHTzjOvHjBxht2AbG+zkr9GAiqcA7HYd38Y8unq0d2EMdBM8nmBVVdXhwyXflFfWNzQFQjJlnNVqdTqdgiAJvMjzPCJGdM0wjEhElWVZVcOMGokOe2ZGemFB/qhRVw4dOiR1gJ3ngHQvcfQBTwbAgJH2yvfbtfDsQU8BGANdB1kJh2U1GAwaBlVVldKz9bckSaLIOxwOq01y2u2CANDx6Md2FTvUZz1GD3l2sWtsH9v+ufMGGLMOnNfxYp+92DzhrN/GPvhjvx/tnn2xFza9a0dfv57soZ7fA927p+st/Nj9rbfQg3vNC+ECN1Q9u639vrikZ6+gK8U6jfe1tH3ME+K1va+dtzfP2/NowuJh0nXh8/3VvhjxGV9D1Lc2XPz8+cOg/5+3USH7P89oidr/eUbB19bW/tA29Dmw7T1xf0XbvUc/99u2/vF/kzvfVCIVGRwAAAAASUVORK5CYII=" alt="Ford"></div>
+  <div class="brand"><img src="data:image/png;base64,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" alt="Chevrolet"></div>
+  <div class="brand"><img src="data:image/png;base64,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" alt="Peugeot"></div>
+  <div class="brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAAAvCAIAAADy7HqUAAAEa0lEQVR4nO2YTU8qVxjH58wwohngWi9BXm4gvBlIiIkmTdnUEONNE2PT3NTrwjTehQs/gS9bdKGJW6Mbt7po00S/gokbkUSNhYgBgfAiCCIwKDhzznQxhhqK9qYz90I7/FZM5sDz//Oc85zzHMBxHIZhsVjMZDJhEgNvtYBW0jEvVTrmpUrHvFQR0zyHYVzzhzZF0pmXifhb4MWHNkVM8/xJuQEA2vdvEM0877xYLN7d3WEYBiEkSdJgMBAEIVYI0RFzzdM0HQ6HtVqtTqfDcTyTyeTz+abToU0QzTxCKJlM2u12uVx+f39/e3trsVhCoRDDMGKFEB1B5rlnFAoFDMMoioIQBgIBq9WqUqn0en00GoUQNgwWkZaZrxczhqmlUgmz2UwQRDqd3t/fj0ajGIZRClX6OlutVjmOa1r5ePV/fwWe0RDr+WCB1VRo5vnw+Xy+p6eHIAiGYfx+/+zsbCQSqVarCCGKoi4uLvjkN3UCAHglgQiheqyGD9gL+8vnI7TacxzHMEw8ntDpdLVaLZ/P397mjMZ3EDKJRILs6oYQXmezNtuAUknRNL20tJRKpQAAk5OT6XT66OhIq9XOzMysrq7Ozc0plcpQKDQ+Pr60tAQhXF5eXl9fn56e7uvr297ettvtKpXK7Xavra35fD6Xy7W4uOh0Ov+1eKHTHgBwc3OTSCRCodD5+bnf73///ge5XG40GsvlcjKZjMfj19fX9eRDCEdGRoaHh8PhcLFYlMlkvb29crk8lUp5vV6/318qla6urgAALMteXl5WKpXHx0cIYS6Xo2mapmmDwbCysqLT6bxer8PhEKJfhMxTFHV4eHhwcAAhZ7NZTCaTXq+vMazPf/zbr7+Xy2WrxTI6OorjOEKIZVkMw4LB4NTU1NnZmcVicblcAACNRrOwsDA/Pz82NraxsZHL5QAAu7u7FEXt7e11d3er1WqE0MnJCUVRTqcTQogQErjmgZALTP67HMf5fL6tra1yuSKTyT58+GliYuKPYGBzc7NUpEmS/HFi4uPHn+VyOcuy4XDYYDCwLJtIJLq6uvgkDw0NJZNJh8NRKpUqlUqhUHA6nQCAQCBgs9mOj49ZlnW73cViMRgMIoQGBwczmczAwIBCoWixeQzDKpXKzs5OOHyFEOrv7/d4PKHLy9PTU4Swt2+/+TTzi1arbVrb6iXz9bL3pLXZGCHJFzTteTUAAIVC4fF4CIJECOE4/vDwUKvVrFYrAMBkMqnVahzH+F6nQSv/+NKG1zSiEMENCF3zdTVmszkeTwAAcBwnSdL4zoQ4lqZp93ffkiTBcdwrslvV/Ih2vCVJ0uVyEQRhMBjevHmj1+uVSqXZbKIoSqwQoiNmS6vRaLLZbCQS4TgOIUSS5NDQ9+3c1QkqeHU+f9G2FeJk/j9nm+dr3OG1bUv/Ncy37byQ9O1tx7xU6ZiXKh3zUqVjXqo8mW/bQ9gX5cl82x6/vyi4NG3z4NKc8Dx/9fOxWKyFOlrCP18Y/4+R9Fb3JwdVeeSfUIQzAAAAAElFTkSuQmCC" alt="Renault"></div>
+  <div class="brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFcAAAAvCAIAAAAZ28GXAAAFe0lEQVR4nO2abUxTVxjH/+f2FhGkQAvayjtEQEUFKchwipuJDsKYM4tZYjTZNFuyfdi3LdmLcVn2wW3GxGWaqHO66VCYjqlR4ojgVJioy7pMQAzoRRALLW15a2l7z9mHohQEpwn3QGL/35ree/M8v+d/7nOek0sYYwAASJKUkJCA50+SJAlTHcO0UIACEKDgU4ACEKDgU4ACEKDgE3cKDGB+vxib+FJ+mmIvEEKmNgCfuFMgAAGGXUAB+tAcFKBPvnW0jSZTojKPnVCMMQZCAYDIMrHbB80WKwC9Xq/RqAUGMIgCyMN8+ZiFOwUQCjgGUFffWFtX3yq12W29g64hQSWmps4rLlq98oXUWUEQCMhjdVeOBz8KjDEQ4qFoaG4/Vna2z+nJNuauLV6viQjzeHH3bkfV7+c+/OhTY1b6to8/SIrVqQjAKB8vEA4zJQMFBAJ4KK7/e7/sxOklGemFhQWEYveeQ+1dbrVa/UbJytyclIZG8/bt271uz3e7v56XFKkWKGOEkGFbKMSD00zJwBgYZWjrcPxacdaYk7docea+fYeGXO6MhWmaWcGiQFOS4+uu/H259s9Ptn0hE/Vnn3/ZYxv0IeAQIQ8KhIGC9A/hQs2VKF3YogXz9h/8abYh2d7vys7OVhF3VuZCIqi///Fk+W9Vl6+atmzd2tzcdOnSFa9MfE4lExhhsroGFwqEEKDb6rrZdPvF/GVRupCYmBioghqbpZDQoKzFaatW5LV3Omx9XlEdGhcXFxdriI81HC0ts/c6FXwl+onLimCMUty7b6ZMpdVqnQPO/GVGh8PRbrZZe7Hu1RWaMBw6csLpESM1M5Pjoh3d941Ls+7ckbotttEPGlv6iTzyrOK0a3J7cKu5lRKx02w5c+bMXEN0e5vU0WE5W1nVdKv9Rv0/d6R2QRDXrF5JvK5fyo+Hh0d6ZTbQ7+QTHh8KAmPod7lcXuah6sZbrTNEsiQjzWLt6jJbHPbe3oFBWZYFAblLF/11vbZ/wOmVAQpKR+8mR5X+//eazxDfZD3oyRJFJCTEOxwOdVBwt8VuMt3MyTZ6nY7CNS8ty19QUJA3d44mMyOJyt6KilNarbbHYmWMhoYE8wmPDwUqikhJiLVbzP19jvjEpFOVF2aGhBa+nJeaqK2ouGi3D7yzqWhD8fLW1larbWB+WrrJdM2gj9RFRfjuH68XCJMYPL9pKmZ2eGJsdPnxYyUl68wPuhubmoqLCtwu54Effi47cVofHaEmQ6VHD8+fnyao0NJye/3rJZHhob4VoHSj4ERBAIsMw+aN600mU01NzfvvbT13+mRb24PKqj86e2hFZV2n2d7Q0GCYE7FqRW55eZlOpysqWhMUNBKeoiB4zRFUVgmq7Mz0d7ds3rnrW6fjtU2bNvbYHNUXLjJQt9N17dqNWH14Xo7xyOGDPdauA/v2zo3REzBf+owxRTeRXOYIJgNgjIAILjeOlJ7c8dWuiMjoolfWZixeopoRMjQ0ZOm8W3+1trq62jBHt/ObHfnLjSpAICPJMyXnCB4UHrY0AQAF88rkZtO9vXv2nz9/3ma3iqIgy7LX601MjH9zw4a339qsn60RyJj7GYFSZuBGYUSMMUYARmQGu72vpaXFYraIomiINSSnJIUGB8E3fnKUJEm8T1kIYQQAIQJBlDYsSpvpS5kBDGz4Zaic+ycQbwr+XelR/hjeFpJRf4xDY2RlKRXTdBPPI3r+XvAXBUAmqATPNTF9vcBTPL1AH4P+NDXwfxcoVbOAFwC+Xnh64jzq76+AF4Cp7hETiXdtAl4AAhR8GofCNPmyQmn5pzkOhWnyZYXS8k8zsCKAMT1CkiRCyHOyIgA8Snb8nJU+55tyjUnwOar8E/QfjG1Z0zTBBD0AAAAASUVORK5CYII=" alt="Volkswagen"></div>
+  <div class="brand"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Toyota.svg" alt="Toyota"></div>
+ </div>
 </section>
-<div class="cart-float">
-<div class="cart-panel" id="cartPanel">
-<div class="cart-header">
-<h3 data-i18n="cart_title">🛒Tu Pedido</h3>
-<button class="cart-close" onclick="toggleCart()">✕</button>
-</div>
-<div class="cart-items" id="cartItems">
-<div class="cart-empty" data-i18n="cart_empty">Tu carrito está vacío.<br>¡Agregá algo del
-menú!</div>
-</div>
-<div class="cart-footer">
-<div class="cart-mesa-wrap">
-<div class="cart-mesa-label"><span>🪑</span> <span
-data-i18n="cart_mesa_label">Número de mesa</span> <span class="required">*</span></div>
-<select id="cartMesaSelect" class="cart-mesa-select" onchange="updateCartMesa()">
-<option value="" data-i18n="cart_mesa_placeholder">Seleccionar mesa...</option>
-</select>
-</div>
-<div class="cart-note-wrap">
-<div class="cart-note-label"><span>📝</span> <span data-i18n="cart_note_label">Nota /
-Observaciones</span></div>
-<textarea id="cartNote" class="cart-note" data-i18n-placeholder="cart_note_placeholder"
-placeholder="Ej: sin cebolla, bien cocido, alergias..." oninput="onNoteChange(this.value)"
-rows="2"></textarea>
-</div>
-<div class="cart-pay-wrap">
-<input type="checkbox" id="cartCashCheck" onchange="toggleCashOption()">
-<label for="cartCashCheck" data-i18n="cart_cash_label">Compra en Efectivo</label>
-<div class="pay-info" data-i18n="cart_cash_info">Pagás en el local al recibir tu
-pedido</div>
-</div>
-<div class="cart-pay-wrap">
-<input type="checkbox" id="cartOnlineCheck" onchange="toggleOnlineOption()">
-<label for="cartOnlineCheck" data-i18n="cart_online_label">Compra Online</label>
-<div class="pay-info" data-i18n="cart_online_info">Opcional - Para pedidos con pago
-digital</div>
-</div>
-<div class="cart-consult-note" id="cartConsultNote" data-i18n="cart_consult_note">⚠ Hay
-ítems con precio a consultar en el local</div>
-<div class="cart-total">
-<span id="cartTotalLabel" data-i18n="cart_total_label">Total estimado</span>
-<span id="cartTotal">$0</span>
-</div>
-<div class="cart-buttons">
-<button class="btn-wa" id="btnSendOrder" onclick="sendOrder()" disabled>📲
-&nbsp;<span data-i18n="cart_send">Enviar Pedido por WhatsApp</span></button>
-<button class="btn-online" id="btnOnlineOrder" onclick="sendOnlineOrder()">💳<span
-data-i18n="cart_online_btn">Pagar Online</span></button>
-</div>
-</div>
-</div>
-<button class="cart-btn" onclick="toggleCart()">
-🛒<span data-i18n="cart_view">Ver Pedido</span> <span class="cart-badge"
-id="cartCount">0</span>
-</button>
-</div>
-<section id="promociones">
-<div class="container">
-<p class="sec-label reveal scroll-motion-text" data-i18n="promos_label">✦ Ofertas especiales</p>
-<h2 class="sec-h reveal scroll-motion-text" style="text-align:left" data-i18n="promos_title">Promociones</h2>
-<div class="divider reveal scroll-motion-text" style="margin-left:0;"></div>
-<div class="promos-grid" id="promosGrid"></div>
-</div>
+
+<section class="section">
+ <div class="section-title"><h2>Opiniones</h2></div>
+ <div class="reviews">
+  <article class="review"><div class="stars">★★★★★</div><p>“En <strong>Autopartes Brass</strong> conseguí el <strong>radiador</strong> que necesitaba para mi vehículo. Me orientaron con la pieza y pude resolver la compra en el local.”</p><small>— Martín, vecino de Trelew · Cliente local</small></article>
+  <article class="review"><div class="stars">★★★★★</div><p>“Pasé por <strong>Autopartes Brass</strong> buscando una <strong>bomba de agua</strong> y encontré el repuesto que necesitaba. Buena atención y explicación sobre la pieza.”</p><small>— Laura, vecina de Trelew · Cliente local</small></article>
+  <article class="review"><div class="stars">★★★★★</div><p>“Estaba de viaje por la zona y en <strong>Autopartes Brass</strong> pude consultar por un <strong>alternador</strong> para continuar el viaje. La atención fue clara y rápida.”</p><small>— Diego · Turista / viajero</small></article>
+ </div>
+ <p style="font-size:9px;color:#999;margin-top:10px">Nota: estas tres opiniones son ejemplos de contenido para el diseño. Reemplazalas por reseñas reales de clientes antes de publicarlas.</p>
 </section>
-<section id="nosotros">
-<div class="container">
-<div class="about-grid">
-<div class="about-imgs reveal">
-<img
-src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=85&fit=cro
-p" alt="Interior Tongoy" loading="lazy">
-<img
-src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=600&q=85&fit=crop"
-alt="Cocina Tongoy" loading="lazy">
-<img
-src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=85&fit=crop"
-alt="Bar Tongoy" loading="lazy">
-</div>
-<div class="reveal">
-<p class="sec-label" data-i18n="about_label">✦ Quiénes somos</p>
-<h2 class="sec-h" style="text-align:left;font-size:clamp(2rem,4vw,3.5rem);"
-data-i18n="about_title">Un espacio para todos los momentos</h2>
-<div class="divider" style="margin-left:0;"></div>
-<p style="color:var(--muted);line-height:1.85;margin-bottom:1rem;font-size:.92rem;"
-data-i18n="about_desc1">En Tongoy creemos que cada momento merece ser especial. Desde
-el primer café hasta el último trago del after work, te ofrecemos una experiencia gastronómica
-única en el corazón de Campana.</p>
-<p style="color:var(--muted);line-height:1.85;font-size:.92rem;"
-data-i18n="about_desc2">Cocina de calidad, ingredientes frescos, ambiente cálido y un equipo
-que pone el corazón en cada plato.</p>
-<div class="about-stats">
-<div class="stat"><div class="stat-num">7AM</div><div class="stat-lbl"
-data-i18n="stat_early">Abrimos temprano</div></div>
-<div class="stat"><div class="stat-num">16H</div><div class="stat-lbl"
-data-i18n="stat_hours">Jornada completa</div></div>
-<div class="stat"><div class="stat-num">+50</div><div class="stat-lbl"
-data-i18n="stat_options">Opciones en carta</div></div>
-<div class="stat"><div class="stat-num">1</div><div class="stat-lbl"
-data-i18n="stat_unique">Solo en Campana</div></div>
-</div>
-</div>
-</div>
-</div>
+
+<section id="ubicacion" class="section">
+ <div class="section-title"><h2>Ubicación</h2></div>
+ <div class="location">
+  <div class="info">
+   <h3>📍 Autopartes Brass</h3>
+   <p><strong>Av. Cd. de la Plata 2701</strong><br>U9100 Trelew, Chubut<br>Referencia: PMW5+54 Trelew, Chubut</p>
+   <div class="map-wrap">
+    <iframe
+      title="Mapa de ubicación de Autopartes Brass"
+      src="https://www.google.com/maps?q=Autopartes%20Brass%2C%20Trelew%2C%20Chubut&ll=-43.2545812%2C-65.3421681&z=17&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen>
+    </iframe>
+   </div>
+   <div class="map-actions">
+    <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/HVETTiax4X2DRon1A">ABRIR EN GOOGLE MAPS</a>
+   </div>
+  </div>
+  <div class="info" id="contacto">
+   <h3>📞 Contacto</h3>
+   <p><strong>0280 458-9193</strong></p>
+   <p>Consultas de repuestos, disponibilidad y pedidos.</p>
+   <a class="btn" href="tel:02804589193">LLAMAR AHORA</a>
+   <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/HVETTiax4X2DRon1A">📍 VER UBICACIÓN</a>
+  </div>
+ </div>
 </section>
-<section id="contacto">
-<div class="container">
-<p class="sec-label reveal scroll-motion-text" data-i18n="contact_label">✦ Encontranos</p>
-<h2 class="sec-h reveal scroll-motion-text" style="text-align:left" data-i18n="contact_title">Contacto</h2>
-<div class="divider reveal scroll-motion-text" style="margin-left:0;margin-bottom:3rem;"></div>
-<div class="contact-grid">
-<div class="contact-info reveal">
-<div class="ci-item"><div class="ci-icon">📍</div><div class="ci-txt"><h4
-data-i18n="contact_address_title">Dirección</h4><p>Av. Ing. Agustín Rocca 130, B2804
-Campana, Provincia de Buenos Aires</p></div></div>
-<div class="ci-item"><div class="ci-icon">🕐</div><div class="ci-txt"><h4
-data-i18n="contact_hours_title">Horarios</h4><p data-i18n="contact_hours">Lun–Jue: 07:00 a
-23:00 hs<br>Vie–Sáb: 07:00 a 00:30 hs</p></div></div>
-<div class="ci-item"><div class="ci-icon">📞</div><div class="ci-txt"><h4
-data-i18n="contact_takeaway">Take Away</h4><a href="tel:3489236010">3489
-236010</a></div></div>
-<div class="ci-item"><div class="ci-icon">📲</div><div class="ci-txt"><h4
-data-i18n="contact_whatsapp">WhatsApp Pedidos</h4><a
-href="https://wa.me/5493489236010" target="_blank" rel="noopener noreferrer">3489
-236010</a></div></div>
-<div class="social-row">
-<a href="https://wa.me/5493489236010" target="_blank" rel="noopener noreferrer"
-class="soc-btn soc-wa" data-i18n="social_whatsapp">📱WhatsApp</a>
-<a href="https://www.instagram.com/tongoycampana/" target="_blank" rel="noopener
-noreferrer" class="soc-btn soc-ig" data-i18n="social_instagram">📸Instagram</a>
-<a href="https://www.facebook.com/tongoycampana/" target="_blank" rel="noopener
-noreferrer" class="soc-btn soc-fb" data-i18n="social_facebook">🔵Facebook</a>
-</div>
-</div>
-<div class="reveal" style="display:flex;flex-direction:column;gap:1rem;">
-<div class="map-block"
-style="flex:1;padding:0;overflow:hidden;position:relative;min-height:360px;">
-<iframe
-src="https://maps.google.com/maps?q=Av.%20Ing.%20Agust%C3%ADn%20Rocca%20130,%2
-0B2804%20Campana,%20Provincia%20de%20Buenos%20Aires&t=&z=16&ie=UTF8&iwloc=&
-output=embed"
-width="100%" height="100%" style="border:0;position:absolute;inset:0;filter:grayscale(1)
-invert(0.92) contrast(1.2) brightness(0.9);"
-allowfullscreen="" loading="lazy"
-referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-<a href="https://maps.app.goo.gl/tiv5TK77PuhanHMfA" target="_blank" rel="noopener
-noreferrer"
-style="display:flex;align-items:center;justify-content:center;gap:.6rem;padding:1rem
-1.5rem;background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(247,147,30,.08));border:1
-px solid
-rgba(255,107,53,.4);border-radius:6px;color:var(--cream);text-decoration:none;font-size:.85rem;f
-ont-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:all .2s;"
-onmouseover="this.style.borderColor='#FF6B35';this.style.color='#FF6B35'"
-onmouseout="this.style.borderColor='rgba(255,107,53,.4)';this.style.color='var(--cream)'">
-<span style="color:#FFD700;font-size:1rem;">★★★★★</span> <span
-data-i18n="google_review">Dejá tu Reseña en Google</span>
-</a>
-</div>
-</div>
-</div>
 </section>
-<footer>
-<div class="footer-inner">
-<div class="footer-top">
-<div>
-<div class="footer-logo">Tongoy</div>
-<div class="footer-tag" data-i18n="footer_tag">Restobar · Campana, Buenos Aires</div>
-</div>
-<div class="footer-col">
-<h4 data-i18n="footer_menu">Carta</h4>
-<a href="#menu" data-i18n="footer_breakfast">Desayunos</a>
-<a href="#menu" data-i18n="footer_lunch">Almuerzos</a>
-<a href="#menu" data-i18n="footer_drinks">Bebidas</a>
-<a href="#menu" data-i18n="footer_after">After Work</a>
-</div>
-<div class="footer-col">
-<h4 data-i18n="footer_contact">Contacto</h4>
-<a href="tel:3489236010">3489 236010</a>
-<a href="https://wa.me/5493489236010" target="_blank" rel="noopener noreferrer"
-data-i18n="footer_whatsapp">WhatsApp</a>
-<a href="https://www.instagram.com/tongoycampana/" target="_blank" rel="noopener
-noreferrer">@tongoycampana</a>
-<a href="https://www.facebook.com/tongoycampana/" target="_blank" rel="noopener
-noreferrer" data-i18n="footer_facebook">Facebook</a>
-<a href="https://maps.app.goo.gl/tiv5TK77PuhanHMfA" target="_blank" rel="noopener
-noreferrer" data-i18n="footer_reviews">⭐Reseñas Google</a>
-</div>
-</div>
-<div class="footer-bottom">
-<p data-i18n="footer_copyright">© 2026 Tongoy Restobar · Todos los derechos
-reservados.</p>
-<p data-i18n="footer_hours">Lun–Jue 7–23 hs · Vie–Sáb 7–00:30 hs</p>
-</div>
-</div>
+</main>
+
+<section class="newsletter"><div class="newsletter-inner"><input type="email" placeholder="Suscribite a nuestro newsletter"><button>Suscribirme</button></div></section>
+<footer class="footer">
+ <div class="footer-inner">
+  <div><div class="footer-logo">BRASS</div><p>0280 458-9193</p><p>Av. Cd. de la Plata 2701</p><p>U9100 Trelew, Chubut</p></div>
+  <div><h4>ACCESOS</h4><a href="#inicio">Inicio</a><a href="#galeria">Galería</a><a href="#repuestos">Repuestos</a><a href="#ofertas">Ofertas</a><a href="#ubicacion">Ubicación</a></div>
+  <div><h4>RUBROS</h4><p>Alternador · Bobina · Bombas · Cajas · Capot · Carburador · Radiador · Módulo de inyección · Motor de arranque · Puertas · Turbo · Volante de motor</p></div>
+ </div>
+ <div class="copyright">© 2026 Autopartes Brass · Trelew, Chubut</div>
 </footer>
-<input type="file" id="imgFileInput" accept="image/*" style="display:none">
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script><script> const SHEET_ID = '1wlDDniHWbdJZ0FbbEcEPLVi4EeglWlAHlKf4oO0VScI'; const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit?usp=sharing`; const currentVersion = '9.0-scroll-motion'; const _savedLang = localStorage.getItem('lang'); if (localStorage.getItem('appVersion') !== currentVersion) { localStorage.clear(); if (_savedLang) localStorage.setItem('lang', _savedLang); localStorage.setItem('appVersion', currentVersion); console.log(`✅Cache local limpiada. Nueva versión: ${currentVersion}`); } const I18N = { es: { nav_home:'Inicio', nav_menu:'Menú', nav_promos:'Promos', nav_about:'Nosotros', nav_contact:'Contacto', nav_order:'Hacer Pedido', status_open:'Abierto', status_closed:'Cerrado', hero_eyebrow:'✦ Restobar · Campana, Buenos Aires', hero_sub:'Gastronomía de calidad, ambiente cálido<br>y el mejor after work de Campana.', btn_menu:'Ver Menú', btn_whatsapp:'📲Pedido WhatsApp', scroll_text:'Scroll', strip_hours:'🕐LUN–JUE 07:00 A 23:00 &nbsp;|&nbsp; VIE–SÁB 07:00 A 00:30 &nbsp;|&nbsp; TAKE AWAY 3489-236010', sec_breakfast_label:'✦ Comenzá el día', sec_breakfast_title:'Desayunos<br><span style="color:var(--gold)">& Meriendas</span>', sec_breakfast_desc:'Desde las 7 de la mañana, el aroma del café recién hecho y las medialunas artesanales te esperan en Tongoy.', btn_see_breakfast:'Ver Desayunos', sec_after_label:'✦ De lunes a sábado', sec_after_title:'AFTER<br><span style="color:var(--gold)">WORK</span>', sec_after_desc:'Terminó el trabajo, empieza Tongoy. Tu gin tonic frío, buena música y el mejor ambiente de Campana.', btn_see_drinks:'Ver Bebidas', sec_dishes_label:'✦ Platos principales', sec_dishes_title:'Cocina<br><span style="color:var(--gold)">con alma</span>', sec_dishes_desc:'Milanesas jugosas, hamburguesas artesanales y ensaladas frescas. Ingredientes seleccionados, recetas con sabor a casa.', btn_see_dishes:'Ver Platos', sec_drinks_label:'✦ Carta de tragos', sec_drinks_title:'Gin Tonic · Aperol<br><span style="color:var(--gold)">Amargo Obrero</span>', sec_drinks_desc:'Cada copa cuenta una historia. Nuestros bartenders combinan los mejores destilados con ingredientes frescos para el trago perfecto.', menu_label:'✦ Nuestra carta', menu_title:'Menú Digital', menu_desc:'Seleccioná tus platos, revisá el carrito y enviá tu pedido directo al local por WhatsApp.', admin_mode:'Modo Admin', search_placeholder:'Buscar platos, bebidas, ingredientes...', search_results:'Mostrando <b>{n}</b> resultado(s) para <b>“{q}”</b>', search_noresults:'No encontramos nada para <b>“{q}”</b>. Probá con otra palabra.', cart_title:'🛒Tu Pedido', cart_empty:'Tu carrito está vacío.<br>¡Agregá algo del menú!', cart_total_label:'Total estimado', cart_total_partial:'Total parcial', cart_send:'Enviar Pedido por WhatsApp', cart_view:'Ver Pedido', cart_mesa_label:'Número de mesa', cart_mesa_placeholder:'Seleccionar mesa...', cart_note_label:'Nota / Observaciones', cart_note_placeholder:'Ej: sin cebolla, bien cocido, alergias...', cart_cash_label:'Compra en Efectivo', cart_cash_info:'Pagás en el local al recibir tu pedido', cart_online_label:'Compra Online', cart_online_info:'Opcional - Para pedidos con pago digital', cart_online_btn:'Pagar Online', cart_consult_note:'⚠ Hay ítems con precio a consultar en el local', promos_label:'✦ Ofertas especiales', promos_title:'Promociones', about_label:'✦ Quiénes somos', about_title:'Un espacio para todos los momentos', about_desc1:'En Tongoy creemos que cada momento merece ser especial. Desde el primer café hasta el último trago del after work, te ofrecemos una experiencia gastronómica única en el corazón de Campana.', about_desc2:'Cocina de calidad, ingredientes frescos, ambiente cálido y un equipo que pone el corazón en cada plato.', stat_early:'Abrimos temprano', stat_hours:'Jornada completa', stat_options:'Opciones en carta', stat_unique:'Solo en Campana', contact_label:'✦ Encontranos', contact_title:'Contacto', contact_address_title:'Dirección', contact_hours_title:'Horarios', contact_hours:'Lun–Jue: 07:00 a 23:00 hs<br>Vie–Sáb: 07:00 a 00:30 hs', contact_takeaway:'Take Away', contact_whatsapp:'WhatsApp Pedidos', social_whatsapp:'📱WhatsApp', social_instagram:'📸Instagram', social_facebook:'🔵 Facebook', google_review:'Dejá tu Reseña en Google', footer_tag:'Restobar · Campana, Buenos Aires', footer_menu:'Carta', footer_breakfast:'Desayunos', footer_lunch:'Almuerzos', footer_drinks:'Bebidas', footer_after:'After Work', footer_contact:'Contacto', footer_whatsapp:'WhatsApp', footer_facebook:'Facebook', footer_reviews:'⭐Reseñas Google', footer_copyright:'© 2026 Tongoy Restobar · Todos los derechos reservados.', footer_hours:'Lun–Jue 7–23 hs · Vie–Sáb 7–00:30 hs', admin_title:'⚙ Modo Administrador Activo', admin_exit:'Salir del modo admin', admin_password:'Contraseña:', admin_wrong:'Incorrecta', cat_desayunos:'Desayunos', cat_platos:'Platos', cat_bebidas:'Bebidas', cat_desc_desayunos:'Para empezar el día con el pie derecho', cat_desc_platos:'Platos principales hechos con alma', cat_desc_bebidas:'Tragos, vinos y clásicos de la casa', menu_count_label:'opciones', empty_cat:'No hay productos en esta categoría', price_consult:'Consultar', sub_cafeteria:'Cafetería', sub_combos:'Combos', sub_tentaciones:'Tentaciones', sub_hamburguesas:'Hamburguesas', sub_pizzas:'Pizzas de la Casa', sub_ensaladas:'Ensaladas', sub_tartas:'Tartas Caseras', sub_pastas:'Nuestras Pastas', sub_salsas:'Salsas Caseras', sub_entrepanes:'Entre Panes', sub_cocina:'La Cocina de Tongoy', sub_kids:'Menú Kids', sub_postres:'Postres', sub_otros:'Otros', sub_aperitivos:'Aperitivos & Clásicos', sub_cervezas:'Cervezas', sub_gintonic:'Gin Tonic', sub_licores:'Licores', sub_whisky:'Whisky', sub_vodka:'Vodka', sub_sinalcohol:'Sin Alcohol', sub_tintos:'Vinos Tintos', sub_blancos:'Vinos Blancos', sub_espumantes:'Espumantes', comanda_title:'COMANDA TONGOY', comanda_table:'MESA', comanda_order:'PEDIDO', comanda_notes:'NOTAS / OBSERVACIONES', comanda_total:'TOTAL', comanda_partial:'parcial', comanda_consultwarn:'Incluye ítems a consultar en el local', comanda_online:'PAGO: ONLINE (pago digital)', comanda_cash:'PAGO: EFECTIVO', comanda_pay_default:'PAGO: A CONFIRMAR EN EL LOCAL', comanda_hs:'hs', comanda_qty:'CANT', comanda_item:'PRODUCTO', comanda_amount:'IMPORTE', comanda_thanks:'¡Gracias por tu pedido! 🙌', promo_badge_breakfast:'Desayuno', promo_badge_lunch:'Almuerzo', promo_badge_dinner:'Cena', promo_badge_default:'Promo', img_select_error:'Seleccioná un archivo de imagen válido', img_too_large:'La imagen es demasiado grande para guardar en este navegador' }, en: { nav_home:'Home', nav_menu:'Menu', nav_promos:'Promos', nav_about:'About Us', nav_contact:'Contact', nav_order:'Order Now', status_open:'Open', status_closed:'Closed', hero_eyebrow:'✦ Restobar · Campana, Buenos Aires', hero_sub:'Quality gastronomy, warm atmosphere<br>and the best after work in Campana.', btn_menu:'View Menu', btn_whatsapp:'📲WhatsApp Order', scroll_text:'Scroll', strip_hours:'🕐MON–THU 07:00 TO 23:00 &nbsp;|&nbsp; FRI–SAT 07:00 TO 00:30 &nbsp;|&nbsp; TAKE AWAY 3489-236010', sec_breakfast_label:'✦ Start your day', sec_breakfast_title:'Breakfast<br><span style="color:var(--gold)">& Snacks</span>', sec_breakfast_desc:'From 7 in the morning, the aroma of freshly made coffee and artisanal croissants await you at Tongoy.', btn_see_breakfast:'View Breakfast', sec_after_label:'✦ Monday to Saturday', sec_after_title:'AFTER<br><span style="color:var(--gold)">WORK</span>', sec_after_desc:'Work is over, Tongoy begins. Your cold gin tonic, good music and the best atmosphere in Campana.', btn_see_drinks:'View Drinks', sec_dishes_label:'✦ Main dishes', sec_dishes_title:'Kitchen<br><span style="color:var(--gold)">with soul</span>', sec_dishes_desc:'Juicy milanesas, artisanal hamburgers and fresh salads. Selected ingredients, recipes with home flavor.', btn_see_dishes:'View Dishes', sec_drinks_label:'✦ Drink menu', sec_drinks_title:'Gin Tonic · Aperol<br><span style="color:var(--gold)">Amargo Obrero</span>', sec_drinks_desc:'Every glass tells a story. Our bartenders combine the best spirits with fresh ingredients for the perfect drink.', menu_label:'✦ Our menu', menu_title:'Digital Menu', menu_desc:'Select your dishes, review the cart and send your order directly to the venue via WhatsApp.', admin_mode:'Admin Mode', search_placeholder:'Search dishes, drinks, ingredients...', search_results:'Showing <b>{n}</b> result(s) for <b>“{q}”</b>', search_noresults:'Nothing found for <b>“{q}”</b>. Try another word.', cart_title:'🛒Your Order', cart_empty:'Your cart is empty.<br>Add something from the menu!', cart_total_label:'Estimated total', cart_total_partial:'Partial total', cart_send:'Send Order via WhatsApp', cart_view:'View Order', cart_mesa_label:'Table number', cart_mesa_placeholder:'Select table...', cart_note_label:'Note / Remarks', cart_note_placeholder:'E.g.: no onion, well done, allergies...', cart_cash_label:'Cash Payment', cart_cash_info:'Pay at the venue when you receive your order', cart_online_label:'Online Purchase', cart_online_info:'Optional - For digital payment orders', cart_online_btn:'Pay Online', cart_consult_note:'⚠ Some items have prices to confirm at the venue', promos_label:'✦ Special offers', promos_title:'Promotions', about_label:'✦ Who we are', about_title:'A space for all moments', about_desc1:'At Tongoy we believe that every moment deserves to be special. From the first coffee to the last after work drink, we offer you a unique gastronomic experience in the heart of Campana.', about_desc2:'Quality cuisine, fresh ingredients, warm atmosphere and a team that puts their heart into every dish.', stat_early:'We open early', stat_hours:'Full day', stat_options:'Menu options', stat_unique:'Only in Campana', contact_label:'✦ Find us', contact_title:'Contact', contact_address_title:'Address', contact_hours_title:'Hours', contact_hours:'Mon–Thu: 07:00 to 23:00<br>Fri–Sat: 07:00 to 00:30', contact_takeaway:'Take Away', contact_whatsapp:'WhatsApp Orders', social_whatsapp:'📱WhatsApp', social_instagram:'📸Instagram', social_facebook:'🔵 Facebook', google_review:'Leave your Google Review', footer_tag:'Restobar · Campana, Buenos Aires', footer_menu:'Menu', footer_breakfast:'Breakfast', footer_lunch:'Lunch', footer_drinks:'Drinks', footer_after:'After Work', footer_contact:'Contact', footer_whatsapp:'WhatsApp', footer_facebook:'Facebook', footer_reviews:'⭐Google Reviews', footer_copyright:'© 2026 Tongoy Restobar · All rights reserved.', footer_hours:'Mon–Thu 7–23 · Fri–Sat 7–00:30', admin_title:'⚙ Admin Mode Active', admin_exit:'Exit admin mode', admin_password:'Password:', admin_wrong:'Incorrect', cat_desayunos:'Breakfast', cat_platos:'Dishes', cat_bebidas:'Drinks', cat_desc_desayunos:'Start the day on the right foot', cat_desc_platos:'Main dishes made with soul', cat_desc_bebidas:'Cocktails, wines & house classics', menu_count_label:'options', empty_cat:'No products in this category', price_consult:'Ask', sub_cafeteria:'Coffee Shop', sub_combos:'Combos', sub_tentaciones:'Temptations', sub_hamburguesas:'Burgers', sub_pizzas:'House Pizzas', sub_ensaladas:'Salads', sub_tartas:'Homemade Pies', sub_pastas:'Our Pastas', sub_salsas:'Homemade Sauces', sub_entrepanes:'Sandwiches', sub_cocina:"Tongoy's Kitchen", sub_kids:'Kids Menu', sub_postres:'Desserts', sub_otros:'Others', sub_aperitivos:'Aperitifs & Classics', sub_cervezas:'Beers', sub_gintonic:'Gin Tonic', sub_licores:'Liqueurs', sub_whisky:'Whisky', sub_vodka:'Vodka', sub_sinalcohol:'Non-Alcoholic', sub_tintos:'Red Wines', sub_blancos:'White Wines', sub_espumantes:'Sparkling', comanda_title:'TONGOY ORDER', comanda_table:'TABLE', comanda_order:'ORDER', comanda_notes:'NOTES / REMARKS', comanda_total:'TOTAL', comanda_partial:'partial', comanda_consultwarn:'Includes items to confirm at the venue', comanda_online:'PAYMENT: ONLINE (digital payment)', comanda_cash:'PAYMENT: CASH', comanda_pay_default:'PAYMENT: TO CONFIRM AT VENUE', comanda_hs:'', comanda_qty:'QTY', comanda_item:'ITEM', comanda_amount:'AMOUNT', comanda_thanks:'Thank you for your order! 🙌', promo_badge_breakfast:'Breakfast', promo_badge_lunch:'Lunch', promo_badge_dinner:'Dinner', promo_badge_default:'Promo', img_select_error:'Please select a valid image file', img_too_large:'Image is too large to save in this browser' } }; let currentLang = localStorage.getItem('lang') || 'es'; function t(key) { return I18N[currentLang][key] || I18N['es'][key] || key; } function setLang(lang) { currentLang = lang; localStorage.setItem('lang', lang); document.documentElement.lang = lang; document.documentElement.setAttribute('data-lang', lang); document.querySelectorAll('.lang-btn').forEach(btn => { btn.classList.remove('active'); if(btn.textContent.toLowerCase() === lang) btn.classList.add('active'); }); applyTranslations(); renderTabs(); renderMenu(); renderPromos(); updateCartUI(); initCartMesaSelect(); } function applyTranslations() { document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.getAttribute('data-i18n'); if(I18N[currentLang][key]) el.innerHTML = t(key); }); document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { const key = el.getAttribute('data-i18n-placeholder'); if(I18N[currentLang][key]) el.placeholder = t(key); }); } const DEFAULT_MENU = [ {id:1,cat:'desayunos',subcat:'cafeteria',name:'Café',desc:'(100% café) Café espresso intenso, de aroma profundo y sabor equilibrado.',descEn:'',price:8000,img:''}, {id:2,cat:'desayunos',subcat:'cafeteria',name:'Cortado',desc:'(70% Café - 30% leche) Café espresso suavizado con un toque de leche caliente.',descEn:'',price:8000,img:''}, {id:3,cat:'desayunos',subcat:'cafeteria',name:'Café con Leche',desc:'(50% Café - 50% leche) Café espresso acompañado de leche caliente y cremosa.',descEn:'',price:8000,img:''}, {id:4,cat:'desayunos',subcat:'combos',name:'Cortado + Medialunas',desc:'Cortado acompañado de dos medialunas recién horneadas.',descEn:'',price:8000,img:''}, {id:5,cat:'desayunos',subcat:'tentaciones',name:'Medialuna con Jamón y Queso',desc:'',descEn:'',price:8000,img:''}, {id:6,cat:'platos',subcat:'hamburguesas',name:'Clásica',desc:'2 medallones de 100 gr, lechuga, tomate, cebolla y queso acompañada con papas fritas.',descEn:'',price:8000,img:''}, {id:7,cat:'platos',subcat:'hamburguesas',name:'Tongoy',desc:'2 medallones de 100 gr, con provoleta, lechuga, tomate y mayo de chimichurri acompañada con papas fritas.',descEn:'',price:8000,img:''}, {id:8,cat:'platos',subcat:'pizzas',name:'Muzzarella',desc:'Salsa de tomate y Muzzarella.',descEn:'',price:8000,img:''}, {id:9,cat:'platos',subcat:'ensaladas',name:'César Clásica',desc:'Lechuga, parmesano, croustons, aderezo y pollo grillado.',descEn:'',price:8000,img:''}, {id:10,cat:'platos',subcat:'pastas',name:'Ñoquis de Papas',desc:'Ñoquis elaborados con papa seleccionada, livianos y de sabor tradicional.',descEn:'',price:0,img:''}, {id:11,cat:'platos',subcat:'cocina',name:'Milanesa Napolitana',desc:'Milanesa de pollo o carne a la napolitana, acompañada de papas fritas, puré o ensalada.',descEn:'',price:0,img:''}, {id:12,cat:'platos',subcat:'postres',name:'Flan Casero',desc:'',descEn:'',price:8000,img:''}, {id:13,cat:'bebidas',subcat:'aperitivos',name:'Aperol Spritz',desc:'(Aperol + espumante + soda)',descEn:'',price:8000,img:''}, {id:14,cat:'bebidas',subcat:'cervezas',name:'Stella Artois 330 ml',desc:'',descEn:'',price:8000,img:''}, {id:15,cat:'bebidas',subcat:'gintonic',name:'Gin Tonic',desc:'Gin + agua tónica + limón / naranja / pomelo.',descEn:'',price:8000,img:''}, {id:16,cat:'bebidas',subcat:'tintos',name:'Portillo Malbec 750 ml',desc:'Vino joven, frutado y fácil de tomar, de perfil suave y equilibrado.',descEn:'',price:8000,img:''}, {id:17,cat:'bebidas',subcat:'espumantes',name:'Mumm',desc:'',descEn:'',price:8000,img:''}, ]; const DEFAULT_PROMOS = [ {id:'p1',badge:'',name:'Desayuno',desc:'Café con leche + jugo de naranja + 2 medialunas artesanales.',descEn:'Coffee with milk + orange juice + 2 artisanal croissants.',price:8000,img:''}, {id:'p2',badge:'',name:'Almuerzo',desc:'Plato principal + bebida + postre del día.',descEn:'Main dish + drink + dessert of the day.',price:8000,img:''}, ]; const CATS = [{key:'todos',label:'Todos'},{key:'desayunos',label:'Desayunos'},{key:'platos',label:'Platos'},{key:'b ebidas',label:'Bebidas'}]; const EMOJIS = {'desayunos':'☕','platos':'🍽️','bebidas':'🍹'}; const SUBCAT_EMOJI = { cafeteria:'☕', combos:'🥐', tentaciones:'🍰', hamburguesas:'🍔', pizzas:'🍕', ensaladas:'🥗', tartas:'🥧', pastas:'🍝', salsas:'🥫', entrepanes:'🥪', cocina:'🍽️', kids:'🧒', postres:'🍨', otros:'🍽️', aperitivos:'🍸', cervezas:'🍺', gintonic:'🍸', licores:'🥃', whisky:'🥃', vodka:'🍸', sinalcohol:'🥤', tintos:'🍷', blancos:'🥂', espumantes:'🍾' }; const SUBCAT_CONFIG = { desayunos: [ {key:'cafeteria', labelKey:'sub_cafeteria'}, {key:'combos', labelKey:'sub_combos'}, {key:'tentaciones', labelKey:'sub_tentaciones'}, ], platos: [ {key:'hamburguesas', labelKey:'sub_hamburguesas'}, {key:'pizzas', labelKey:'sub_pizzas'}, {key:'ensaladas', labelKey:'sub_ensaladas'}, {key:'tartas', labelKey:'sub_tartas'}, {key:'pastas', labelKey:'sub_pastas'}, {key:'salsas', labelKey:'sub_salsas'}, {key:'entrepanes', labelKey:'sub_entrepanes'}, {key:'cocina', labelKey:'sub_cocina'}, {key:'kids', labelKey:'sub_kids'}, {key:'postres', labelKey:'sub_postres'}, {key:'otros', labelKey:'sub_otros'}, ], bebidas: [ {key:'aperitivos', labelKey:'sub_aperitivos'}, {key:'cervezas', labelKey:'sub_cervezas'}, {key:'gintonic', labelKey:'sub_gintonic'}, {key:'licores', labelKey:'sub_licores'}, {key:'whisky', labelKey:'sub_whisky'}, {key:'vodka', labelKey:'sub_vodka'}, {key:'sinalcohol', labelKey:'sub_sinalcohol'}, {key:'tintos', labelKey:'sub_tintos'}, {key:'blancos', labelKey:'sub_blancos'}, {key:'espumantes', labelKey:'sub_espumantes'}, ], }; function normalize(str) { if (!str) return ''; return str.toString().toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); } function escapeHtml(s){ return (s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); } function escapeAttr(s){ return (s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); } function formatPrice(p){ if(!p || p<=0) return t('price_consult'); return '$' + Number(p).toLocaleString('es-AR'); } // Convierte la columna E en una URL visualizable (URL directa, Google Drive, Dropbox, Imgur o data:image) function resolveImageUrl(raw){ if(!raw) return ''; let u = raw.toString().trim(); if(!u) return ''; if(u.startsWith('data:image')) return u; let m = u.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/); if(m) return 'https://lh3.googleusercontent.com/d/'+m[1]; if(u.includes('drive.google.com')){ m = u.match(/[?&]id=([a-zA-Z0-9_-]+)/); if(m) return 'https://lh3.googleusercontent.com/d/'+m[1]; } if(u.includes('dropbox.com')){ return u.replace('www.dropbox.com','dl.dropboxusercontent.com').replace('dl=0','dl=1'); } m = u.match(/imgur\.com\/(a\/)?([a-zA-Z0-9]+)/); if(m && !/\.(jpg|jpeg|png|gif|webp)$/i.test(u)){ return 'https://i.imgur.com/'+m[2]+'.jpg'; } if(u.startsWith('http://')||u.startsWith('https://')) return u; return ''; // nombre de archivo local → no visualizable en web } // Overrides de imágenes subidas desde la PC (modo admin, guardadas en este navegador) let imageOverrides = {}; function loadOverrides(){ try{ imageOverrides = JSON.parse(localStorage.getItem('tongoy_img_overrides')||'{}'); }catch(e){ imageOverrides={}; } } function saveOverrides(){ localStorage.setItem('tongoy_img_overrides', JSON.stringify(imageOverrides)); } function imgKey(item, isPromo){ return (isPromo?'promo::':normalize(item.cat)+'::')+normalize(item.name); } const FALLBACK_IMAGES={coffee:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=82&auto=format&fit=crop',coffee2:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&q=82&auto=format&fit=crop',croissant:'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1200&q=82&auto=format&fit=crop',sandwich:'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=1200&q=82&auto=format&fit=crop',burger:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=82&auto=format&fit=crop',burger2:'https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200&q=82&auto=format&fit=crop',pizza:'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=1200&q=82&auto=format&fit=crop',salad:'https://images.unsplash.com/photo-1546793665-c74683f339c1?w=1200&q=82&auto=format&fit=crop',pasta:'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=1200&q=82&auto=format&fit=crop',milanesa:'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1200&q=82&auto=format&fit=crop',dessert:'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=1200&q=82&auto=format&fit=crop',aperol:'https://images.unsplash.com/photo-1560508180-03f285f67ded?w=1200&q=82&auto=format&fit=crop',beer:'https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=1200&q=82&auto=format&fit=crop',gin:'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=1200&q=82&auto=format&fit=crop',wine:'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1200&q=82&auto=format&fit=crop',sparkling:'https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=1200&q=82&auto=format&fit=crop',promoBreakfast:'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=1400&q=82&auto=format&fit=crop',promoLunch:'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1400&q=82&auto=format&fit=crop'};
-function fallbackImage(item,isPromo){if(isPromo){return /desay/i.test(item.name)?FALLBACK_IMAGES.promoBreakfast:FALLBACK_IMAGES.promoLunch;}const n=normalize(item.name);if(n.includes('cafe')||n.includes('cortado')) return n.includes('leche')?FALLBACK_IMAGES.coffee2:FALLBACK_IMAGES.coffee;if(n.includes('medialuna')) return FALLBACK_IMAGES.croissant;if(n.includes('jamon')||n.includes('queso')) return FALLBACK_IMAGES.sandwich;if(n.includes('hamburg')||n==='clasica'||n==='tongoy') return n==='tongoy'?FALLBACK_IMAGES.burger2:FALLBACK_IMAGES.burger;if(n.includes('muzzarella')||n.includes('pizza')) return FALLBACK_IMAGES.pizza;if(n.includes('cesar')||n.includes('ensalada')) return FALLBACK_IMAGES.salad;if(n.includes('noqui')||n.includes('pasta')) return FALLBACK_IMAGES.pasta;if(n.includes('milanesa')) return FALLBACK_IMAGES.milanesa;if(n.includes('flan')||n.includes('postre')) return FALLBACK_IMAGES.dessert;if(n.includes('aperol')) return FALLBACK_IMAGES.aperol;if(n.includes('stella')||n.includes('cerveza')) return FALLBACK_IMAGES.beer;if(n.includes('gin')) return FALLBACK_IMAGES.gin;if(n.includes('mumm')||n.includes('espumante')) return FALLBACK_IMAGES.sparkling;if(n.includes('malbec')||n.includes('vino')) return FALLBACK_IMAGES.wine;const byCat={desayunos:FALLBACK_IMAGES.coffee,platos:FALLBACK_IMAGES.milanesa,bebidas:FALLBACK_IMAGES.gin};return byCat[item.cat]||FALLBACK_IMAGES.coffee;}
-function getItemImg(item, isPromo){ const k = imgKey(item, isPromo); if(imageOverrides[k]) return imageOverrides[k]; const remote=resolveImageUrl(item.img); return remote||fallbackImage(item,isPromo); } let pendingImgKey = null; function editImage(key){ pendingImgKey = key; document.getElementById('imgFileInput').click(); } function handleImageFile(e){ const file = e.target.files[0]; if(!file || !pendingImgKey) return; if(!file.type || !file.type.startsWith('image/')){ alert(t('img_select_error')); e.target.value=''; return; } const key = pendingImgKey; pendingImgKey = null; const reader = new FileReader(); reader.onload = function(ev){ const img = new Image(); img.onload = function(){ const maxW = 900; let w = img.width, h = img.height; if(w > maxW){ h = Math.round(h * maxW / w); w = maxW; } const canvas = document.createElement('canvas'); canvas.width = w; canvas.height = h; const ctx = canvas.getContext('2d'); ctx.drawImage(img, 0, 0, w, h); const dataUrl = canvas.toDataURL('image/jpeg', 0.82); imageOverrides[key] = dataUrl; try{ saveOverrides(); }catch(err){ alert(t('img_too_large')); return; } renderMenu(); renderPromos(); }; img.src = ev.target.result; }; reader.readAsDataURL(file); e.target.value = ''; } function classify(rawCat){ const c = normalize(rawCat); if(c.includes('aperitiv')) return {cat:'bebidas', sub:'aperitivos'}; if(c.includes('vino')||c.includes('espumant')) return {cat:'bebidas', sub:'__wine'}; if(c.includes('cerveza')) return {cat:'bebidas', sub:'cervezas'}; if(c.includes('cafe')) return {cat:'desayunos', sub:'cafeteria'}; if(c.includes('combo')) return {cat:'desayunos', sub:'combos'}; if(c.includes('tentacion')) return {cat:'desayunos', sub:'tentaciones'}; if(c.includes('hamburg')) return {cat:'platos', sub:'hamburguesas'}; if(c.includes('pizza')) return {cat:'platos', sub:'pizzas'}; if(c.includes('ensalad')) return {cat:'platos', sub:'ensaladas'}; if(c.includes('tarta')) return {cat:'platos', sub:'tartas'}; if(c.includes('pasta')||c.includes('noqui')||c.includes('sorrentino')||c.includes('raviol')) return {cat:'platos', sub:'pastas'}; if(c.includes('salsa')||c.includes('ragu')) return {cat:'platos', sub:'salsas'}; if(c.includes('panes')||c.includes('sandwich')||c.includes('lomito')) return {cat:'platos', sub:'entrepanes'}; if(c.includes('cocina')) return {cat:'platos', sub:'cocina'}; if(c.includes('kid')) return {cat:'platos', sub:'kids'}; if(c.includes('postre')) return {cat:'platos', sub:'postres'}; if(c.includes('bebida')) return {cat:'bebidas', sub:'__bycol'}; return {cat:'platos', sub:'otros'}; } function mapBeerSub(b){ const n = normalize(b); if(n.includes('cerveza')) return 'cervezas'; if(n.includes('gin')) return 'gintonic'; if(n.includes('licor')) return 'licores'; if(n.includes('whisky')) return 'whisky'; if(n.includes('vodka')) return 'vodka'; if(n.includes('alcohol')) return 'sinalcohol'; return 'sinalcohol'; } function splitNameDesc(name, desc){ name=(name||'').trim(); desc=(desc||'').trim(); if(name.length>55){ const seps=['. ',' - ',' // ',') ',', ']; let done=false; for(const s of seps){ const i=name.indexOf(s); if(i>5 && i<58){ const headEnd = i + (s===') '?1:0); const head=name.slice(0,headEnd).trim(); const tail=name.slice(i+s.length).trim(); if(head.length>=6){ desc = desc ? (tail?tail+' ':'')+desc : tail; name=head; done=true; break; } } } if(!done && name.length>70){ const sp=name.lastIndexOf(' ',58); if(sp>20){ desc = desc ? name.slice(sp).trim()+' '+desc : name.slice(sp).trim(); name=name.slice(0,sp).trim(); } } } return [name,desc]; } function parseSheetRows(rows){ const menuItems=[]; const promoItems=[]; let lastCat=''; let lastWineSub='tintos'; let idc=0, pidc=0; rows.forEach(row=>{ const c=row.c||[]; let rawCat=(c[0]?.v??'').toString().trim(); let rawName=(c[1]?.v??'').toString().trim(); let rawDesc=(c[2]?.v??'').toString().trim(); let rawPrice=c[3]?.v; let rawImg=(c[4]?.v??'').toString().trim(); if(rawCat) lastCat=rawCat; else rawCat=lastCat; if(!rawCat && !rawName) return; if(normalize(rawCat).includes('promo')){ let name=rawName||rawDesc; if(!name) return; let desc=(rawName&&rawDesc)?rawDesc:''; const price=parseInt(rawPrice)>0?parseInt(rawPrice):0; promoItems.push({id:'p'+(++pidc), badge:'', name, desc, descEn:'', price, img:rawImg}); return; } const cls=classify(rawCat); let cat=cls.cat, sub=cls.sub, name=rawName, desc=rawDesc; if(sub==='__bycol'){ sub=mapBeerSub(rawName); if(normalize(rawName).includes('gin')){ name='Gin Tonic'; desc=rawDesc; } else { name=rawDesc; desc=''; } } else if(sub==='__wine'){ const nb=normalize(rawName); if(nb.includes('tinto')) lastWineSub='tintos'; else if(nb.includes('blanco')) lastWineSub='blancos'; else if(nb.includes('espumante')) lastWineSub='espumantes'; sub=lastWineSub; const isHeader=/(tintos|blancos|espumantes)(\s*750\s*ml)?$/.test(nb)||nb==='tintos'||nb==='blancos'||nb==='espumantes'; if(isHeader){ name=rawDesc; desc=''; } else { name=rawName; desc=rawDesc; } } if(!name && desc){ name=desc; desc=''; } if(!name) return; [name,desc]=splitNameDesc(name,desc); const price=parseInt(rawPrice)>0?parseInt(rawPrice):0; menuItems.push({id:++idc, cat, subcat:sub, name, desc, descEn:'', price, img:rawImg}); }); return {menuItems, promoItems}; } let menuData=[]; let promosData=[]; let activeCat='todos'; let activeSubcat='todos'; let searchQuery=''; let cart={}; let adminMode=false; let cartMesa=null; let cartOnline=false; let cartCash=false; let cartNote=''; async function loadDataFromSheets(){ try{ const url=`https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=Menu`; const resp=await fetch(url).then(r=>r.text()); const m=resp.match(/setResponse\((\{[\s\S]*\})\)/); if(m){ const data=JSON.parse(m[1]); if(data.table&&data.table.rows){ const {menuItems, promoItems}=parseSheetRows(data.table.rows); if(menuItems.length>0){ menuData=menuItems; console.log('✅Menú cargado ('+menuItems.length+' productos)'); } else { menuData=JSON.parse(JSON.stringify(DEFAULT_MENU)); } if(promoItems.length>0){ promosData=promoItems; console.log('✅Promos cargadas ('+promoItems.length+')'); } else { promosData=JSON.parse(JSON.stringify(DEFAULT_PROMOS)); } return; } } throw new Error('sin datos'); }catch(e){ console.warn('⚠ Usando respaldo local:', e.message); menuData=JSON.parse(JSON.stringify(DEFAULT_MENU)); promosData=JSON.parse(JSON.stringify(DEFAULT_PROMOS)); } } let ticking=false; function onScrollThrottled(){ if(!ticking){ ticking=true; requestAnimationFrame(()=>{ onScroll(); ticking=false; }); } } function onScroll(){ const y=window.scrollY||window.pageYOffset; const vh=window.innerHeight; const docH=document.documentElement.scrollHeight-vh; const prog=docH>0?Math.min(y/docH,1):0; const bar=document.getElementById('scrollProgress'); if(bar) bar.style.width=(prog*100).toFixed(2)+'%'; } function onSearch(val){ searchQuery=val; const clr=document.getElementById('searchClear'); if(clr) clr.classList.toggle('visible', val.length>0); renderMenu(); } function clearSearch(){ searchQuery=''; const inp=document.getElementById('menuSearch'); if(inp) inp.value=''; const clr=document.getElementById('searchClear'); if(clr) clr.classList.remove('visible'); renderMenu(); } function catLabel(key){ return t('cat_'+key); } function catDesc(key){ return t('cat_desc_'+key); } function buildMenuGroups(){ const q=normalize(searchQuery); let base=menuData; if(q){ base=base.filter(m=>normalize(m.name).includes(q)||normalize(m.desc).includes(q)); } else { const cat=activeCat==='todos'?null:activeCat; if(cat) base=base.filter(m=>m.cat===cat); if(activeSubcat!=='todos' && cat) base=base.filter(m=>normalize(m.subcat)===normalize(activeSubcat)); } const catKeys=['desayunos','platos','bebidas']; const groups=[]; catKeys.forEach((ck,ci)=>{ const catItems=base.filter(m=>m.cat===ck); if(!catItems.length) return; const subs=SUBCAT_CONFIG[ck]||[]; const known=new Set(subs.map(s=>normalize(s.key))); const subgroups=[]; subs.forEach(s=>{ let items=catItems.filter(m=>normalize(m.subcat)===normalize(s.key)); items=items.slice().sort((a,b)=>a.name.localeCompare(b.name,'es',{sensitivity:'base'})); if(items.length) subgroups.push({key:s.key,labelKey:s.labelKey,items}); }); let orphan=catItems.filter(m=>!known.has(normalize(m.subcat))); orphan=orphan.slice().sort((a,b)=>a.name.localeCompare(b.name,'es',{sensitivity:'base'})); if(orphan.length) subgroups.push({key:'__other',labelKey:'sub_otros',items:orphan}); if(subgroups.length){ const total=subgroups.reduce((s,sg)=>s+sg.items.length,0); groups.push({cat:ck,index:ci+1,subgroups,total}); } }); return groups; } function cardHTML(item,i){ const desc=currentLang==='en'&&item.descEn?item.descEn:item.desc; const delay=Math.min(i,6)*70; const priceLabel=formatPrice(item.price); const noPrice=(!item.price||item.price<=0); const emoji=SUBCAT_EMOJI[item.subcat]||EMOJIS[item.cat]||'🍽️'; const img=getItemImg(item,false); const key=imgKey(item,false); return ` <article class="menu-card mcard-reveal" style="--d:${delay}ms"> <div class="card-img-wrap"> ${img?`<img src="${img}" alt="${escapeHtml(item.name)}" loading="lazy">`:`<div class="card-emoji">${emoji}</div>`} ${adminMode?`<button class="img-edit-btn" data-imgkey="${escapeAttr(key)}" title="Cambiar imagen">📷</button>`:''} </div> <div class="card-body"> <div class="card-name scroll-motion-text">${escapeHtml(item.name)}</div> <div class="card-desc scroll-motion-text">${escapeHtml(desc)}</div> <div class="card-footer"> <div class="card-price${noPrice?' consult':''}">${priceLabel}</div> <button class="add-btn" onclick="addToCart(${item.id}, '${item.name.replace(/'/g,"\\'")}', ${item.price||0}, this)">+</button> </div> </div> </article> `; } function renderTabs(){ if(!document.getElementById('tabs')) return; const tabs=document.getElementById('tabs'); const labels={ 'es':{todos:'Todos',desayunos:'Desayunos',platos:'Platos',bebidas:'Bebidas'}, 'en':{todos:'All',desayunos:'Breakfast',platos:'Dishes',bebidas:'Drinks'} }; tabs.innerHTML=CATS.map(c=>` <button class="tab ${activeCat===c.key?'active':''}" onclick="setCategory('${c.key}')">${labels[currentLang][c.key]}</button> `).join(''); renderSubTabs(); } function renderSubTabs(){ const subTabs=document.getElementById('subTabs'); if(!subTabs) return; if(activeCat==='todos'){ subTabs.classList.remove('visible'); subTabs.innerHTML=''; return; } const subcats=SUBCAT_CONFIG[activeCat]||[]; if(!subcats.length){ subTabs.classList.remove('visible'); subTabs.innerHTML=''; return; } subTabs.classList.add('visible'); subTabs.innerHTML=` <button class="sub-tab ${activeSubcat==='todos'?'active':''}" onclick="setSubcategory('todos')">${currentLang==='es'?'Todos':'All'}</button> ${subcats.map(s=>` <button class="sub-tab ${normalize(activeSubcat)===normalize(s.key)?'active':''}" onclick="setSubcategory('${s.key.replace(/'/g,"\\'")}')">${t(s.labelKey)}</button> `).join('')} `; } function setCategory(cat){ activeCat=cat; activeSubcat='todos'; renderTabs(); renderMenu(); } function setSubcategory(subcat){ activeSubcat=subcat; renderSubTabs(); renderMenu(); } function renderMenu(){ const wrap=document.getElementById('menuGrid'); if(!wrap) return; const groups=buildMenuGroups(); const meta=document.getElementById('searchMeta'); const q=searchQuery.trim(); if(q){ const total=groups.reduce((s,g)=>s+g.total,0); if(meta){ meta.style.display='block'; meta.innerHTML = total>0 ? t('search_results').replace('{n}',total).replace('{q}',escapeHtml(q)) : t('search_noresults').replace('{q}',escapeHtml(q)); } } else if(meta){ meta.style.display='none'; } if(groups.length===0){ wrap.innerHTML=`<div class="menu-empty">${q?'':t('empty_cat')}</div>`; observeMenuReveals(); return; } wrap.innerHTML=groups.map(g=>{ const subsHTML=g.subgroups.map(sg=>{ const head=sg.labelKey?` <div class="menu-subsection-head mhead-reveal"> <span class="mssh-dot"></span> <span class="mssh-name">${t(sg.labelKey)}</span> <span class="mssh-rule"></span> <span class="mssh-count">${sg.items.length}</span> </div>`:''; return ` <div class="menu-subsection"> ${head} <div class="menu-grid"> ${sg.items.map((item,i)=>cardHTML(item,i)).join('')} </div> </div>`; }).join(''); return ` <section class="menu-section"> <header class="menu-section-head mhead-reveal"> <span class="msh-index">${String(g.index).padStart(2,'0')}</span> <div class="msh-center"> <div class="msh-titlerow"> <span class="msh-emoji">${EMOJIS[g.cat]||''}</span> <h3 class="msh-title">${catLabel(g.cat)}</h3> </div> <p class="msh-desc">${catDesc(g.cat)}</p> </div> <div class="msh-meta"> <span class="msh-count">${g.total}</span> <span class="msh-countlabel">${t('menu_count_label')}</span> </div> <span class="msh-underline"></span> </header> ${subsHTML} </section>`; }).join(''); observeMenuReveals(); } let menuObserver=null; function observeMenuReveals(){ if(menuObserver) menuObserver.disconnect(); menuObserver=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); menuObserver.unobserve(e.target); } }); }, {threshold:.12, rootMargin:'0px 0px -6% 0px'}); document.querySelectorAll('#menuGrid .mhead-reveal, #menuGrid .mcard-reveal').forEach(el=>menuObserver.observe(el)); } function promoBadge(name){ const n=normalize(name); if(n.includes('desayuno')) return t('promo_badge_breakfast'); if(n.includes('almuerzo')) return t('promo_badge_lunch'); if(n.includes('cena')) return t('promo_badge_dinner'); if(n.includes('after')) return 'After Work'; return t('promo_badge_default'); } function renderPromos(){ const grid=document.getElementById('promosGrid'); if(!grid) return; grid.innerHTML=promosData.map(item=>{ const desc=currentLang==='en'&&item.descEn?item.descEn:item.desc; const badge=item.badge||promoBadge(item.name); const img=getItemImg(item,true); const key=imgKey(item,true); return ` <div class="promo-card"> <div class="promo-img-wrap"> ${img?`<img src="${img}" alt="${escapeHtml(item.name)}" loading="lazy">`:`<div class="promo-img-emoji">🎉</div>`} ${adminMode?`<button class="img-edit-btn" data-imgkey="${escapeAttr(key)}" title="Cambiar imagen">📷</button>`:''} </div> <div class="promo-body"> <div class="promo-badge">${escapeHtml(badge)}</div> <div class="promo-name scroll-motion-text">${escapeHtml(item.name)}</div> <div class="promo-desc scroll-motion-text">${escapeHtml(desc)}</div> <div class="promo-footer"> <div class="promo-price">${formatPrice(item.price)}</div> <button class="add-btn" onclick="addToCart('${item.id}', '${item.name.replace(/'/g,"\\'")}', ${item.price||0}, this)">+</button> </div> </div> </div> `}).join(''); } function addToCart(id, name, price, btnElement){ if(!cart[id]) cart[id]={name, price, qty:0}; cart[id].qty++; updateCartUI(); if(btnElement){ btnElement.classList.add('added'); setTimeout(()=>btnElement.classList.remove('added'),400); } } function updateCartUI(){ const items=Object.values(cart).filter(i=>i.qty>0); const count=items.reduce((s,i)=>s+i.qty,0); const total=items.reduce((s,i)=>s+(i.price*i.qty),0); const hasConsult=items.some(i=>!i.price||i.price<=0); document.getElementById('cartCount').textContent=count; document.getElementById('cartTotal').textContent= hasConsult && total>0 ? `$${total.toLocaleString('es-AR')} +` : `$${total.toLocaleString('es-AR')}`; document.getElementById('cartTotalLabel').textContent = hasConsult ? t('cart_total_partial') : t('cart_total_label'); const note=document.getElementById('cartConsultNote'); if(note) note.classList.toggle('visible', hasConsult); const cartItems=document.getElementById('cartItems'); if(items.length===0){ cartItems.innerHTML=`<div class="cart-empty">${t('cart_empty')}</div>`; } else { cartItems.innerHTML=items.map((item,idx)=>{ const itemId=Object.keys(cart)[idx]; const noPrice=(!item.price||item.price<=0); return ` <div class="cart-item"> <div class="ci-name">${escapeHtml(item.name)}</div> <div class="ci-qty"> <button class="qty-btn" onclick="modifyQty('${itemId}',-1)">−</button> <span>${item.qty}</span> <button class="qty-btn" onclick="modifyQty('${itemId}',1)">+</button> </div> <div class="ci-price${noPrice?' consult':''}">${noPrice?t('price_consult'):'$'+(item.price*item.qty).toLocaleString('es-AR')}</div> </div> `}).join(''); } updateSendButtonState(); } function modifyQty(id, delta){ if(cart[id]){ cart[id].qty=Math.max(0,cart[id].qty+delta); if(cart[id].qty===0) delete cart[id]; updateCartUI(); } } function toggleCart(){ document.getElementById('cartPanel').classList.toggle('open'); } function updateSendButtonState(){ const hasItems=Object.values(cart).some(i=>i.qty>0); const btn=document.getElementById('btnSendOrder'); btn.disabled=!(hasItems && cartMesa); const btnOnline=document.getElementById('btnOnlineOrder'); if(cartOnline){ btnOnline.classList.add('visible'); btnOnline.disabled=!(hasItems && cartMesa); } else { btnOnline.classList.remove('visible'); } } function initCartMesaSelect(){ const select=document.getElementById('cartMesaSelect'); if(!select) return; let html=`<option value="">${t('cart_mesa_placeholder')}</option>`; for(let i=1;i<=200;i++){ html+=`<option value="${i}" ${cartMesa==i?'selected':''}>${currentLang==='es'?'Mesa':'Table'} ${i}</option>`; } select.innerHTML=html; } function updateCartMesa(){ const val=parseInt(document.getElementById('cartMesaSelect').value); cartMesa=(val&&val>=1&&val<=200)?val:null; updateSendButtonState(); } function onNoteChange(val){ cartNote=val; } function toggleCashOption(){ cartCash=document.getElementById('cartCashCheck').checked; if(cartCash){ cartOnline=false; document.getElementById('cartOnlineCheck').checked=false; } updateSendButtonState(); } function toggleOnlineOption(){ cartOnline=document.getElementById('cartOnlineCheck').checked; if(cartOnline){ cartCash=false; document.getElementById('cartCashCheck').checked=false; } updateSendButtonState(); } // ── COMANDA PROFESIONAL (formato ticket para cocina) ── function padR(s,w){ s=String(s); return s.length>w ? s.slice(0,w-1)+'…' : s+' '.repeat(w-s.length); } function padL(s,w){ s=String(s); return s.length>w ? s.slice(0,w) : ' '.repeat(w-s.length)+s; } function buildComanda(){ const items=Object.values(cart).filter(i=>i.qty>0); const total=items.reduce((s,i)=>s+(i.price*i.qty),0); const hasConsult=items.some(i=>!i.price||i.price<=0); const now=new Date(); const fecha=now.toLocaleDateString('es-AR'); const hora=now.toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit'}); const num=Math.floor(1000+Math.random()*9000); const note=cartNote.trim(); const hs=currentLang==='es'?' hs':''; const FENCE='\u0060\u0060\u0060'; const priceFn = i => (i.price&&i.price>0) ? '$'+(i.price*i.qty).toLocaleString('es-AR') : t('price_consult'); const totalStr = '$'+total.toLocaleString('es-AR'); const nameW = Math.min(28, Math.max(t('comanda_item').length, ...items.map(i=>i.name.length))); const priceW = Math.max(t('comanda_amount').length, totalStr.length, ...items.map(i=>priceFn(i).length)); const sepLen = 4 + 2 + nameW + 2 + priceW; const sep = '-'.repeat(sepLen); const table=[]; table.push(padR(t('comanda_qty'),4)+' '+padR(t('comanda_item'),nameW)+' '+padL(t('comanda_amount'),priceW)); table.push(sep); items.forEach(i=>{ table.push(padL(i.qty+'x',4)+' '+padR(i.name,nameW)+' '+padL(priceFn(i),priceW)); }); table.push(sep); table.push(' '.repeat(6)+padL(t('comanda_total'),nameW)+' '+padL(hasConsult?totalStr+' +':totalStr,priceW)); const msg=[]; msg.push('*🍽️'+t('comanda_title')+' · #'+num+'*'); msg.push('*📍'+t('comanda_table')+' '+cartMesa+'* 🕐'+fecha+' · '+hora+hs); msg.push(''); msg.push(FENCE); table.forEach(l=>msg.push(l)); msg.push(FENCE); if(note){ msg.push(''); msg.push('📝*'+t('comanda_notes')+':* '+note); } msg.push(''); if(cartCash) msg.push('💵*'+t('comanda_cash')+'*'); else if(cartOnline) msg.push('💳*'+t('comanda_online')+'*'); else msg.push('💰*'+t('comanda_pay_default')+'*'); if(hasConsult) msg.push('⚠️'+t('comanda_consultwarn')); msg.push(''); msg.push(t('comanda_thanks')); return msg.join('\n'); } function sendOrder(){ if(!cartMesa){ alert(currentLang==='es'?'Por favor seleccioná un número de mesa':'Please select a table number'); return; } const items=Object.values(cart).filter(i=>i.qty>0); if(items.length===0) return; window.open(`https://wa.me/5493489236010?text=${encodeURIComponent(buildComanda())}`) ; cart={}; cartMesa=null; cartOnline=false; cartCash=false; cartNote=''; document.getElementById('cartOnlineCheck').checked=false; document.getElementById('cartCashCheck').checked=false; document.getElementById('cartMesaSelect').value=''; const noteEl=document.getElementById('cartNote'); if(noteEl) noteEl.value=''; updateCartUI(); toggleCart(); } function sendOnlineOrder(){ if(!cartMesa){ alert(currentLang==='es'?'Por favor seleccioná un número de mesa':'Please select a table number'); return; } const items=Object.values(cart).filter(i=>i.qty>0); if(items.length===0) return; const total=items.reduce((s,i)=>s+(i.price*i.qty),0); const message=currentLang==='es' ? `Pedido para Mesa ${cartMesa}\nTotal: $${total.toLocaleString('es-AR')}\n\nSerás redirigido a la pasarela de pago.` : `Order for Table ${cartMesa}\nTotal: $${total.toLocaleString('es-AR')}\n\nYou will be redirected to the payment gateway.`; alert(message); } function setAdmin(on){ if(on){ const pwd=prompt(t('admin_password')); if(pwd!=='tongoyhome'){ alert(t('admin_wrong')); document.getElementById('adminToggle').checked=false; return; } window.open(SHEET_URL,'_blank'); } adminMode=on; document.getElementById('adminToggle').checked=on; document.getElementById('adminPanel').classList.toggle('open',on); document.body.classList.toggle('admin-mode',on); renderMenu(); renderPromos(); if(on) console.log('✅MODO ADMINISTRADOR ACTIVADO - Google Sheets abierto'); else console.log('⚠️MODO ADMINISTRADOR DESACTIVADO'); } async function initScrollMotion(){ if(!window.gsap||!window.ScrollTrigger||window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; gsap.registerPlugin(ScrollTrigger); document.querySelectorAll('.parallax-section').forEach(sec=>{const bg=sec.querySelector('.parallax-bg'),content=sec.querySelector('.parallax-content'),index=sec.querySelector('.sec-index'); if(bg) gsap.fromTo(bg,{yPercent:-7,scale:1.16},{yPercent:7,scale:1.03,ease:'none',scrollTrigger:{trigger:sec,start:'top bottom',end:'bottom top',scrub:1.15}}); if(content) gsap.fromTo(content,{y:80,rotateX:4,opacity:.45},{y:-70,rotateX:-3,opacity:1,ease:'none',scrollTrigger:{trigger:sec,start:'top bottom',end:'bottom top',scrub:1.05}}); if(index) gsap.fromTo(index,{x:-70,rotateY:-12,opacity:.15},{x:35,rotateY:12,opacity:1,ease:'none',scrollTrigger:{trigger:sec,start:'top bottom',end:'bottom top',scrub:1.2}}); const texts=sec.querySelectorAll('.scroll-motion-text,.reveal'); if(texts.length) gsap.fromTo(texts,{y:42,z:0,rotateX:5,opacity:0},{y:0,z:18,rotateX:0,opacity:1,stagger:.07,ease:'power2.out',scrollTrigger:{trigger:sec,start:'top 78%',end:'top 35%',scrub:1}}); }); const groups=document.querySelectorAll('#menuGrid .menu-section,#promosGrid .promo-card,#nosotros .about-grid,#contacto .contact-grid'); groups.forEach(el=>gsap.fromTo(el,{y:55,rotateX:2,opacity:.2},{y:0,rotateX:0,opacity:1,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%',end:'top 55%',scrub:1}})); ScrollTrigger.refresh(); } function init(){ loadOverrides(); await loadDataFromSheets(); setLang(currentLang); observeReveals(); initScrollMotion(); updateStatus(); setInterval(updateStatus,60000); window.addEventListener('scroll',onScrollThrottled,{passive:true}); window.addEventListener('resize',onScrollThrottled,{passive:true}); onScroll(); // Delegación para botones de cambio de imagen (modo admin) const mg=document.getElementById('menuGrid'); if(mg) mg.addEventListener('click', function(e){ const b=e.target.closest('.img-edit-btn'); if(b) editImage(b.getAttribute('data-imgkey')); }); const pg=document.getElementById('promosGrid'); if(pg) pg.addEventListener('click', function(e){ const b=e.target.closest('.img-edit-btn'); if(b) editImage(b.getAttribute('data-imgkey')); }); const fi=document.getElementById('imgFileInput'); if(fi) fi.addEventListener('change', handleImageFile); console.log('✅App iniciada - Versión:',currentVersion,'- Idioma:',currentLang); } function toggleMobile(){ document.getElementById('hamburger').classList.toggle('open'); document.getElementById('mobMenu').classList.toggle('open'); } function closeMobile(){ document.getElementById('hamburger').classList.remove('open'); document.getElementById('mobMenu').classList.remove('open'); } function updateStatus(){ const now=new Date(); const day=now.getDay(); const timeNum=now.getHours()+now.getMinutes()/60; let open=false; if(day>=1&&day<=4){ open=timeNum>=7&&timeNum<23; } else if(day===5||day===0){ open=timeNum>=7&&timeNum<24.5; } else { open=timeNum>=7&&timeNum<24.5; } const badge=document.getElementById('statusBadge'); badge.className=`status-badge ${open?'status-open':'status-closed'}`; document.getElementById('statusText').textContent=open?t('status_open'):t('status_closed'); } function observeReveals(){ const obs=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); }); },{threshold:.1}); document.querySelectorAll('.reveal').forEach(el=>obs.observe(el)); const secObs=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ e.target.classList.toggle('in-view',e.isIntersecting); }); },{threshold:.3}); document.querySelectorAll('.parallax-section').forEach(el=>secObs.observe(el)); } window.addEventListener('load', init); </script>
+
+<script>
+const catalogo = {
+ "Motor y encendido":["ALTERNADOR","BOBINA DE ENCENDIDO","MOTOR DE ARRANQUE","VOLANTE DE MOTOR"],
+ "Combustible e inyección":["BOMBA DE NAFTA","BOMBA INYECTORA","CARBURADOR","MÓDULO DE INYECCIÓN"],
+ "Transmisión":["CAJA DE TRANSFERENCIA","CAJA DE VELOCIDADES"],
+ "Carrocería":["CAPOT","GRILLA DELANTERA","GUARDABARROS","PUERTAS","TAPA DE BAÚL"],
+ "Climatización":["AIRE ACONDICIONADO","COMPRESOR DE AIRE ACONDICIONADO","CONDENSADOR"],
+ "Refrigeración":["BOMBA DE AGUA","RADIADOR","RADIADOR DE ACEITE","ELECTROVENTILADOR"],
+ "Electricidad":["ALTERNADOR","INSTRUMENTAL DE TABLERO","TABLERO DE INSTRUMENTO"],
+ "Interior":["TABLERO DE INSTRUMENTO","TAPIZADOS"],
+ "Admisión y turbo":["INTERCOOLER","TURBO COMPRESOR"]
+};
+
+const cuentas = {
+ "Credicoop": {
+   banco:"Banco Credicoop",
+   cta:"CC $ 191-084-009157/6",
+   cbu:"1910084155008400915764",
+   alias:"SURGEONCAR.CREDICOOP"
+ },
+ "Galicia": {
+   banco:"Banco Galicia",
+   cta:"CC $ 0037861-3 084-5",
+   cbu:"0070084920000037861353",
+   alias:"SURGEONCAR.GALICIA"
+ },
+ "Provincia": {
+   banco:"Banco Provincia",
+   cta:"CC $ 4200-68568/5",
+   cbu:"0140323501420006856851",
+   alias:"SURGEONCAR.PROVINCIA"
+ },
+ "Macro": {
+   banco:"Banco Macro",
+   cta:"CC $ 368409421025577",
+   cbu:"2850684130094210255771",
+   alias:"SURGEONCAR.MACRO"
+ },
+ "Mercado Pago": {
+   banco:"Mercado Pago",
+   cvu:"0000003100052955211396",
+   alias:"SURGEONCAR.MP"
+ }
+};
+
+const cat=document.getElementById('categoria');
+const prod=document.getElementById('producto');
+const cuenta=document.getElementById('cuenta');
+const bankDetails=document.getElementById('bankDetails');
+
+const fields={
+ nombre:document.getElementById('nombre'),
+ telefono:document.getElementById('telefono'),
+ email:document.getElementById('email'),
+ vehiculo:document.getElementById('vehiculo'),
+ direccion:document.getElementById('direccion'),
+ cp:document.getElementById('cp'),
+ ciudad:document.getElementById('ciudad'),
+ comentario:document.getElementById('comentario')
+};
+
+const sum={
+ cat:document.getElementById('sumCat'),
+ prod:document.getElementById('sumProd'),
+ nombre:document.getElementById('sumNombre'),
+ vehiculo:document.getElementById('sumVehiculo'),
+ direccion:document.getElementById('sumDireccion'),
+ cp:document.getElementById('sumCP'),
+ ciudad:document.getElementById('sumCiudad'),
+ cuenta:document.getElementById('sumCuenta'),
+ comentario:document.getElementById('sumComentario')
+};
+
+cat.addEventListener('change',()=>{
+  prod.innerHTML='<option value="">Seleccionar repuesto...</option>';
+  prod.disabled=!cat.value;
+  (catalogo[cat.value]||[]).forEach(x=>{
+    const o=document.createElement('option');
+    o.value=x;o.textContent=x;prod.appendChild(o);
+  });
+  sum.cat.textContent=cat.value||'—';
+  sum.prod.textContent='—';
+});
+
+prod.addEventListener('change',()=>sum.prod.textContent=prod.value||'—');
+
+fields.nombre.addEventListener('input',()=>sum.nombre.textContent=fields.nombre.value||'—');
+fields.vehiculo.addEventListener('input',()=>sum.vehiculo.textContent=fields.vehiculo.value||'—');
+fields.direccion.addEventListener('input',()=>sum.direccion.textContent=fields.direccion.value||'—');
+fields.cp.addEventListener('input',()=>sum.cp.textContent=fields.cp.value||'—');
+fields.ciudad.addEventListener('input',()=>sum.ciudad.textContent=fields.ciudad.value||'—');
+fields.comentario.addEventListener('input',()=>sum.comentario.textContent=fields.comentario.value||'—');
+
+cuenta.addEventListener('change',()=>{
+  const c=cuentas[cuenta.value];
+  if(!c){
+    bankDetails.style.display='none';
+    bankDetails.innerHTML='';
+    sum.cuenta.textContent='—';
+    return;
+  }
+  const datoPrincipal=c.cta ? `<strong>Cuenta:</strong> ${c.cta}<br>` : `<strong>CVU:</strong> ${c.cvu}<br>`;
+  bankDetails.innerHTML=`<strong>${c.banco}</strong><br>${datoPrincipal}<strong>CBU:</strong> ${c.cbu || 'No corresponde'}<br><strong>Alias:</strong> ${c.alias}`;
+  bankDetails.style.display='block';
+  sum.cuenta.textContent=`${c.banco} · Alias: ${c.alias}`;
+});
+
+document.getElementById('enviarPedido').addEventListener('click',()=>{
+  if(!cat.value || !prod.value || !fields.nombre.value.trim() || !fields.telefono.value.trim()){
+    alert('Completá categoría, repuesto, nombre y teléfono/WhatsApp.');
+    return;
+  }
+
+  const c=cuentas[cuenta.value];
+  const cuentaTexto=c
+    ? `${c.banco} | ${c.cta ? 'Cuenta: '+c.cta+' | ' : ''}${c.cbu ? 'CBU: '+c.cbu+' | ' : ''}${c.cvu ? 'CVU: '+c.cvu+' | ' : ''}Alias: ${c.alias}`
+    : 'No seleccionada';
+
+  const msg =
+`PEDIDO DE REPUESTO - AUTOPARTES BRASS
+
+Categoría: ${cat.value}
+Repuesto: ${prod.value}
+
+Nombre: ${fields.nombre.value}
+Teléfono/WhatsApp: ${fields.telefono.value}
+E-mail: ${fields.email.value || 'No informado'}
+Vehículo: ${fields.vehiculo.value || 'No informado'}
+Dirección: ${fields.direccion.value || 'No informada'}
+Código postal: ${fields.cp.value || 'No informado'}
+Ciudad: ${fields.ciudad.value || 'No informada'}
+
+CUENTA / MEDIO DE PAGO SELECCIONADO:
+${cuentaTexto}
+
+Comentario: ${fields.comentario.value || 'Sin comentario'}`;
+
+  window.open('https://wa.me/542804589193?text='+encodeURIComponent(msg),'_blank');
+});
+
+document.getElementById('globalSearch').addEventListener('input',e=>{
+  const q=e.target.value.toLowerCase().trim();
+  document.querySelectorAll('.sidebar a').forEach(a=>{
+    a.style.display=!q || a.textContent.toLowerCase().includes(q)?'block':'none';
+  });
+});
+</script>
 </body>
 </html>
