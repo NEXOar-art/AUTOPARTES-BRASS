@@ -195,6 +195,54 @@ img,video,iframe{max-width:100%}
  .row{grid-template-columns:1fr}
  .brands-marquee .brand{width:118px;flex-basis:118px}
 }
+
+/* ===== V11: ajustes solicitados sin alterar el resto del diseño ===== */
+.logo-box{height:auto !important;align-self:center;overflow:hidden;padding:0;background:#fff;box-sizing:border-box}
+.logo-box img{height:auto !important;width:100%;max-height:none;object-fit:contain;object-position:center;border-radius:22px;display:block}
+
+/* Carrusel horizontal continuo: una imagen cada 5 segundos */
+.hero-carousel{overflow:hidden;position:relative}
+.hero-track{display:flex;width:100%;height:100%;transform:translateX(0);transition:transform 900ms cubic-bezier(.65,0,.25,1);will-change:transform}
+.hero-slide{display:block !important;flex:0 0 100%;width:100%;min-width:100%;position:relative;background:#111}
+.hero-slide.active{display:block !important}
+.hero-slide img{width:100%;height:100%;object-fit:cover;display:block;transform:none !important;animation:none !important}
+
+/* Ofertas ampliables */
+#ofertas .product{cursor:zoom-in;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+#ofertas .product:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.12);border-color:#c9c9c9}
+#ofertas .product .pic{cursor:zoom-in;overflow:hidden}
+#ofertas .product .pic img{transition:transform .3s ease}
+#ofertas .product:hover .pic img{transform:scale(1.04)}
+#galleryModal img.offer-expanded{max-width:96vw;max-height:94vh;width:auto;height:auto;border-radius:14px;box-shadow:0 20px 80px rgba(0,0,0,.55)}
+
+/* Ubicación y contacto: acabado más limpio y destacado */
+#ubicacion .section-title h2{font-weight:800;letter-spacing:.2px}
+#ubicacion .location{gap:20px;align-items:stretch}
+#ubicacion .info{background:linear-gradient(145deg,#fff,#f7f8fa);border:1px solid #e1e4e8;border-radius:16px;padding:22px;box-shadow:0 8px 24px rgba(0,0,0,.06);transition:transform .2s ease,box-shadow .2s ease}
+#ubicacion .info:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.09)}
+#ubicacion .info h3{color:var(--red);font-size:16px;font-weight:800}
+#ubicacion .map-wrap{border-radius:12px;border:1px solid #ddd;box-shadow:0 5px 18px rgba(0,0,0,.07)}
+#ubicacion .btn{border-radius:7px;background:linear-gradient(135deg,var(--red),var(--red2));box-shadow:0 5px 14px rgba(183,25,42,.18);transition:transform .2s ease,box-shadow .2s ease}
+#ubicacion .btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(183,25,42,.24)}
+.footer{border-top:1px solid #e4e6ea;background:linear-gradient(180deg,#fafafa,#f1f2f4)}
+.footer-inner{padding-top:34px;padding-bottom:34px}
+
+/* WhatsApp flotante */
+.whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:95;display:flex;align-items:center;gap:9px;background:#25D366;color:#fff;text-decoration:none;padding:11px 15px 11px 12px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.22);font-size:12px;font-weight:900;letter-spacing:.2px;transition:transform .2s ease,box-shadow .2s ease}
+.whatsapp-float:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 30px rgba(0,0,0,.27)}
+.whatsapp-icon{width:27px;height:27px;border:2px solid #fff;border-radius:50%;display:grid;place-items:center;font-size:18px;line-height:1;font-weight:900;transform:rotate(-20deg)}
+@media(max-width:700px){
+ .logo-box{width:min(94vw,560px);height:auto !important;flex:0 0 auto}
+ .logo-box img{height:auto !important;width:100%}
+ .whatsapp-float{right:14px;bottom:14px;padding:10px 12px 10px 10px}
+ .whatsapp-label{font-size:11px}
+ #ubicacion .location{gap:14px}
+}
+@media(max-width:480px){
+ .whatsapp-float{right:12px;bottom:12px}
+ .whatsapp-label{display:none}
+ .whatsapp-icon{width:31px;height:31px}
+}
 </style>
 </head>
 <body>
@@ -262,10 +310,12 @@ img,video,iframe{max-width:100%}
   </div>
 </div>
 <section class="hero-carousel" id="heroCarousel" aria-label="Promociones Autopartes Brass">
-  <div class="hero-slide active"><img src="OFERTA CUENTAS.png" alt="Oferta y medios de pago"></div>
-  <div class="hero-slide"><img src="OFERTA HORARIO DE ATENCION.png" alt="Horario de atención"></div>
-  <div class="hero-slide"><img src="OFERTA MOTOR.png" alt="Oferta motor"></div>
-  <div class="hero-slide"><img src="OFERTA CAJA DE VELOCIDADES.png" alt="Oferta caja de velocidades"></div>
+  <div class="hero-track">
+    <div class="hero-slide active"><img src="OFERTA CUENTAS.png" alt="Oferta y medios de pago"></div>
+    <div class="hero-slide"><img src="OFERTA HORARIO DE ATENCION.png" alt="Horario de atención"></div>
+    <div class="hero-slide"><img src="OFERTA MOTOR.png" alt="Oferta motor"></div>
+    <div class="hero-slide"><img src="OFERTA CAJA DE VELOCIDADES.png" alt="Oferta caja de velocidades"></div>
+  </div>
 </section>
 
 <section id="galeria" class="section">
@@ -362,6 +412,8 @@ img,video,iframe{max-width:100%}
    <article class="product"><div class="pic"><img src="OFERTA2.jpg" alt="Oferta 2"></div><h3>Autopartes destacadas</h3><p>Solicitá información por WhatsApp.</p></article>
    <article class="product"><div class="pic"><img src="OFERTA3.jpg" alt="Oferta 3"></div><h3>Promociones</h3><p>Stock sujeto a disponibilidad.</p></article>
    <article class="product"><div class="pic"><img src="OFERTA4.jpg" alt="Oferta 4"></div><h3>Ofertas especiales</h3><p>Consultá disponibilidad y precio.</p></article>
+   <article class="product"><div class="pic"><img src="OFERTA5.jpg" alt="Oferta 5"></div><h3>Nuevas ofertas</h3><p>Consultá disponibilidad y precio.</p></article>
+   <article class="product"><div class="pic"><img src="OFERTA6.jpg" alt="Oferta 6"></div><h3>Promociones destacadas</h3><p>Consultá disponibilidad y precio.</p></article>
   </div>
  </section>
 
@@ -430,6 +482,10 @@ img,video,iframe{max-width:100%}
 </section>
 </main>
 
+<a class="whatsapp-float" href="https://wa.me/542804589193?text=Hola%20Autopartes%20Brass%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
+  <span class="whatsapp-icon">⌕</span>
+  <span class="whatsapp-label">WhatsApp</span>
+</a>
 
 <footer class="footer">
  <div class="footer-inner">
@@ -665,26 +721,47 @@ searchButton.addEventListener('click',()=>{
   if(q){ buscarRepuesto(q,true); document.getElementById('pedido').scrollIntoView({behavior:'smooth',block:'start'}); }
 });
 
-// Carrusel principal: imágenes con avance automático y soporte táctil.
+// Carrusel principal: desplazamiento horizontal de derecha a izquierda, 5 segundos por imagen.
+const heroCarousel=document.getElementById('heroCarousel');
+const heroTrack=heroCarousel ? heroCarousel.querySelector('.hero-track') : null;
 const slides=[...document.querySelectorAll('.hero-slide')];
 let slideIndex=0;
-function showSlide(i){
+let carouselTimer=null;
+function showSlide(i,animate=true){
+  if(!slides.length || !heroTrack) return;
   slideIndex=(i+slides.length)%slides.length;
-  slides.forEach((s,n)=>s.classList.toggle('active',n===slideIndex));
+  heroTrack.style.transition=animate?'transform 900ms cubic-bezier(.65,0,.25,1)':'none';
+  heroTrack.style.transform=`translateX(-${slideIndex*100}%)`;
+  slides.forEach((slide,n)=>slide.classList.toggle('active',n===slideIndex));
 }
-let carouselTimer=setInterval(()=>showSlide(slideIndex+1),5000);
-document.getElementById('heroCarousel').addEventListener('mouseenter',()=>clearInterval(carouselTimer));
-document.getElementById('heroCarousel').addEventListener('mouseleave',()=>carouselTimer=setInterval(()=>showSlide(slideIndex+1),5000));
-document.getElementById('heroCarousel').addEventListener('touchstart',()=>clearInterval(carouselTimer),{passive:true});
-document.getElementById('heroCarousel').addEventListener('touchend',()=>carouselTimer=setInterval(()=>showSlide(slideIndex+1),5000),{passive:true});
+function startCarousel(){
+  clearInterval(carouselTimer);
+  carouselTimer=setInterval(()=>showSlide(slideIndex+1,true),5000);
+}
+showSlide(0,false);
+startCarousel();
+heroCarousel.addEventListener('mouseenter',()=>clearInterval(carouselTimer));
+heroCarousel.addEventListener('mouseleave',startCarousel);
+heroCarousel.addEventListener('touchstart',()=>clearInterval(carouselTimer),{passive:true});
+heroCarousel.addEventListener('touchend',startCarousel,{passive:true});
 
 // Galería: ampliar cualquier imagen al hacer clic y cerrar con X, fondo o Escape.
 const galleryModal=document.getElementById('galleryModal');
 const galleryModalImg=document.getElementById('galleryModalImg');
 document.querySelectorAll('.gallery-card img').forEach(img=>{
   img.addEventListener('click',()=>{
+    galleryModalImg.classList.remove('offer-expanded');
     galleryModalImg.src=img.src;
     galleryModalImg.alt=img.alt||'Imagen ampliada';
+    galleryModal.classList.add('open');
+    document.body.style.overflow='hidden';
+  });
+});
+document.querySelectorAll('#ofertas .product .pic img').forEach(img=>{
+  img.addEventListener('click',()=>{
+    galleryModalImg.classList.add('offer-expanded');
+    galleryModalImg.src=img.src;
+    galleryModalImg.alt=img.alt||'Oferta ampliada';
     galleryModal.classList.add('open');
     document.body.style.overflow='hidden';
   });
@@ -692,6 +769,7 @@ document.querySelectorAll('.gallery-card img').forEach(img=>{
 function closeGallery(){
   galleryModal.classList.remove('open');
   galleryModalImg.src='';
+  galleryModalImg.classList.remove('offer-expanded');
   document.body.style.overflow='';
 }
 document.querySelector('.gallery-close').addEventListener('click',closeGallery);
@@ -704,6 +782,3 @@ document.querySelectorAll('.sidebar a[data-category]').forEach(link=>{link.addEv
 </script>
 </body>
 </html>
-
-
-
