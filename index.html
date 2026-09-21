@@ -135,6 +135,66 @@ a{text-decoration:none;color:inherit}
 @keyframes brandsInfinite{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .product .pic img{width:100%;height:100%;object-fit:cover;display:block}
 @media(max-width:700px){.logo-box{width:82vw;height:92px}.logo-box img{height:90px}.brands-marquee .brand{width:125px;flex-basis:125px}}
+
+/* V10 - ajuste integral responsive sin alterar el contenido */
+html{width:100%;max-width:100%;overflow-x:hidden;scroll-behavior:smooth}
+body{width:100%;max-width:100%;overflow-x:hidden;margin:0}
+img,video,iframe{max-width:100%}
+.header-main,.nav,.main,.container,.footer-inner{width:100%;max-width:1180px}
+.header-main{min-width:0}
+.logo-box{width:clamp(280px,48vw,620px);height:clamp(92px,10vw,122px);flex:0 1 620px;min-width:0;overflow:hidden;border-radius:22px;background:#fff;box-shadow:0 5px 18px rgba(0,0,0,.10)}
+.logo-box img{width:100%;height:100%;object-fit:contain;object-position:center;border-radius:22px;display:block}
+.hero-intro,.hero-carousel{width:100%;max-width:100%;overflow:hidden}
+.hero-carousel{min-height:clamp(250px,34vw,420px);touch-action:pan-y}
+.hero-slide{min-height:clamp(250px,34vw,420px);width:100%;overflow:hidden}
+.hero-slide img{width:100%;height:clamp(250px,34vw,420px);object-fit:cover;object-position:center;display:block}
+.hero-slide{animation:none}
+.hero-slide.active img{animation:carouselKenBurns 5s ease both}
+@keyframes carouselKenBurns{0%{transform:scale(1)}100%{transform:scale(1.035)}}
+.container{min-width:0}
+.main{min-width:0}
+.section,.section-title,.gallery,.product-grid,.form-wrap,.location,.footer-inner{min-width:0;max-width:100%}
+.gallery-card,.product,.form-card,.summary,.quote,.review,.brand{min-width:0}
+.nav{min-width:0;overflow:hidden}
+.nav a{white-space:nowrap}
+.brands-marquee{width:100%;max-width:100%;overflow:hidden}
+.brands{width:max-content;max-width:none}
+@media(min-width:901px){
+ .header-main{padding-left:18px;padding-right:18px}
+ .container{grid-template-columns:210px minmax(0,1fr);gap:18px}
+ .main{overflow:visible}
+}
+@media(max-width:900px){
+ .header-main{width:100%;padding:8px 15px;gap:12px}
+ .logo-box{width:min(76vw,560px);height:96px;flex-basis:min(76vw,560px)}
+ .contact-mini{max-width:32%;min-width:0}
+ .contact-mini span{white-space:normal}
+ .container{width:100%;grid-template-columns:1fr;min-width:0}
+ .main{width:100%;min-width:0}
+ .hero-slide,.hero-slide img{height:clamp(240px,52vw,380px);min-height:240px}
+}
+@media(max-width:700px){
+ .header-main{flex-direction:column;align-items:center}
+ .logo-box{width:min(94vw,560px);height:clamp(82px,22vw,108px);flex:0 0 auto;border-radius:20px}
+ .logo-box img{border-radius:20px}
+ .contact-mini{display:flex;max-width:100%;width:100%;justify-content:center;flex-wrap:wrap;gap:8px;font-size:10px}
+ .nav{overflow-x:auto;overflow-y:hidden;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+ .nav::-webkit-scrollbar{display:none}
+ .hero-carousel{border-radius:14px}
+ .hero-slide,.hero-slide img{height:clamp(220px,58vw,340px);min-height:220px}
+ .gallery,.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:480px){
+ .logo-box{width:94vw;height:82px;border-radius:18px}
+ .logo-box img{border-radius:18px}
+ .hero-slide,.hero-slide img{height:220px;min-height:220px}
+ .gallery,.product-grid{grid-template-columns:1fr}
+ .section{padding-top:32px}
+ .section-title{gap:10px}
+ .section-title h2{font-size:19px}
+ .row{grid-template-columns:1fr}
+ .brands-marquee .brand{width:118px;flex-basis:118px}
+}
 </style>
 </head>
 <body>
@@ -204,7 +264,7 @@ a{text-decoration:none;color:inherit}
 <section class="hero-carousel" id="heroCarousel" aria-label="Promociones Autopartes Brass">
   <div class="hero-slide active"><img src="OFERTA CUENTAS.png" alt="Oferta y medios de pago"></div>
   <div class="hero-slide"><img src="OFERTA HORARIO DE ATENCION.png" alt="Horario de atención"></div>
-  <div class="hero-slide"><img src="OFERTA MOTOR .png" alt="Oferta motor"></div>
+  <div class="hero-slide"><img src="OFERTA MOTOR.png" alt="Oferta motor"></div>
   <div class="hero-slide"><img src="OFERTA CAJA DE VELOCIDADES.png" alt="Oferta caja de velocidades"></div>
 </section>
 
@@ -605,15 +665,13 @@ searchButton.addEventListener('click',()=>{
   if(q){ buscarRepuesto(q,true); document.getElementById('pedido').scrollIntoView({behavior:'smooth',block:'start'}); }
 });
 
-// Carrusel principal: solo imágenes, flechas y avance automático.
+// Carrusel principal: imágenes con avance automático y soporte táctil.
 const slides=[...document.querySelectorAll('.hero-slide')];
 let slideIndex=0;
 function showSlide(i){
   slideIndex=(i+slides.length)%slides.length;
   slides.forEach((s,n)=>s.classList.toggle('active',n===slideIndex));
 }
-document.querySelector('.carousel-arrow.prev').addEventListener('click',()=>showSlide(slideIndex-1));
-document.querySelector('.carousel-arrow.next').addEventListener('click',()=>showSlide(slideIndex+1));
 let carouselTimer=setInterval(()=>showSlide(slideIndex+1),5000);
 document.getElementById('heroCarousel').addEventListener('mouseenter',()=>clearInterval(carouselTimer));
 document.getElementById('heroCarousel').addEventListener('mouseleave',()=>carouselTimer=setInterval(()=>showSlide(slideIndex+1),5000));
@@ -646,5 +704,6 @@ document.querySelectorAll('.sidebar a[data-category]').forEach(link=>{link.addEv
 </script>
 </body>
 </html>
+
 
 
