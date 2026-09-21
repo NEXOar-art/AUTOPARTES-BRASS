@@ -6,7 +6,7 @@
 <title>Autopartes Brass | Repuestos en Trelew</title>
 <meta name="description" content="Autopartes Brass - repuestos y autopartes en Trelew, Chubut.">
 <style>
-:root{--red:#b7192a;--red2:#7f1020;--blue:#173b68;--blue2:#0b2547;--ink:#202735;--muted:#687080;--line:#d7dce5;--soft:#f4f6f9;--gold:#d7b35a;--cream:#f7f3ea;--steel:#4b5563;--wa:#25D366}
+:root{--red:#c91524;--red2:#8f0d19;--blue:#c91524;--blue2:#8f0d19;--ink:#202735;--muted:#687080;--line:#e1c9cc;--soft:#fff5f6;--gold:#d7b35a;--cream:#fff8f8;--steel:#4b5563;--wa:#25D366}
 *{box-sizing:border-box;scroll-behavior:smooth}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff 0,#f5f8fc 100%)}
 a{text-decoration:none;color:inherit}
@@ -14,8 +14,8 @@ a{text-decoration:none;color:inherit}
 .topbar .inner{max-width:1180px;margin:auto;height:100%;display:flex;justify-content:flex-end;align-items:center;gap:18px}
 .header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid #ddd;box-shadow:0 2px 7px rgba(0,0,0,.06)}
 .header-main{max-width:1180px;margin:auto;min-height:98px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:6px 0}
-.logo-box{width:min(50vw,440px);height:84px;display:flex;align-items:center;justify-content:flex-start;overflow:hidden;border-radius:18px}
-.logo-box img{width:100%;height:82px;max-width:100%;max-height:none;object-fit:contain;object-position:left center;border-radius:18px;filter:drop-shadow(0 0 5px rgba(215,179,90,.30));animation:logoGlow 2.8s ease-in-out infinite alternate}
+.logo-box{width:min(50vw,560px);height:104px;display:flex;align-items:center;justify-content:flex-start;overflow:hidden;border-radius:18px}
+.logo-box img{width:100%;height:102px;max-width:100%;max-height:none;object-fit:contain;object-position:left center;border-radius:18px;filter:drop-shadow(0 0 5px rgba(215,179,90,.30));animation:logoGlow 2.8s ease-in-out infinite alternate}
 @keyframes logoGlow{from{filter:drop-shadow(0 0 3px rgba(214,169,58,.18)) drop-shadow(0 0 0 rgba(201,21,36,0))}to{filter:drop-shadow(0 0 8px rgba(214,169,58,.62)) drop-shadow(0 0 15px rgba(201,21,36,.20))}}
 .logo-fallback{display:none;width:210px;height:50px;align-items:center;justify-content:center;font-size:27px;font-weight:900;font-style:italic;color:#fff;background:linear-gradient(#244b9e,#11285e);border:4px solid #fff;outline:2px solid var(--red);transform:skew(-7deg);text-shadow:2px 2px #111}
 .logo-fallback span{transform:skew(7deg)}
@@ -32,7 +32,7 @@ a{text-decoration:none;color:inherit}
 .sidebar a{display:block;padding:8px 10px;border-bottom:1px solid #e8e8e8;background:#fafafa;font-size:10px}
 .sidebar a:nth-child(even){background:#f1f1f1}
 .sidebar a:hover{background:#eaf1fb;color:var(--blue);padding-left:14px}
-.hero{min-height:265px;background:linear-gradient(135deg,var(--blue2) 0 57%,var(--red) 57%);position:relative;overflow:hidden;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero{min-height:265px;background:var(--red);position:relative;overflow:hidden;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center}
 .hero:before{content:"";position:absolute;inset:-90px auto auto -70px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.07)}
 .hero:after{content:"";position:absolute;right:-100px;bottom:-150px;width:330px;height:330px;border-radius:50%;background:rgba(255,255,255,.06)}
 .hero-content{position:relative;z-index:1;padding:25px}
@@ -40,22 +40,19 @@ a{text-decoration:none;color:inherit}
 .hero h1{font-size:43px;margin:10px 0;text-shadow:3px 3px rgba(0,0,0,.28)}
 .hero p{font-size:14px}
 .badge{display:inline-block;background:#fff;color:var(--blue);font-size:11px;font-weight:bold;padding:9px 15px;margin-top:8px}
-.hero-intro{margin-bottom:14px;border-radius:18px;overflow:hidden;box-shadow:0 8px 24px rgba(23,59,104,.14)}
-.hero-carousel{position:relative;overflow:hidden;border-radius:18px;box-shadow:0 8px 24px rgba(23,59,104,.16);background:#111}
+.hero-intro{margin-bottom:14px;border-radius:18px;overflow:hidden;box-shadow:0 8px 24px rgba(143,13,25,.18)}
+.hero-carousel{position:relative;overflow:hidden;border-radius:18px;box-shadow:0 8px 24px rgba(143,13,25,.18);background:#111}
 .hero-slide{display:none;min-height:360px;position:relative;background:#111}
 .hero-slide.active{display:flex;align-items:center;justify-content:center}
 .hero-slide img{width:100%;height:360px;object-fit:cover;display:block;opacity:1;transition:transform .8s ease}
 .hero-slide.active img{transform:scale(1.01)}
 
-.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.88);color:var(--blue);font-size:22px;cursor:pointer;box-shadow:0 3px 12px rgba(0,0,0,.18)}
-.carousel-arrow.prev{left:12px}.carousel-arrow.next{right:12px}
 .carousel-dots{display:none}
 .segment-label{display:block;padding:7px 10px;background:#eef3f9;color:var(--blue);font-size:9px;font-weight:900;letter-spacing:.7px;text-transform:uppercase;border-bottom:1px solid #dce4ef}
 .order-path{margin:0 0 15px;padding:10px 12px;background:#eef7ff;border-left:4px solid var(--blue);font-size:10px;color:#36506d}
 .whatsapp-preview{margin-top:14px;padding:13px;background:#eaf8ef;border:1px solid #bde8cd;border-radius:8px;font-size:10px;color:#28553a}
 .whatsapp-preview strong{color:#128c45}
-@media(max-width:520px){.hero-slide,.hero-slide img{height:300px}.logo-box{width:72vw;height:72px}.logo-box img{height:70px;border-radius:14px}.hero-intro{margin-bottom:10px}.hero-carousel{border-radius:12px}.carousel-arrow{width:34px;height:34px;font-size:20px}.carousel-arrow.prev{left:8px}.carousel-arrow.next{right:8px}}
-.section{padding-top:42px}
+@media(max-width:520px){.hero-slide,.hero-slide img{height:300px}.logo-box{width:72vw;height:72px}.logo-box img{height:70px;border-radius:14px}.hero-intro{margin-bottom:10px}.hero-carousel{border-radius:12px}.section{padding-top:42px}
 .section-title{display:flex;align-items:center;gap:15px;margin-bottom:18px}
 .section-title h2{font-size:21px;font-weight:normal;margin:0}
 .section-title:after{content:"";height:1px;background:#ddd;flex:1}
@@ -65,9 +62,9 @@ a{text-decoration:none;color:inherit}
 .gallery-modal{position:fixed;inset:0;z-index:100;background:rgba(7,16,31,.88);display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px)}
 .gallery-modal.open{display:flex}.gallery-modal img{max-width:min(94vw,1200px);max-height:88vh;object-fit:contain;border-radius:16px;box-shadow:0 18px 60px rgba(0,0,0,.45)}
 .gallery-close{position:absolute;top:18px;right:22px;width:42px;height:42px;border:0;border-radius:50%;background:#fff;color:var(--blue);font-size:28px;line-height:1;cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.25)}
-.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .product{border:1px solid #ddd;background:#fff;padding:16px}
-.product .pic{height:115px;background:#f2f2f2;display:flex;align-items:center;justify-content:center;color:#999;font-size:11px;margin-bottom:12px}
+.product .pic{height:115px;background:#f2f2f2;display:flex;align-items:center;justify-content:center;color:#999;font-size:11px;margin-bottom:12px;overflow:hidden;border-radius:8px}.product .pic img{width:100%;height:100%;object-fit:cover;display:block}
 .product h3{font-size:13px;margin:0 0 7px}
 .product p{font-size:11px;color:#777;margin:0}
 .quote{background:#fafafa;border-left:4px solid var(--red);padding:14px;margin-top:12px;font-size:12px;line-height:1.6}
@@ -107,10 +104,6 @@ a{text-decoration:none;color:inherit}
 .stars{color:#e30613;letter-spacing:2px;font-size:13px}
 .review p{font-size:12px;line-height:1.6}
 .review small{color:#777;font-size:10px}
-.newsletter{margin-top:45px;border-top:1px solid #ddd;border-bottom:1px solid #ddd;padding:25px}
-.newsletter-inner{max-width:760px;margin:auto;display:flex}
-.newsletter input{flex:1;border:1px solid #ddd;height:36px;padding:0 10px;font-size:11px}
-.newsletter button{border:0;background:var(--red);color:#fff;width:90px;font-size:10px;font-weight:bold}
 .footer{background:#fafafa}
 .footer-inner{max-width:1180px;margin:auto;padding:28px 0;display:grid;grid-template-columns:1.2fr .7fr 1.4fr;gap:45px}
 .footer h4{font-size:11px;margin:0 0 12px}.footer p,.footer a{font-size:10px;color:#777;line-height:1.8;display:block}
@@ -129,77 +122,26 @@ a{text-decoration:none;color:inherit}
  .gallery,.product-grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}.brands{grid-template-columns:repeat(2,1fr)}.map-wrap iframe{height:280px}
 }
 
-/* V8 — identidad visual roja, encabezado/logo a ancho completo, microinteracciones y banner infinito */
-:root{--red:#c91524;--red2:#8f0d19;--blue:var(--red);--blue2:var(--red2);--ink:#242424;--muted:#6b6b6b;--line:#e1c7ca;--soft:#fff5f5;--gold:#d9aa45;--cream:#fff8f8;--steel:#555;--wa:#25D366}
-body{background:linear-gradient(180deg,#fff 0,#fff7f7 100%)}
-.topbar{background:linear-gradient(90deg,var(--red2),var(--red),#e21d2f)}
-.topbar .inner{max-width:none;padding:0 2.2vw;justify-content:flex-end;gap:14px;flex-wrap:wrap}
-.top-contact{font-weight:700;white-space:nowrap}
-.header-main{max-width:none;width:100%;min-height:128px;padding:10px 2vw;display:flex;align-items:center;justify-content:center}
-.logo-box{width:100%;height:116px;justify-content:center;border-radius:20px;overflow:hidden}
-.logo-box img{width:100%;height:116px;object-fit:contain;object-position:center;border-radius:20px}
-.logo-fallback{width:min(92vw,720px);height:94px}
-.nav{max-width:none;width:100%;padding:0 2vw;gap:3px;background:#fff}
-.nav a{position:relative;padding:14px 13px;color:#4b4b4b;transition:color .22s ease,transform .22s ease,background .22s ease,border-color .22s ease}
-.nav a:hover,.nav a.active{color:var(--red);background:#fff7f7;border-bottom-color:var(--red);transform:translateY(-1px)}
-.nav a:after{content:"";position:absolute;left:12px;right:12px;bottom:5px;height:2px;background:var(--red);transform:scaleX(0);transform-origin:center;transition:transform .22s ease}
-.nav a:hover:after,.nav a.active:after{transform:scaleX(1)}
-.nav-search button{background:var(--red)}
-.sidebar h3{background:linear-gradient(90deg,var(--red2),var(--red))}
-.sidebar a{transition:background .2s ease,color .2s ease,padding-left .2s ease,box-shadow .2s ease}
-.sidebar a:hover{background:#fff0f1;color:var(--red);padding-left:14px}
-.sidebar a.active{background:linear-gradient(90deg,#ffe2e5,#fff7f7);color:var(--red);font-weight:900;box-shadow:inset 5px 0 0 var(--red),0 2px 8px rgba(143,13,25,.12);padding-left:14px}
-.hero{min-height:265px;background:linear-gradient(135deg,var(--red2),var(--red),#e21d2f);border-radius:18px}
-.hero-intro{border-radius:18px;box-shadow:0 10px 28px rgba(143,13,25,.18)}
-.badge{color:var(--red);transition:transform .22s ease,box-shadow .22s ease;background:#fff}
-.badge:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.18)}
-.hero-carousel{box-shadow:0 10px 28px rgba(143,13,25,.16)}
-/* El carrusel queda 100% automático: sin flechas ni controles visibles */
-.carousel-arrow,.carousel-dots{display:none!important}
-.section-title h2{transition:color .22s ease,transform .22s ease}
-.section-title:hover h2{color:var(--red);transform:translateX(3px)}
-.section-title:after{background:linear-gradient(90deg,#e7b2b7,#eee);transition:background .25s ease}
-.section-title:hover:after{background:linear-gradient(90deg,var(--red),#efb1b6)}
-/* Banner infinito de marcas */
-.brands-wrap{width:100%;overflow:hidden;position:relative;padding:4px 0}
-.brands-wrap:before,.brands-wrap:after{content:"";position:absolute;top:0;bottom:0;width:45px;z-index:2;pointer-events:none}
-.brands-wrap:before{left:0;background:linear-gradient(90deg,#fff,#fff0)}
-.brands-wrap:after{right:0;background:linear-gradient(270deg,#fff,#fff0)}
-.brands{display:flex;width:max-content;grid-template-columns:none;gap:12px;animation:brandsInfinite 26s linear infinite}
-.brand{flex:0 0 165px;height:82px;border-color:#ead5d7;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
-.brand:hover{border-color:var(--red);box-shadow:0 5px 16px rgba(201,21,36,.16);transform:translateY(-2px)}
-@keyframes brandsInfinite{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-/* Más contraste rojo en elementos que antes usaban azul */
-.order-path{background:#fff1f2;border-left-color:var(--red);color:#6d3035}
-.summary h3{color:var(--red)}
-.summary{background:linear-gradient(145deg,#fff,#fff5f5);border-color:#e8c9cd}
-.segment-label{background:#fff0f1;color:var(--red);border-bottom-color:#efd0d3}
-.gallery-modal{background:rgba(50,5,10,.9)}
-.gallery-close{color:var(--red)}
-.footer-logo{color:var(--red)}
-.footer{border-top:1px solid #efd0d3}
-@media(max-width:760px){
- .topbar{height:auto;min-height:30px;padding:5px 0}.topbar .inner{justify-content:center;gap:8px;font-size:10px}
- .header-main{min-height:98px;padding:7px 10px}.logo-box,.logo-box img{height:88px;border-radius:15px}
- .nav{padding:0 8px;flex-wrap:wrap;justify-content:center;overflow:visible}.nav a{padding:10px 8px;font-size:10px}.nav-search{order:10;width:100%;min-width:0;margin:4px 0 8px}
- .hero{min-height:250px}.hero h1{font-size:34px}.hero-content{padding:22px 16px}
- .hero-slide,.hero-slide img{height:340px;min-height:340px}.hero-slide img{object-fit:cover}
- .container{grid-template-columns:1fr;margin:22px 12px}.sidebar{order:0}.main{order:1}
- .brands{gap:8px;animation-duration:22s}.brand{flex-basis:135px;height:72px}
-}
-@media(max-width:480px){
- .topbar .inner{font-size:9px}.top-contact{display:block}
- .header-main{min-height:82px}.logo-box,.logo-box img{height:72px;border-radius:12px}
- .nav a{font-size:9px;padding:9px 6px}.hero-slide,.hero-slide img{height:300px;min-height:300px}.hero h1{font-size:28px}.hero small{font-size:9px;letter-spacing:2px}
- .gallery{grid-template-columns:1fr 1fr}.gallery-card{height:130px}.product-grid{grid-template-columns:1fr}.reviews{grid-template-columns:1fr!important}
- .brand{flex-basis:118px;height:64px}.brands-wrap:before,.brands-wrap:after{width:24px}
-}
-
+/* V8 - rojo integral, interacción sutil y banner infinito de marcas */
+.nav a{transition:color .22s ease,background .22s ease,transform .22s ease,border-color .22s ease;border-radius:6px 6px 0 0}
+.nav a:hover{background:rgba(201,21,36,.07);transform:translateY(-1px)}
+.nav a.active{color:var(--red);background:rgba(201,21,36,.06)}
+.sidebar a{transition:background .2s ease,color .2s ease,box-shadow .2s ease,padding-left .2s ease}
+.sidebar a:hover,.sidebar a.active{background:linear-gradient(90deg,#fff0f2,#ffe3e6);color:var(--red);padding-left:14px;box-shadow:inset 4px 0 0 var(--red),0 2px 8px rgba(143,13,25,.10);font-weight:800}
+.segment-label{background:#fff0f2;color:var(--red);border-bottom-color:#f0d0d4}
+.badge{color:var(--red);transition:transform .22s ease,box-shadow .22s ease}.badge:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.section-title h2{transition:color .22s ease}.section-title:hover h2{color:var(--red)}
+.btn{background:var(--red);transition:transform .2s ease,box-shadow .2s ease}.btn:hover{background:var(--red2);transform:translateY(-1px);box-shadow:0 5px 14px rgba(143,13,25,.18)}
+.info h3,.summary h3{color:var(--red)}.footer-logo{color:var(--red)}
+.brands-marquee{overflow:hidden;width:100%;padding:4px 0 10px}.brands{display:flex!important;align-items:center;gap:16px;width:max-content!important;animation:brandsScroll 24s linear infinite}.brands .brand{flex:0 0 150px!important}.brand{border-color:#ead3d5}.brand:hover{border-color:var(--red);box-shadow:0 3px 10px rgba(143,13,25,.16)}
+@keyframes brandsScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:900px){.logo-box{width:min(50vw,470px);height:88px}.logo-box img{height:86px}.brands .brand{flex-basis:135px!important}}
+@media(max-width:520px){.logo-box{width:92vw;height:82px}.logo-box img{height:80px;border-radius:14px}.brands .brand{flex-basis:125px!important}.brands{gap:10px;animation-duration:20s}}
 </style>
 </head>
 <body>
 
-<div class="topbar"><div class="inner"><span>Trelew, Chubut</span><span>|</span><a href="#contacto">Contacto</a><span class="top-contact">📞 0280 458-9193</span><span class="top-contact">📍 Av. Cd. de la Plata 2701</span></div></div>
+<div class="topbar"><div class="inner"><span>Trelew, Chubut</span><span>|</span><a href="#contacto">Contacto</a></div></div>
 
 <header class="header">
   <div class="header-main">
@@ -208,6 +150,10 @@ body{background:linear-gradient(180deg,#fff 0,#fff7f7 100%)}
       <img src="LOGO AUTOPARTES BRASS.jpg" alt="Autopartes Brass"
            onerror="this.style.display='none';document.querySelector('.logo-fallback').style.display='flex'">
       <div class="logo-fallback"><span>BRASS</span></div>
+    </div>
+    <div class="contact-mini">
+      <span>📞 0280 458-9193</span>
+      <span>📍 Av. Cd. de la Plata 2701</span>
     </div>
   </div>
   <nav class="nav" aria-label="Navegación principal">
@@ -224,7 +170,7 @@ body{background:linear-gradient(180deg,#fff 0,#fff7f7 100%)}
 </header>
 
 <main id="inicio" class="container">
-<aside class="sidebar">
+<aside id="repuestos" class="sidebar">
   <h3>REPUESTOS</h3>
   <span class="segment-label">Motor y encendido</span>
   <a href="#pedido" data-category="Motor y encendido" data-product="ALTERNADOR">ALTERNADOR</a><a href="#pedido" data-category="Motor y encendido" data-product="BOBINA DE ENCENDIDO">BOBINA DE ENCENDIDO</a><a href="#pedido" data-category="Motor y encendido" data-product="MOTOR DE ARRANQUE">MOTOR DE ARRANQUE</a><a href="#pedido" data-category="Motor y encendido" data-product="VOLANTE DE MOTOR">VOLANTE DE MOTOR</a>
@@ -354,9 +300,10 @@ body{background:linear-gradient(180deg,#fff 0,#fff7f7 100%)}
 <section id="ofertas" class="section">
  <div class="section-title"><h2>Ofertas</h2></div>
  <div class="product-grid">
-  <article class="product"><div class="pic">PRODUCTO EN OFERTA</div><h3>Repuestos seleccionados</h3><p>Consultá disponibilidad y precio.</p></article>
-  <article class="product"><div class="pic">PRODUCTO EN OFERTA</div><h3>Autopartes destacadas</h3><p>Solicitá información por WhatsApp.</p></article>
-  <article class="product"><div class="pic">PRODUCTO EN OFERTA</div><h3>Promociones</h3><p>Stock sujeto a disponibilidad.</p></article>
+  <article class="product"><div class="pic"><img src="OFERTA1.jpg" alt="Oferta 1"></div><h3>Repuestos seleccionados</h3><p>Consultá disponibilidad y precio.</p></article>
+  <article class="product"><div class="pic"><img src="OFERTA2.jpg" alt="Oferta 2"></div><h3>Autopartes destacadas</h3><p>Solicitá información por WhatsApp.</p></article>
+  <article class="product"><div class="pic"><img src="OFERTA3.jpg" alt="Oferta 3"></div><h3>Promociones</h3><p>Stock sujeto a disponibilidad.</p></article>
+  <article class="product"><div class="pic"><img src="OFERTA4.jpg" alt="Oferta 4"></div><h3>Ofertas especiales</h3><p>Consultá disponibilidad y precio.</p></article>
  </div>
 </section>
 
@@ -367,7 +314,14 @@ body{background:linear-gradient(180deg,#fff 0,#fff7f7 100%)}
 
 <section id="marcas" class="section">
  <div class="section-title"><h2>Marcas</h2></div>
- <div class="brands-wrap"><div class="brands">
+ <div class="brands-marquee"><div class="brands">
+  <div class="brand"><img src="data:image/png;base64,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" alt="Ford"></div>
+  <div class="brand"><img src="data:image/png;base64,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" alt="Chevrolet"></div>
+  <div class="brand"><img src="data:image/png;base64,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" alt="Peugeot"></div>
+  <div class="brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAAAvCAIAAADy7HqUAAAEa0lEQVR4nO2YTU8qVxjH58wwohngWi9BXm4gvBlIiIkmTdnUEONNE2PT3NTrwjTehQs/gS9bdKGJW6Mbt7po00S/gokbkUSNhYgBgfAiCCIwKDhzznQxhhqK9qYz90I7/FZM5sDz//Oc85zzHMBxHIZhsVjMZDJhEgNvtYBW0jEvVTrmpUrHvFQR0zyHYVzzhzZF0pmXifhb4MWHNkVM8/xJuQEA2vdvEM0877xYLN7d3WEYBiEkSdJgMBAEIVYI0RFzzdM0HQ6HtVqtTqfDcTyTyeTz+abToU0QzTxCKJlM2u12uVx+f39/e3trsVhCoRDDMGKFEB1B5rlnFAoFDMMoioIQBgIBq9WqUqn0en00GoUQNgwWkZaZrxczhqmlUgmz2UwQRDqd3t/fj0ajGIZRClX6OlutVjmOa1r5ePV/fwWe0RDr+WCB1VRo5vnw+Xy+p6eHIAiGYfx+/+zsbCQSqVarCCGKoi4uLvjkN3UCAHglgQiheqyGD9gL+8vnI7TacxzHMEw8ntDpdLVaLZ/P397mjMZ3EDKJRILs6oYQXmezNtuAUknRNL20tJRKpQAAk5OT6XT66OhIq9XOzMysrq7Ozc0plcpQKDQ+Pr60tAQhXF5eXl9fn56e7uvr297ettvtKpXK7Xavra35fD6Xy7W4uOh0Ov+1eKHTHgBwc3OTSCRCodD5+bnf73///ge5XG40GsvlcjKZjMfj19fX9eRDCEdGRoaHh8PhcLFYlMlkvb29crk8lUp5vV6/318qla6urgAALMteXl5WKpXHx0cIYS6Xo2mapmmDwbCysqLT6bxer8PhEKJfhMxTFHV4eHhwcAAhZ7NZTCaTXq+vMazPf/zbr7+Xy2WrxTI6OorjOEKIZVkMw4LB4NTU1NnZmcVicblcAACNRrOwsDA/Pz82NraxsZHL5QAAu7u7FEXt7e11d3er1WqE0MnJCUVRTqcTQogQErjmgZALTP67HMf5fL6tra1yuSKTyT58+GliYuKPYGBzc7NUpEmS/HFi4uPHn+VyOcuy4XDYYDCwLJtIJLq6uvgkDw0NJZNJh8NRKpUqlUqhUHA6nQCAQCBgs9mOj49ZlnW73cViMRgMIoQGBwczmczAwIBCoWixeQzDKpXKzs5OOHyFEOrv7/d4PKHLy9PTU4Swt2+/+TTzi1arbVrb6iXz9bL3pLXZGCHJFzTteTUAAIVC4fF4CIJECOE4/vDwUKvVrFYrAMBkMqnVahzH+F6nQSv/+NKG1zSiEMENCF3zdTVmszkeTwAAcBwnSdL4zoQ4lqZp93ffkiTBcdwrslvV/Ih2vCVJ0uVyEQRhMBjevHmj1+uVSqXZbKIoSqwQoiNmS6vRaLLZbCQS4TgOIUSS5NDQ9+3c1QkqeHU+f9G2FeJk/j9nm+dr3OG1bUv/Ncy37byQ9O1tx7xU6ZiXKh3zUqVjXqo8mW/bQ9gX5cl82x6/vyi4NG3z4NKc8Dx/9fOxWKyFOlrCP18Y/4+R9Fb3JwdVeeSfUIQzAAAAAElFTkSuQmCC" alt="Renault"></div>
+  <div class="brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFcAAAAvCAIAAAAZ28GXAAAFe0lEQVR4nO2abUxTVxjH/+f2FhGkQAvayjtEQEUFKchwipuJDsKYM4tZYjTZNFuyfdi3LdmLcVn2wW3GxGWaqHO66VCYjqlR4ojgVJioy7pMQAzoRRALLW15a2l7z9mHohQEpwn3QGL/35ree/M8v+d/7nOek0sYYwAASJKUkJCA50+SJAlTHcO0UIACEKDgU4ACEKDgU4ACEKDgE3cKDGB+vxib+FJ+mmIvEEKmNgCfuFMgAAGGXUAB+tAcFKBPvnW0jSZTojKPnVCMMQZCAYDIMrHbB80WKwC9Xq/RqAUGMIgCyMN8+ZiFOwUQCjgGUFffWFtX3yq12W29g64hQSWmps4rLlq98oXUWUEQCMhjdVeOBz8KjDEQ4qFoaG4/Vna2z+nJNuauLV6viQjzeHH3bkfV7+c+/OhTY1b6to8/SIrVqQjAKB8vEA4zJQMFBAJ4KK7/e7/sxOklGemFhQWEYveeQ+1dbrVa/UbJytyclIZG8/bt271uz3e7v56XFKkWKGOEkGFbKMSD00zJwBgYZWjrcPxacdaYk7docea+fYeGXO6MhWmaWcGiQFOS4+uu/H259s9Ptn0hE/Vnn3/ZYxv0IeAQIQ8KhIGC9A/hQs2VKF3YogXz9h/8abYh2d7vys7OVhF3VuZCIqi///Fk+W9Vl6+atmzd2tzcdOnSFa9MfE4lExhhsroGFwqEEKDb6rrZdPvF/GVRupCYmBioghqbpZDQoKzFaatW5LV3Omx9XlEdGhcXFxdriI81HC0ts/c6FXwl+onLimCMUty7b6ZMpdVqnQPO/GVGh8PRbrZZe7Hu1RWaMBw6csLpESM1M5Pjoh3d941Ls+7ckbotttEPGlv6iTzyrOK0a3J7cKu5lRKx02w5c+bMXEN0e5vU0WE5W1nVdKv9Rv0/d6R2QRDXrF5JvK5fyo+Hh0d6ZTbQ7+QTHh8KAmPod7lcXuah6sZbrTNEsiQjzWLt6jJbHPbe3oFBWZYFAblLF/11vbZ/wOmVAQpKR+8mR5X+//eazxDfZD3oyRJFJCTEOxwOdVBwt8VuMt3MyTZ6nY7CNS8ty19QUJA3d44mMyOJyt6KilNarbbHYmWMhoYE8wmPDwUqikhJiLVbzP19jvjEpFOVF2aGhBa+nJeaqK2ouGi3D7yzqWhD8fLW1larbWB+WrrJdM2gj9RFRfjuH68XCJMYPL9pKmZ2eGJsdPnxYyUl68wPuhubmoqLCtwu54Effi47cVofHaEmQ6VHD8+fnyao0NJye/3rJZHhob4VoHSj4ERBAIsMw+aN600mU01NzfvvbT13+mRb24PKqj86e2hFZV2n2d7Q0GCYE7FqRW55eZlOpysqWhMUNBKeoiB4zRFUVgmq7Mz0d7ds3rnrW6fjtU2bNvbYHNUXLjJQt9N17dqNWH14Xo7xyOGDPdauA/v2zo3REzBf+owxRTeRXOYIJgNgjIAILjeOlJ7c8dWuiMjoolfWZixeopoRMjQ0ZOm8W3+1trq62jBHt/ObHfnLjSpAICPJMyXnCB4UHrY0AQAF88rkZtO9vXv2nz9/3ma3iqIgy7LX601MjH9zw4a339qsn60RyJj7GYFSZuBGYUSMMUYARmQGu72vpaXFYraIomiINSSnJIUGB8E3fnKUJEm8T1kIYQQAIQJBlDYsSpvpS5kBDGz4Zaic+ycQbwr+XelR/hjeFpJRf4xDY2RlKRXTdBPPI3r+XvAXBUAmqATPNTF9vcBTPL1AH4P+NDXwfxcoVbOAFwC+Xnh64jzq76+AF4Cp7hETiXdtAl4AAhR8GofCNPmyQmn5pzkOhWnyZYXS8k8zsCKAMT1CkiRCyHOyIgA8Snb8nJU+55tyjUnwOar8E/QfjG1Z0zTBBD0AAAAASUVORK5CYII=" alt="Volkswagen"></div>
+  <div class="brand"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Toyota.svg" alt="Toyota"></div>
+ 
   <div class="brand"><img src="data:image/png;base64,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" alt="Ford"></div>
   <div class="brand"><img src="data:image/png;base64,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" alt="Chevrolet"></div>
   <div class="brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAAAvCAIAAAD/8grTAAAGEklEQVR4nO2ZbUxbVRjHn3NvYTSMlVJKYSyrJWQ6XWPihwGZQ+3Yi4kKmCwh8kXFuGTxJdFkX0z8ojP7YoybL1mcLksGTt2SaZDFpZJlImNGYNCwUaC0pbTdhb6/Xcptz+OHC12BAssosFl+uR9Ob59zz/mf53nOc25LLBaLWq2GDINZ7wmsDxuyM4kN2ZnEhuxM4tGVTQHo0hYIgKnasPayEXF5o9VHssbjEUIAABHFxgpY3mFkkTakXfZCZ6ZDYfpJs2xCCCKKUoPBoMViiUajSqVSrVYTBCAEZ1NswXKIibpGSbcqwwiCcPPmTb1ez7JseXl5OBxuaWkJhUJTPG+xWOLxeCLUV2P0+2FVctvv95tMJpVKxXGTdrtTp9MVFRV//e03xcXF8Xh8586dFRUVC5L8/h1AAQCQAViQsvfNSr0tekwM7FAoZDAYBgcHZTKZRqPJzc3VarXRaFSv10cikQMHDhiNxt27d8diMUEQkp+wAECEpPYyFkuzKrIT+UkpbW5utlqtgUCgo6MDEe12u81mU6vVvb29kUhk69atbre7qKjIZrP5/f7EhMgsyYtJCCABJJBUbunsMhEAZvbbhVDEuFjVl9hKH1z2vIVkWbahoSEvL89kMpWWlsZisfz8fIVCMTk5WVNTo1KpZDJZVlZWV1fX4cOHc3Nz760XzlwIJHFRBFE3zsQxIYQFQhAIEGauJaFIgJCZb4EFIkFgEVhEWCwNHlx2Yt6ICEDjccFkMo2Pj3d2dp09e06t1oTDfFdXV0lJyY4d5Z2dHadPnz5y5EhbW5sgCFKpdKYvEJcnMmbzBIKUIkRjMO70Wm3chMs3TcEbnAKA6DSN8ML0NPBRuGM0m632qACRKDg4v9XGub0hJDA1DYND1nGHCxGCYWHM7r07GR4fn5yKxtIsex5ut3t0dLSgoKCurk6r1fb19VVWViqVyvb29pGREURsamratWtXdXV1f38/wzBiYAsCffmluhGT5cKFX05+9cMdo+WT4yeGhk3jdm7CFXz9zbdjFK7+8Wfb71eNw9b33v9wYtJ7+84wN+G9dr3z8y9ODg2bubtu0yj3zrsfOBx3r127/tHHx+2Oib/+7nqj6a1/uv/leX5VZTObN28pKSmRy+VbtmzWaNSE4LlzZzUajVar1evbCWFbW1sdDofb7TaZTEkdCQLDcZM8H66u3otIKAVBoBLJJopMLA4IQNhNQhx7+27teOKpqj3PlJRsM5sthGRRygjTlJFIbg8MlpZu2/tsRW1tbW9PX2FBYc0LuqJCxYsH98vz88Rh5pzJMX0FTCqVVlVViZEvHloUCoXb7ZbL5WVlZTdu3Nizp+rMmTNSqVSn08Fs6WIY0vhaQ/2rB7OzAAACQeFp7ZPBYMDhsJc//lh97Svff3c+JydHt+/5IlXhxYu/tpy/FA4Ha3T7ZXK5xTQS8Hs5Z/ahg8/FhKmLl36LREInPvtUXrApEsZDB/dJJCwiJSSFa0lafjlN3t5EzT6fz2w2SyTZHo/H5w1Yx8wWy2h9fX00ytfU1BDCznYEikAIiA9Y4hSbbIBzu8z5iEkRjEBI6qNxGoJ8XnlEREppT08Py7Iej2dsbOynn3+Mx+MqlerKlSvhcDgQCCQVVWQZYAiwDLAMMIQyhDIEGAIEUGyI16yBaBNPvjPnCey9LgwDi9Ww9OT2vKfzPM8wjNfr9Xrd/f23Tp36Mjtb4vF4pFKpIMRbW9sopSk7AjCJKS1edZlEsDwwaZCdPD9CCKXU5XIZDAafz9fd3X3s2DGFQnH06NG6urqcnJyJiYmysjKn0ynar9exPM3eNhqNzc3Nvb29eXl5IyMjjY2NSqUSABDRYDBoNJrKysqCgoLLly+v79toGnbyZI8NDAx4vV6XyxUKhTiOk8lk4n2e551O5/bt24eGhjiO02q1Kx93JaRhJ0+8jYh7+EI3ivfn2SfM1sXtafB2olYnf0xps4TBGpO2w+k8Hy5rub6kTXZKwSkV/q+8nZKHQWFKHt2/B1bEhuxMYkN2JrEhO5PYkJ1JbMjOJCQAYLVa13saaw15GF4D154MDfL/AMXNcy0q4Xj1AAAAAElFTkSuQmCC" alt="Peugeot"></div>
@@ -417,6 +371,7 @@ body{background:linear-gradient(180deg,#fff 0,#fff7f7 100%)}
 </section>
 </section>
 </main>
+
 <footer class="footer">
  <div class="footer-inner">
   <div><div class="footer-logo">BRASS</div><p>0280 458-9193</p><p>Av. Cd. de la Plata 2701</p><p>U9100 Trelew, Chubut</p></div>
@@ -508,6 +463,8 @@ function cargarCategoria(nombreCategoria, productoDeseado=''){
     o.value=x;o.textContent=x;prod.appendChild(o);
   });
   if(productoDeseado && (catalogo[cat.value]||[]).includes(productoDeseado)) prod.value=productoDeseado;
+  const normLocal=v=>(v||'').toString().normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+  document.querySelectorAll('.sidebar a[data-category]').forEach(a=>a.classList.toggle('active', normLocal(a.dataset.category)===normLocal(cat.value) && (!productoDeseado || normLocal(a.dataset.product)===normLocal(productoDeseado))));
   sum.cat.textContent=cat.value||'—';
   sum.prod.textContent=prod.value||'—';
   document.getElementById('orderPath').innerHTML=`Ruta inteligente: <strong>Repuestos</strong> → <strong>${cat.value||'categoría'}</strong> → <strong>${prod.value||'producto'}</strong>`;
@@ -651,29 +608,18 @@ searchButton.addEventListener('click',()=>{
   if(q){ buscarRepuesto(q,true); document.getElementById('pedido').scrollIntoView({behavior:'smooth',block:'start'}); }
 });
 
-// Carrusel principal: avance automático, sin flechas ni controles.
+// Carrusel principal: solo imágenes, flechas y avance automático.
 const slides=[...document.querySelectorAll('.hero-slide')];
 let slideIndex=0;
 function showSlide(i){
   slideIndex=(i+slides.length)%slides.length;
-  slides.forEach((sl,n)=>sl.classList.toggle('active',n===slideIndex));
+  slides.forEach((s,n)=>s.classList.toggle('active',n===slideIndex));
 }
 let carouselTimer=setInterval(()=>showSlide(slideIndex+1),5000);
-
-// Resaltar dentro de REPUESTOS la categoría/producto actualmente seleccionado.
-document.querySelectorAll('.sidebar a[data-category]').forEach(link=>{
-  link.addEventListener('click',()=>{
-    document.querySelectorAll('.sidebar a[data-category]').forEach(a=>a.classList.remove('active'));
-    link.classList.add('active');
-  });
-});
-
-// Banner infinito de marcas: duplicamos la pista para crear un ciclo continuo.
-const brandTrack=document.querySelector('.brands');
-if(brandTrack && !brandTrack.dataset.looped){
-  brandTrack.innerHTML += brandTrack.innerHTML;
-  brandTrack.dataset.looped='1';
-}
+document.getElementById('heroCarousel').addEventListener('mouseenter',()=>clearInterval(carouselTimer));
+document.getElementById('heroCarousel').addEventListener('mouseleave',()=>carouselTimer=setInterval(()=>showSlide(slideIndex+1),5000));
+document.getElementById('heroCarousel').addEventListener('touchstart',()=>clearInterval(carouselTimer),{passive:true});
+document.getElementById('heroCarousel').addEventListener('touchend',()=>carouselTimer=setInterval(()=>showSlide(slideIndex+1),5000),{passive:true});
 
 // Galería: ampliar cualquier imagen al hacer clic y cerrar con X, fondo o Escape.
 const galleryModal=document.getElementById('galleryModal');
@@ -698,4 +644,5 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape') closeGallery();});
 </script>
 </body>
 </html>
+
 
