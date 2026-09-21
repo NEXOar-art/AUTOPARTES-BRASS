@@ -6,16 +6,16 @@
 <title>Autopartes Brass | Repuestos en Trelew</title>
 <meta name="description" content="Autopartes Brass - repuestos y autopartes en Trelew, Chubut.">
 <style>
-:root{--red:#c91524;--red2:#8f0d19;--blue:#123c7a;--blue2:#0b2550;--ink:#202735;--muted:#687080;--line:#d7dce5;--soft:#f3f6fb;--gold:#d6a93a;--wa:#25D366}
+:root{--red:#b7192a;--red2:#7f1020;--blue:#173b68;--blue2:#0b2547;--ink:#202735;--muted:#687080;--line:#d7dce5;--soft:#f4f6f9;--gold:#d7b35a;--cream:#f7f3ea;--steel:#4b5563;--wa:#25D366}
 *{box-sizing:border-box;scroll-behavior:smooth}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff 0,#f5f8fc 100%)}
 a{text-decoration:none;color:inherit}
 .topbar{height:24px;background:linear-gradient(90deg,var(--blue2),var(--blue),var(--red));color:#fff;font-size:11px}
 .topbar .inner{max-width:1180px;margin:auto;height:100%;display:flex;justify-content:flex-end;align-items:center;gap:18px}
 .header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid #ddd;box-shadow:0 2px 7px rgba(0,0,0,.06)}
-.header-main{max-width:1180px;margin:auto;min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo-box{width:245px;height:65px;display:flex;align-items:center}
-.logo-box img{max-width:100%;max-height:65px;object-fit:contain;filter:drop-shadow(0 0 5px rgba(214,169,58,.28));animation:logoGlow 2.8s ease-in-out infinite alternate}
+.header-main{max-width:1180px;margin:auto;min-height:98px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:6px 0}
+.logo-box{width:min(50vw,440px);height:84px;display:flex;align-items:center;justify-content:flex-start;overflow:hidden;border-radius:18px}
+.logo-box img{width:100%;height:82px;max-width:100%;max-height:none;object-fit:contain;object-position:left center;border-radius:18px;filter:drop-shadow(0 0 5px rgba(215,179,90,.30));animation:logoGlow 2.8s ease-in-out infinite alternate}
 @keyframes logoGlow{from{filter:drop-shadow(0 0 3px rgba(214,169,58,.18)) drop-shadow(0 0 0 rgba(201,21,36,0))}to{filter:drop-shadow(0 0 8px rgba(214,169,58,.62)) drop-shadow(0 0 15px rgba(201,21,36,.20))}}
 .logo-fallback{display:none;width:210px;height:50px;align-items:center;justify-content:center;font-size:27px;font-weight:900;font-style:italic;color:#fff;background:linear-gradient(#244b9e,#11285e);border:4px solid #fff;outline:2px solid var(--red);transform:skew(-7deg);text-shadow:2px 2px #111}
 .logo-fallback span{transform:skew(7deg)}
@@ -40,29 +40,31 @@ a{text-decoration:none;color:inherit}
 .hero h1{font-size:43px;margin:10px 0;text-shadow:3px 3px rgba(0,0,0,.28)}
 .hero p{font-size:14px}
 .badge{display:inline-block;background:#fff;color:var(--blue);font-size:11px;font-weight:bold;padding:9px 15px;margin-top:8px}
-.hero-carousel{position:relative;overflow:hidden;border-radius:0;box-shadow:0 8px 24px rgba(18,60,122,.12)}
-.hero-slide{display:none;min-height:265px;position:relative;background:#0b2550}
+.hero-intro{margin-bottom:14px;border-radius:18px;overflow:hidden;box-shadow:0 8px 24px rgba(23,59,104,.14)}
+.hero-carousel{position:relative;overflow:hidden;border-radius:18px;box-shadow:0 8px 24px rgba(23,59,104,.16);background:#111}
+.hero-slide{display:none;min-height:360px;position:relative;background:#111}
 .hero-slide.active{display:flex;align-items:center;justify-content:center}
-.hero-slide img{width:100%;height:265px;object-fit:cover;display:block;opacity:.82}
-.hero-slide .slide-caption{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:linear-gradient(90deg,rgba(11,37,80,.78),rgba(11,37,80,.18),rgba(201,21,36,.45));padding:25px}
-.hero-slide .slide-caption h2{font-size:30px;margin:0 0 8px;text-shadow:2px 2px 5px #000}
-.hero-slide .slide-caption p{font-size:13px;margin:0}
+.hero-slide img{width:100%;height:360px;object-fit:cover;display:block;opacity:1;transition:transform .8s ease}
+.hero-slide.active img{transform:scale(1.01)}
+
 .carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.88);color:var(--blue);font-size:22px;cursor:pointer;box-shadow:0 3px 12px rgba(0,0,0,.18)}
 .carousel-arrow.prev{left:12px}.carousel-arrow.next{right:12px}
-.carousel-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:5;display:flex;gap:7px}
-.carousel-dot{width:9px;height:9px;border-radius:50%;border:1px solid #fff;background:rgba(255,255,255,.5);cursor:pointer}.carousel-dot.active{background:#fff}
+.carousel-dots{display:none}
 .segment-label{display:block;padding:7px 10px;background:#eef3f9;color:var(--blue);font-size:9px;font-weight:900;letter-spacing:.7px;text-transform:uppercase;border-bottom:1px solid #dce4ef}
 .order-path{margin:0 0 15px;padding:10px 12px;background:#eef7ff;border-left:4px solid var(--blue);font-size:10px;color:#36506d}
 .whatsapp-preview{margin-top:14px;padding:13px;background:#eaf8ef;border:1px solid #bde8cd;border-radius:8px;font-size:10px;color:#28553a}
 .whatsapp-preview strong{color:#128c45}
-@media(max-width:520px){.hero-slide,.hero-slide img{height:285px}.hero-slide .slide-caption h2{font-size:24px}}
+@media(max-width:520px){.hero-slide,.hero-slide img{height:300px}.logo-box{width:72vw;height:72px}.logo-box img{height:70px;border-radius:14px}.hero-intro{margin-bottom:10px}.hero-carousel{border-radius:12px}.carousel-arrow{width:34px;height:34px;font-size:20px}.carousel-arrow.prev{left:8px}.carousel-arrow.next{right:8px}}
 .section{padding-top:42px}
 .section-title{display:flex;align-items:center;gap:15px;margin-bottom:18px}
 .section-title h2{font-size:21px;font-weight:normal;margin:0}
 .section-title:after{content:"";height:1px;background:#ddd;flex:1}
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.gallery-card{height:145px;position:relative;overflow:hidden;}
-.gallery-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}.gallery-card:hover img{transform:scale(1.04)}background:linear-gradient(135deg,#eee,#cfcfcf);display:flex;align-items:center;justify-content:center;color:#777;font-weight:bold;font-size:14px;border:1px solid #ddd}
+.gallery-card{height:145px;position:relative;overflow:hidden;background:linear-gradient(135deg,#eee,#cfcfcf);display:flex;align-items:center;justify-content:center;color:#777;font-weight:bold;font-size:14px;border:1px solid #ddd;border-radius:12px;cursor:zoom-in}
+.gallery-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}.gallery-card:hover img{transform:scale(1.05)}
+.gallery-modal{position:fixed;inset:0;z-index:100;background:rgba(7,16,31,.88);display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px)}
+.gallery-modal.open{display:flex}.gallery-modal img{max-width:min(94vw,1200px);max-height:88vh;object-fit:contain;border-radius:16px;box-shadow:0 18px 60px rgba(0,0,0,.45)}
+.gallery-close{position:absolute;top:18px;right:22px;width:42px;height:42px;border:0;border-radius:50%;background:#fff;color:var(--blue);font-size:28px;line-height:1;cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.25)}
 .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .product{border:1px solid #ddd;background:#fff;padding:16px}
 .product .pic{height:115px;background:#f2f2f2;display:flex;align-items:center;justify-content:center;color:#999;font-size:11px;margin-bottom:12px}
@@ -114,15 +116,16 @@ a{text-decoration:none;color:inherit}
 .footer h4{font-size:11px;margin:0 0 12px}.footer p,.footer a{font-size:10px;color:#777;line-height:1.8;display:block}
 .footer-logo{font-size:25px;font-weight:900;font-style:italic;color:var(--blue)}
 .copyright{text-align:center;border-top:1px solid #ddd;padding:10px;font-size:9px;color:#999}
+@media(max-width:1100px){.header-main{padding-left:15px;padding-right:15px}.nav{padding:0 15px}.container{padding-left:15px;padding-right:15px}.logo-box{width:min(50vw,390px)}}
 @media(max-width:900px){
- .header-main{padding:8px 15px}.contact-mini{display:none}.nav{padding:0 10px}.nav-search{display:none}
+ .header-main{padding:8px 15px}.contact-mini{display:none}.nav{padding:0 10px;flex-wrap:wrap}.nav-search{display:flex;order:2;width:100%;min-width:0;margin:4px 0 8px;height:36px}.nav-search input{font-size:12px}.nav-search button{width:44px}
  .container{grid-template-columns:1fr;padding:0 15px}.sidebar{display:none}
  .form-wrap,.location{grid-template-columns:1fr}.summary{position:static}
  .brands{grid-template-columns:repeat(3,1fr)}.reviews{grid-template-columns:1fr}.gallery,.product-grid{grid-template-columns:1fr 1fr}.map-wrap iframe{height:300px}
  .footer-inner{padding:25px 15px;grid-template-columns:1fr}
 }
 @media(max-width:520px){
- .logo-box{width:190px}.logo-box img{max-height:52px}.hero h1{font-size:30px}
+ .logo-box{width:78vw;height:68px}.logo-box img{height:66px;border-radius:14px}.hero h1{font-size:30px}
  .gallery,.product-grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}.brands{grid-template-columns:repeat(2,1fr)}.map-wrap iframe{height:280px}
 }
 </style>
@@ -181,24 +184,23 @@ a{text-decoration:none;color:inherit}
 </aside>
 
 <section class="main">
-<section class="hero-carousel" id="heroCarousel" aria-label="Promociones Autopartes Brass">
-  <div class="hero-slide active">
-    <div class="hero" style="width:100%">
-      <div class="hero-content">
-        <small>AUTOPARTES • REPUESTOS • ACCESORIOS</small>
-        <h1>AUTOPARTES BRASS</h1>
-        <p>Repuestos para tu vehículo en Trelew, Chubut</p>
-        <a class="badge" href="#pedido">SOLICITAR UN REPUESTO</a>
-      </div>
+<div class="hero-intro">
+  <div class="hero" style="width:100%">
+    <div class="hero-content">
+      <small>AUTOPARTES • REPUESTOS • ACCESORIOS</small>
+      <h1>AUTOPARTES BRASS</h1>
+      <p>Repuestos para tu vehículo en Trelew, Chubut</p>
+      <a class="badge" href="#pedido">SOLICITAR UN REPUESTO</a>
     </div>
   </div>
-  <div class="hero-slide"><img src="OFERTA CUENTAS.png" alt="Oferta y medios de pago"><div class="slide-caption"><div><h2>OFERTAS Y MEDIOS DE PAGO</h2><p>Consultá nuestras opciones para tu repuesto.</p></div></div></div>
-  <div class="hero-slide"><img src="OFERTA HORARIO DE ATENCION.png" alt="Horario de atención"><div class="slide-caption"><div><h2>HORARIO DE ATENCIÓN</h2><p>Encontrá el momento ideal para visitarnos.</p></div></div></div>
-  <div class="hero-slide"><img src="OFERTA MOTOR .png" alt="Oferta motor"><div class="slide-caption"><div><h2>REPUESTOS DE MOTOR</h2><p>Consultá por compatibilidad, stock y disponibilidad.</p></div></div></div>
-  <div class="hero-slide"><img src="OFERTA CAJA DE VELOCIDADES.png" alt="Oferta caja de velocidades"><div class="slide-caption"><div><h2>CAJAS DE VELOCIDADES</h2><p>Buscamos la pieza adecuada para tu vehículo.</p></div></div></div>
-  <button class="carousel-arrow prev" type="button" aria-label="Anterior">‹</button>
-  <button class="carousel-arrow next" type="button" aria-label="Siguiente">›</button>
-  <div class="carousel-dots" aria-label="Seleccionar imagen"></div>
+</div>
+<section class="hero-carousel" id="heroCarousel" aria-label="Promociones Autopartes Brass">
+  <div class="hero-slide active"><img src="OFERTA CUENTAS.png" alt="Oferta y medios de pago"></div>
+  <div class="hero-slide"><img src="OFERTA HORARIO DE ATENCION.png" alt="Horario de atención"></div>
+  <div class="hero-slide"><img src="OFERTA MOTOR .png" alt="Oferta motor"></div>
+  <div class="hero-slide"><img src="OFERTA CAJA DE VELOCIDADES.png" alt="Oferta caja de velocidades"></div>
+  <button class="carousel-arrow prev" type="button" aria-label="Imagen anterior">‹</button>
+  <button class="carousel-arrow next" type="button" aria-label="Imagen siguiente">›</button>
 </section>
 
 <section id="galeria" class="section">
@@ -212,6 +214,10 @@ a{text-decoration:none;color:inherit}
    <div class="gallery-card"><img src="REPUESTO CAJA.jpg" alt="Repuesto de caja" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
  </div>
 </section>
+<div class="gallery-modal" id="galleryModal" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+  <button class="gallery-close" type="button" aria-label="Cerrar imagen">×</button>
+  <img id="galleryModalImg" src="" alt="Imagen ampliada">
+</div>
 
 <section id="repuestos" class="section">
  <div class="section-title"><h2>Repuestos</h2></div>
@@ -314,7 +320,7 @@ a{text-decoration:none;color:inherit}
  <div class="section-title"><h2>Opiniones</h2></div>
  <div class="reviews">
   <article class="review"><div class="stars">★★★★★</div><p>“En <strong>Autopartes Brass</strong> conseguí el <strong>radiador</strong> que necesitaba para mi vehículo. Me orientaron con la pieza y pude resolver la compra en el local.”</p><small>— Martín, vecino de Trelew · Cliente local</small></article>
-  <article class="review"><div class="stars">★★★★★</div><p>“Pasé por <strong>Autopartes Brass</strong> buscando una <strong>bomba de agua</strong> y encontré el repuesto que necesitaba. Buena atención y explicación sobre la pieza.”</p><small>— Laura, vecina de Trelew · Cliente local</small></article>
+  <article class="review"><div class="stars">★★★★☆</div><p>“Pasé por <strong>Autopartes Brass</strong> buscando una <strong>bomba de agua</strong> y encontré el repuesto que necesitaba. Buena atención y explicación sobre la pieza.”</p><small>— Laura, vecina de Trelew · Cliente local</small></article>
   <article class="review"><div class="stars">★★★★★</div><p>“Estaba de viaje por la zona y en <strong>Autopartes Brass</strong> pude consultar por un <strong>alternador</strong> para continuar el viaje. La atención fue clara y rápida.”</p><small>— Diego · Turista / viajero</small></article>
  </div>
  <p style="font-size:9px;color:#999;margin-top:10px">Nota: estas tres opiniones son ejemplos de contenido para el diseño. Reemplazalas por reseñas reales de clientes antes de publicarlas.</p>
@@ -530,24 +536,99 @@ ${fields.comentario.value || 'Sin comentario'}
   window.open('https://wa.me/542804589193?text='+encodeURIComponent(msg),'_blank');
 });
 
-document.getElementById('globalSearch').addEventListener('input',e=>{
-  const q=e.target.value.toLowerCase().trim();
-  document.querySelectorAll('.sidebar a').forEach(a=>{
-    a.style.display=!q || a.textContent.toLowerCase().includes(q)?'block':'none';
-  });
+// Buscador inteligente: combina palabras clave, categoría/tipo de repuesto y producto.
+const normalizar=t=>(t||'').toString().normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+const segmentKeywords={
+  "motor y encendido":["motor","encendido","arranque","alternador","bobina","volante"],
+  "combustible e inyección":["combustible","inyeccion","nafta","bomba nafta","bomba inyectora","carburador","modulo"],
+  "transmisión":["transmision","caja","transferencia","velocidades"],
+  "carrocería":["carroceria","capot","grilla","guardabarros","puerta","baul"],
+  "climatización":["climatizacion","clima","aire","aire acondicionado","a/c","ac","compresor","condensador"],
+  "refrigeración":["refrigeracion","radiador","bomba de agua","electroventilador","radiador de aceite"],
+  "electricidad":["electricidad","instrumental","tablero","alternador"],
+  "interior":["interior","tapizado","tapizados","tablero"],
+  "admisión y turbo":["admision","turbo","intercooler","turbo compresor"]
+};
+const searchInput=document.getElementById('globalSearch');
+const searchButton=document.querySelector('.nav-search button');
+
+function buscarRepuesto(raw,autoCargar=true){
+  const q=normalizar(raw);
+  const links=[...document.querySelectorAll('.sidebar a[data-category]')];
+  links.forEach(a=>a.style.display='block');
+  if(!q) return [];
+  const words=q.split(/\s+/).filter(Boolean);
+  const scored=links.map(a=>{
+    const catN=normalizar(a.dataset.category), prodN=normalizar(a.dataset.product);
+    const keys=(segmentKeywords[catN]||[]).map(normalizar);
+    const productWords=prodN.split(/\s+/);
+    let score=0;
+    if(prodN===q) score+=100;
+    else if(prodN.startsWith(q)) score+=75;
+    else if(prodN.includes(q)) score+=55;
+    if(catN===q) score+=50;
+    if(keys.includes(q)) score+=45;
+    if(words.every(w=>prodN.includes(w))) score+=35;
+    if(words.every(w=>catN.includes(w))) score+=25;
+    if(words.some(w=>prodN.includes(w))) score+=12;
+    if(words.some(w=>catN.includes(w))) score+=8;
+    if(keys.some(k=>words.some(w=>k.includes(w)||w.includes(k)))) score+=10;
+    return {a,score};
+  }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score);
+  links.forEach(a=>a.style.display='none');
+  scored.forEach(x=>x.a.style.display='block');
+  if(autoCargar && scored[0]) cargarCategoria(scored[0].a.dataset.category,scored[0].a.dataset.product);
+  return scored;
+}
+searchInput.addEventListener('input',e=>buscarRepuesto(e.target.value,false));
+searchInput.addEventListener('keydown',e=>{
+  if(e.key==='Enter'){
+    const q=e.target.value.trim();
+    if(q){ buscarRepuesto(q,true); setTimeout(()=>document.getElementById('pedido').scrollIntoView({behavior:'smooth',block:'start'}),80); }
+  }
 });
-// Carrusel principal: conserva el primer hero con su botón de acción.
+searchButton.addEventListener('click',()=>{
+  const q=searchInput.value.trim();
+  if(q){ buscarRepuesto(q,true); document.getElementById('pedido').scrollIntoView({behavior:'smooth',block:'start'}); }
+});
+
+// Carrusel principal: solo imágenes, flechas y avance automático.
 const slides=[...document.querySelectorAll('.hero-slide')];
-const dotsWrap=document.querySelector('.carousel-dots');
 let slideIndex=0;
-slides.forEach((_,i)=>{const d=document.createElement('button');d.className='carousel-dot'+(i===0?' active':'');d.type='button';d.setAttribute('aria-label','Ir a imagen '+(i+1));d.addEventListener('click',()=>showSlide(i));dotsWrap.appendChild(d);});
-const dots=[...document.querySelectorAll('.carousel-dot')];
-function showSlide(i){slideIndex=(i+slides.length)%slides.length;slides.forEach((s,n)=>s.classList.toggle('active',n===slideIndex));dots.forEach((d,n)=>d.classList.toggle('active',n===slideIndex));}
+function showSlide(i){
+  slideIndex=(i+slides.length)%slides.length;
+  slides.forEach((s,n)=>s.classList.toggle('active',n===slideIndex));
+}
 document.querySelector('.carousel-arrow.prev').addEventListener('click',()=>showSlide(slideIndex-1));
 document.querySelector('.carousel-arrow.next').addEventListener('click',()=>showSlide(slideIndex+1));
-setInterval(()=>showSlide(slideIndex+1),5500);
+let carouselTimer=setInterval(()=>showSlide(slideIndex+1),5000);
+document.getElementById('heroCarousel').addEventListener('mouseenter',()=>clearInterval(carouselTimer));
+document.getElementById('heroCarousel').addEventListener('mouseleave',()=>carouselTimer=setInterval(()=>showSlide(slideIndex+1),5000));
+document.getElementById('heroCarousel').addEventListener('touchstart',()=>clearInterval(carouselTimer),{passive:true});
+document.getElementById('heroCarousel').addEventListener('touchend',()=>carouselTimer=setInterval(()=>showSlide(slideIndex+1),5000),{passive:true});
+
+// Galería: ampliar cualquier imagen al hacer clic y cerrar con X, fondo o Escape.
+const galleryModal=document.getElementById('galleryModal');
+const galleryModalImg=document.getElementById('galleryModalImg');
+document.querySelectorAll('.gallery-card img').forEach(img=>{
+  img.addEventListener('click',()=>{
+    galleryModalImg.src=img.src;
+    galleryModalImg.alt=img.alt||'Imagen ampliada';
+    galleryModal.classList.add('open');
+    document.body.style.overflow='hidden';
+  });
+});
+function closeGallery(){
+  galleryModal.classList.remove('open');
+  galleryModalImg.src='';
+  document.body.style.overflow='';
+}
+document.querySelector('.gallery-close').addEventListener('click',closeGallery);
+galleryModal.addEventListener('click',e=>{if(e.target===galleryModal) closeGallery();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape') closeGallery();});
 
 </script>
 </body>
 </html>
+
 
