@@ -243,6 +243,119 @@ img,video,iframe{max-width:100%}
  .whatsapp-label{display:none}
  .whatsapp-icon{width:31px;height:31px}
 }
+
+/* V12: esquinas y efectos sutiles en tarjetas/contendedores */
+.gallery-card,
+.product,
+.product .pic,
+.review,
+.form-card,
+.summary,
+.quote,
+.brand,
+.location,
+.map-wrap,
+.info,
+.bank-details,
+.whatsapp-preview,
+.section-title,
+.footer-inner > div,
+.sidebar,
+.hero-carousel,
+.hero-intro,
+.gallery-modal img{
+  border-radius:14px;
+}
+
+.gallery-card,
+.product,
+.review,
+.form-card,
+.summary,
+.quote,
+.brand,
+.location,
+.map-wrap,
+.info,
+.sidebar,
+.hero-carousel,
+.hero-intro{
+  border:1px solid rgba(183,25,42,.12);
+  box-shadow:0 3px 12px rgba(20,30,45,.06);
+  transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease;
+}
+
+.gallery-card:hover,
+.product:hover,
+.review:hover,
+.form-card:hover,
+.summary:hover,
+.quote:hover,
+.brand:hover,
+.location:hover,
+.map-wrap:hover,
+.info:hover,
+.sidebar:hover,
+.hero-carousel:hover,
+.hero-intro:hover{
+  border-color:rgba(183,25,42,.28);
+  box-shadow:0 7px 20px rgba(20,30,45,.10);
+}
+
+.product{overflow:hidden;border-radius:14px}
+.product .pic{overflow:hidden;border:0;border-radius:12px}
+.product .pic img{width:100%;height:100%;object-fit:cover;display:block;border-radius:12px;transition:transform .35s ease,filter .35s ease}
+.product:hover .pic img{transform:scale(1.025);filter:saturate(1.03)}
+.review{border-radius:14px;overflow:hidden}
+
+/* Hover del botón flotante de WhatsApp */
+.whatsapp-float{position:relative}
+.whatsapp-float::after{
+  content:"Consulta con nuestro accessor";
+  position:absolute;
+  right:0;
+  bottom:calc(100% + 10px);
+  background:#202735;
+  color:#fff;
+  padding:8px 11px;
+  border-radius:9px;
+  font-size:11px;
+  font-weight:800;
+  white-space:nowrap;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(5px);
+  transition:opacity .2s ease,transform .2s ease,visibility .2s ease;
+  box-shadow:0 7px 18px rgba(0,0,0,.18);
+  pointer-events:none;
+}
+.whatsapp-float::before{
+  content:"";
+  position:absolute;
+  right:20px;
+  bottom:calc(100% + 4px);
+  border:6px solid transparent;
+  border-top-color:#202735;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(5px);
+  transition:opacity .2s ease,transform .2s ease,visibility .2s ease;
+  pointer-events:none;
+}
+.whatsapp-float:hover::after,
+.whatsapp-float:hover::before,
+.whatsapp-float:focus-visible::after,
+.whatsapp-float:focus-visible::before{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+@media(max-width:480px){
+  .whatsapp-float::after{right:-4px;font-size:10px;padding:7px 9px}
+  .whatsapp-float::before{right:16px}
+}
+
 </style>
 </head>
 <body>
@@ -482,7 +595,7 @@ img,video,iframe{max-width:100%}
 </section>
 </main>
 
-<a class="whatsapp-float" href="https://wa.me/542804589193?text=Hola%20Autopartes%20Brass%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
+<a class="whatsapp-float" href="https://wa.me/542804589193?text=Hola%20Autopartes%20Brass%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Consultar por WhatsApp" title="Consulta con nuestro accessor">
   <span class="whatsapp-icon">⌕</span>
   <span class="whatsapp-label">WhatsApp</span>
 </a>
@@ -782,3 +895,4 @@ document.querySelectorAll('.sidebar a[data-category]').forEach(link=>{link.addEv
 </script>
 </body>
 </html>
+
