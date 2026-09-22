@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Autopartes Brass | Repuestos en Trelew</title>
 <meta name="description" content="Autopartes Brass - repuestos y autopartes en Trelew, Chubut.">
+<meta name="google-site-verification" content="6mIhBBtzvDt-qs0NoBVwcRg939KLQWJLbmYEM06Ic3g" />
 <style>
 :root{--red:#b7192a;--red2:#7f1020;--blue:#173b68;--blue2:#0b2547;--ink:#202735;--muted:#687080;--line:#d7dce5;--soft:#f4f6f9;--gold:#d7b35a;--cream:#f7f3ea;--steel:#4b5563;--wa:#25D366}
 *{box-sizing:border-box;scroll-behavior:smooth}
@@ -227,134 +228,15 @@ img,video,iframe{max-width:100%}
 .footer{border-top:1px solid #e4e6ea;background:linear-gradient(180deg,#fafafa,#f1f2f4)}
 .footer-inner{padding-top:34px;padding-bottom:34px}
 
-/* WhatsApp flotante */
-.whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:95;display:flex;align-items:center;gap:9px;background:#25D366;color:#fff;text-decoration:none;padding:11px 15px 11px 12px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.22);font-size:12px;font-weight:900;letter-spacing:.2px;transition:transform .2s ease,box-shadow .2s ease}
-.whatsapp-float:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 30px rgba(0,0,0,.27)}
-.whatsapp-icon{width:27px;height:27px;border:2px solid #fff;border-radius:50%;display:grid;place-items:center;font-size:18px;line-height:1;font-weight:900;transform:rotate(-20deg)}
-@media(max-width:700px){
- .logo-box{width:min(94vw,560px);height:auto !important;flex:0 0 auto}
- .logo-box img{height:auto !important;width:100%}
- .whatsapp-float{right:14px;bottom:14px;padding:10px 12px 10px 10px}
- .whatsapp-label{font-size:11px}
- #ubicacion .location{gap:14px}
-}
-@media(max-width:480px){
- .whatsapp-float{right:12px;bottom:12px}
- .whatsapp-label{display:none}
- .whatsapp-icon{width:31px;height:31px}
-}
-
-/* V12: esquinas y efectos sutiles en tarjetas/contendedores */
-.gallery-card,
-.product,
-.product .pic,
-.review,
-.form-card,
-.summary,
-.quote,
-.brand,
-.location,
-.map-wrap,
-.info,
-.bank-details,
-.whatsapp-preview,
-.section-title,
-.footer-inner > div,
-.sidebar,
-.hero-carousel,
-.hero-intro,
-.gallery-modal img{
-  border-radius:14px;
-}
-
-.gallery-card,
-.product,
-.review,
-.form-card,
-.summary,
-.quote,
-.brand,
-.location,
-.map-wrap,
-.info,
-.sidebar,
-.hero-carousel,
-.hero-intro{
-  border:1px solid rgba(183,25,42,.12);
-  box-shadow:0 3px 12px rgba(20,30,45,.06);
-  transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease;
-}
-
-.gallery-card:hover,
-.product:hover,
-.review:hover,
-.form-card:hover,
-.summary:hover,
-.quote:hover,
-.brand:hover,
-.location:hover,
-.map-wrap:hover,
-.info:hover,
-.sidebar:hover,
-.hero-carousel:hover,
-.hero-intro:hover{
-  border-color:rgba(183,25,42,.28);
-  box-shadow:0 7px 20px rgba(20,30,45,.10);
-}
-
-.product{overflow:hidden;border-radius:14px}
-.product .pic{overflow:hidden;border:0;border-radius:12px}
-.product .pic img{width:100%;height:100%;object-fit:cover;display:block;border-radius:12px;transition:transform .35s ease,filter .35s ease}
-.product:hover .pic img{transform:scale(1.025);filter:saturate(1.03)}
-.review{border-radius:14px;overflow:hidden}
-
-/* Hover del botón flotante de WhatsApp */
-.whatsapp-float{position:relative}
-.whatsapp-float::after{
-  content:"Consulta con nuestro accessor";
-  position:absolute;
-  right:0;
-  bottom:calc(100% + 10px);
-  background:#202735;
-  color:#fff;
-  padding:8px 11px;
-  border-radius:9px;
-  font-size:11px;
-  font-weight:800;
-  white-space:nowrap;
-  opacity:0;
-  visibility:hidden;
-  transform:translateY(5px);
-  transition:opacity .2s ease,transform .2s ease,visibility .2s ease;
-  box-shadow:0 7px 18px rgba(0,0,0,.18);
-  pointer-events:none;
-}
-.whatsapp-float::before{
-  content:"";
-  position:absolute;
-  right:20px;
-  bottom:calc(100% + 4px);
-  border:6px solid transparent;
-  border-top-color:#202735;
-  opacity:0;
-  visibility:hidden;
-  transform:translateY(5px);
-  transition:opacity .2s ease,transform .2s ease,visibility .2s ease;
-  pointer-events:none;
-}
-.whatsapp-float:hover::after,
-.whatsapp-float:hover::before,
-.whatsapp-float:focus-visible::after,
-.whatsapp-float:focus-visible::before{
-  opacity:1;
-  visibility:visible;
-  transform:translateY(0);
-}
-
-@media(max-width:480px){
-  .whatsapp-float::after{right:-4px;font-size:10px;padding:7px 9px}
-  .whatsapp-float::before{right:16px}
-}
+/* WhatsApp flotante compacto */
+.whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:95;display:flex;align-items:center;justify-content:center;background:var(--wa);color:#fff;text-decoration:none;width:86px;height:38px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.20);font-size:12px;font-weight:900;letter-spacing:.2px;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.whatsapp-float:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.25);background:#128c45}
+.whatsapp-label{display:block}
+.whatsapp-icon{display:none}
+.whatsapp-float::after{content:"Consulta con nuestro asesor";position:absolute;right:0;bottom:calc(100% + 9px);background:#202735;color:#fff;padding:8px 11px;border-radius:9px;font-size:11px;font-weight:800;white-space:nowrap;opacity:0;visibility:hidden;transform:translateY(5px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease;box-shadow:0 7px 18px rgba(0,0,0,.18);pointer-events:none}
+.whatsapp-float::before{content:"";position:absolute;right:31px;bottom:calc(100% + 3px);border:6px solid transparent;border-top-color:#202735;opacity:0;visibility:hidden;transform:translateY(5px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease;pointer-events:none}
+.whatsapp-float:hover::after,.whatsapp-float:hover::before,.whatsapp-float:focus-visible::after,.whatsapp-float:focus-visible::before{opacity:1;visibility:visible;transform:translateY(0)}
+@media(max-width:480px){.whatsapp-float{right:12px;bottom:12px;width:82px;height:36px;font-size:11px}.whatsapp-float::after{right:-4px;font-size:10px;padding:7px 9px}.whatsapp-float::before{right:27px}}
 
 </style>
 </head>
@@ -398,7 +280,7 @@ img,video,iframe{max-width:100%}
   <span class="segment-label">Transmisión</span>
   <a href="#pedido" data-category="Transmisión" data-product="CAJA DE TRANSFERENCIA">CAJA DE TRANSFERENCIA</a><a href="#pedido" data-category="Transmisión" data-product="CAJA DE VELOCIDADES">CAJA DE VELOCIDADES</a>
   <span class="segment-label">Carrocería</span>
-  <a href="#pedido" data-category="Carrocería" data-product="CAPOT">CAPOT</a><a href="#pedido" data-category="Carrocería" data-product="GRILLA DELANTERA">GRILLA DELANTERA</a><a href="#pedido" data-category="Carrocería" data-product="GUARDABARROS">GUARDABARROS</a><a href="#pedido" data-category="Carrocería" data-product="PUERTAS">PUERTAS</a><a href="#pedido" data-category="Carrocería" data-product="TAPA DE BAÚL">TAPA DE BAÚL</a>
+  <a href="#pedido" data-category="Carrocería" data-product="CAPOT">CAPOT</a><a href="#pedido" data-category="Carrocería" data-product="GRILLA DELANTERA">GRILLA DELANTERA</a><a href="#pedido" data-category="Carrocería" data-product="GUARDABARROS">GUARDABARROS</a><a href="#pedido" data-category="Carrocería" data-product="ÓPTICAS">ÓPTICAS</a><a href="#pedido" data-category="Carrocería" data-product="PUERTAS">PUERTAS</a><a href="#pedido" data-category="Carrocería" data-product="TAPA DE BAÚL">TAPA DE BAÚL</a>
   <span class="segment-label">Climatización / aire acondicionado</span>
   <a href="#pedido" data-category="Climatización" data-product="AIRE ACONDICIONADO">AIRE ACONDICIONADO</a><a href="#pedido" data-category="Climatización" data-product="COMPRESOR DE AIRE ACONDICIONADO">COMPRESOR DE AIRE ACONDICIONADO</a><a href="#pedido" data-category="Climatización" data-product="CONDENSADOR">CONDENSADOR</a>
   <span class="segment-label">Refrigeración</span>
@@ -595,7 +477,7 @@ img,video,iframe{max-width:100%}
 </section>
 </main>
 
-<a class="whatsapp-float" href="https://wa.me/542804589193?text=Hola%20Autopartes%20Brass%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Consultar por WhatsApp" title="Consulta con nuestro accessor">
+<a class="whatsapp-float" href="https://wa.me/542804589193?text=Hola%20Autopartes%20Brass%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Consultar por WhatsApp" title="Consulta con nuestro asesor">
   <span class="whatsapp-icon">⌕</span>
   <span class="whatsapp-label">WhatsApp</span>
 </a>
@@ -614,7 +496,7 @@ const catalogo = {
  "Motor y encendido":["ALTERNADOR","BOBINA DE ENCENDIDO","MOTOR DE ARRANQUE","VOLANTE DE MOTOR"],
  "Combustible e inyección":["BOMBA DE NAFTA","BOMBA INYECTORA","CARBURADOR","MÓDULO DE INYECCIÓN"],
  "Transmisión":["CAJA DE TRANSFERENCIA","CAJA DE VELOCIDADES"],
- "Carrocería":["CAPOT","GRILLA DELANTERA","GUARDABARROS","PUERTAS","TAPA DE BAÚL"],
+ "Carrocería":["CAPOT","GRILLA DELANTERA","GUARDABARROS","ÓPTICAS","PUERTAS","TAPA DE BAÚL"],
  "Climatización":["AIRE ACONDICIONADO","COMPRESOR DE AIRE ACONDICIONADO","CONDENSADOR"],
  "Refrigeración":["BOMBA DE AGUA","RADIADOR","RADIADOR DE ACEITE","ELECTROVENTILADOR"],
  "Electricidad":["ALTERNADOR","INSTRUMENTAL DE TABLERO","TABLERO DE INSTRUMENTO"],
@@ -784,7 +666,7 @@ const segmentKeywords={
   "motor y encendido":["motor","encendido","arranque","alternador","bobina","volante"],
   "combustible e inyección":["combustible","inyeccion","nafta","bomba nafta","bomba inyectora","carburador","modulo"],
   "transmisión":["transmision","caja","transferencia","velocidades"],
-  "carrocería":["carroceria","capot","grilla","guardabarros","puerta","baul"],
+  "carrocería":["carroceria","capot","grilla","guardabarros","optica","opticas","faro","faros","puerta","baul"],
   "climatización":["climatizacion","clima","aire","aire acondicionado","a/c","ac","compresor","condensador"],
   "refrigeración":["refrigeracion","radiador","bomba de agua","electroventilador","radiador de aceite"],
   "electricidad":["electricidad","instrumental","tablero","alternador"],
@@ -895,4 +777,5 @@ document.querySelectorAll('.sidebar a[data-category]').forEach(link=>{link.addEv
 </script>
 </body>
 </html>
+
 
