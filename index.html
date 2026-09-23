@@ -258,6 +258,17 @@ img,video,iframe{max-width:100%}
 .form-accordion-content>.field:first-child{margin-top:12px}
 .form-accordion .shipping-info{margin:12px 0 0}
 @media(max-width:600px){.contact-card-top{grid-template-columns:1fr;min-width:0}.form-accordion>summary{font-size:11px}}
+/* V17 */
+:root{--glass-bg:rgba(255,255,255,.64);--glass-border:rgba(255,255,255,.58);--glass-shadow:0 14px 40px rgba(23,59,104,.13)}
+body{background:linear-gradient(135deg,#f7f3ea 0%,#eef3f9 45%,#fff 100%)}
+.hero-intro,.hero-carousel,.gallery-card,.product,.form-card,.summary,.review,.brand,#ubicacion .info,.quote,.sidebar,.shipping-info,.whatsapp-preview,.form-accordion{background:var(--glass-bg)!important;border:1px solid var(--glass-border)!important;box-shadow:var(--glass-shadow)!important;backdrop-filter:blur(14px) saturate(125%);-webkit-backdrop-filter:blur(14px) saturate(125%)}
+.hero-intro{background:linear-gradient(135deg,rgba(11,37,71,.96),rgba(183,25,42,.92))!important;border-color:rgba(255,255,255,.18)!important}
+.top-contact-card{margin:18px auto 0;max-width:1180px;padding:22px 26px;border-radius:20px;background:linear-gradient(135deg,rgba(11,37,71,.96),rgba(23,59,104,.88) 52%,rgba(183,25,42,.94));color:#fff;border:1px solid rgba(255,255,255,.22);box-shadow:0 14px 40px rgba(23,59,104,.18);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.top-contact-card h2{margin:0 0 16px;text-align:center;font-size:20px;letter-spacing:.6px}.top-contact-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px 18px}.top-contact-links a{display:inline-flex;align-items:center;gap:7px;color:#fff;font-size:12px;font-weight:800;padding:9px 12px;border-radius:12px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);transition:.2s ease}.top-contact-links a:hover{transform:translateY(-2px);background:rgba(255,255,255,.17)}
+.form-card h3{font-size:18px}.form-card,.summary{border-radius:18px!important}.summary .attachment-note{margin:0 0 12px;padding:10px 12px;border-radius:10px;background:rgba(183,25,42,.08);border-left:4px solid var(--red);font-size:11px;font-weight:800}
+.footer{background:linear-gradient(180deg,rgba(11,37,71,.98),rgba(23,59,104,.98));color:#fff;border-top:1px solid rgba(255,255,255,.16)}.footer-inner{max-width:none;width:100%;padding:30px clamp(18px,5vw,70px);display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:42px;justify-items:center;text-align:center}.footer-inner>div{width:100%;max-width:520px}.footer p,.footer a{color:rgba(255,255,255,.84)}.footer h4{color:#fff}.footer-logo{color:#fff!important;font-size:30px}.footer-contact a{display:flex;justify-content:center;align-items:center;gap:8px;margin:7px 0}.copyright{border-top:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.68)}
+.location{width:100%;grid-template-columns:1fr}.location .info{width:100%;min-height:360px}.map-wrap iframe{height:340px}
+@media(max-width:700px){.top-contact-card{margin:12px 15px 0;padding:18px 14px}.top-contact-links{gap:8px}.top-contact-links a{font-size:11px}.footer-inner{grid-template-columns:1fr;gap:24px}.location .info{min-height:0}}
 </style>
 
 <style>
@@ -278,13 +289,16 @@ img,video,iframe{max-width:100%}
            onerror="this.style.display='none';document.querySelector('.logo-fallback').style.display='flex'">
       <div class="logo-fallback"><span>BRASS</span></div>
     </div>
-    <div class="contact-card-top" aria-label="Información de contacto">
-      <a href="tel:+542804589193"><a class="contact-wa" href="https://wa.me/542804589193" target="_blank" rel="noopener">📞 0280 458-9193</a></a>
-      <a href="tel:+542894350829"><a class="contact-wa" href="https://wa.me/542894350829" target="_blank" rel="noopener">📞 0289 435-0829</a></a>
-      <a href="tel:+542804651184"><a class="contact-wa" href="https://wa.me/542804651184" target="_blank" rel="noopener">📞 0280 465-1184</a></a>
-      <a href="https://maps.app.goo.gl/e1EfhuTn9NAQMxXL8" target="_blank" rel="noopener">📍 Av. Cd. de la Plata 2701</a>
-      <a class="instagram-link" href="https://instagram.com/autopartesbrass/" target="_blank" rel="noopener" aria-label="Instagram de Autopartes Brass">◎ Instagram</a>
-      <a href="mailto:Jorgecurytw@gmail.com">✉️ Jorgecurytw@gmail.com</a>
+    <div class="top-contact-card" aria-label="Consulta con nuestros asesores">
+      <h2>CONSULTA CON NUESTROS ASESORES</h2>
+      <div class="top-contact-links">
+        <a href="https://wa.me/542804589193" target="_blank" rel="noopener"><span>🟢</span>0280 458-9193</a>
+        <a href="https://wa.me/542894350829" target="_blank" rel="noopener"><span>🟢</span>0289 435-0829</a>
+        <a href="https://wa.me/542804651184" target="_blank" rel="noopener"><span>🟢</span>0280 465-1184</a>
+        <a href="https://maps.app.goo.gl/e1EfhuTn9NAQMxXL8" target="_blank" rel="noopener"><span>📍</span>Av. La Plata 2701</a>
+        <a href="https://instagram.com/autopartesbrass/" target="_blank" rel="noopener"><span>◎</span>Instagram</a>
+        <a href="mailto:Jorgecurytw@gmail.com"><span>✉️</span>Jorgecurytw@gmail.com</a>
+      </div>
     </div>
   </div>
   <nav class="nav" aria-label="Navegación principal">
@@ -363,7 +377,7 @@ img,video,iframe{max-width:100%}
  <div class="section-title"><h2>Repuestos</h2></div>
  <div class="form-wrap">
   <div class="form-card" id="pedido">
-   <h3>Pedido / Captación de repuesto</h3>
+   <h3>Pedido de Repuestos</h3>
    <div class="sub">Seleccioná una categoría y el producto. La selección se incorpora automáticamente al pedido.</div>
    <div class="order-path" id="orderPath">Ruta inteligente: <strong>Repuestos</strong> → elegí categoría → elegí producto. Los accesos laterales cargan automáticamente la combinación.</div>
    <div class="row">
@@ -383,8 +397,11 @@ img,video,iframe{max-width:100%}
    </div>
    <div class="row">
     <div class="field"><label>Nombre y apellido *</label><input id="nombre" required placeholder="Tu nombre completo"></div>
-    <div class="field"><label>Teléfono / WhatsApp *</label><input id="telefono" required placeholder="Ej. 0280 458-9193"></div>
+    <div class="field"><label>DNI *</label><input id="dni" required inputmode="numeric" placeholder="Tu DNI"></div>
    </div>
+   <div class="row">
+    <div class="field"><label>Teléfono / WhatsApp *</label><input id="telefono" required placeholder="Ej. 0280 458-9193"></div>
+    </div>
    <div class="field"><label>E-mail <span>(opcional)</span></label><input id="email" type="email" placeholder="tuemail@ejemplo.com"></div>
    <div class="field">
     <label>Vehículo: marca / modelo / año <span>(opcional)</span></label>
@@ -432,6 +449,7 @@ img,video,iframe{max-width:100%}
     <p><strong>Cuenta para pago:</strong> <span id="sumCuenta">—</span></p>
     <p><strong>Comentario:</strong> <span id="sumComentario">—</span></p>
     <hr>
+    <div class="attachment-note">📷 <strong>Adjuntar imagen de comprobante/ticket</strong></div>
     <p>El formulario conserva todos los datos elegidos antes de enviar el pedido.</p>
   </aside>
  </div>
@@ -514,7 +532,14 @@ img,video,iframe{max-width:100%}
 
 <footer class="footer">
  <div class="footer-inner">
-  <div><div class="footer-logo">BRASS</div><p><a href="tel:+542804589193">0280 458-9193</a></p><p><a href="tel:+542894350829">0289 435-0829</a></p><p><a href="tel:+542804651184">0280 465-1184</a></p><p><a href="https://maps.app.goo.gl/e1EfhuTn9NAQMxXL8" target="_blank" rel="noopener">📍 Av. La Plata 2701</a></p><p><a class="instagram-link" href="https://instagram.com/autopartesbrass/" target="_blank" rel="noopener" aria-label="Instagram de Autopartes Brass">◎ Instagram</a></p><p><a href="mailto:Jorgecurytw@gmail.com">✉️ Jorgecurytw@gmail.com</a></p></div>
+  <div class="footer-contact"><div class="footer-logo">BRASS</div>
+   <a href="https://wa.me/542804589193" target="_blank" rel="noopener">🟢 0280 458-9193</a>
+   <a href="https://wa.me/542894350829" target="_blank" rel="noopener">🟢 0289 435-0829</a>
+   <a href="https://wa.me/542804651184" target="_blank" rel="noopener">🟢 0280 465-1184</a>
+   <a href="https://maps.app.goo.gl/e1EfhuTn9NAQMxXL8" target="_blank" rel="noopener">📍 Av. La Plata 2701</a>
+   <a href="https://instagram.com/autopartesbrass/" target="_blank" rel="noopener">◎ Instagram</a>
+   <a href="mailto:Jorgecurytw@gmail.com">✉️ Jorgecurytw@gmail.com</a>
+  </div>
   <div><h4>ACCESOS</h4><a href="#inicio">Inicio</a><a href="#galeria">Galería</a><a href="#repuestos">Repuestos</a><a href="#ofertas">Ofertas</a><a href="#ubicacion">Ubicación</a></div>
   <div><h4>RUBROS</h4><p>Alternador · Bobina · Bombas · Cajas · Capot · Carburador · Radiador · Módulo de inyección · Motor de arranque · Puertas · Turbo · Volante de motor</p></div>
  </div>
@@ -562,6 +587,7 @@ const bankDetails=document.getElementById('bankDetails');
 
 const fields={
  nombre:document.getElementById('nombre'),
+ dni:document.getElementById('dni'),
  telefono:document.getElementById('telefono'),
  email:document.getElementById('email'),
  vehiculo:document.getElementById('vehiculo'),
@@ -635,8 +661,8 @@ cuenta.addEventListener('change',()=>{
 });
 
 document.getElementById('enviarPedido').addEventListener('click',()=>{
-  if(!cat.value || !prod.value || !fields.nombre.value.trim() || !fields.telefono.value.trim()){
-    alert('Completá categoría, repuesto, nombre y teléfono/WhatsApp.');
+  if(!cat.value || !prod.value || !fields.nombre.value.trim() || !fields.dni.value.trim() || !fields.telefono.value.trim()){
+    alert('Completá categoría, repuesto, nombre, DNI y teléfono/WhatsApp.');
     return;
   }
 
@@ -662,6 +688,7 @@ document.getElementById('enviarPedido').addEventListener('click',()=>{
 
 👤 *DATOS DEL CLIENTE*
 • Nombre: ${fields.nombre.value}
+• DNI: ${fields.dni.value}
 • WhatsApp: ${fields.telefono.value}
 • E-mail: ${fields.email.value || 'No informado'}
 
