@@ -240,6 +240,30 @@ img,video,iframe{max-width:100%}
 
 
 .contact-card-top{display:grid;grid-template-columns:repeat(2,minmax(150px,1fr));gap:5px 9px;padding:9px 11px;border:1px solid rgba(183,25,42,.25);border-radius:18px;background:linear-gradient(135deg,#fff 0%,#faf7f2 100%);box-shadow:0 5px 16px rgba(32,39,53,.10),inset 0 0 0 1px rgba(255,255,255,.8);font-size:10px;min-width:330px}.contact-card-top a{padding:4px 7px;border-radius:9px;transition:.25s;border:1px solid transparent}.contact-card-top a:hover{background:#fff;border-color:rgba(183,25,42,.25);transform:translateY(-1px);color:var(--red)}.shipping-info{margin:14px 0;padding:13px 15px;border:1px solid rgba(183,25,42,.22);border-radius:16px;background:linear-gradient(135deg,#fff,#f8f9fb);box-shadow:0 5px 16px rgba(32,39,53,.07)}.shipping-info h4{margin:0 0 8px;color:var(--red);font-size:11px}.shipping-info p{font-size:10px;line-height:1.65;margin:4px 0}.shipping-warning{padding:8px 10px;border-radius:10px;background:#fff7e7}.contact-actions{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.contact-actions .btn{margin:0}.footer a:hover{color:var(--red)}@media(max-width:900px){.contact-card-top{min-width:0;width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){.contact-card-top{grid-template-columns:1fr 1fr;width:100%;font-size:9px}.contact-card-top a{white-space:normal}.contact-actions .btn{flex:1 1 180px}}@media(max-width:480px){.contact-card-top{grid-template-columns:1fr}.contact-actions .btn{flex:1 1 100%}}
+
+/* V15: microinteracciones de contacto y formulario compacto */
+.contact-card-top{position:relative;overflow:visible;border-color:rgba(183,25,42,.34);box-shadow:0 6px 18px rgba(32,39,53,.10),0 0 0 1px rgba(183,25,42,.06);transition:box-shadow .35s ease,border-color .35s ease,transform .35s ease}
+.contact-card-top:hover{border-color:rgba(183,25,42,.48);box-shadow:0 9px 24px rgba(32,39,53,.13),0 0 18px rgba(183,25,42,.08)}
+.contact-card-top a.instagram-link{font-weight:900;color:#b7192a;animation:instagramPulse 2.4s ease-in-out infinite}
+.contact-card-top a.instagram-link::before{content:'●';font-size:7px;display:inline-block;margin-right:5px;vertical-align:middle;animation:instagramDot 1.8s ease-in-out infinite}
+@keyframes instagramPulse{0%,100%{opacity:1;text-shadow:0 0 0 rgba(183,25,42,0)}50%{opacity:.68;text-shadow:0 0 8px rgba(183,25,42,.35)}}
+@keyframes instagramDot{0%,100%{opacity:.55;transform:scale(.9)}50%{opacity:1;transform:scale(1.25)}}
+.form-accordion{margin-top:12px;border:1px solid rgba(183,25,42,.18);border-radius:14px;background:#fff;overflow:hidden;box-shadow:0 5px 16px rgba(32,39,53,.06)}
+.form-accordion>summary{list-style:none;cursor:pointer;padding:12px 14px;font-weight:900;font-size:12px;color:var(--red);display:flex;align-items:center;justify-content:space-between;gap:12px;background:linear-gradient(135deg,#fff,#faf7f2);user-select:none}
+.form-accordion>summary::-webkit-details-marker{display:none}
+.form-accordion>summary::after{content:'＋';font-size:18px;line-height:1;transition:transform .25s ease}
+.form-accordion[open]>summary::after{content:'−';transform:rotate(180deg)}
+.form-accordion>summary:hover{background:linear-gradient(135deg,#fff,#f7f1eb)}
+.form-accordion-content{padding:0 14px 14px}
+.form-accordion-content>.field:first-child{margin-top:12px}
+.form-accordion .shipping-info{margin:12px 0 0}
+@media(max-width:600px){.contact-card-top{grid-template-columns:1fr;min-width:0}.form-accordion>summary{font-size:11px}}
+</style>
+
+<style>
+/* V16: teléfonos de contacto como accesos directos a WhatsApp */
+.contact-wa{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:800;color:inherit;transition:transform .2s ease,opacity .2s ease}
+.contact-wa:hover{transform:translateY(-1px);opacity:.82}
 </style>
 </head>
 <body>
@@ -255,11 +279,11 @@ img,video,iframe{max-width:100%}
       <div class="logo-fallback"><span>BRASS</span></div>
     </div>
     <div class="contact-card-top" aria-label="Información de contacto">
-      <a href="tel:+542804589193">📞 0280 458-9193</a>
-      <a href="tel:+542894350829">📞 0289 435-0829</a>
-      <a href="tel:+542804651184">📞 0280 465-1184</a>
+      <a href="tel:+542804589193"><a class="contact-wa" href="https://wa.me/542804589193" target="_blank" rel="noopener">📞 0280 458-9193</a></a>
+      <a href="tel:+542894350829"><a class="contact-wa" href="https://wa.me/542894350829" target="_blank" rel="noopener">📞 0289 435-0829</a></a>
+      <a href="tel:+542804651184"><a class="contact-wa" href="https://wa.me/542804651184" target="_blank" rel="noopener">📞 0280 465-1184</a></a>
       <a href="https://maps.app.goo.gl/e1EfhuTn9NAQMxXL8" target="_blank" rel="noopener">📍 Av. Cd. de la Plata 2701</a>
-      <a href="https://instagram.com/autopartesbrass/" target="_blank" rel="noopener">◎ Instagram</a>
+      <a class="instagram-link" href="https://instagram.com/autopartesbrass/" target="_blank" rel="noopener" aria-label="Instagram de Autopartes Brass">◎ Instagram</a>
       <a href="mailto:Jorgecurytw@gmail.com">✉️ Jorgecurytw@gmail.com</a>
     </div>
   </div>
@@ -371,23 +395,27 @@ img,video,iframe{max-width:100%}
     <div class="field"><label>Código postal <span>(opcional)</span></label><input id="cp" placeholder="Ej. 9100"></div>
    </div>
    <div class="field"><label>Ciudad <span>(opcional)</span></label><input id="ciudad" placeholder="Ej. Trelew"></div>
-   <div class="field">
-    <label>DATOS DE CUENTA BANCARIA</label>
-    <div class="bank-note">Elegí la cuenta a la que querés enviar el pago. Los datos seleccionados se incorporarán al pedido.</div>
-    <select id="cuenta">
-      <option value="">Seleccionar cuenta bancaria / medio de pago...</option>
-      <option value="Mercado Pago">Mercado Pago</option>
-      <option value="Santander Rio">Santander Río</option>
-      <option value="Efectivo">Pago en Efectivo</option>
-    </select>
-    <div id="bankDetails" class="bank-details"></div>
-   </div>
-   <div class="shipping-info">
-    <h4>📦 DATOS DE ENVÍO — AUTOPARTES Brass</h4>
-    <p><strong>🏬 Nombre:</strong> BRASS AUTOPARTES<br><strong>📍 Dirección:</strong> Av. La Plata 2701<br><strong>📌 Ciudad:</strong> Trelew, Chubut<br><strong>📮 Código Postal:</strong> 9100<br><strong>☎️ Teléfono:</strong> 2804-589193<br><strong>✉️ E-mail:</strong> Jorgecurytw@gmail.com<br><strong>💼 CUIT:</strong> 20-13160637-1</p>
-    <p class="shipping-warning">⚠️ <strong>Importante:</strong> Avisar previamente el envío y enviar comprobante + datos del repuesto por este medio.</p>
-   </div>
-   <div class="field"><label>Comentario adicional <span>(opcional)</span></label><textarea id="comentario" placeholder="Indicá motor, versión, lado, año, código o cualquier dato que ayude a identificar el repuesto."></textarea></div>
+   <details class="form-accordion" id="datosPagoEnvio">
+    <summary>💳 DATOS DE CUENTA BANCARIA / MEDIO DE PAGO</summary>
+    <div class="form-accordion-content">
+     <div class="field">
+      <div class="bank-note">Elegí la cuenta o medio de pago. Los datos seleccionados se incorporarán al pedido.</div>
+      <select id="cuenta">
+        <option value="">Seleccionar cuenta bancaria / medio de pago...</option>
+        <option value="Mercado Pago">Mercado Pago</option>
+        <option value="Santander Rio">Santander Río</option>
+        <option value="Efectivo">Pago en Efectivo</option>
+      </select>
+      <div id="bankDetails" class="bank-details"></div>
+     </div>
+     <div class="field"><label>Comentario adicional <span>(opcional)</span></label><textarea id="comentario" placeholder="Indicá motor, versión, lado, año, código o cualquier dato que ayude a identificar el repuesto."></textarea></div>
+     <div class="shipping-info">
+      <h4>📦 DATOS DE ENVÍO — AUTOPARTES Brass</h4>
+      <p><strong>🏬 Nombre:</strong> BRASS AUTOPARTES<br><strong>📍 Dirección:</strong> Av. La Plata 2701<br><strong>📌 Ciudad:</strong> Trelew, Chubut<br><strong>📮 Código Postal:</strong> 9100<br><strong>☎️ Teléfono:</strong> 2804-589193<br><strong>✉️ E-mail:</strong> Jorgecurytw@gmail.com<br><strong>💼 CUIT:</strong> 20-13160637-1</p>
+      <p class="shipping-warning">⚠️ <strong>Importante:</strong> Avisar previamente el envío y enviar comprobante + datos del repuesto por este medio.</p>
+     </div>
+    </div>
+   </details>
    <button class="submit" id="enviarPedido" type="button">📲 ENVIAR PEDIDO FORMATEADO POR WHATSAPP</button>
    <div class="whatsapp-preview"><strong>Pedido listo para WhatsApp</strong><br>Se enviará con categoría, producto, datos del cliente, vehículo, ubicación, medio de pago y comentario, organizado como una ficha de pedido.</div>
   </div>
@@ -474,11 +502,6 @@ img,video,iframe{max-width:100%}
     <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/e1EfhuTn9NAQMxXL8">ABRIR EN GOOGLE MAPS</a>
    </div>
   </div>
-  <div class="info" id="contacto">
-   <h3>📞 Contacto</h3>
-   <div class="contact-actions"><a class="btn" href="tel:+542804589193">📞 0280 458-9193</a><a class="btn" href="tel:+542894350829">📞 0289 435-0829</a><a class="btn" href="tel:+542804651184">📞 0280 465-1184</a><a class="btn" href="mailto:Jorgecurytw@gmail.com">✉️ Jorgecurytw@gmail.com</a><a class="btn" target="_blank" rel="noopener" href="https://instagram.com/autopartesbrass/">◎ Instagram</a></div>
-   <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/e1EfhuTn9NAQMxXL8">📍 VER UBICACIÓN</a>
-  </div>
  </div>
 </section>
 </section>
@@ -491,7 +514,7 @@ img,video,iframe{max-width:100%}
 
 <footer class="footer">
  <div class="footer-inner">
-  <div><div class="footer-logo">BRASS</div><p><a href="tel:+542804589193">0280 458-9193</a></p><p><a href="tel:+542894350829">0289 435-0829</a></p><p><a href="tel:+542804651184">0280 465-1184</a></p><p><a href="https://maps.app.goo.gl/e1EfhuTn9NAQMxXL8" target="_blank" rel="noopener">📍 Av. La Plata 2701</a></p><p><a href="https://instagram.com/autopartesbrass/" target="_blank" rel="noopener">◎ Instagram</a></p><p><a href="mailto:Jorgecurytw@gmail.com">✉️ Jorgecurytw@gmail.com</a></p></div>
+  <div><div class="footer-logo">BRASS</div><p><a href="tel:+542804589193">0280 458-9193</a></p><p><a href="tel:+542894350829">0289 435-0829</a></p><p><a href="tel:+542804651184">0280 465-1184</a></p><p><a href="https://maps.app.goo.gl/e1EfhuTn9NAQMxXL8" target="_blank" rel="noopener">📍 Av. La Plata 2701</a></p><p><a class="instagram-link" href="https://instagram.com/autopartesbrass/" target="_blank" rel="noopener" aria-label="Instagram de Autopartes Brass">◎ Instagram</a></p><p><a href="mailto:Jorgecurytw@gmail.com">✉️ Jorgecurytw@gmail.com</a></p></div>
   <div><h4>ACCESOS</h4><a href="#inicio">Inicio</a><a href="#galeria">Galería</a><a href="#repuestos">Repuestos</a><a href="#ofertas">Ofertas</a><a href="#ubicacion">Ubicación</a></div>
   <div><h4>RUBROS</h4><p>Alternador · Bobina · Bombas · Cajas · Capot · Carburador · Radiador · Módulo de inyección · Motor de arranque · Puertas · Turbo · Volante de motor</p></div>
  </div>
@@ -789,6 +812,7 @@ document.querySelectorAll('.sidebar a[data-category]').forEach(link=>{link.addEv
 </script>
 </body>
 </html>
+
 
 
 
