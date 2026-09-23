@@ -238,6 +238,8 @@ img,video,iframe{max-width:100%}
 .whatsapp-float:hover::after,.whatsapp-float:hover::before,.whatsapp-float:focus-visible::after,.whatsapp-float:focus-visible::before{opacity:1;visibility:visible;transform:translateY(0)}
 @media(max-width:480px){.whatsapp-float{right:12px;bottom:12px;width:82px;height:36px;font-size:11px}.whatsapp-float::after{right:-4px;font-size:10px;padding:7px 9px}.whatsapp-float::before{right:27px}}
 
+
+.contact-card-top{display:grid;grid-template-columns:repeat(2,minmax(150px,1fr));gap:5px 9px;padding:9px 11px;border:1px solid rgba(183,25,42,.25);border-radius:18px;background:linear-gradient(135deg,#fff 0%,#faf7f2 100%);box-shadow:0 5px 16px rgba(32,39,53,.10),inset 0 0 0 1px rgba(255,255,255,.8);font-size:10px;min-width:330px}.contact-card-top a{padding:4px 7px;border-radius:9px;transition:.25s;border:1px solid transparent}.contact-card-top a:hover{background:#fff;border-color:rgba(183,25,42,.25);transform:translateY(-1px);color:var(--red)}.shipping-info{margin:14px 0;padding:13px 15px;border:1px solid rgba(183,25,42,.22);border-radius:16px;background:linear-gradient(135deg,#fff,#f8f9fb);box-shadow:0 5px 16px rgba(32,39,53,.07)}.shipping-info h4{margin:0 0 8px;color:var(--red);font-size:11px}.shipping-info p{font-size:10px;line-height:1.65;margin:4px 0}.shipping-warning{padding:8px 10px;border-radius:10px;background:#fff7e7}.contact-actions{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.contact-actions .btn{margin:0}.footer a:hover{color:var(--red)}@media(max-width:900px){.contact-card-top{min-width:0;width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){.contact-card-top{grid-template-columns:1fr 1fr;width:100%;font-size:9px}.contact-card-top a{white-space:normal}.contact-actions .btn{flex:1 1 180px}}@media(max-width:480px){.contact-card-top{grid-template-columns:1fr}.contact-actions .btn{flex:1 1 100%}}
 </style>
 </head>
 <body>
@@ -252,9 +254,13 @@ img,video,iframe{max-width:100%}
            onerror="this.style.display='none';document.querySelector('.logo-fallback').style.display='flex'">
       <div class="logo-fallback"><span>BRASS</span></div>
     </div>
-    <div class="contact-mini">
-      <span>📞 0280 458-9193</span>
-      <span>📍 Av. Cd. de la Plata 2701</span>
+    <div class="contact-card-top" aria-label="Información de contacto">
+      <a href="tel:+542804589193">📞 0280 458-9193</a>
+      <a href="tel:+542894350829">📞 0289 435-0829</a>
+      <a href="tel:+542804651184">📞 0280 465-1184</a>
+      <a href="https://maps.app.goo.gl/e1EfhuTn9NAQMxXL8" target="_blank" rel="noopener">📍 Av. Cd. de la Plata 2701</a>
+      <a href="https://instagram.com/autopartesbrass/" target="_blank" rel="noopener">◎ Instagram</a>
+      <a href="mailto:Jorgecurytw@gmail.com">✉️ Jorgecurytw@gmail.com</a>
     </div>
   </div>
   <nav class="nav" aria-label="Navegación principal">
@@ -370,13 +376,16 @@ img,video,iframe{max-width:100%}
     <div class="bank-note">Elegí la cuenta a la que querés enviar el pago. Los datos seleccionados se incorporarán al pedido.</div>
     <select id="cuenta">
       <option value="">Seleccionar cuenta bancaria / medio de pago...</option>
-      <option value="Credicoop">Banco Credicoop</option>
-      <option value="Galicia">Banco Galicia</option>
-      <option value="Provincia">Banco Provincia</option>
-      <option value="Macro">Banco Macro</option>
       <option value="Mercado Pago">Mercado Pago</option>
+      <option value="Santander Rio">Santander Río</option>
+      <option value="Efectivo">Pago en Efectivo</option>
     </select>
     <div id="bankDetails" class="bank-details"></div>
+   </div>
+   <div class="shipping-info">
+    <h4>📦 DATOS DE ENVÍO — AUTOPARTES Brass</h4>
+    <p><strong>🏬 Nombre:</strong> BRASS AUTOPARTES<br><strong>📍 Dirección:</strong> Av. La Plata 2701<br><strong>📌 Ciudad:</strong> Trelew, Chubut<br><strong>📮 Código Postal:</strong> 9100<br><strong>☎️ Teléfono:</strong> 2804-589193<br><strong>✉️ E-mail:</strong> Jorgecurytw@gmail.com<br><strong>💼 CUIT:</strong> 20-13160637-1</p>
+    <p class="shipping-warning">⚠️ <strong>Importante:</strong> Avisar previamente el envío y enviar comprobante + datos del repuesto por este medio.</p>
    </div>
    <div class="field"><label>Comentario adicional <span>(opcional)</span></label><textarea id="comentario" placeholder="Indicá motor, versión, lado, año, código o cualquier dato que ayude a identificar el repuesto."></textarea></div>
    <button class="submit" id="enviarPedido" type="button">📲 ENVIAR PEDIDO FORMATEADO POR WHATSAPP</button>
@@ -451,7 +460,7 @@ img,video,iframe{max-width:100%}
  <div class="location">
   <div class="info">
    <h3>📍 Autopartes Brass</h3>
-   <p><strong>Av. Cd. de la Plata 2701</strong><br>U9100 Trelew, Chubut<br>Referencia: PMW5+54 Trelew, Chubut</p>
+   <p><strong>Av. La Plata 2701</strong><br>U9100 Trelew, Chubut<br>Referencia: PMW5+54 Trelew, Chubut</p>
    <div class="map-wrap">
     <iframe
       title="Mapa de ubicación de Autopartes Brass"
@@ -462,15 +471,13 @@ img,video,iframe{max-width:100%}
     </iframe>
    </div>
    <div class="map-actions">
-    <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/HVETTiax4X2DRon1A">ABRIR EN GOOGLE MAPS</a>
+    <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/e1EfhuTn9NAQMxXL8">ABRIR EN GOOGLE MAPS</a>
    </div>
   </div>
   <div class="info" id="contacto">
    <h3>📞 Contacto</h3>
-   <p><strong>0280 458-9193</strong></p>
-   <p>Consultas de repuestos, disponibilidad y pedidos.</p>
-   <a class="btn" href="tel:02804589193">LLAMAR AHORA</a>
-   <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/HVETTiax4X2DRon1A">📍 VER UBICACIÓN</a>
+   <div class="contact-actions"><a class="btn" href="tel:+542804589193">📞 0280 458-9193</a><a class="btn" href="tel:+542894350829">📞 0289 435-0829</a><a class="btn" href="tel:+542804651184">📞 0280 465-1184</a><a class="btn" href="mailto:Jorgecurytw@gmail.com">✉️ Jorgecurytw@gmail.com</a><a class="btn" target="_blank" rel="noopener" href="https://instagram.com/autopartesbrass/">◎ Instagram</a></div>
+   <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/e1EfhuTn9NAQMxXL8">📍 VER UBICACIÓN</a>
   </div>
  </div>
 </section>
@@ -484,7 +491,7 @@ img,video,iframe{max-width:100%}
 
 <footer class="footer">
  <div class="footer-inner">
-  <div><div class="footer-logo">BRASS</div><p>0280 458-9193</p><p>Av. Cd. de la Plata 2701</p><p>U9100 Trelew, Chubut</p></div>
+  <div><div class="footer-logo">BRASS</div><p><a href="tel:+542804589193">0280 458-9193</a></p><p><a href="tel:+542894350829">0289 435-0829</a></p><p><a href="tel:+542804651184">0280 465-1184</a></p><p><a href="https://maps.app.goo.gl/e1EfhuTn9NAQMxXL8" target="_blank" rel="noopener">📍 Av. La Plata 2701</a></p><p><a href="https://instagram.com/autopartesbrass/" target="_blank" rel="noopener">◎ Instagram</a></p><p><a href="mailto:Jorgecurytw@gmail.com">✉️ Jorgecurytw@gmail.com</a></p></div>
   <div><h4>ACCESOS</h4><a href="#inicio">Inicio</a><a href="#galeria">Galería</a><a href="#repuestos">Repuestos</a><a href="#ofertas">Ofertas</a><a href="#ubicacion">Ubicación</a></div>
   <div><h4>RUBROS</h4><p>Alternador · Bobina · Bombas · Cajas · Capot · Carburador · Radiador · Módulo de inyección · Motor de arranque · Puertas · Turbo · Volante de motor</p></div>
  </div>
@@ -505,34 +512,23 @@ const catalogo = {
 };
 
 const cuentas = {
- "Credicoop": {
-   banco:"Banco Credicoop",
-   cta:"CC $ 191-084-009157/6",
-   cbu:"1910084155008400915764",
-   alias:"SURGEONCAR.CREDICOOP"
- },
- "Galicia": {
-   banco:"Banco Galicia",
-   cta:"CC $ 0037861-3 084-5",
-   cbu:"0070084920000037861353",
-   alias:"SURGEONCAR.GALICIA"
- },
- "Provincia": {
-   banco:"Banco Provincia",
-   cta:"CC $ 4200-68568/5",
-   cbu:"0140323501420006856851",
-   alias:"SURGEONCAR.PROVINCIA"
- },
- "Macro": {
-   banco:"Banco Macro",
-   cta:"CC $ 368409421025577",
-   cbu:"2850684130094210255771",
-   alias:"SURGEONCAR.MACRO"
- },
  "Mercado Pago": {
-   banco:"Mercado Pago",
-   cvu:"0000003100052955211396",
-   alias:"SURGEONCAR.MP"
+   banco:"Mercado Pago · AUTOPARTES Brass",
+   titular:"JORGE OMAR CURILAF",
+   cvu:"0000003100025722323433",
+   alias:"autopartes1brass",
+   cuit:"20131606371"
+ },
+ "Santander Rio": {
+   banco:"SANTANDER RIO · AUTOPARTES Brass",
+   titular:"Jorge Omar Curilaf",
+   cta:"Cuenta única: 286-018002/9",
+   cbu:"07202867880000001800290",
+   alias:"AMBAR.TAPUJO.FOCA"
+ },
+ "Efectivo": {
+   banco:"Pago en Efectivo",
+   titular:"AUTOPARTES Brass"
  }
 };
 
@@ -603,8 +599,14 @@ cuenta.addEventListener('change',()=>{
     sum.cuenta.textContent='—';
     return;
   }
-  const datoPrincipal=c.cta ? `<strong>Cuenta:</strong> ${c.cta}<br>` : `<strong>CVU:</strong> ${c.cvu}<br>`;
-  bankDetails.innerHTML=`<strong>${c.banco}</strong><br>${datoPrincipal}<strong>CBU:</strong> ${c.cbu || 'No corresponde'}<br><strong>Alias:</strong> ${c.alias}`;
+  let detalle=`<strong>${c.banco}</strong><br>`;
+  if(c.titular) detalle+=`<strong>Titular:</strong> ${c.titular}<br>`;
+  if(c.cta) detalle+=`<strong>Cuenta:</strong> ${c.cta}<br>`;
+  if(c.cbu) detalle+=`<strong>CBU:</strong> ${c.cbu}<br>`;
+  if(c.cvu) detalle+=`<strong>CVU:</strong> ${c.cvu}<br>`;
+  if(c.alias) detalle+=`<strong>Alias:</strong> ${c.alias}<br>`;
+  if(c.cuit) detalle+=`<strong>CUIT/CUIL:</strong> ${c.cuit}`;
+  bankDetails.innerHTML=detalle;
   bankDetails.style.display='block';
   sum.cuenta.textContent=`${c.banco} · Alias: ${c.alias}`;
 });
@@ -617,8 +619,8 @@ document.getElementById('enviarPedido').addEventListener('click',()=>{
 
   const c=cuentas[cuenta.value];
   const cuentaTexto=c
-    ? `${c.banco} | ${c.cta ? 'Cuenta: '+c.cta+' | ' : ''}${c.cbu ? 'CBU: '+c.cbu+' | ' : ''}${c.cvu ? 'CVU: '+c.cvu+' | ' : ''}Alias: ${c.alias}`
-    : 'No seleccionada';
+    ? `${c.banco}${c.titular ? ' | Titular: '+c.titular : ''}${c.cta ? ' | '+c.cta : ''}${c.cbu ? ' | CBU: '+c.cbu : ''}${c.cvu ? ' | CVU: '+c.cvu : ''}${c.alias ? ' | Alias: '+c.alias : ''}${c.cuit ? ' | CUIT/CUIL: '+c.cuit : ''}`
+    : 'No seleccionado';
 
   const ahora = new Date();
   const fecha = ahora.toLocaleString('es-AR',{dateStyle:'short',timeStyle:'short'});
@@ -653,6 +655,16 @@ ${cuentaTexto}
 
 📝 *DETALLE ADICIONAL*
 ${fields.comentario.value || 'Sin comentario'}
+
+📦 *DATOS DE ENVÍO — AUTOPARTES BRASS*
+• Nombre: BRASS AUTOPARTES
+• Dirección: Av. La Plata 2701
+• Ciudad: Trelew, Chubut
+• Código Postal: 9100
+• Teléfono: 2804-589193
+• E-mail: Jorgecurytw@gmail.com
+• CUIT: 20-13160637-1
+⚠️ Avisar previamente el envío y enviar comprobante + datos del repuesto por este medio.
 
 ━━━━━━━━━━━━━━━━━━━━
 📲 *Pedido generado desde la web de Autopartes Brass*`;
@@ -777,5 +789,6 @@ document.querySelectorAll('.sidebar a[data-category]').forEach(link=>{link.addEv
 </script>
 </body>
 </html>
+
 
 
