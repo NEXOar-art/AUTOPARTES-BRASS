@@ -279,13 +279,6 @@ body{background:linear-gradient(135deg,#f7f3ea 0%,#eef3f9 45%,#fff 100%)}
 /* V16: teléfonos de contacto como accesos directos a WhatsApp */
 .contact-wa{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:800;color:inherit;transition:transform .2s ease,opacity .2s ease}
 .contact-wa:hover{transform:translateY(-1px);opacity:.82}
-
-/* V19 — Glassmorphism focal cards */
-.logo-box{position:relative;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.48);box-shadow:0 12px 32px rgba(23,59,104,.16),inset 0 1px 0 rgba(255,255,255,.55);backdrop-filter:blur(14px) saturate(135%);-webkit-backdrop-filter:blur(14px) saturate(135%);padding:5px}
-.logo-box::before{content:"";position:absolute;inset:0;border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,.30),rgba(255,255,255,.04) 55%,rgba(183,25,42,.10));pointer-events:none}
-.logo-box img{position:relative;z-index:1}
-.top-contact-card{background:linear-gradient(135deg,rgba(11,37,71,.72),rgba(23,59,104,.56) 52%,rgba(183,25,42,.70))!important;border:1px solid rgba(255,255,255,.34)!important;box-shadow:0 16px 42px rgba(23,59,104,.20),inset 0 1px 0 rgba(255,255,255,.28)!important;backdrop-filter:blur(18px) saturate(140%)!important;-webkit-backdrop-filter:blur(18px) saturate(140%)!important}
-.hero-intro{background:linear-gradient(135deg,rgba(11,37,71,.78),rgba(183,25,42,.72))!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 16px 42px rgba(23,59,104,.18),inset 0 1px 0 rgba(255,255,255,.25)!important;backdrop-filter:blur(18px) saturate(140%)!important;-webkit-backdrop-filter:blur(18px) saturate(140%)!important}
 </style>
 </head>
 <body>
@@ -728,7 +721,6 @@ ${cuentaTexto}
 📝 *DETALLE ADICIONAL*
 ${fields.comentario.value || 'Sin comentario'}
 
-
 ━━━━━━━━━━━━━━━━━━━━
 📲 *Pedido generado desde la web de Autopartes Brass*`;
 
@@ -852,6 +844,7 @@ document.querySelectorAll('.sidebar a[data-category]').forEach(link=>{link.addEv
 </script>
 </body>
 </html>
+
 
 
 
