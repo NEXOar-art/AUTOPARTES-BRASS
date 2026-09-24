@@ -84,6 +84,10 @@ a{text-decoration:none;color:inherit}
 .bank-details strong{color:#333}
 .submit{background:linear-gradient(90deg,#128c45,var(--wa));border:0;color:#fff;padding:12px 18px;font-size:11px;font-weight:bold;cursor:pointer}
 .submit:hover{background:#128c45}
+#enviarPedido.is-ready{position:relative;isolation:isolate;animation:whatsappReadyPulse 1.5s ease-in-out infinite;box-shadow:0 0 0 0 rgba(37,211,102,.75),0 8px 22px rgba(0,0,0,.14)}
+#enviarPedido.is-ready::before{content:"";position:absolute;inset:-4px;border-radius:inherit;border:2px solid rgba(37,211,102,.9);animation:whatsappReadyBorder 1.5s ease-out infinite;pointer-events:none;z-index:-1}
+@keyframes whatsappReadyPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.55),0 8px 22px rgba(0,0,0,.14)}50%{box-shadow:0 0 0 7px rgba(37,211,102,.12),0 10px 28px rgba(37,211,102,.28)}}
+@keyframes whatsappReadyBorder{0%{transform:scale(.98);opacity:1}100%{transform:scale(1.06);opacity:0}}
 .summary{background:linear-gradient(145deg,#fff,#f3f7fc);border:1px solid #cfd8e6;padding:18px;height:max-content;position:sticky;top:150px}
 .summary h3{margin:0 0 13px;color:var(--blue);font-size:14px}
 .summary p{font-size:11px;margin:8px 0;line-height:1.5}
@@ -660,9 +664,20 @@ cuenta.addEventListener('change',()=>{
   sum.cuenta.textContent=`${c.banco} · Alias: ${c.alias}`;
 });
 
+const enviarPedidoBtn=document.getElementById('enviarPedido');
+const requiredFields=[cat,prod,fields.nombre,fields.dni,fields.telefono];
+function formularioCompleto(){return requiredFields.every(el=>el && el.value && el.value.toString().trim());}
+function actualizarEstadoEnvio(){
+  const listo=formularioCompleto();
+  enviarPedidoBtn.classList.toggle('is-ready',listo);
+  enviarPedidoBtn.setAttribute('aria-label',listo?'Enviar pedido formateado por WhatsApp':'Completar datos para habilitar el envío por WhatsApp');
+}
+[cat,prod,fields.nombre,fields.dni,fields.telefono].forEach(el=>{el.addEventListener('input',actualizarEstadoEnvio);el.addEventListener('change',actualizarEstadoEnvio);});
+actualizarEstadoEnvio();
+
 document.getElementById('enviarPedido').addEventListener('click',()=>{
-  if(!cat.value || !prod.value || !fields.nombre.value.trim() || !fields.dni.value.trim() || !fields.telefono.value.trim()){
-    alert('Completá categoría, repuesto, nombre, DNI y teléfono/WhatsApp.');
+  if(!formularioCompleto()){
+    alert('Completá categoría, repuesto, nombre, DNI y teléfono/WhatsApp para habilitar el envío.');
     return;
   }
 
@@ -839,6 +854,7 @@ document.querySelectorAll('.sidebar a[data-category]').forEach(link=>{link.addEv
 </script>
 </body>
 </html>
+
 
 
 
