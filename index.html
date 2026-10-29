@@ -1,906 +1,326 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="6mIhBBtzvDt-qs0NoBVwcRg939KLQWJLbmYEM06Ic3g" />
-<title>Autopartes Brass | Repuestos en Trelew</title>
-<meta name="description" content="Autopartes Brass - repuestos y autopartes en Trelew, Chubut.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Sitio en Mantenimiento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#2563EB',
+                            cyan: '#06B6D4',
+                            dark: '#111827',
+                            light: '#F9FAFB',
+                            petroleum: '#0B1120'
+                        }
+                    },
+                    animation: {
+                        'spin-slow': 'spin 12s linear infinite',
+                        'spin-reverse': 'spin-reverse 15s linear infinite',
+                        'pulse-glow': 'pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'spin-reverse': {
+                            '100%': { transform: 'rotate(-360deg)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: 1, boxShadow: '0 0 20px rgba(6, 182, 212, 0.5)' },
+                            '50%': { opacity: .8, boxShadow: '0 0 40px rgba(37, 99, 235, 0.8)' },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-<style>
-:root{--red:#b7192a;--red2:#7f1020;--blue:#173b68;--blue2:#0b2547;--ink:#202735;--muted:#687080;--line:#d7dce5;--soft:#f4f6f9;--gold:#d7b35a;--cream:#f7f3ea;--steel:#4b5563;--wa:#25D366}
-*{box-sizing:border-box;scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff 0,#f5f8fc 100%)}
-a{text-decoration:none;color:inherit}
-.topbar{height:24px;background:linear-gradient(90deg,var(--blue2),var(--blue),var(--red));color:#fff;font-size:11px}
-.topbar .inner{max-width:1180px;margin:auto;height:100%;display:flex;justify-content:flex-end;align-items:center;gap:18px}
-.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid #ddd;box-shadow:0 2px 7px rgba(0,0,0,.06)}
-.header-main{max-width:1180px;margin:auto;min-height:98px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:6px 0}
-.logo-box{width:min(50vw,560px);height:104px;display:flex;align-items:center;justify-content:flex-start;overflow:hidden;border-radius:18px}
-.logo-box img{width:100%;height:102px;max-width:100%;max-height:none;object-fit:contain;object-position:left center;border-radius:18px;filter:drop-shadow(0 0 5px rgba(215,179,90,.30));animation:logoGlow 2.8s ease-in-out infinite alternate}
-@keyframes logoGlow{from{filter:drop-shadow(0 0 3px rgba(214,169,58,.18)) drop-shadow(0 0 0 rgba(201,21,36,0))}to{filter:drop-shadow(0 0 8px rgba(214,169,58,.62)) drop-shadow(0 0 15px rgba(201,21,36,.20))}}
-.logo-fallback{display:none;width:210px;height:50px;align-items:center;justify-content:center;font-size:27px;font-weight:900;font-style:italic;color:#fff;background:linear-gradient(#244b9e,#11285e);border:4px solid #fff;outline:2px solid var(--red);transform:skew(-7deg);text-shadow:2px 2px #111}
-.logo-fallback span{transform:skew(7deg)}
-.contact-mini{font-size:11px;color:#9a4b50;display:flex;gap:22px;align-items:center}
-.nav{max-width:1180px;margin:auto;display:flex;align-items:center;gap:4px;overflow-x:auto}
-.nav a{padding:13px 12px;font-size:11px;font-weight:bold;white-space:nowrap;border-bottom:3px solid transparent}
-.nav a:hover,.nav a.active{color:var(--blue);border-bottom-color:var(--red)}
-.nav-search{margin-left:auto;display:flex;height:30px;min-width:210px}
-.nav-search input{min-width:0;flex:1;border:1px solid #ccc;padding:0 8px;font-size:11px}
-.nav-search button{width:38px;border:0;background:var(--blue);color:#fff}
-.container{max-width:1180px;margin:35px auto;display:grid;grid-template-columns:205px 1fr;gap:12px}
-.sidebar{border:1px solid #d8d8d8;height:max-content}
-.sidebar h3{margin:0;background:linear-gradient(90deg,var(--blue2),var(--blue));color:#fff;padding:12px 15px;font-size:12px}
-.sidebar a{display:block;padding:8px 10px;border-bottom:1px solid #e8e8e8;background:#fafafa;font-size:10px}
-.sidebar a:nth-child(even){background:#f1f1f1}
-.sidebar a:hover{background:#eaf1fb;color:var(--blue);padding-left:14px}
-.hero{min-height:265px;background:linear-gradient(135deg,var(--blue2) 0 57%,var(--red) 57%);position:relative;overflow:hidden;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center}
-.hero:before{content:"";position:absolute;inset:-90px auto auto -70px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.07)}
-.hero:after{content:"";position:absolute;right:-100px;bottom:-150px;width:330px;height:330px;border-radius:50%;background:rgba(255,255,255,.06)}
-.hero-content{position:relative;z-index:1;padding:25px}
-.hero small{letter-spacing:3px;font-weight:bold}
-.hero h1{font-size:43px;margin:10px 0;text-shadow:3px 3px rgba(0,0,0,.28)}
-.hero p{font-size:14px}
-.badge{display:inline-block;background:#fff;color:var(--blue);font-size:11px;font-weight:bold;padding:9px 15px;margin-top:8px}
-.hero-intro{margin-bottom:14px;border-radius:18px;overflow:hidden;box-shadow:0 8px 24px rgba(23,59,104,.14)}
-.hero-carousel{position:relative;overflow:hidden;border-radius:18px;box-shadow:0 8px 24px rgba(23,59,104,.16);background:#111}
-.hero-slide{display:none;min-height:360px;position:relative;background:#111}
-.hero-slide.active{display:flex;align-items:center;justify-content:center}
-.hero-slide img{width:100%;height:360px;object-fit:cover;display:block;opacity:1;transition:transform .8s ease}
-.hero-slide.active img{transform:scale(1.01)}
-.carousel-dots{display:none}
-.segment-label{display:block;padding:7px 10px;background:#eef3f9;color:var(--blue);font-size:9px;font-weight:900;letter-spacing:.7px;text-transform:uppercase;border-bottom:1px solid #dce4ef}
-.order-path{margin:0 0 15px;padding:10px 12px;background:#eef7ff;border-left:4px solid var(--blue);font-size:10px;color:#36506d}
-.whatsapp-preview{margin-top:14px;padding:13px;background:#eaf8ef;border:1px solid #bde8cd;border-radius:8px;font-size:10px;color:#28553a}
-.whatsapp-preview strong{color:#128c45}
-@media(max-width:520px){.hero-slide,.hero-slide img{height:300px}.logo-box{width:72vw;height:72px}.logo-box img{height:70px;border-radius:14px}.hero-intro{margin-bottom:10px}.hero-carousel{border-radius:12px}}
-.section{padding-top:42px}
-.section-title{display:flex;align-items:center;gap:15px;margin-bottom:18px}
-.section-title h2{font-size:21px;font-weight:normal;margin:0}
-.section-title:after{content:"";height:1px;background:#ddd;flex:1}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.gallery-card{height:145px;position:relative;overflow:hidden;background:linear-gradient(135deg,#eee,#cfcfcf);display:flex;align-items:center;justify-content:center;color:#777;font-weight:bold;font-size:14px;border:1px solid #ddd;border-radius:12px;cursor:zoom-in}
-.gallery-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}.gallery-card:hover img{transform:scale(1.05)}
-.gallery-modal{position:fixed;inset:0;z-index:100;background:rgba(7,16,31,.88);display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px)}
-.gallery-modal.open{display:flex}.gallery-modal img{max-width:min(94vw,1200px);max-height:88vh;object-fit:contain;border-radius:16px;box-shadow:0 18px 60px rgba(0,0,0,.45)}
-.gallery-close{position:absolute;top:18px;right:22px;width:42px;height:42px;border:0;border-radius:50%;background:#fff;color:var(--blue);font-size:28px;line-height:1;cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.25)}
-.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.product{border:1px solid #ddd;background:#fff;padding:16px}
-.product .pic{height:115px;background:#f2f2f2;display:flex;align-items:center;justify-content:center;color:#999;font-size:11px;margin-bottom:12px}
-.product h3{font-size:13px;margin:0 0 7px}
-.product p{font-size:11px;color:#777;margin:0}
-.quote{background:#fafafa;border-left:4px solid var(--red);padding:14px;margin-top:12px;font-size:12px;line-height:1.6}
-.form-wrap{display:grid;grid-template-columns:1fr .65fr;gap:18px}
-.form-card{border:1px solid #ddd;background:#fff;padding:22px}
-.form-card h3{margin:0 0 5px;font-size:17px}
-.form-card .sub{font-size:11px;color:#777;margin-bottom:18px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.field{margin-bottom:13px}
-.field label{display:block;font-size:11px;font-weight:bold;margin-bottom:6px}
-.field label span{font-weight:normal;color:#999}
-.field input,.field select,.field textarea{width:100%;border:1px solid #ccc;padding:10px;font:inherit;font-size:12px;border-radius:2px}
-.field textarea{min-height:105px;resize:vertical}
-.bank-note{font-size:10px;color:#777;margin:5px 0 10px}
-.bank-details{margin-top:8px;padding:12px;background:#f8f8f8;border:1px solid #ddd;font-size:11px;line-height:1.7;display:none}
-.bank-details strong{color:#333}
-.submit{background:linear-gradient(90deg,#128c45,var(--wa));border:0;color:#fff;padding:12px 18px;font-size:11px;font-weight:bold;cursor:pointer}
-.submit:hover{background:#128c45}
-#enviarPedido.is-ready{position:relative;isolation:isolate;animation:whatsappReadyPulse 1.5s ease-in-out infinite;box-shadow:0 0 0 0 rgba(37,211,102,.75),0 8px 22px rgba(0,0,0,.14)}
-#enviarPedido.is-ready::before{content:"";position:absolute;inset:-4px;border-radius:inherit;border:2px solid rgba(37,211,102,.9);animation:whatsappReadyBorder 1.5s ease-out infinite;pointer-events:none;z-index:-1}
-@keyframes whatsappReadyPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.55),0 8px 22px rgba(0,0,0,.14)}50%{box-shadow:0 0 0 7px rgba(37,211,102,.12),0 10px 28px rgba(37,211,102,.28)}}
-@keyframes whatsappReadyBorder{0%{transform:scale(.98);opacity:1}100%{transform:scale(1.06);opacity:0}}
-.summary{background:linear-gradient(145deg,#fff,#f3f7fc);border:1px solid #cfd8e6;padding:18px;height:max-content;position:sticky;top:150px}
-.summary h3{margin:0 0 13px;color:var(--blue);font-size:14px}
-.summary p{font-size:11px;margin:8px 0;line-height:1.5}
-.summary strong{color:#333}
-.brands{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
-.brand{height:78px;border:1px solid #ddd;display:flex;align-items:center;justify-content:center;background:#fff;padding:9px;overflow:hidden;transition:.2s}
-.brand:hover{border-color:var(--blue);box-shadow:0 3px 10px rgba(0,0,0,.08);transform:translateY(-2px)}
-.brand img{max-width:90%;max-height:55px;width:auto;height:auto;object-fit:contain;display:block}
-.map-wrap{border:1px solid #ddd;background:#f5f5f5;overflow:hidden;min-height:340px}
-.map-wrap iframe{width:100%;height:340px;border:0;display:block}
-.map-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.location{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.info{border:1px solid #ddd;padding:20px;background:#fafafa}
-.info h3{font-size:14px;color:var(--blue);margin:0 0 10px}
-.info p{font-size:12px;line-height:1.6}
-.btn{display:inline-block;background:var(--blue);color:#fff;padding:10px 14px;font-size:11px;font-weight:bold;margin-top:5px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.review{border:1px solid #ddd;padding:18px;background:#fff}
-.stars{color:#e30613;letter-spacing:2px;font-size:13px}
-.review p{font-size:12px;line-height:1.6}
-.review small{color:#777;font-size:10px}
-.footer{background:#fafafa}
-.footer-inner{max-width:1180px;margin:auto;padding:28px 0;display:grid;grid-template-columns:1.2fr .7fr 1.4fr;gap:45px}
-.footer h4{font-size:11px;margin:0 0 12px}.footer p,.footer a{font-size:10px;color:#777;line-height:1.8;display:block}
-.footer-logo{font-size:25px;font-weight:900;font-style:italic;color:var(--blue)}
-.copyright{text-align:center;border-top:1px solid #ddd;padding:10px;font-size:9px;color:#999}
-@media(max-width:1100px){.header-main{padding-left:15px;padding-right:15px}.nav{padding:0 15px}.container{padding-left:15px;padding-right:15px}.logo-box{width:min(50vw,390px)}}
-@media(max-width:900px){
- .header-main{padding:8px 15px}.contact-mini{display:none}.nav{padding:0 10px;flex-wrap:wrap}.nav-search{display:flex;order:2;width:100%;min-width:0;margin:4px 0 8px;height:36px}.nav-search input{font-size:12px}.nav-search button{width:44px}
- .container{grid-template-columns:1fr;padding:0 15px}.sidebar{display:none}
- .form-wrap,.location{grid-template-columns:1fr}.summary{position:static}
- .brands{grid-template-columns:repeat(3,1fr)}.reviews{grid-template-columns:1fr}.gallery,.product-grid{grid-template-columns:1fr 1fr}.map-wrap iframe{height:300px}
- .footer-inner{padding:25px 15px;grid-template-columns:1fr}
-}
-@media(max-width:520px){
- .logo-box{width:78vw;height:68px}.logo-box img{height:66px;border-radius:14px}.hero h1{font-size:30px}
- .gallery,.product-grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}.brands{grid-template-columns:repeat(2,1fr)}.map-wrap iframe{height:280px}
-}
+    <style>
+        body {
+            background: radial-gradient(ellipse at top, #1e293b 0%, #0B1120 40%, #000000 100%);
+            overflow-x: hidden;
+        }
+        
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 
+                        0 0 100px rgba(37, 99, 235, 0.1);
+        }
 
-/* Mejoras V8 conservando el diseño visual de V7 */
-.section-title h2{transition:transform .22s ease,text-shadow .22s ease,color .22s ease}
-.section-title:hover h2{transform:translateX(3px);text-shadow:0 2px 10px rgba(183,25,42,.16);color:var(--red)}
-.nav a{transition:transform .2s ease,color .2s ease,box-shadow .2s ease}
-.nav a:hover{transform:translateY(-1px);color:var(--red);box-shadow:0 4px 12px rgba(183,25,42,.10)}
-.sidebar a{transition:background .2s ease,box-shadow .2s ease,transform .2s ease}
-.sidebar a:hover,.sidebar a.active{background:#f8e9ec;box-shadow:inset 4px 0 0 var(--red),0 3px 10px rgba(183,25,42,.10);transform:translateX(2px)}
-.brands-marquee{overflow:hidden;width:100%;padding:2px 0}
-.brands-marquee .brands{display:flex;grid-template-columns:none;width:max-content;gap:12px;animation:brandsInfinite 24s linear infinite}
-.brands-marquee .brand{width:150px;flex:0 0 150px}
-@keyframes brandsInfinite{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.product .pic img{width:100%;height:100%;object-fit:cover;display:block}
-@media(max-width:700px){.logo-box{width:82vw;height:92px}.logo-box img{height:90px}.brands-marquee .brand{width:125px;flex-basis:125px}}
+        .neon-text {
+            text-shadow: 0 0 20px rgba(6, 182, 212, 0.6), 0 0 40px rgba(37, 99, 235, 0.4);
+        }
 
-/* V10 - ajuste integral responsive sin alterar el contenido */
-html{width:100%;max-width:100%;overflow-x:hidden;scroll-behavior:smooth}
-body{width:100%;max-width:100%;overflow-x:hidden;margin:0}
-img,video,iframe{max-width:100%}
-.header-main,.nav,.main,.container,.footer-inner{width:100%;max-width:1180px}
-.header-main{min-width:0}
-.logo-box{width:clamp(280px,48vw,620px);height:clamp(92px,10vw,122px);flex:0 1 620px;min-width:0;overflow:hidden;border-radius:22px;background:#fff;box-shadow:0 5px 18px rgba(0,0,0,.10)}
-.logo-box img{width:100%;height:100%;object-fit:contain;object-position:center;border-radius:22px;display:block}
-.hero-intro,.hero-carousel{width:100%;max-width:100%;overflow:hidden}
-.hero-carousel{min-height:clamp(250px,34vw,420px);touch-action:pan-y}
-.hero-slide{min-height:clamp(250px,34vw,420px);width:100%;overflow:hidden}
-.hero-slide img{width:100%;height:clamp(250px,34vw,420px);object-fit:cover;object-position:center;display:block}
-.hero-slide{animation:none}
-.hero-slide.active img{animation:carouselKenBurns 5s ease both}
-@keyframes carouselKenBurns{0%{transform:scale(1)}100%{transform:scale(1.035)}}
-.container{min-width:0}
-.main{min-width:0}
-.section,.section-title,.gallery,.product-grid,.form-wrap,.location,.footer-inner{min-width:0;max-width:100%}
-.gallery-card,.product,.form-card,.summary,.quote,.review,.brand{min-width:0}
-.nav{min-width:0;overflow:hidden}
-.nav a{white-space:nowrap}
-.brands-marquee{width:100%;max-width:100%;overflow:hidden}
-.brands{width:max-content;max-width:none}
-@media(min-width:901px){
- .header-main{padding-left:18px;padding-right:18px}
- .container{grid-template-columns:210px minmax(0,1fr);gap:18px}
- .main{overflow:visible}
-}
-@media(max-width:900px){
- .header-main{width:100%;padding:8px 15px;gap:12px}
- .logo-box{width:min(76vw,560px);height:96px;flex-basis:min(76vw,560px)}
- .contact-mini{max-width:32%;min-width:0}
- .contact-mini span{white-space:normal}
- .container{width:100%;grid-template-columns:1fr;min-width:0}
- .main{width:100%;min-width:0}
- .hero-slide,.hero-slide img{height:clamp(240px,52vw,380px);min-height:240px}
-}
-@media(max-width:700px){
- .header-main{flex-direction:column;align-items:center}
- .logo-box{width:min(94vw,560px);height:clamp(82px,22vw,108px);flex:0 0 auto;border-radius:20px}
- .logo-box img{border-radius:20px}
- .contact-mini{display:flex;max-width:100%;width:100%;justify-content:center;flex-wrap:wrap;gap:8px;font-size:10px}
- .nav{overflow-x:auto;overflow-y:hidden;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}
- .nav::-webkit-scrollbar{display:none}
- .hero-carousel{border-radius:14px}
- .hero-slide,.hero-slide img{height:clamp(220px,58vw,340px);min-height:220px}
- .gallery,.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media(max-width:480px){
- .logo-box{width:94vw;height:82px;border-radius:18px}
- .logo-box img{border-radius:18px}
- .hero-slide,.hero-slide img{height:220px;min-height:220px}
- .gallery,.product-grid{grid-template-columns:1fr}
- .section{padding-top:32px}
- .section-title{gap:10px}
- .section-title h2{font-size:19px}
- .row{grid-template-columns:1fr}
- .brands-marquee .brand{width:118px;flex-basis:118px}
-}
+        .progress-glow {
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.8);
+        }
 
-/* ===== V11: ajustes solicitados sin alterar el resto del diseño ===== */
-.logo-box{height:auto !important;align-self:center;overflow:hidden;padding:0;background:#fff;box-sizing:border-box}
-.logo-box img{height:auto !important;width:100%;max-height:none;object-fit:contain;object-position:center;border-radius:22px;display:block}
+        /* Canvas detrás de todo */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
 
-/* Carrusel horizontal continuo: una imagen cada 5 segundos */
-.hero-carousel{overflow:hidden;position:relative}
-.hero-track{display:flex;width:100%;height:100%;transform:translateX(0);transition:transform 900ms cubic-bezier(.65,0,.25,1);will-change:transform}
-.hero-slide{display:block !important;flex:0 0 100%;width:100%;min-width:100%;position:relative;background:#111}
-.hero-slide.active{display:block !important}
-.hero-slide img{width:100%;height:100%;object-fit:cover;display:block;transform:none !important;animation:none !important}
-
-/* Ofertas ampliables */
-#ofertas .product{cursor:zoom-in;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
-#ofertas .product:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.12);border-color:#c9c9c9}
-#ofertas .product .pic{cursor:zoom-in;overflow:hidden}
-#ofertas .product .pic img{transition:transform .3s ease}
-#ofertas .product:hover .pic img{transform:scale(1.04)}
-#galleryModal img.offer-expanded{max-width:96vw;max-height:94vh;width:auto;height:auto;border-radius:14px;box-shadow:0 20px 80px rgba(0,0,0,.55)}
-
-/* Ubicación y contacto: acabado más limpio y destacado */
-#ubicacion .section-title h2{font-weight:800;letter-spacing:.2px}
-#ubicacion .location{gap:20px;align-items:stretch}
-#ubicacion .info{background:linear-gradient(145deg,#fff,#f7f8fa);border:1px solid #e1e4e8;border-radius:16px;padding:22px;box-shadow:0 8px 24px rgba(0,0,0,.06);transition:transform .2s ease,box-shadow .2s ease}
-#ubicacion .info:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.09)}
-#ubicacion .info h3{color:var(--red);font-size:16px;font-weight:800}
-#ubicacion .map-wrap{border-radius:12px;border:1px solid #ddd;box-shadow:0 5px 18px rgba(0,0,0,.07)}
-#ubicacion .btn{border-radius:7px;background:linear-gradient(135deg,var(--red),var(--red2));box-shadow:0 5px 14px rgba(183,25,42,.18);transition:transform .2s ease,box-shadow .2s ease}
-#ubicacion .btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(183,25,42,.24)}
-.footer{border-top:1px solid #e4e6ea;background:linear-gradient(180deg,#fafafa,#f1f2f4)}
-.footer-inner{padding-top:34px;padding-bottom:34px}
-
-/* WhatsApp flotante compacto */
-.whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:95;display:flex;align-items:center;justify-content:center;background:var(--wa);color:#fff;text-decoration:none;width:86px;height:38px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.20);font-size:12px;font-weight:900;letter-spacing:.2px;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
-.whatsapp-float:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.25);background:#128c45}
-.whatsapp-label{display:block}
-.whatsapp-icon{display:none}
-.whatsapp-float::after{content:"Consulta con nuestro asesor";position:absolute;right:0;bottom:calc(100% + 9px);background:#202735;color:#fff;padding:8px 11px;border-radius:9px;font-size:11px;font-weight:800;white-space:nowrap;opacity:0;visibility:hidden;transform:translateY(5px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease;box-shadow:0 7px 18px rgba(0,0,0,.18);pointer-events:none}
-.whatsapp-float::before{content:"";position:absolute;right:31px;bottom:calc(100% + 3px);border:6px solid transparent;border-top-color:#202735;opacity:0;visibility:hidden;transform:translateY(5px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease;pointer-events:none}
-.whatsapp-float:hover::after,.whatsapp-float:hover::before,.whatsapp-float:focus-visible::after,.whatsapp-float:focus-visible::before{opacity:1;visibility:visible;transform:translateY(0)}
-@media(max-width:480px){.whatsapp-float{right:12px;bottom:12px;width:82px;height:36px;font-size:11px}.whatsapp-float::after{right:-4px;font-size:10px;padding:7px 9px}.whatsapp-float::before{right:27px}}
-
-
-.contact-card-top{display:grid;grid-template-columns:repeat(2,minmax(150px,1fr));gap:5px 9px;padding:9px 11px;border:1px solid rgba(183,25,42,.25);border-radius:18px;background:linear-gradient(135deg,#fff 0%,#faf7f2 100%);box-shadow:0 5px 16px rgba(32,39,53,.10),inset 0 0 0 1px rgba(255,255,255,.8);font-size:10px;min-width:330px}.contact-card-top a{padding:4px 7px;border-radius:9px;transition:.25s;border:1px solid transparent}.contact-card-top a:hover{background:#fff;border-color:rgba(183,25,42,.25);transform:translateY(-1px);color:var(--red)}.shipping-info{margin:14px 0;padding:13px 15px;border:1px solid rgba(183,25,42,.22);border-radius:16px;background:linear-gradient(135deg,#fff,#f8f9fb);box-shadow:0 5px 16px rgba(32,39,53,.07)}.shipping-info h4{margin:0 0 8px;color:var(--red);font-size:11px}.shipping-info p{font-size:10px;line-height:1.65;margin:4px 0}.shipping-warning{padding:8px 10px;border-radius:10px;background:#fff7e7}.contact-actions{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.contact-actions .btn{margin:0}.footer a:hover{color:var(--red)}@media(max-width:900px){.contact-card-top{min-width:0;width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){.contact-card-top{grid-template-columns:1fr 1fr;width:100%;font-size:9px}.contact-card-top a{white-space:normal}.contact-actions .btn{flex:1 1 180px}}@media(max-width:480px){.contact-card-top{grid-template-columns:1fr}.contact-actions .btn{flex:1 1 100%}}
-
-/* V15: microinteracciones de contacto y formulario compacto */
-.contact-card-top{position:relative;overflow:visible;border-color:rgba(183,25,42,.34);box-shadow:0 6px 18px rgba(32,39,53,.10),0 0 0 1px rgba(183,25,42,.06);transition:box-shadow .35s ease,border-color .35s ease,transform .35s ease}
-.contact-card-top:hover{border-color:rgba(183,25,42,.48);box-shadow:0 9px 24px rgba(32,39,53,.13),0 0 18px rgba(183,25,42,.08)}
-.contact-card-top a.instagram-link{font-weight:900;color:#b7192a;animation:instagramPulse 2.4s ease-in-out infinite}
-.contact-card-top a.instagram-link::before{content:'●';font-size:7px;display:inline-block;margin-right:5px;vertical-align:middle;animation:instagramDot 1.8s ease-in-out infinite}
-@keyframes instagramPulse{0%,100%{opacity:1;text-shadow:0 0 0 rgba(183,25,42,0)}50%{opacity:.68;text-shadow:0 0 8px rgba(183,25,42,.35)}}
-@keyframes instagramDot{0%,100%{opacity:.55;transform:scale(.9)}50%{opacity:1;transform:scale(1.25)}}
-.form-accordion{margin-top:12px;border:1px solid rgba(183,25,42,.18);border-radius:14px;background:#fff;overflow:hidden;box-shadow:0 5px 16px rgba(32,39,53,.06)}
-.form-accordion>summary{list-style:none;cursor:pointer;padding:12px 14px;font-weight:900;font-size:12px;color:var(--red);display:flex;align-items:center;justify-content:space-between;gap:12px;background:linear-gradient(135deg,#fff,#faf7f2);user-select:none}
-.form-accordion>summary::-webkit-details-marker{display:none}
-.form-accordion>summary::after{content:'＋';font-size:18px;line-height:1;transition:transform .25s ease}
-.form-accordion[open]>summary::after{content:'−';transform:rotate(180deg)}
-.form-accordion>summary:hover{background:linear-gradient(135deg,#fff,#f7f1eb)}
-.form-accordion-content{padding:0 14px 14px}
-.form-accordion-content>.field:first-child{margin-top:12px}
-.form-accordion .shipping-info{margin:12px 0 0}
-@media(max-width:600px){.contact-card-top{grid-template-columns:1fr;min-width:0}.form-accordion>summary{font-size:11px}}
-/* V17 */
-:root{--glass-bg:rgba(255,255,255,.64);--glass-border:rgba(255,255,255,.58);--glass-shadow:0 14px 40px rgba(23,59,104,.13)}
-body{background:linear-gradient(135deg,#f7f3ea 0%,#eef3f9 45%,#fff 100%)}
-.hero-intro,.hero-carousel,.gallery-card,.product,.form-card,.summary,.review,.brand,#ubicacion .info,.quote,.sidebar,.shipping-info,.whatsapp-preview,.form-accordion{background:var(--glass-bg)!important;border:1px solid var(--glass-border)!important;box-shadow:var(--glass-shadow)!important;backdrop-filter:blur(14px) saturate(125%);-webkit-backdrop-filter:blur(14px) saturate(125%)}
-.hero-intro{background:linear-gradient(135deg,rgba(11,37,71,.96),rgba(183,25,42,.92))!important;border-color:rgba(255,255,255,.18)!important}
-.top-contact-card{margin:18px auto 0;max-width:1180px;padding:22px 26px;border-radius:20px;background:linear-gradient(135deg,rgba(11,37,71,.96),rgba(23,59,104,.88) 52%,rgba(183,25,42,.94));color:#fff;border:1px solid rgba(255,255,255,.22);box-shadow:0 14px 40px rgba(23,59,104,.18);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
-.top-contact-card h2{margin:0 0 16px;text-align:center;font-size:20px;letter-spacing:.6px}.top-contact-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px 18px}.top-contact-links a{display:inline-flex;align-items:center;gap:7px;color:#fff;font-size:12px;font-weight:800;padding:9px 12px;border-radius:12px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);transition:.2s ease}.top-contact-links a:hover{transform:translateY(-2px);background:rgba(255,255,255,.17)}
-.form-card h3{font-size:18px}.form-card,.summary{border-radius:18px!important}.summary .attachment-note{margin:0 0 12px;padding:10px 12px;border-radius:10px;background:rgba(183,25,42,.08);border-left:4px solid var(--red);font-size:11px;font-weight:800}
-.footer{background:linear-gradient(180deg,rgba(11,37,71,.98),rgba(23,59,104,.98));color:#fff;border-top:1px solid rgba(255,255,255,.16)}.footer-inner{max-width:none;width:100%;padding:30px clamp(18px,5vw,70px);display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:42px;justify-items:center;text-align:center}.footer-inner>div{width:100%;max-width:520px}.footer p,.footer a{color:rgba(255,255,255,.84)}.footer h4{color:#fff}.footer-logo{color:#fff!important;font-size:30px}.footer-contact a{display:flex;justify-content:center;align-items:center;gap:8px;margin:7px 0}.copyright{border-top:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.68)}
-.location{width:100%;grid-template-columns:1fr}.location .info{width:100%;min-height:360px}.map-wrap iframe{height:340px}
-@media(max-width:700px){.top-contact-card{margin:12px 15px 0;padding:18px 14px}.top-contact-links{gap:8px}.top-contact-links a{font-size:11px}.footer-inner{grid-template-columns:1fr;gap:24px}.location .info{min-height:0}}
-</style>
-
-<style>
-/* V16: teléfonos de contacto como accesos directos a WhatsApp */
-.contact-wa{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:800;color:inherit;transition:transform .2s ease,opacity .2s ease}
-.contact-wa:hover{transform:translateY(-1px);opacity:.82}
-
-/* V20: carrusel persuasivo de Ofertas + banner móvil */
-.offers-banner{position:relative;overflow:hidden;margin:0 0 16px;border-radius:16px;border:1px solid rgba(183,25,42,.24);background:linear-gradient(100deg,rgba(11,37,71,.97),rgba(183,25,42,.96),rgba(11,37,71,.97));box-shadow:0 10px 28px rgba(23,59,104,.16);color:#fff;white-space:nowrap}
-.offers-banner::before,.offers-banner::after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
-.offers-banner::before{left:0;background:linear-gradient(90deg,rgba(11,37,71,1),rgba(11,37,71,0))}.offers-banner::after{right:0;background:linear-gradient(270deg,rgba(11,37,71,1),rgba(11,37,71,0))}
-.offers-banner-track{display:inline-flex;align-items:center;gap:12px;min-width:max-content;padding:13px 70px;font-size:11px;font-weight:800;animation:offersBannerMove 34s linear infinite}
-.offers-banner-track span{letter-spacing:.25px}.offers-banner-track b{color:#ffe7a6;font-weight:900}.offers-banner-track b::after{content:"  •";color:rgba(255,255,255,.55);margin-left:12px}
-@keyframes offersBannerMove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.offers-carousel{position:relative;overflow:hidden;border-radius:20px;padding:0 0 42px;background:rgba(255,255,255,.38);border:1px solid rgba(255,255,255,.62);box-shadow:0 14px 40px rgba(23,59,104,.14);backdrop-filter:blur(14px) saturate(125%);-webkit-backdrop-filter:blur(14px) saturate(125%)}
-.offers-track{display:flex;transition:transform 700ms cubic-bezier(.65,0,.25,1);will-change:transform}
-.offer-slide{flex:0 0 100%;min-width:100%;padding:0;box-sizing:border-box}.offer-pic{position:relative;overflow:hidden;height:clamp(280px,42vw,520px);border-radius:0;background:#fff;border:1px solid rgba(183,25,42,.18);box-shadow:0 10px 25px rgba(32,39,53,.12);cursor:zoom-in}.offer-pic::after{content:"VER OFERTA";position:absolute;left:16px;bottom:14px;padding:7px 11px;border-radius:999px;background:rgba(11,37,71,.82);color:#fff;font-size:10px;font-weight:900;letter-spacing:.5px;opacity:0;transform:translateY(8px);transition:.25s ease}.offer-pic:hover::after{opacity:1;transform:translateY(0)}
-.offer-pic img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .45s ease,filter .45s ease}.offer-pic:hover img{transform:scale(1.035);filter:saturate(1.08)}
-.offer-caption{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;padding:11px 8px 2px;text-align:center}.offer-caption strong{color:var(--red);font-size:14px}.offer-caption span{font-size:10px;color:var(--muted);font-weight:700}
-.offers-dots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:7px}.offers-dots button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:rgba(23,59,104,.28);cursor:pointer;transition:.25s}.offers-dots button.active{width:23px;border-radius:999px;background:var(--red)}
-@media(max-width:600px){.offers-banner-track{font-size:10px;padding:12px 55px;gap:9px;animation-duration:28s}.offers-banner::before,.offers-banner::after{width:45px}.offers-carousel{padding:0 0 40px}.offer-pic{height:270px}.offer-caption{gap:5px}.offer-caption strong{font-size:12px}.offer-caption span{font-size:9px}}
-</style>
+        .whatsapp-float {
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+    </style>
 </head>
-<body>
+<body class="text-brand-light antialiased min-h-screen flex flex-col relative">
 
-<div class="topbar"><div class="inner"><span>Trelew, Chubut</span><span>|</span><a href="#contacto">Contacto</a></div></div>
+    <!-- Fondo de Partículas -->
+    <canvas id="particle-canvas"></canvas>
 
-<header class="header">
-  <div class="header-main">
-    <div class="logo-box">
-      <!-- Colocá el archivo "LOGO AUTOPARTES BRASS.jpg" en la misma carpeta que este HTML -->
-      <img src="LOGO AUTOPARTES BRASS.jpg" alt="Autopartes Brass"
-           onerror="this.style.display='none';document.querySelector('.logo-fallback').style.display='flex'">
-      <div class="logo-fallback"><span>BRASS</span></div>
-    </div>
-    <div class="top-contact-card" aria-label="Consulta con nuestros asesores">
-      <h2>CONSULTA CON NUESTROS ASESORES</h2>
-      <div class="top-contact-links">
-        <a href="https://wa.me/542804589193" target="_blank" rel="noopener"><span>🟢</span>0280 458-9193</a>
-        <a href="https://wa.me/542894350829" target="_blank" rel="noopener"><span>🟢</span>0289 435-0829</a>
-        <a href="https://wa.me/542804651184" target="_blank" rel="noopener"><span>🟢</span>0280 465-1184</a>
-        <a href="https://maps.app.goo.gl/e1EfhuTn9NAQMxXL8" target="_blank" rel="noopener"><span>📍</span>Av. La Plata 2701</a>
-        <a href="https://instagram.com/autopartesbrass/" target="_blank" rel="noopener"><span>◎</span>Instagram</a>
-        <a href="mailto:Jorgecurytw@gmail.com"><span>✉️</span>Jorgecurytw@gmail.com</a>
-      </div>
-    </div>
-  </div>
-  <nav class="nav" aria-label="Navegación principal">
-    <a href="#inicio" class="active">Inicio</a>
-    <a href="#galeria">Galería</a>
-    <a href="#repuestos">Repuestos</a>
-    <a href="#ofertas">Ofertas</a>
-    <a href="#novedades">Novedades</a>
-    <a href="#marcas">Marcas</a>
-    <a href="#ubicacion">Ubicación</a>
-    <a href="#contacto">Contacto</a>
-    <div class="nav-search"><input id="globalSearch" type="search" placeholder="Buscar repuesto..."><button>🔎</button></div>
-  </nav>
-</header>
+    <!-- Contenido Principal -->
+    <main class="relative z-10 flex-grow flex items-center justify-center p-4 sm:p-6 lg:p-8">
+        <div class="glass-panel rounded-3xl p-8 sm:p-12 max-w-3xl w-full text-center animate-float">
+            
+            <!-- Representación Visual 404 -->
+            <div class="mb-6 relative inline-block">
+                <h1 class="text-8xl sm:text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-cyan neon-text tracking-tighter">
+                    404
+                </h1>
+                <!-- Ícono de advertencia tecnológica superpuesto sutil -->
+                <div class="absolute -top-2 -right-2 sm:-right-4 text-brand-cyan animate-pulse">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 sm:h-10 sm:w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                </div>
+            </div>
 
-<main id="inicio" class="container">
-<aside class="sidebar">
-  <h3>REPUESTOS</h3>
-  <span class="segment-label">Motor y encendido</span>
-  <a href="#pedido" data-category="Motor y encendido" data-product="ALTERNADOR">ALTERNADOR</a><a href="#pedido" data-category="Motor y encendido" data-product="BOBINA DE ENCENDIDO">BOBINA DE ENCENDIDO</a><a href="#pedido" data-category="Motor y encendido" data-product="MOTOR DE ARRANQUE">MOTOR DE ARRANQUE</a><a href="#pedido" data-category="Motor y encendido" data-product="VOLANTE DE MOTOR">VOLANTE DE MOTOR</a>
-  <span class="segment-label">Combustible e inyección</span>
-  <a href="#pedido" data-category="Combustible e inyección" data-product="BOMBA DE NAFTA">BOMBA DE NAFTA</a><a href="#pedido" data-category="Combustible e inyección" data-product="BOMBA INYECTORA">BOMBA INYECTORA</a><a href="#pedido" data-category="Combustible e inyección" data-product="CARBURADOR">CARBURADOR</a><a href="#pedido" data-category="Combustible e inyección" data-product="MÓDULO DE INYECCIÓN">MÓDULO DE INYECCIÓN</a>
-  <span class="segment-label">Transmisión</span>
-  <a href="#pedido" data-category="Transmisión" data-product="CAJA DE TRANSFERENCIA">CAJA DE TRANSFERENCIA</a><a href="#pedido" data-category="Transmisión" data-product="CAJA DE VELOCIDADES">CAJA DE VELOCIDADES</a>
-  <span class="segment-label">Carrocería</span>
-  <a href="#pedido" data-category="Carrocería" data-product="CAPOT">CAPOT</a><a href="#pedido" data-category="Carrocería" data-product="GRILLA DELANTERA">GRILLA DELANTERA</a><a href="#pedido" data-category="Carrocería" data-product="GUARDABARROS">GUARDABARROS</a><a href="#pedido" data-category="Carrocería" data-product="ÓPTICAS">ÓPTICAS</a><a href="#pedido" data-category="Carrocería" data-product="PUERTAS">PUERTAS</a><a href="#pedido" data-category="Carrocería" data-product="TAPA DE BAÚL">TAPA DE BAÚL</a>
-  <span class="segment-label">Climatización / aire acondicionado</span>
-  <a href="#pedido" data-category="Climatización" data-product="AIRE ACONDICIONADO">AIRE ACONDICIONADO</a><a href="#pedido" data-category="Climatización" data-product="COMPRESOR DE AIRE ACONDICIONADO">COMPRESOR DE AIRE ACONDICIONADO</a><a href="#pedido" data-category="Climatización" data-product="CONDENSADOR">CONDENSADOR</a>
-  <span class="segment-label">Refrigeración</span>
-  <a href="#pedido" data-category="Refrigeración" data-product="BOMBA DE AGUA">BOMBA DE AGUA</a><a href="#pedido" data-category="Refrigeración" data-product="RADIADOR">RADIADOR</a><a href="#pedido" data-category="Refrigeración" data-product="RADIADOR DE ACEITE">RADIADOR DE ACEITE</a><a href="#pedido" data-category="Refrigeración" data-product="ELECTROVENTILADOR">ELECTROVENTILADOR</a>
-  <span class="segment-label">Electricidad</span>
-  <a href="#pedido" data-category="Electricidad" data-product="ALTERNADOR">ALTERNADOR</a><a href="#pedido" data-category="Electricidad" data-product="INSTRUMENTAL DE TABLERO">INSTRUMENTAL DE TABLERO</a><a href="#pedido" data-category="Electricidad" data-product="TABLERO DE INSTRUMENTO">TABLERO DE INSTRUMENTO</a>
-  <span class="segment-label">Interior</span>
-  <a href="#pedido" data-category="Interior" data-product="TABLERO DE INSTRUMENTO">TABLERO DE INSTRUMENTO</a><a href="#pedido" data-category="Interior" data-product="TAPIZADOS">TAPIZADOS</a>
-  <span class="segment-label">Admisión y turbo</span>
-  <a href="#pedido" data-category="Admisión y turbo" data-product="INTERCOOLER">INTERCOOLER</a><a href="#pedido" data-category="Admisión y turbo" data-product="TURBO COMPRESOR">TURBO COMPRESOR</a>
-</aside>
+            <!-- Ilustración SVG: Servidor en Mantenimiento -->
+            <div class="flex justify-center mb-8">
+                <svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="drop-shadow-2xl">
+                    <!-- Servidor -->
+                    <rect x="40" y="20" width="120" height="80" rx="8" fill="#1F2937" stroke="#374151" stroke-width="2"/>
+                    <rect x="50" y="30" width="100" height="12" rx="4" fill="#111827"/>
+                    <rect x="50" y="50" width="100" height="12" rx="4" fill="#111827"/>
+                    <rect x="50" y="70" width="100" height="12" rx="4" fill="#111827"/>
+                    <!-- Luces del servidor -->
+                    <circle cx="135" cy="36" r="3" fill="#06B6D4" class="animate-pulse"/>
+                    <circle cx="145" cy="36" r="3" fill="#2563EB"/>
+                    <circle cx="135" cy="56" r="3" fill="#10B981"/>
+                    <circle cx="145" cy="56" r="3" fill="#111827"/>
+                    <circle cx="135" cy="76" r="3" fill="#2563EB"/>
+                    <circle cx="145" cy="76" r="3" fill="#06B6D4" class="animate-pulse"/>
+                    
+                    <!-- Engranaje 1 -->
+                    <g class="animate-spin-slow" style="transform-origin: 160px 20px;">
+                        <path d="M160 10 L163 16 L170 16 L165 20 L167 27 L160 23 L153 27 L155 20 L150 16 L157 16 Z" fill="#4B5563" stroke="#9CA3AF" stroke-width="1"/>
+                        <circle cx="160" cy="19" r="4" fill="#1F2937"/>
+                    </g>
+                    
+                    <!-- Engranaje 2 -->
+                    <g class="animate-spin-reverse" style="transform-origin: 30px 90px;">
+                        <path d="M30 80 L32 85 L38 85 L34 88 L36 94 L30 91 L24 94 L26 88 L22 85 L28 85 Z" fill="#4B5563" stroke="#9CA3AF" stroke-width="1"/>
+                        <circle cx="30" cy="89" r="3" fill="#1F2937"/>
+                    </g>
 
-<section class="main">
-<div class="hero-intro">
-  <div class="hero" style="width:100%">
-    <div class="hero-content">
-      <small>AUTOPARTES • REPUESTOS • ACCESORIOS</small>
-      <h1>AUTOPARTES BRASS</h1>
-      <p>Repuestos para tu vehículo en Trelew, Chubut</p>
-      <a class="badge" href="#pedido">SOLICITAR UN REPUESTO</a>
-    </div>
-  </div>
-</div>
-<section class="hero-carousel" id="heroCarousel" aria-label="Promociones Autopartes Brass">
-  <div class="hero-track">
-    <div class="hero-slide active"><img src="OFERTA CUENTAS.png" alt="Oferta y medios de pago"></div>
-    <div class="hero-slide"><img src="OFERTA HORARIO DE ATENCION.png" alt="Horario de atención"></div>
-    <div class="hero-slide"><img src="OFERTA MOTOR.png" alt="Oferta motor"></div>
-    <div class="hero-slide"><img src="OFERTA CAJA DE VELOCIDADES.png" alt="Oferta caja de velocidades"></div>
-  </div>
-</section>
+                    <!-- Llave inglesa estilizada -->
+                    <path d="M10 100 L25 85 L30 90 L15 105 Z" fill="#6B7280" stroke="#9CA3AF" stroke-width="1.5"/>
+                    <circle cx="12" cy="103" r="4" fill="#111827" stroke="#9CA3AF" stroke-width="1.5"/>
+                    
+                    <!-- Líneas de conexión digitales -->
+                    <path d="M160 20 Q 180 10, 190 30" stroke="#06B6D4" stroke-width="1.5" stroke-dasharray="4 4" class="animate-pulse" fill="none"/>
+                    <path d="M30 90 Q 10 100, 5 80" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="4 4" class="animate-pulse" fill="none"/>
+                </svg>
+            </div>
 
-<section id="galeria" class="section">
- <div class="section-title"><h2>Galería</h2></div>
- <div class="gallery">
-   <div class="gallery-card"><img src="LOCAL.jpg" alt="Local Autopartes Brass" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-   <div class="gallery-card"><img src="AUTOPARTES.jpg" alt="Autopartes" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-   <div class="gallery-card"><img src="AUTOPARTES2.jpg" alt="Autopartes 2" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-   <div class="gallery-card"><img src="REPUESTO MOTOR.jpg" alt="Repuesto de motor" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-   <div class="gallery-card"><img src="REPUESTO PLASTICOS.jpg" alt="Repuestos plásticos" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-   <div class="gallery-card"><img src="REPUESTO CAJA.jpg" alt="Repuesto de caja" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
- </div>
-</section>
-<div class="gallery-modal" id="galleryModal" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
-  <button class="gallery-close" type="button" aria-label="Cerrar imagen">×</button>
-  <img id="galleryModalImg" src="" alt="Imagen ampliada">
-</div>
+            <!-- Textos -->
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3 tracking-tight">
+                🚧 Sitio Temporalmente No Disponible
+            </h2>
+            
+            <p class="text-lg text-gray-300 mb-2 font-medium">
+                Estamos realizando tareas de mantenimiento para mejorar tu experiencia.
+            </p>
+            
+            <div class="inline-block bg-brand-blue/10 border border-brand-blue/20 rounded-lg px-4 py-2 mb-8">
+                <p class="text-sm text-brand-cyan font-medium flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    El servicio se encuentra suspendido temporalmente por cuestiones administrativas relacionadas con el hosting.
+                </p>
+            </div>
 
-<section id="repuestos" class="section">
- <div class="section-title"><h2>Repuestos</h2></div>
- <div class="form-wrap">
-  <div class="form-card" id="pedido">
-   <h3>Pedido de Repuestos</h3>
-   <div class="sub">Seleccioná una categoría y el producto. La selección se incorpora automáticamente al pedido.</div>
-   <div class="order-path" id="orderPath">Ruta inteligente: <strong>Repuestos</strong> → elegí categoría → elegí producto. Los accesos laterales cargan automáticamente la combinación.</div>
-   <div class="row">
-    <div class="field">
-      <label>Categoría de repuesto *</label>
-      <select id="categoria" required>
-       <option value="">Seleccionar categoría...</option>
-       <option>Motor y encendido</option><option>Combustible e inyección</option><option>Transmisión</option>
-       <option>Carrocería</option><option>Climatización</option><option>Refrigeración</option>
-       <option>Electricidad</option><option>Interior</option><option>Admisión y turbo</option>
-      </select>
-    </div>
-    <div class="field">
-      <label>Repuesto / producto *</label>
-      <select id="producto" required disabled><option value="">Primero elegí una categoría...</option></select>
-    </div>
-   </div>
-   <div class="row">
-    <div class="field"><label>Nombre y apellido *</label><input id="nombre" required placeholder="Tu nombre completo"></div>
-    <div class="field"><label>DNI *</label><input id="dni" required inputmode="numeric" placeholder="Tu DNI"></div>
-   </div>
-   <div class="row">
-    <div class="field"><label>Teléfono / WhatsApp *</label><input id="telefono" required placeholder="Ej. 0280 458-9193"></div>
-    </div>
-   <div class="field"><label>E-mail <span>(opcional)</span></label><input id="email" type="email" placeholder="tuemail@ejemplo.com"></div>
-   <div class="field">
-    <label>Vehículo: marca / modelo / año <span>(opcional)</span></label>
-    <input id="vehiculo" placeholder="Ej. Ford Ranger / 2018">
-   </div>
-   <div class="row">
-    <div class="field"><label>Dirección <span>(opcional)</span></label><input id="direccion" placeholder="Calle y número"></div>
-    <div class="field"><label>Código postal <span>(opcional)</span></label><input id="cp" placeholder="Ej. 9100"></div>
-   </div>
-   <div class="field"><label>Ciudad <span>(opcional)</span></label><input id="ciudad" placeholder="Ej. Trelew"></div>
-   <details class="form-accordion" id="datosPagoEnvio">
-    <summary>💳 DATOS DE CUENTA BANCARIA / MEDIO DE PAGO</summary>
-    <div class="form-accordion-content">
-     <div class="field">
-      <div class="bank-note">Elegí la cuenta o medio de pago. Los datos seleccionados se incorporarán al pedido.</div>
-      <select id="cuenta">
-        <option value="">Seleccionar cuenta bancaria / medio de pago...</option>
-        <option value="Mercado Pago">Mercado Pago</option>
-        <option value="Santander Rio">Santander Río</option>
-        <option value="Efectivo">Pago en Efectivo</option>
-      </select>
-      <div id="bankDetails" class="bank-details"></div>
-     </div>
-     <div class="field"><label>Comentario adicional <span>(opcional)</span></label><textarea id="comentario" placeholder="Indicá motor, versión, lado, año, código o cualquier dato que ayude a identificar el repuesto."></textarea></div>
-     <div class="shipping-info">
-      <h4>📦 DATOS DE ENVÍO — AUTOPARTES Brass</h4>
-      <p><strong>🏬 Nombre:</strong> BRASS AUTOPARTES<br><strong>📍 Dirección:</strong> Av. La Plata 2701<br><strong>📌 Ciudad:</strong> Trelew, Chubut<br><strong>📮 Código Postal:</strong> 9100<br><strong>☎️ Teléfono:</strong> 2804-589193<br><strong>✉️ E-mail:</strong> Jorgecurytw@gmail.com<br><strong>💼 CUIT:</strong> 20-13160637-1</p>
-      <p class="shipping-warning">⚠️ <strong>Importante:</strong> Avisar previamente el envío y enviar comprobante + datos del repuesto por este medio.</p>
-     </div>
-    </div>
-   </details>
-   <button class="submit" id="enviarPedido" type="button">📲 ENVIAR PEDIDO FORMATEADO POR WHATSAPP</button>
-   <div class="whatsapp-preview"><strong>Pedido listo para WhatsApp</strong><br>Se enviará con categoría, producto, datos del cliente, vehículo, ubicación, medio de pago y comentario, organizado como una ficha de pedido.</div>
-  </div>
+            <!-- Indicador de Progreso Luminoso -->
+            <div class="w-full max-w-md mx-auto mb-10">
+                <div class="flex justify-between text-xs text-gray-400 mb-2 font-medium uppercase tracking-wider">
+                    <span>Progreso del mantenimiento</span>
+                    <span class="text-brand-cyan">En curso...</span>
+                </div>
+                <div class="h-2 w-full bg-gray-800 rounded-full overflow-hidden border border-gray-700">
+                    <div class="h-full bg-gradient-to-r from-brand-blue to-brand-cyan rounded-full progress-glow animate-pulse" style="width: 65%"></div>
+                </div>
+            </div>
 
-  <aside class="summary">
-    <h3>Resumen del pedido</h3>
-    <p><strong>Categoría:</strong> <span id="sumCat">—</span></p>
-    <p><strong>Repuesto:</strong> <span id="sumProd">—</span></p>
-    <p><strong>Cliente:</strong> <span id="sumNombre">—</span></p>
-    <p><strong>Vehículo:</strong> <span id="sumVehiculo">—</span></p>
-    <p><strong>Dirección:</strong> <span id="sumDireccion">—</span></p>
-    <p><strong>Código postal:</strong> <span id="sumCP">—</span></p>
-    <p><strong>Ciudad:</strong> <span id="sumCiudad">—</span></p>
-    <p><strong>Cuenta para pago:</strong> <span id="sumCuenta">—</span></p>
-    <p><strong>Comentario:</strong> <span id="sumComentario">—</span></p>
-    <hr>
-    <div class="attachment-note">📷 <strong>Adjuntar imagen de comprobante/ticket</strong></div>
-    <p>El formulario conserva todos los datos elegidos antes de enviar el pedido.</p>
-  </aside>
- </div>
-</section>
+            <!-- Botones de Acción -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+                <a href="/" class="group relative px-8 py-3.5 bg-brand-blue hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    Volver al Inicio
+                </a>
+                <a href="mailto:soporte@empresa.com" class="group px-8 py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-brand-cyan/50 text-gray-200 font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    Contactar Soporte
+                </a>
+            </div>
 
-<section id="ofertas" class="section">
-  <div class="section-title"><h2>Ofertas</h2></div>
-  <div class="offers-banner" aria-label="Promociones y ofertas Autopartes Brass">
-    <div class="offers-banner-track">
-      <span>Repuestos seleccionados</span><b>Consultá disponibilidad y precio</b>
-      <span>Autopartes destacadas</span><b>Solicitá información por WhatsApp</b>
-      <span>Promociones</span><b>Stock sujeto a disponibilidad</b>
-      <span>Ofertas especiales</span><b>Consultá disponibilidad y precio</b>
-      <span>Nuevas ofertas</span><b>Consultá disponibilidad y precio</b>
-      <span>Promociones destacadas</span><b>Consultá disponibilidad y precio</b>
-      <span>Repuestos seleccionados</span><b>Consultá disponibilidad y precio</b>
-      <span>Autopartes destacadas</span><b>Solicitá información por WhatsApp</b>
-    </div>
-  </div>
-  <div class="offers-carousel" id="offersCarousel" aria-label="Carrusel de ofertas Autopartes Brass">
-    <div class="offers-track">
-      <article class="offer-slide"><div class="offer-pic"><img src="OFERTA1.jpg" alt="Repuestos seleccionados"></div><div class="offer-caption"><strong>Repuestos seleccionados</strong><span>Consultá disponibilidad y precio</span></div></article>
-      <article class="offer-slide"><div class="offer-pic"><img src="OFERTA2.jpg" alt="Autopartes destacadas"></div><div class="offer-caption"><strong>Autopartes destacadas</strong><span>Solicitá información por WhatsApp</span></div></article>
-      <article class="offer-slide"><div class="offer-pic"><img src="OFERTA3.jpg" alt="Promociones"></div><div class="offer-caption"><strong>Promociones</strong><span>Stock sujeto a disponibilidad</span></div></article>
-      <article class="offer-slide"><div class="offer-pic"><img src="OFERTA4.jpg" alt="Ofertas especiales"></div><div class="offer-caption"><strong>Ofertas especiales</strong><span>Consultá disponibilidad y precio</span></div></article>
-      <article class="offer-slide"><div class="offer-pic"><img src="OFERTA5.jpg" alt="Nuevas ofertas"></div><div class="offer-caption"><strong>Nuevas ofertas</strong><span>Consultá disponibilidad y precio</span></div></article>
-      <article class="offer-slide"><div class="offer-pic"><img src="OFERTA6.jpg" alt="Promociones destacadas"></div><div class="offer-caption"><strong>Promociones destacadas</strong><span>Consultá disponibilidad y precio</span></div></article>
-      <article class="offer-slide"><div class="offer-pic"><img src="OFERTAS CARRU1.jpg" alt="Oferta especial 1"></div><div class="offer-caption"><strong>Oferta especial</strong><span>Consultá disponibilidad y precio</span></div></article>
-      <article class="offer-slide"><div class="offer-pic"><img src="OFERTAS CARRU2.jpg" alt="Oferta especial 2"></div><div class="offer-caption"><strong>Oferta destacada</strong><span>Solicitá información por WhatsApp</span></div></article>
-    </div>
-    <div class="offers-dots" aria-label="Navegación de ofertas"></div>
-  </div>
- </section>
+            <!-- Sección de Contacto -->
+            <div class="border-t border-white/10 pt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                <a href="mailto:soporte@empresa.com" class="flex items-center justify-center sm:justify-start gap-3 text-gray-400 hover:text-brand-cyan transition-colors group">
+                    <div class="p-2 bg-white/5 rounded-lg group-hover:bg-brand-cyan/10 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <span class="font-medium">soporte@empresa.com</span>
+                </a>
+                <a href="tel:+5491112345678" class="flex items-center justify-center sm:justify-start gap-3 text-gray-400 hover:text-brand-cyan transition-colors group">
+                    <div class="p-2 bg-white/5 rounded-lg group-hover:bg-brand-cyan/10 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                    </div>
+                    <span class="font-medium">+54 9 11 1234-5678</span>
+                </a>
+            </div>
 
-<section id="novedades" class="section">
- <div class="section-title"><h2>Novedades</h2></div>
- <div class="quote">Nuevos ingresos de autopartes y repuestos. Consultá por marca, modelo, año y disponibilidad.</div>
-</section>
+        </div>
+    </main>
 
-<section id="marcas" class="section">
- <div class="section-title"><h2>Marcas</h2></div>
- <div class="brands-marquee"><div class="brands">
-  <div class="brand"><img src="data:image/png;base64,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" alt="Ford"></div>
-  <div class="brand"><img src="data:image/png;base64,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" alt="Chevrolet"></div>
-  <div class="brand"><img src="data:image/png;base64,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" alt="Peugeot"></div>
-  <div class="brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAAAvCAIAAADy7HqUAAAEa0lEQVR4nO2YTU8qVxjH58wwohngWi9BXm4gvBlIiIkmTdnUEONNE2PT3NTrwjTehQs/gS9bdKGJW6Mbt7po00S/gokbkUSNhYgBgfAiCCIwKDhzznQxhhqK9qYz90I7/FZM5sDz//Oc85zzHMBxHIZhsVjMZDJhEgNvtYBW0jEvVTrmpUrHvFQR0zyHYVzzhzZF0pmXifhb4MWHNkVM8/xJuQEA2vdvEM0877xYLN7d3WEYBiEkSdJgMBAEIVYI0RFzzdM0HQ6HtVqtTqfDcTyTyeTz+abToU0QzTxCKJlM2u12uVx+f39/e3trsVhCoRDDMGKFEB1B5rlnFAoFDMMoioIQBgIBq9WqUqn0en00GoUQNgwWkZaZrxczhqmlUgmz2UwQRDqd3t/fj0ajGIZRClX6OlutVjmOa1r5ePV/fwWe0RDr+WCB1VRo5vnw+Xy+p6eHIAiGYfx+/+zsbCQSqVarCCGKoi4uLvjkN3UCAHglgQiheqyGD9gL+8vnI7TacxzHMEw8ntDpdLVaLZ/P397mjMZ3EDKJRILs6oYQXmezNtuAUknRNL20tJRKpQAAk5OT6XT66OhIq9XOzMysrq7Ozc0plcpQKDQ+Pr60tAQhXF5eXl9fn56e7uvr297ettvtKpXK7Xavra35fD6Xy7W4uOh0Ov+1eKHTHgBwc3OTSCRCodD5+bnf73///ge5XG40GsvlcjKZjMfj19fX9eRDCEdGRoaHh8PhcLFYlMlkvb29crk8lUp5vV6/318qla6urgAALMteXl5WKpXHx0cIYS6Xo2mapmmDwbCysqLT6bxer8PhEKJfhMxTFHV4eHhwcAAhZ7NZTCaTXq+vMazPf/zbr7+Xy2WrxTI6OorjOEKIZVkMw4LB4NTU1NnZmcVicblcAACNRrOwsDA/Pz82NraxsZHL5QAAu7u7FEXt7e11d3er1WqE0MnJCUVRTqcTQogQErjmgZALTP67HMf5fL6tra1yuSKTyT58+GliYuKPYGBzc7NUpEmS/HFi4uPHn+VyOcuy4XDYYDCwLJtIJLq6uvgkDw0NJZNJh8NRKpUqlUqhUHA6nQCAQCBgs9mOj49ZlnW73cViMRgMIoQGBwczmczAwIBCoWixeQzDKpXKzs5OOHyFEOrv7/d4PKHLy9PTU4Swt2+/+TTzi1arbVrb6iXz9bL3pLXZGCHJFzTteTUAAIVC4fF4CIJECOE4/vDwUKvVrFYrAMBkMqnVahzH+F6nQSv/+NKG1zSiEMENCF3zdTVmszkeTwAAcBwnSdL4zoQ4lqZp93ffkiTBcdwrslvV/Ih2vCVJ0uVyEQRhMBjevHmj1+uVSqXZbKIoSqwQoiNmS6vRaLLZbCQS4TgOIUSS5NDQ9+3c1QkqeHU+f9G2FeJk/j9nm+dr3OG1bUv/Ncy37byQ9O1tx7xU6ZiXKh3zUqVjXqo8mW/bQ9gX5cl82x6/vyi4NG3z4NKc8Dx/9fOxWKyFOlrCP18Y/4+R9Fb3JwdVeeSfUIQzAAAAAElFTkSuQmCC" alt="Renault"></div>
-  <div class="brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFcAAAAvCAIAAAAZ28GXAAAFe0lEQVR4nO2abUxTVxjH/+f2FhGkQAvayjtEQEUFKchwipuJDsKYM4tZYjTZNFuyfdi3LdmLcVn2wW3GxGWaqHO66VCYjqlR4ojgVJioy7pMQAzoRRALLW15a2l7z9mHohQEpwn3QGL/35ree/M8v+d/7nOek0sYYwAASJKUkJCA50+SJAlTHcO0UIACEKDgU4ACEKDgU4ACEKDgE3cKDGB+vxib+FJ+mmIvEEKmNgCfuFMgAAGGXUAB+tAcFKBPvnW0jSZTojKPnVCMMQZCAYDIMrHbB80WKwC9Xq/RqAUGMIgCyMN8+ZiFOwUQCjgGUFffWFtX3yq12W29g64hQSWmps4rLlq98oXUWUEQCMhjdVeOBz8KjDEQ4qFoaG4/Vna2z+nJNuauLV6viQjzeHH3bkfV7+c+/OhTY1b6to8/SIrVqQjAKB8vEA4zJQMFBAJ4KK7/e7/sxOklGemFhQWEYveeQ+1dbrVa/UbJytyclIZG8/bt271uz3e7v56XFKkWKGOEkGFbKMSD00zJwBgYZWjrcPxacdaYk7docea+fYeGXO6MhWmaWcGiQFOS4+uu/H259s9Ptn0hE/Vnn3/ZYxv0IeAQIQ8KhIGC9A/hQs2VKF3YogXz9h/8abYh2d7vys7OVhF3VuZCIqi///Fk+W9Vl6+atmzd2tzcdOnSFa9MfE4lExhhsroGFwqEEKDb6rrZdPvF/GVRupCYmBioghqbpZDQoKzFaatW5LV3Omx9XlEdGhcXFxdriI81HC0ts/c6FXwl+onLimCMUty7b6ZMpdVqnQPO/GVGh8PRbrZZe7Hu1RWaMBw6csLpESM1M5Pjoh3d941Ls+7ckbotttEPGlv6iTzyrOK0a3J7cKu5lRKx02w5c+bMXEN0e5vU0WE5W1nVdKv9Rv0/d6R2QRDXrF5JvK5fyo+Hh0d6ZTbQ7+QTHh8KAmPod7lcXuah6sZbrTNEsiQjzWLt6jJbHPbe3oFBWZYFAblLF/11vbZ/wOmVAQpKR+8mR5X+//eazxDfZD3oyRJFJCTEOxwOdVBwt8VuMt3MyTZ6nY7CNS8ty19QUJA3d44mMyOJyt6KilNarbbHYmWMhoYE8wmPDwUqikhJiLVbzP19jvjEpFOVF2aGhBa+nJeaqK2ouGi3D7yzqWhD8fLW1larbWB+WrrJdM2gj9RFRfjuH68XCJMYPL9pKmZ2eGJsdPnxYyUl68wPuhubmoqLCtwu54Effi47cVofHaEmQ6VHD8+fnyao0NJye/3rJZHhob4VoHSj4ERBAIsMw+aN600mU01NzfvvbT13+mRb24PKqj86e2hFZV2n2d7Q0GCYE7FqRW55eZlOpysqWhMUNBKeoiB4zRFUVgmq7Mz0d7ds3rnrW6fjtU2bNvbYHNUXLjJQt9N17dqNWH14Xo7xyOGDPdauA/v2zo3REzBf+owxRTeRXOYIJgNgjIAILjeOlJ7c8dWuiMjoolfWZixeopoRMjQ0ZOm8W3+1trq62jBHt/ObHfnLjSpAICPJMyXnCB4UHrY0AQAF88rkZtO9vXv2nz9/3ma3iqIgy7LX601MjH9zw4a339qsn60RyJj7GYFSZuBGYUSMMUYARmQGu72vpaXFYraIomiINSSnJIUGB8E3fnKUJEm8T1kIYQQAIQJBlDYsSpvpS5kBDGz4Zaic+ycQbwr+XelR/hjeFpJRf4xDY2RlKRXTdBPPI3r+XvAXBUAmqATPNTF9vcBTPL1AH4P+NDXwfxcoVbOAFwC+Xnh64jzq76+AF4Cp7hETiXdtAl4AAhR8GofCNPmyQmn5pzkOhWnyZYXS8k8zsCKAMT1CkiRCyHOyIgA8Snb8nJU+55tyjUnwOar8E/QfjG1Z0zTBBD0AAAAASUVORK5CYII=" alt="Volkswagen"></div>
-  <div class="brand"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Toyota.svg" alt="Toyota"></div>
- 
-  <div class="brand"><img src="data:image/png;base64,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" alt="Ford"></div>
-  <div class="brand"><img src="data:image/png;base64,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" alt="Chevrolet"></div>
-  <div class="brand"><img src="data:image/png;base64,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" alt="Peugeot"></div>
-  <div class="brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAAAvCAIAAADy7HqUAAAEa0lEQVR4nO2YTU8qVxjH58wwohngWi9BXm4gvBlIiIkmTdnUEONNE2PT3NTrwjTehQs/gS9bdKGJW6Mbt7po00S/gokbkUSNhYgBgfAiCCIwKDhzznQxhhqK9qYz90I7/FZM5sDz//Oc85zzHMBxHIZhsVjMZDJhEgNvtYBW0jEvVTrmpUrHvFQR0zyHYVzzhzZF0pmXifhb4MWHNkVM8/xJuQEA2vdvEM0877xYLN7d3WEYBiEkSdJgMBAEIVYI0RFzzdM0HQ6HtVqtTqfDcTyTyeTz+abToU0QzTxCKJlM2u12uVx+f39/e3trsVhCoRDDMGKFEB1B5rlnFAoFDMMoioIQBgIBq9WqUqn0en00GoUQNgwWkZaZrxczhqmlUgmz2UwQRDqd3t/fj0ajGIZRClX6OlutVjmOa1r5ePV/fwWe0RDr+WCB1VRo5vnw+Xy+p6eHIAiGYfx+/+zsbCQSqVarCCGKoi4uLvjkN3UCAHglgQiheqyGD9gL+8vnI7TacxzHMEw8ntDpdLVaLZ/P397mjMZ3EDKJRILs6oYQXmezNtuAUknRNL20tJRKpQAAk5OT6XT66OhIq9XOzMysrq7Ozc0plcpQKDQ+Pr60tAQhXF5eXl9fn56e7uvr297ettvtKpXK7Xavra35fD6Xy7W4uOh0Ov+1eKHTHgBwc3OTSCRCodD5+bnf73///ge5XG40GsvlcjKZjMfj19fX9eRDCEdGRoaHh8PhcLFYlMlkvb29crk8lUp5vV6/318qla6urgAALMteXl5WKpXHx0cIYS6Xo2mapmmDwbCysqLT6bxer8PhEKJfhMxTFHV4eHhwcAAhZ7NZTCaTXq+vMazPf/zbr7+Xy2WrxTI6OorjOEKIZVkMw4LB4NTU1NnZmcVicblcAACNRrOwsDA/Pz82NraxsZHL5QAAu7u7FEXt7e11d3er1WqE0MnJCUVRTqcTQogQErjmgZALTP67HMf5fL6tra1yuSKTyT58+GliYuKPYGBzc7NUpEmS/HFi4uPHn+VyOcuy4XDYYDCwLJtIJLq6uvgkDw0NJZNJh8NRKpUqlUqhUHA6nQCAQCBgs9mOj49ZlnW73cViMRgMIoQGBwczmczAwIBCoWixeQzDKpXKzs5OOHyFEOrv7/d4PKHLy9PTU4Swt2+/+TTzi1arbVrb6iXz9bL3pLXZGCHJFzTteTUAAIVC4fF4CIJECOE4/vDwUKvVrFYrAMBkMqnVahzH+F6nQSv/+NKG1zSiEMENCF3zdTVmszkeTwAAcBwnSdL4zoQ4lqZp93ffkiTBcdwrslvV/Ih2vCVJ0uVyEQRhMBjevHmj1+uVSqXZbKIoSqwQoiNmS6vRaLLZbCQS4TgOIUSS5NDQ9+3c1QkqeHU+f9G2FeJk/j9nm+dr3OG1bUv/Ncy37byQ9O1tx7xU6ZiXKh3zUqVjXqo8mW/bQ9gX5cl82x6/vyi4NG3z4NKc8Dx/9fOxWKyFOlrCP18Y/4+R9Fb3JwdVeeSfUIQzAAAAAElFTkSuQmCC" alt="Renault"></div>
-  <div class="brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFcAAAAvCAIAAAAZ28GXAAAFe0lEQVR4nO2abUxTVxjH/+f2FhGkQAvayjtEQEUFKchwipuJDsKYM4tZYjTZNFuyfdi3LdmLcVn2wW3GxGWaqHO66VCYjqlR4ojgVJioy7pMQAzoRRALLW15a2l7z9mHohQEpwn3QGL/35ree/M8v+d/7nOek0sYYwAASJKUkJCA50+SJAlTHcO0UIACEKDgU4ACEKDgU4ACEKDgE3cKDGB+vxib+FJ+mmIvEEKmNgCfuFMgAAGGXUAB+tAcFKBPvnW0jSZTojKPnVCMMQZCAYDIMrHbB80WKwC9Xq/RqAUGMIgCyMN8+ZiFOwUQCjgGUFffWFtX3yq12W29g64hQSWmps4rLlq98oXUWUEQCMhjdVeOBz8KjDEQ4qFoaG4/Vna2z+nJNuauLV6viQjzeHH3bkfV7+c+/OhTY1b6to8/SIrVqQjAKB8vEA4zJQMFBAJ4KK7/e7/sxOklGemFhQWEYveeQ+1dbrVa/UbJytyclIZG8/bt271uz3e7v56XFKkWKGOEkGFbKMSD00zJwBgYZWjrcPxacdaYk7docea+fYeGXO6MhWmaWcGiQFOS4+uu/H259s9Ptn0hE/Vnn3/ZYxv0IeAQIQ8KhIGC9A/hQs2VKF3YogXz9h/8abYh2d7vys7OVhF3VuZCIqi///Fk+W9Vl6+atmzd2tzcdOnSFa9MfE4lExhhsroGFwqEEKDb6rrZdPvF/GVRupCYmBioghqbpZDQoKzFaatW5LV3Omx9XlEdGhcXFxdriI81HC0ts/c6FXwl+onLimCMUty7b6ZMpdVqnQPO/GVGh8PRbrZZe7Hu1RWaMBw6csLpESM1M5Pjoh3d941Ls+7ckbotttEPGlv6iTzyrOK0a3J7cKu5lRKx02w5c+bMXEN0e5vU0WE5W1nVdKv9Rv0/d6R2QRDXrF5JvK5fyo+Hh0d6ZTbQ7+QTHh8KAmPod7lcXuah6sZbrTNEsiQjzWLt6jJbHPbe3oFBWZYFAblLF/11vbZ/wOmVAQpKR+8mR5X+//eazxDfZD3oyRJFJCTEOxwOdVBwt8VuMt3MyTZ6nY7CNS8ty19QUJA3d44mMyOJyt6KilNarbbHYmWMhoYE8wmPDwUqikhJiLVbzP19jvjEpFOVF2aGhBa+nJeaqK2ouGi3D7yzqWhD8fLW1larbWB+WrrJdM2gj9RFRfjuH68XCJMYPL9pKmZ2eGJsdPnxYyUl68wPuhubmoqLCtwu54Effi47cVofHaEmQ6VHD8+fnyao0NJye/3rJZHhob4VoHSj4ERBAIsMw+aN600mU01NzfvvbT13+mRb24PKqj86e2hFZV2n2d7Q0GCYE7FqRW55eZlOpysqWhMUNBKeoiB4zRFUVgmq7Mz0d7ds3rnrW6fjtU2bNvbYHNUXLjJQt9N17dqNWH14Xo7xyOGDPdauA/v2zo3REzBf+owxRTeRXOYIJgNgjIAILjeOlJ7c8dWuiMjoolfWZixeopoRMjQ0ZOm8W3+1trq62jBHt/ObHfnLjSpAICPJMyXnCB4UHrY0AQAF88rkZtO9vXv2nz9/3ma3iqIgy7LX601MjH9zw4a339qsn60RyJj7GYFSZuBGYUSMMUYARmQGu72vpaXFYraIomiINSSnJIUGB8E3fnKUJEm8T1kIYQQAIQJBlDYsSpvpS5kBDGz4Zaic+ycQbwr+XelR/hjeFpJRf4xDY2RlKRXTdBPPI3r+XvAXBUAmqATPNTF9vcBTPL1AH4P+NDXwfxcoVbOAFwC+Xnh64jzq76+AF4Cp7hETiXdtAl4AAhR8GofCNPmyQmn5pzkOhWnyZYXS8k8zsCKAMT1CkiRCyHOyIgA8Snb8nJU+55tyjUnwOar8E/QfjG1Z0zTBBD0AAAAASUVORK5CYII=" alt="Volkswagen"></div>
-  <div class="brand"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Toyota.svg" alt="Toyota"></div>
- </div></div>
- </section>
+    <!-- Texto Inferior -->
+    <footer class="relative z-10 text-center pb-8 px-4">
+        <p class="text-gray-500 text-sm font-medium flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Disculpe las molestias. Estamos trabajando para restablecer el servicio lo antes posible.
+        </p>
+    </footer>
 
-<section class="section">
- <div class="section-title"><h2>Opiniones</h2></div>
- <div class="reviews">
-  <article class="review"><div class="stars">★★★★★</div><p>“En <strong>Autopartes Brass</strong> conseguí el <strong>radiador</strong> que necesitaba para mi vehículo. Me orientaron con la pieza y pude resolver la compra en el local.”</p><small>— Martín, vecino de Trelew · Cliente local</small></article>
-  <article class="review"><div class="stars">★★★★☆</div><p>“Pasé por <strong>Autopartes Brass</strong> buscando una <strong>bomba de agua</strong> y encontré el repuesto que necesitaba. Buena atención y explicación sobre la pieza.”</p><small>— Laura, vecina de Trelew · Cliente local</small></article>
-  <article class="review"><div class="stars">★★★★★</div><p>“Estaba de viaje por la zona y en <strong>Autopartes Brass</strong> pude consultar por un <strong>alternador</strong> para continuar el viaje. La atención fue clara y rápida.”</p><small>— Diego · Turista / viajero</small></article>
- </div>
- <p style="font-size:9px;color:#999;margin-top:10px">Nota: estas tres opiniones son ejemplos de contenido para el diseño. Reemplazalas por reseñas reales de clientes antes de publicarlas.</p>
-</section>
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/5491112345678" target="_blank" rel="noopener noreferrer" 
+       class="whatsapp-float fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full flex items-center justify-center group"
+       aria-label="Contactar por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="transition-transform group-hover:scale-110">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <!-- Tooltip -->
+        <span class="absolute right-full mr-3 bg-gray-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-gray-700 shadow-xl">
+            ¿Necesitas ayuda? Escríbenos
+        </span>
+    </a>
 
-<section id="ubicacion" class="section">
- <div class="section-title"><h2>Ubicación</h2></div>
- <div class="location">
-  <div class="info">
-   <h3>📍 Autopartes Brass</h3>
-   <p><strong>Av. La Plata 2701</strong><br>U9100 Trelew, Chubut<br>Referencia: PMW5+54 Trelew, Chubut</p>
-   <div class="map-wrap">
-    <iframe
-      title="Mapa de ubicación de Autopartes Brass"
-      src="https://www.google.com/maps?q=Autopartes%20Brass%2C%20Trelew%2C%20Chubut&ll=-43.2545812%2C-65.3421681&z=17&output=embed"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      allowfullscreen>
-    </iframe>
-   </div>
-   <div class="map-actions">
-    <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/e1EfhuTn9NAQMxXL8">ABRIR EN GOOGLE MAPS</a>
-   </div>
-  </div>
- </div>
-</section>
-</section>
-</main>
+    <!-- Script de Partículas Sutiles -->
+    <script>
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
 
-<a class="whatsapp-float" href="https://wa.me/542804589193?text=Hola%20Autopartes%20Brass%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Consultar por WhatsApp" title="Consulta con nuestro asesor">
-  <span class="whatsapp-icon">⌕</span>
-  <span class="whatsapp-label">WhatsApp</span>
-</a>
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.3;
+                this.vy = (Math.random() - 0.5) * 0.3;
+                this.size = Math.random() * 2 + 0.5;
+                this.opacity = Math.random() * 0.5 + 0.1;
+            }
 
-<footer class="footer">
- <div class="footer-inner">
-  <div class="footer-contact"><div class="footer-logo">BRASS</div>
-   <a href="https://wa.me/542804589193" target="_blank" rel="noopener">🟢 0280 458-9193</a>
-   <a href="https://wa.me/542894350829" target="_blank" rel="noopener">🟢 0289 435-0829</a>
-   <a href="https://wa.me/542804651184" target="_blank" rel="noopener">🟢 0280 465-1184</a>
-   <a href="https://maps.app.goo.gl/e1EfhuTn9NAQMxXL8" target="_blank" rel="noopener">📍 Av. La Plata 2701</a>
-   <a href="https://instagram.com/autopartesbrass/" target="_blank" rel="noopener">◎ Instagram</a>
-   <a href="mailto:Jorgecurytw@gmail.com">✉️ Jorgecurytw@gmail.com</a>
-  </div>
-  <div><h4>ACCESOS</h4><a href="#inicio">Inicio</a><a href="#galeria">Galería</a><a href="#repuestos">Repuestos</a><a href="#ofertas">Ofertas</a><a href="#ubicacion">Ubicación</a></div>
-  <div><h4>RUBROS</h4><p>Alternador · Bobina · Bombas · Cajas · Capot · Carburador · Radiador · Módulo de inyección · Motor de arranque · Puertas · Turbo · Volante de motor</p></div>
- </div>
- <div class="copyright">© 2026 Autopartes Brass · Trelew, Chubut</div>
-</footer>
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
 
-<script>
-const catalogo = {
- "Motor y encendido":["ALTERNADOR","BOBINA DE ENCENDIDO","MOTOR DE ARRANQUE","VOLANTE DE MOTOR"],
- "Combustible e inyección":["BOMBA DE NAFTA","BOMBA INYECTORA","CARBURADOR","MÓDULO DE INYECCIÓN"],
- "Transmisión":["CAJA DE TRANSFERENCIA","CAJA DE VELOCIDADES"],
- "Carrocería":["CAPOT","GRILLA DELANTERA","GUARDABARROS","ÓPTICAS","PUERTAS","TAPA DE BAÚL"],
- "Climatización":["AIRE ACONDICIONADO","COMPRESOR DE AIRE ACONDICIONADO","CONDENSADOR"],
- "Refrigeración":["BOMBA DE AGUA","RADIADOR","RADIADOR DE ACEITE","ELECTROVENTILADOR"],
- "Electricidad":["ALTERNADOR","INSTRUMENTAL DE TABLERO","TABLERO DE INSTRUMENTO"],
- "Interior":["TABLERO DE INSTRUMENTO","TAPIZADOS"],
- "Admisión y turbo":["INTERCOOLER","TURBO COMPRESOR"]
-};
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
 
-const cuentas = {
- "Mercado Pago": {
-   banco:"Mercado Pago · AUTOPARTES Brass",
-   titular:"JORGE OMAR CURILAF",
-   cvu:"0000003100025722323433",
-   alias:"autopartes1brass",
-   cuit:"20131606371"
- },
- "Santander Rio": {
-   banco:"SANTANDER RIO · AUTOPARTES Brass",
-   titular:"Jorge Omar Curilaf",
-   cta:"Cuenta única: 286-018002/9",
-   cbu:"07202867880000001800290",
-   alias:"AMBAR.TAPUJO.FOCA"
- },
- "Efectivo": {
-   banco:"Pago en Efectivo",
-   titular:"AUTOPARTES Brass"
- }
-};
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(6, 182, 212, ${this.opacity})`; // Cyan sutil
+                ctx.fill();
+            }
+        }
 
-const cat=document.getElementById('categoria');
-const prod=document.getElementById('producto');
-const cuenta=document.getElementById('cuenta');
-const bankDetails=document.getElementById('bankDetails');
+        function initParticles() {
+            particles = [];
+            const particleCount = Math.min(window.innerWidth / 10, 100); // Responsive count
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
 
-const fields={
- nombre:document.getElementById('nombre'),
- dni:document.getElementById('dni'),
- telefono:document.getElementById('telefono'),
- email:document.getElementById('email'),
- vehiculo:document.getElementById('vehiculo'),
- direccion:document.getElementById('direccion'),
- cp:document.getElementById('cp'),
- ciudad:document.getElementById('ciudad'),
- comentario:document.getElementById('comentario')
-};
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach((particle, index) => {
+                particle.update();
+                particle.draw();
 
-const sum={
- cat:document.getElementById('sumCat'),
- prod:document.getElementById('sumProd'),
- nombre:document.getElementById('sumNombre'),
- vehiculo:document.getElementById('sumVehiculo'),
- direccion:document.getElementById('sumDireccion'),
- cp:document.getElementById('sumCP'),
- ciudad:document.getElementById('sumCiudad'),
- cuenta:document.getElementById('sumCuenta'),
- comentario:document.getElementById('sumComentario')
-};
+                // Conectar partículas cercanas (efecto red tecnológica)
+                for (let j = index + 1; j < particles.length; j++) {
+                    const dx = particles[j].x - particle.x;
+                    const dy = particles[j].y - particle.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
 
-function cargarCategoria(nombreCategoria, productoDeseado=''){
-  cat.value=nombreCategoria||'';
-  prod.innerHTML='<option value="">Seleccionar repuesto...</option>';
-  prod.disabled=!cat.value;
-  (catalogo[cat.value]||[]).forEach(x=>{
-    const o=document.createElement('option');
-    o.value=x;o.textContent=x;prod.appendChild(o);
-  });
-  if(productoDeseado && (catalogo[cat.value]||[]).includes(productoDeseado)) prod.value=productoDeseado;
-  sum.cat.textContent=cat.value||'—';
-  sum.prod.textContent=prod.value||'—';
-  document.getElementById('orderPath').innerHTML=`Ruta inteligente: <strong>Repuestos</strong> → <strong>${cat.value||'categoría'}</strong> → <strong>${prod.value||'producto'}</strong>`;
-}
+                    if (distance < 120) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(37, 99, 235, ${0.15 * (1 - distance / 120)})`; // Azul sutil
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particle.x, particle.y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            });
 
-cat.addEventListener('change',()=>cargarCategoria(cat.value));
-prod.addEventListener('change',()=>{sum.prod.textContent=prod.value||'—';document.getElementById('orderPath').innerHTML=`Ruta inteligente: <strong>Repuestos</strong> → <strong>${cat.value||'categoría'}</strong> → <strong>${prod.value||'producto'}</strong>`;});
+            requestAnimationFrame(animateParticles);
+        }
 
-document.querySelectorAll('.sidebar a[data-category]').forEach(link=>{
-  link.addEventListener('click',()=>{
-    cargarCategoria(link.dataset.category,link.dataset.product);
-    setTimeout(()=>document.getElementById('pedido').scrollIntoView({behavior:'smooth',block:'start'}),40);
-  });
-});
-
-fields.nombre.addEventListener('input',()=>sum.nombre.textContent=fields.nombre.value||'—');
-fields.vehiculo.addEventListener('input',()=>sum.vehiculo.textContent=fields.vehiculo.value||'—');
-fields.direccion.addEventListener('input',()=>sum.direccion.textContent=fields.direccion.value||'—');
-fields.cp.addEventListener('input',()=>sum.cp.textContent=fields.cp.value||'—');
-fields.ciudad.addEventListener('input',()=>sum.ciudad.textContent=fields.ciudad.value||'—');
-fields.comentario.addEventListener('input',()=>sum.comentario.textContent=fields.comentario.value||'—');
-
-cuenta.addEventListener('change',()=>{
-  const c=cuentas[cuenta.value];
-  if(!c){
-    bankDetails.style.display='none';
-    bankDetails.innerHTML='';
-    sum.cuenta.textContent='—';
-    return;
-  }
-  let detalle=`<strong>${c.banco}</strong><br>`;
-  if(c.titular) detalle+=`<strong>Titular:</strong> ${c.titular}<br>`;
-  if(c.cta) detalle+=`<strong>Cuenta:</strong> ${c.cta}<br>`;
-  if(c.cbu) detalle+=`<strong>CBU:</strong> ${c.cbu}<br>`;
-  if(c.cvu) detalle+=`<strong>CVU:</strong> ${c.cvu}<br>`;
-  if(c.alias) detalle+=`<strong>Alias:</strong> ${c.alias}<br>`;
-  if(c.cuit) detalle+=`<strong>CUIT/CUIL:</strong> ${c.cuit}`;
-  bankDetails.innerHTML=detalle;
-  bankDetails.style.display='block';
-  sum.cuenta.textContent=`${c.banco} · Alias: ${c.alias}`;
-});
-
-const enviarPedidoBtn=document.getElementById('enviarPedido');
-const requiredFields=[cat,prod,fields.nombre,fields.dni,fields.telefono];
-function formularioCompleto(){return requiredFields.every(el=>el && el.value && el.value.toString().trim());}
-function actualizarEstadoEnvio(){
-  const listo=formularioCompleto();
-  enviarPedidoBtn.classList.toggle('is-ready',listo);
-  enviarPedidoBtn.setAttribute('aria-label',listo?'Enviar pedido formateado por WhatsApp':'Completar datos para habilitar el envío por WhatsApp');
-}
-[cat,prod,fields.nombre,fields.dni,fields.telefono].forEach(el=>{el.addEventListener('input',actualizarEstadoEnvio);el.addEventListener('change',actualizarEstadoEnvio);});
-actualizarEstadoEnvio();
-
-document.getElementById('enviarPedido').addEventListener('click',()=>{
-  if(!formularioCompleto()){
-    alert('Completá categoría, repuesto, nombre, DNI y teléfono/WhatsApp para habilitar el envío.');
-    return;
-  }
-
-  const c=cuentas[cuenta.value];
-  const cuentaTexto=c
-    ? `${c.banco}${c.titular ? ' | Titular: '+c.titular : ''}${c.cta ? ' | '+c.cta : ''}${c.cbu ? ' | CBU: '+c.cbu : ''}${c.cvu ? ' | CVU: '+c.cvu : ''}${c.alias ? ' | Alias: '+c.alias : ''}${c.cuit ? ' | CUIT/CUIL: '+c.cuit : ''}`
-    : 'No seleccionado';
-
-  const ahora = new Date();
-  const fecha = ahora.toLocaleString('es-AR',{dateStyle:'short',timeStyle:'short'});
-  const numeroPedido = 'BR-'+Date.now().toString().slice(-6);
-  const msg =
-`━━━━━━━━━━━━━━━━━━━━
-🚗 *AUTOPARTES BRASS*
-📋 *PEDIDO DE REPUESTO*
-━━━━━━━━━━━━━━━━━━━━
-🆔 Pedido: ${numeroPedido}
-🗓️ Fecha: ${fecha}
-
-🔧 *REPUESTO SOLICITADO*
-• Categoría: ${cat.value}
-• Producto: ${prod.value}
-
-👤 *DATOS DEL CLIENTE*
-• Nombre: ${fields.nombre.value}
-• DNI: ${fields.dni.value}
-• WhatsApp: ${fields.telefono.value}
-• E-mail: ${fields.email.value || 'No informado'}
-
-🚘 *VEHÍCULO*
-• Marca / modelo / año: ${fields.vehiculo.value || 'No informado'}
-
-📍 *ENTREGA / UBICACIÓN*
-• Dirección: ${fields.direccion.value || 'No informada'}
-• Código postal: ${fields.cp.value || 'No informado'}
-• Ciudad: ${fields.ciudad.value || 'No informada'}
-
-💳 *MEDIO DE PAGO / CUENTA*
-${cuentaTexto}
-
-📝 *DETALLE ADICIONAL*
-${fields.comentario.value || 'Sin comentario'}
-
-━━━━━━━━━━━━━━━━━━━━
-📲 *Pedido generado desde la web de Autopartes Brass*`;
-
-  window.open('https://wa.me/542804589193?text='+encodeURIComponent(msg),'_blank');
-});
-
-// Buscador inteligente: combina palabras clave, categoría/tipo de repuesto y producto.
-const normalizar=t=>(t||'').toString().normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
-const segmentKeywords={
-  "motor y encendido":["motor","encendido","arranque","alternador","bobina","volante"],
-  "combustible e inyección":["combustible","inyeccion","nafta","bomba nafta","bomba inyectora","carburador","modulo"],
-  "transmisión":["transmision","caja","transferencia","velocidades"],
-  "carrocería":["carroceria","capot","grilla","guardabarros","optica","opticas","faro","faros","puerta","baul"],
-  "climatización":["climatizacion","clima","aire","aire acondicionado","a/c","ac","compresor","condensador"],
-  "refrigeración":["refrigeracion","radiador","bomba de agua","electroventilador","radiador de aceite"],
-  "electricidad":["electricidad","instrumental","tablero","alternador"],
-  "interior":["interior","tapizado","tapizados","tablero"],
-  "admisión y turbo":["admision","turbo","intercooler","turbo compresor"]
-};
-const searchInput=document.getElementById('globalSearch');
-const searchButton=document.querySelector('.nav-search button');
-
-function buscarRepuesto(raw,autoCargar=true){
-  const q=normalizar(raw);
-  const links=[...document.querySelectorAll('.sidebar a[data-category]')];
-  links.forEach(a=>a.style.display='block');
-  if(!q) return [];
-  const words=q.split(/\s+/).filter(Boolean);
-  const scored=links.map(a=>{
-    const catN=normalizar(a.dataset.category), prodN=normalizar(a.dataset.product);
-    const keys=(segmentKeywords[catN]||[]).map(normalizar);
-    const productWords=prodN.split(/\s+/);
-    let score=0;
-    if(prodN===q) score+=100;
-    else if(prodN.startsWith(q)) score+=75;
-    else if(prodN.includes(q)) score+=55;
-    if(catN===q) score+=50;
-    if(keys.includes(q)) score+=45;
-    if(words.every(w=>prodN.includes(w))) score+=35;
-    if(words.every(w=>catN.includes(w))) score+=25;
-    if(words.some(w=>prodN.includes(w))) score+=12;
-    if(words.some(w=>catN.includes(w))) score+=8;
-    if(keys.some(k=>words.some(w=>k.includes(w)||w.includes(k)))) score+=10;
-    return {a,score};
-  }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score);
-  links.forEach(a=>a.style.display='none');
-  scored.forEach(x=>x.a.style.display='block');
-  if(autoCargar && scored[0]) cargarCategoria(scored[0].a.dataset.category,scored[0].a.dataset.product);
-  return scored;
-}
-searchInput.addEventListener('input',e=>buscarRepuesto(e.target.value,false));
-searchInput.addEventListener('keydown',e=>{
-  if(e.key==='Enter'){
-    const q=e.target.value.trim();
-    if(q){ buscarRepuesto(q,true); setTimeout(()=>document.getElementById('pedido').scrollIntoView({behavior:'smooth',block:'start'}),80); }
-  }
-});
-searchButton.addEventListener('click',()=>{
-  const q=searchInput.value.trim();
-  if(q){ buscarRepuesto(q,true); document.getElementById('pedido').scrollIntoView({behavior:'smooth',block:'start'}); }
-});
-
-// Carrusel principal: desplazamiento horizontal de derecha a izquierda, 5 segundos por imagen.
-const heroCarousel=document.getElementById('heroCarousel');
-const heroTrack=heroCarousel ? heroCarousel.querySelector('.hero-track') : null;
-const slides=[...document.querySelectorAll('.hero-slide')];
-let slideIndex=0;
-let carouselTimer=null;
-function showSlide(i,animate=true){
-  if(!slides.length || !heroTrack) return;
-  slideIndex=(i+slides.length)%slides.length;
-  heroTrack.style.transition=animate?'transform 900ms cubic-bezier(.65,0,.25,1)':'none';
-  heroTrack.style.transform=`translateX(-${slideIndex*100}%)`;
-  slides.forEach((slide,n)=>slide.classList.toggle('active',n===slideIndex));
-}
-function startCarousel(){
-  clearInterval(carouselTimer);
-  carouselTimer=setInterval(()=>showSlide(slideIndex+1,true),5000);
-}
-showSlide(0,false);
-startCarousel();
-heroCarousel.addEventListener('mouseenter',()=>clearInterval(carouselTimer));
-heroCarousel.addEventListener('mouseleave',startCarousel);
-heroCarousel.addEventListener('touchstart',()=>clearInterval(carouselTimer),{passive:true});
-heroCarousel.addEventListener('touchend',startCarousel,{passive:true});
-
-
-// Carrusel de Ofertas: navegación automática, táctil y por indicadores.
-const offersCarousel=document.getElementById('offersCarousel');
-const offersTrack=offersCarousel ? offersCarousel.querySelector('.offers-track') : null;
-const offerSlides=offersCarousel ? [...offersCarousel.querySelectorAll('.offer-slide')] : [];
-const offersDots=offersCarousel ? offersCarousel.querySelector('.offers-dots') : null;
-let offerIndex=0, offersTimer=null;
-function showOffer(i,animate=true){
-  if(!offersTrack || !offerSlides.length) return;
-  offerIndex=(i+offerSlides.length)%offerSlides.length;
-  offersTrack.style.transition=animate?'transform 700ms cubic-bezier(.65,0,.25,1)':'none';
-  offersTrack.style.transform=`translateX(-${offerIndex*100}%)`;
-  if(offersDots) [...offersDots.children].forEach((dot,n)=>dot.classList.toggle('active',n===offerIndex));
-}
-function startOffersCarousel(){clearInterval(offersTimer);offersTimer=setInterval(()=>showOffer(offerIndex+1,true),4500)}
-if(offersDots && offerSlides.length){
-  offerSlides.forEach((_,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',`Ver oferta ${i+1}`);b.addEventListener('click',()=>{showOffer(i,true);startOffersCarousel()});offersDots.appendChild(b)});
-}
-showOffer(0,false);
-startOffersCarousel();
-if(offersCarousel){
-  offersCarousel.addEventListener('mouseenter',()=>clearInterval(offersTimer));
-  offersCarousel.addEventListener('mouseleave',startOffersCarousel);
-  offersCarousel.addEventListener('touchstart',()=>clearInterval(offersTimer),{passive:true});
-  offersCarousel.addEventListener('touchend',startOffersCarousel,{passive:true});
-}
-
-// Galería: ampliar cualquier imagen al hacer clic y cerrar con X, fondo o Escape.
-const galleryModal=document.getElementById('galleryModal');
-const galleryModalImg=document.getElementById('galleryModalImg');
-document.querySelectorAll('.gallery-card img').forEach(img=>{
-  img.addEventListener('click',()=>{
-    galleryModalImg.classList.remove('offer-expanded');
-    galleryModalImg.src=img.src;
-    galleryModalImg.alt=img.alt||'Imagen ampliada';
-    galleryModal.classList.add('open');
-    document.body.style.overflow='hidden';
-  });
-});
-document.querySelectorAll('#ofertas .product .pic img').forEach(img=>{
-  img.addEventListener('click',()=>{
-    galleryModalImg.classList.add('offer-expanded');
-    galleryModalImg.src=img.src;
-    galleryModalImg.alt=img.alt||'Oferta ampliada';
-    galleryModal.classList.add('open');
-    document.body.style.overflow='hidden';
-  });
-});
-function closeGallery(){
-  galleryModal.classList.remove('open');
-  galleryModalImg.src='';
-  galleryModalImg.classList.remove('offer-expanded');
-  document.body.style.overflow='';
-}
-document.querySelector('.gallery-close').addEventListener('click',closeGallery);
-galleryModal.addEventListener('click',e=>{if(e.target===galleryModal) closeGallery();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape') closeGallery();});
-
-
-// Resaltado visual de la ubicación actual en Repuestos.
-document.querySelectorAll('.sidebar a[data-category]').forEach(link=>{link.addEventListener('click',()=>{document.querySelectorAll('.sidebar a[data-category]').forEach(x=>x.classList.remove('active'));link.classList.add('active');});});
-</script>
+        initParticles();
+        animateParticles();
+    </script>
 </body>
 </html>
